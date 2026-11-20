@@ -30,7 +30,7 @@ where $`\Phi`$ is the standard normal CDF. The Lean statement is [`Antichain.euc
 
 ```math
 \widehat\mu_n=\frac{1}{n}\sum_{k=1}^n\delta_{X^{(k)}},\qquad
-\mu^\ast=\operatorname{Law}\!\bigl(\Phi\!\bigl(\sqrt{\frac{d}{d-1}}\,(Y-\bar{Y}\mathbf{1})\bigr)\bigr),
+\mu^\ast=\mathrm{Law}\!\bigl(\Phi\!\bigl(\sqrt{\frac{d}{d-1}}\,(Y-\bar{Y}\mathbf{1})\bigr)\bigr),
 ```
 
 with $`\Phi`$ acting coordinatewise. The vector inside $`\Phi`$ has zero coordinate sum and standard normal marginals, so $`\mu^\ast`$ is supported on $`\overline{\mathcal S_d}`$ and has uniform marginals. For every open neighborhood $`U`$ of $`\mu^\ast`$ in the weak topology on probability measures on $`[0,1]^d`$, there is $`\alpha=\alpha(d,U)>0`$ such that, for all sufficiently large $`n`$,
