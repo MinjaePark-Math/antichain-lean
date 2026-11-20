@@ -1,0 +1,878 @@
+{
+  "schema_version": 1,
+  "review_kind": "statement and written-proof-method correspondence, with complete matching human-readable proofs",
+  "review_date": "2026-11-20",
+  "reviewer": "paper_audit",
+  "verified_source_file": "publish/github-ready/antichain-lean/source/main.tex",
+  "verified_source_sha256": "fddf30aa7db66df3b250b668f6be432e9a9a49ec077caa9e0ff80feb2c824fa6",
+  "reviewed_source_file": "main.tex",
+  "reviewed_source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+  "reviewed_source_lines": 1252,
+  "scope_ids": [
+    "ANT-1-2",
+    "ANT-2-1",
+    "ANT-2-2",
+    "ANT-6-1",
+    "ANT-6-PATTERN",
+    "ANT-6-2",
+    "ANT-INTRO-SIGNED-LIMITS",
+    "ANT-INTRO-RANDOM-ORDER",
+    "ANT-GAUSSIAN-COVARIANCE",
+    "ANT-RANK-MIDPOINT-MARGINAL",
+    "ANT-DIM2-STIRLING",
+    "ANT-RANK-COORDINATE-AVERAGES",
+    "ANT-CHAIN-COLORING",
+    "ANT-RANK-HAUSDORFF",
+    "ANT-RANK-SORTING-LAW"
+  ],
+  "category_definitions": {
+    "same_argument": "The written argument and formal proof have the same substantive steps; explicit carrier, metric, measurability or algebra bookkeeping does not change the route.",
+    "expanded_argument": "The source states or cites a compressed step; Lean proves the same mathematical mechanism in greater detail.",
+    "alternative_argument": "At least one substantive step uses a different proof route; a complete human-readable proof matching Lean is supplied.",
+    "no_separate_proof": "The source makes a direct observation without a separate proof environment; Lean supplies its elementary proof."
+  },
+  "summary": {
+    "reviewed_claims": 15,
+    "changed_mathematical_conclusions": 0,
+    "reorganized_rank_theorem_and_shape_remark": true,
+    "all_claim_conclusions_match_endpoints": true,
+    "current_rank_route": "actual fixed-order-statistic Hoeffding; no DKW input",
+    "current_cube_test_route": "actual lattice Stone-Weierstrass Lipschitz density and Cauchy-Schwarz",
+    "focused_compile": "passed; whole audit coordinated by parent",
+    "same_argument": 5,
+    "expanded_argument": 9,
+    "alternative_argument": 0,
+    "no_separate_proof": 1
+  },
+  "limitations": [
+    "Fresh whole-project audit is separate from focused checks.",
+    "Current paper uses Hoeffding, not DKW; the exact sharp DKW theorem remains supplementary.",
+    "Intervals6.5+ and the new coordinate-average CLT belong to parent/algebra revision branches.",
+    "Open questions, conjecture, figure/caption numerical claims and literature-priority/context are outside the own-paper assertion certificates."
+  ],
+  "human_proof_file": "formalization/human-proofs-probability.tex",
+  "entries": [
+    {
+      "id": "ANT-1-2",
+      "display_number": "1.2",
+      "title": "Exponential Hausdorff concentration",
+      "source_statement_lines": [
+        69,
+        75
+      ],
+      "source_proof_lines": [
+        295,
+        319
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Use empirical weak concentration, finite positive bump tests detecting holes in the support, and the comparable-witness lemma plus compactness to detect isolated outliers of an antichain.",
+      "lean_argument": "Construct a fixed weak neighborhood whose empirical measures rule out holes and outliers, then apply actual empirical exponential concentration; explicitly bridge the Pi sup metric and native Euclidean Hausdorff distance.",
+      "precise_method_comparison": "The same compactness/bump-function/comparability argument is formalized. Metric conversions and closed-cube embeddings are explicit bookkeeping; the conclusion is the stated Euclidean distance.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.euclidean_shape_exponential_concentration_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 51
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The delayed proof is attached to Theorem1.2, not Lemma2.2. Nonempty sample clouds are required only eventually (n>0).",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The same compactness/bump-function/comparability argument is formalized. Metric conversions and closed-cube embeddings are explicit bookkeeping; the conclusion is the stated Euclidean distance.",
+      "lean_declarations": [
+        "Antichain.euclidean_shape_exponential_concentration_direct"
+      ]
+    },
+    {
+      "id": "ANT-2-1",
+      "display_number": "2.1",
+      "title": "Exponential empirical-law concentration",
+      "source_statement_lines": [
+        189,
+        200
+      ],
+      "source_proof_lines": [
+        201,
+        273
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Use the actual conditional Laplace limit, Markov height and centered floor-mgf bounds, Stone-Weierstrass density of Lipschitz cube tests, the normal-CDF Lipschitz bound and Cauchy-Schwarz square-root height transfer; finish with finite weak tests and continuity-set Portmanteau.",
+      "lean_argument": "The actual compact-metric Lipschitz sublattice contains constants, is closed under minimum and maximum, and strongly separates pairs by an affine distance function. The proved lattice Stone-Weierstrass theorem gives uniform approximation. Coordinate clamping extends the approximant to a globally bounded ambient Lipschitz function. The production concentration call uses that producer and the written Cauchy-Schwarz estimate.",
+      "precise_method_comparison": "The revised Stone-Weierstrass/Lipschitz route is now the actual production proof. Lean supplies the explicit Lipschitz sublattice, its strong two-point separation, and the one-Lipschitz clamp extension. The earlier finite Kuhn interpolation is supplementary. Absolute two-sided test estimates also imply the source one-sided finite-test estimates. Lean carries out the probability-logarithm step as direct exponential Markov bounds, including zero-probability events; the written logarithmic bound uses the usual extended-real convention log(0)=-infinity.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.closed_cube_empirical_source_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 58
+        },
+        {
+          "declaration": "Antichain.closed_cube_continuity_set_concentration_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 64
+        },
+        {
+          "declaration": "Antichain.closed_cube_continuity_set_in_probability_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 71
+        },
+        {
+          "declaration": "Antichain.compact_lipschitz_density_stoneWeierstrass",
+          "file": "lean/Antichain/LipschitzStoneWeierstrass.lean",
+          "line": 11
+        },
+        {
+          "declaration": "Antichain.cube_lipschitz_approximation_stoneWeierstrass",
+          "file": "lean/Antichain/LipschitzStoneWeierstrass.lean",
+          "line": 61
+        },
+        {
+          "declaration": "Antichain.lipschitz_cubeTest_empirical_floor_error",
+          "file": "lean/Antichain/LipschitzCubeTests.lean",
+          "line": 29
+        },
+        {
+          "declaration": "Antichain.cubeTest_approximation_sqrt_transfer",
+          "file": "lean/Antichain/LipschitzCubeTests.lean",
+          "line": 79
+        },
+        {
+          "declaration": "Antichain.gaussian_cube_test_exponential_tail_lipschitz",
+          "file": "lean/Antichain/LipschitzCubeTests.lean",
+          "line": 110
+        },
+        {
+          "declaration": "Antichain.boundedTest_cgf_quadratic_bigO",
+          "file": "lean/Antichain/BoundedMoment.lean",
+          "line": 37
+        },
+        {
+          "declaration": "Antichain.boundedTest_mgf_quadratic_bigO",
+          "file": "lean/Antichain/BoundedMoment.lean",
+          "line": 70
+        },
+        {
+          "declaration": "Antichain.boundedTest_exists_negative_tilt",
+          "file": "lean/Antichain/BoundedMoment.lean",
+          "line": 104
+        }
+      ],
+      "human_proof_label": "leanproof:ANT-2-1",
+      "recommended_annotation": "The statement is fully Lean-verified. The formal proof follows the written argument with its finite triangulation and probability steps expanded; a complete matching proof is supplied at leanproof:ANT-2-1.",
+      "scope_note": "The paper concludes continuity-set frequencies converge in probability. Lean proves the stronger fixed-tolerance exponential tail; this does not claim a fluctuation scale or a large-deviation rate function.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The revised Stone-Weierstrass/Lipschitz route is now the actual production proof. Lean supplies the explicit Lipschitz sublattice, its strong two-point separation, and the one-Lipschitz clamp extension. The earlier finite Kuhn interpolation is supplementary. Absolute two-sided test estimates also imply the source one-sided finite-test estimates. Lean carries out the probability-logarithm step as direct exponential Markov bounds, including zero-probability events; the written logarithmic bound uses the usual extended-real convention log(0)=-infinity. The centered moment generating function has its written quadratic Taylor remainder. Lean checks both mgf(t)−1=O(t²) and log mgf(t)=O(t²). The actual negative tilt uses the quadratic log-moment bound.",
+      "lean_declarations": [
+        "Antichain.closed_cube_empirical_source_direct",
+        "Antichain.closed_cube_continuity_set_concentration_direct",
+        "Antichain.closed_cube_continuity_set_in_probability_direct",
+        "Antichain.compact_lipschitz_density_stoneWeierstrass",
+        "Antichain.cube_lipschitz_approximation_stoneWeierstrass",
+        "Antichain.lipschitz_cubeTest_empirical_floor_error",
+        "Antichain.cubeTest_approximation_sqrt_transfer",
+        "Antichain.gaussian_cube_test_exponential_tail_lipschitz",
+        "Antichain.boundedTest_cgf_quadratic_bigO",
+        "Antichain.boundedTest_mgf_quadratic_bigO",
+        "Antichain.boundedTest_exists_negative_tilt"
+      ]
+    },
+    {
+      "id": "ANT-2-2",
+      "display_number": "2.2",
+      "title": "Support closure and strict comparable witness",
+      "source_statement_lines": [
+        278,
+        284
+      ],
+      "source_proof_lines": [
+        285,
+        293
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Use the positive Gaussian floor density to identify support as closure(Phi(E)). Characterize boundary limits using inverse-normal endpoint divergence and an explicit balanced zero/one construction. Obtain comparable points by a common shift of the cube coordinates and a scalar intermediate-value argument.",
+      "lean_argument": "Use the actual full-support Gaussian pushforward to identify support as closure(Phi(E)). Prove the upper closure inclusion by continuity in the open cube and one-sign inverse-normal divergence on unmixed boundary faces. For the converse use the written balanced zero/one inverse-normal construction. For an exterior cube point prove min-max span<1, both endpoint limits and strict monotonicity of the common-shift quantile sum, then use IVT to find the actual nonzero cube-coordinate shift.",
+      "precise_method_comparison": "The earlier centered inverse-coordinate witness has been replaced in the source-facing support and shape chain by the literal manuscript common cube-shift IVT witness. Both the endpoint-divergence closure argument and the explicit mixed-boundary approximation are now formalized as written.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.limitingAntichainMeasure_support_cubeShift_source",
+          "file": "lean/Antichain/CubeShiftSupport.lean",
+          "line": 365
+        },
+        {
+          "declaration": "Antichain.normalQuantile_surface_closure_written",
+          "file": "lean/Antichain/CubeShiftSupport.lean",
+          "line": 304
+        },
+        {
+          "declaration": "Antichain.exists_nonzero_cubeShift_comparable",
+          "file": "lean/Antichain/CubeShiftSupport.lean",
+          "line": 332
+        },
+        {
+          "declaration": "Antichain.normalQuantile_cube_outside_closure_exists_comparable_cubeShift",
+          "file": "lean/Antichain/CubeShiftSupport.lean",
+          "line": 355
+        }
+      ],
+      "human_proof_label": "leanproof:ANT-2-2",
+      "recommended_annotation": "Statement matches. The written support/closure and scalar cube-shift argument is fully Lean-verified; a complete readable presentation is provided in Appendix leanproof:ANT-2-2.",
+      "scope_note": "All actual Gaussian scale factors, the inverse-normal surface, the closed cube and both boundary cases are included. No support or comparable-witness conclusion is an input.",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The earlier centered inverse-coordinate witness has been replaced in the source-facing support and shape chain by the literal manuscript common cube-shift IVT witness. Both the endpoint-divergence closure argument and the explicit mixed-boundary approximation are now formalized as written.",
+      "lean_declarations": [
+        "Antichain.limitingAntichainMeasure_support_cubeShift_source",
+        "Antichain.normalQuantile_surface_closure_written",
+        "Antichain.exists_nonzero_cubeShift_comparable",
+        "Antichain.normalQuantile_cube_outside_closure_exists_comparable_cubeShift"
+      ]
+    },
+    {
+      "id": "ANT-6-1",
+      "display_number": "6.2",
+      "title": "Exponential concentration of both rank measures",
+      "source_statement_lines": [
+        1045,
+        1051
+      ],
+      "source_proof_lines": [
+        1052,
+        1081
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Under antichain conditioning the full sorted-coordinate law is unchanged. Use actual Binomial(n,t) counts and fixed-rank Hoeffding tails2exp(-2ns^2). Union over dn rank-coordinate pairs and use the Euclidean norm comparison to prove P(D_n>s)<=2dn exp(-2ns^2/d). Then use uniform continuity, finite weak tests and the rank-box radius sqrt(d)/(2n).",
+      "lean_argument": "RankBinomial proves the exact unconditional and conditioned count pushforward to PMF.binomial, including t=0,1. RankHoeffding proves the Bernoulli subgaussian parameter1/4, fixed-rank tails with the midpoint half-step margin, out-of-range empty events, conditional sorted-law transfer, finite unions and the precise Euclidean finite-n displacement bound. The actual weak/box transport bodies use this new producer.",
+      "precise_method_comparison": "The active source replaces DKW by fixed-order-statistic Hoeffding. That exact route is now formalized and used by the source-facing endpoints, including2dn exp(-2ns^2/d). The sharp DKW library theorem remains supplementary. The former Hausdorff clause is relocated to separate Remark6.3 without a new mathematical conclusion.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.rank_permuton_source_hoeffding",
+          "file": "lean/Antichain/RankLimitsHoeffding.lean",
+          "line": 20
+        },
+        {
+          "declaration": "Antichain.conditional_sorted_count_binomial",
+          "file": "lean/Antichain/RankBinomial.lean",
+          "line": 121
+        },
+        {
+          "declaration": "Antichain.conditional_sorted_midpoint_hoeffding",
+          "file": "lean/Antichain/RankHoeffding.lean",
+          "line": 225
+        },
+        {
+          "declaration": "Antichain.rank_euclidean_displacement_hoeffding",
+          "file": "lean/Antichain/RankHoeffding.lean",
+          "line": 278
+        },
+        {
+          "declaration": "Antichain.rank_displacement_exponential_tail_hoeffding",
+          "file": "lean/Antichain/RankHoeffding.lean",
+          "line": 319
+        },
+        {
+          "declaration": "Antichain.closedRankBoxProbability_coordinate_uniform",
+          "file": "lean/Antichain/RankPermuton.lean",
+          "line": 291
+        },
+        {
+          "declaration": "Antichain.cubeAntichain_sortedCoordinates_law",
+          "file": "lean/Antichain/RankIndependence.lean",
+          "line": 429
+        }
+      ],
+      "human_proof_label": "leanproof:ANT-6-1",
+      "recommended_annotation": "Statement and revised Hoeffding/order-statistic argument match Lean; Appendix leanproof:ANT-6-1 is a supplementary readable expansion.",
+      "scope_note": "Exact finite-n bounds for n>0,s>0 under actual laws; no DKW/alcove record occurs in the closed source-facing types. The separate rank-cloud remark is reviewed as ANT-RANK-HAUSDORFF.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The active source replaces DKW by fixed-order-statistic Hoeffding. That exact route is now formalized and used by the source-facing endpoints, including2dn exp(-2ns^2/d). The sharp DKW library theorem remains supplementary. The former Hausdorff clause is relocated to separate Remark6.3 without a new mathematical conclusion.",
+      "lean_declarations": [
+        "Antichain.rank_permuton_source_hoeffding",
+        "Antichain.conditional_sorted_count_binomial",
+        "Antichain.conditional_sorted_midpoint_hoeffding",
+        "Antichain.rank_euclidean_displacement_hoeffding",
+        "Antichain.rank_displacement_exponential_tail_hoeffding",
+        "Antichain.closedRankBoxProbability_coordinate_uniform",
+        "Antichain.cubeAntichain_sortedCoordinates_law"
+      ]
+    },
+    {
+      "id": "ANT-6-PATTERN",
+      "display_number": "6.4",
+      "title": "Exponential fixed-pattern concentration",
+      "source_statement_lines": [
+        1101,
+        1103
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Invoke continuity of pattern probability as a function of the permuton and the collision-error bound binom(q,2)/n, then apply Proposition6.1; the revised remark cites BL for the two ingredients.",
+      "lean_argument": "Define the actual q-point multidimensional pattern after first-coordinate sorting, prove its chamber frontier is contained in coordinate-tie walls, use uniform marginals to make those walls null, and apply finite-iid weak continuity/Portmanteau. Couple actual rank-box sampling with uniform distinct-label sampling; a repeated label has probability <=binom(q,2)/n. Identify the distinct-label frequency exactly with the ordinary q-subset count divided by choose(n,q).",
+      "precise_method_comparison": "This expands the two cited ingredients into internal proofs of exactly the stated continuity and finite collision estimate. The source's fixed-pattern argument is followed, rather than an abstract continuous-functional substitute. The source-facing concentration now uses the current proved Hoeffding rank route.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.patternProbability_continuousAt_permuton",
+          "file": "lean/Antichain/PatternFrequency.lean",
+          "line": 124
+        },
+        {
+          "declaration": "Antichain.permutationPatternFrequency_box_error",
+          "file": "lean/Antichain/PatternFrequency.lean",
+          "line": 204
+        },
+        {
+          "declaration": "Antichain.permutationPatternFrequency_count_formula",
+          "file": "lean/Antichain/PatternFrequency.lean",
+          "line": 194
+        },
+        {
+          "declaration": "Antichain.permutationSubsetPatternFrequency_eq",
+          "file": "lean/Antichain/PatternFrequencySubsets.lean",
+          "line": 17
+        },
+        {
+          "declaration": "Antichain.permutationSubsetPatternFrequency_box_error",
+          "file": "lean/Antichain/PatternFrequencySubsets.lean",
+          "line": 25
+        },
+        {
+          "declaration": "Antichain.fixed_pattern_frequency_source_hoeffding",
+          "file": "lean/Antichain/RankLimitsHoeffding.lean",
+          "line": 97
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Pattern size q is fixed before n tends to infinity. The frequency is the usual subset frequency; no assertion is made about a growing q or a joint limit over all patterns. The empty/small n conventions do not affect eventual n>=q.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "This expands the two cited ingredients into internal proofs of exactly the stated continuity and finite collision estimate. The source's fixed-pattern argument is followed, rather than an abstract continuous-functional substitute. The source-facing concentration now uses the current proved Hoeffding rank route.",
+      "lean_declarations": [
+        "Antichain.patternProbability_continuousAt_permuton",
+        "Antichain.permutationPatternFrequency_box_error",
+        "Antichain.permutationPatternFrequency_count_formula",
+        "Antichain.permutationSubsetPatternFrequency_eq",
+        "Antichain.permutationSubsetPatternFrequency_box_error",
+        "Antichain.fixed_pattern_frequency_source_hoeffding"
+      ]
+    },
+    {
+      "id": "ANT-6-2",
+      "display_number": "6.1",
+      "title": "Normalized two-point avoidance enumeration",
+      "source_statement_lines": [
+        1022,
+        1028
+      ],
+      "source_proof_lines": [
+        1029,
+        1035
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Combine |C_n|=(n!)^(d-1)a_n with the counting theorem and Stirling. Reverse coordinate axes for other two-point orientations. In dimension2 only reversal remains.",
+      "lean_argument": "Prove the exact finite rank-count identity from iid cube ranks, then perform the same logarithmic/Stirling calculation and exhibit the actual coordinate-reversal bijection. Derive the dimension2 uniqueness and constants.",
+      "precise_method_comparison": "The written algebra and combinatorial symmetries are the formal argument. Lean explicitly constructs a little-o remainder to give the displayed exponential form.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.avoidanceClassCard_exact",
+          "file": "lean/Antichain/RankIndependence.lean",
+          "line": 409
+        },
+        {
+          "declaration": "Antichain.avoidance_counting_exponential_source_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 158
+        },
+        {
+          "declaration": "Antichain.signed_avoidance_counting_exponential_source_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 167
+        },
+        {
+          "declaration": "Antichain.dimension_two_avoidance_unique",
+          "file": "lean/Antichain/RankCounting.lean",
+          "line": 65
+        },
+        {
+          "declaration": "Antichain.antichain_counting_dimension_two",
+          "file": "lean/Antichain/RankCounting.lean",
+          "line": 167
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The stable ID is ANT-6-2 while the current displayed proposition number is6.3. Growth constants remain defined by the actual counting limit, not evaluated for d>=3.",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The written algebra and combinatorial symmetries are the formal argument. Lean explicitly constructs a little-o remainder to give the displayed exponential form.",
+      "lean_declarations": [
+        "Antichain.avoidanceClassCard_exact",
+        "Antichain.avoidance_counting_exponential_source_direct",
+        "Antichain.signed_avoidance_counting_exponential_source_direct",
+        "Antichain.dimension_two_avoidance_unique",
+        "Antichain.antichain_counting_dimension_two"
+      ]
+    },
+    {
+      "id": "ANT-INTRO-SIGNED-LIMITS",
+      "display_number": null,
+      "title": "Reflected shape and permuton limits for every two-point orientation",
+      "source_statement_lines": [
+        82,
+        82
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "By symmetry, reverse selected coordinate axes to reduce any two-point pattern to the increasing two-point pattern and reflect the geometric/permuton limits back.",
+      "lean_argument": "Construct the involutive rank-coordinate reversal and prove its actual finite uniform signed-class pushforward. Identify the corresponding cube reflection of midpoint clouds, actual box laws, weak neighborhoods and the Euclidean limit surface.",
+      "precise_method_comparison": "The same symmetry is expanded into measure identities and an actual Euclidean isometry. The first coordinate stays increasing; signs concern the remaining d-1 pattern coordinates. The source-facing concentration now uses the current proved Hoeffding rank route.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.uniformSignedAvoidanceLaw_reflect",
+          "file": "lean/Antichain/SignedRankLimits.lean",
+          "line": 27
+        },
+        {
+          "declaration": "Antichain.signed_rank_closed_cube_permuton_concentration_hoeffding",
+          "file": "lean/Antichain/RankLimitsHoeffding.lean",
+          "line": 67
+        },
+        {
+          "declaration": "Antichain.signed_rank_euclidean_shape_exponential_concentration_hoeffding",
+          "file": "lean/Antichain/RankLimitsHoeffding.lean",
+          "line": 77
+        },
+        {
+          "declaration": "Antichain.signedEuclideanLimitShape_eq_closure_reflectedSurface",
+          "file": "lean/Antichain/SignedRankLimits.lean",
+          "line": 270
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The reflected target depends on the prescribed orientation. This is not a claim that all orientations have the unreflected limiting law.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The same symmetry is expanded into measure identities and an actual Euclidean isometry. The first coordinate stays increasing; signs concern the remaining d-1 pattern coordinates. The source-facing concentration now uses the current proved Hoeffding rank route.",
+      "lean_declarations": [
+        "Antichain.uniformSignedAvoidanceLaw_reflect",
+        "Antichain.signed_rank_closed_cube_permuton_concentration_hoeffding",
+        "Antichain.signed_rank_euclidean_shape_exponential_concentration_hoeffding",
+        "Antichain.signedEuclideanLimitShape_eq_closure_reflectedSurface"
+      ]
+    },
+    {
+      "id": "ANT-INTRO-RANDOM-ORDER",
+      "display_number": null,
+      "title": "Expected linear-extension identity for random multidimensional orders",
+      "source_statement_lines": [
+        94,
+        99
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Intersect the first d-1 independent uniform ranking orders. The reversed final ranking is a linear extension of their intersection exactly when the full point sample is an antichain; condition on the first rankings.",
+      "lean_argument": "Use actual independent finite uniform ranking orders to define the intersection partial order and its literal bijective linear extensions. Construct the same reverse-last-ranking equivalence and average the exact finite counts.",
+      "precise_method_comparison": "This is the same conditional finite-uniform counting argument. The ranking-order and linear-extension carriers are made explicit.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.antichainProbability_random_poset_source",
+          "file": "lean/Antichain/RandomPosetCounting.lean",
+          "line": 161
+        },
+        {
+          "declaration": "Antichain.linearExtensionFullRankPairEquiv",
+          "file": "lean/Antichain/RandomPosetCounting.lean",
+          "line": 94
+        },
+        {
+          "declaration": "Antichain.expected_posetLinearExtensionCount",
+          "file": "lean/Antichain/RandomPosetCounting.lean",
+          "line": 141
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The identity a_n=E[e(P_(d-1)(n))]/n! is proved. The subsequent comparison with the quoted Brightwell lower bound is literature context and is not a new theorem certified by this identity.",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "This is the same conditional finite-uniform counting argument. The ranking-order and linear-extension carriers are made explicit.",
+      "lean_declarations": [
+        "Antichain.antichainProbability_random_poset_source",
+        "Antichain.linearExtensionFullRankPairEquiv",
+        "Antichain.expected_posetLinearExtensionCount"
+      ]
+    },
+    {
+      "id": "ANT-GAUSSIAN-COVARIANCE",
+      "display_number": null,
+      "title": "Means, variances, off-diagonal covariance and zero sum of the actual limiting Gaussian",
+      "source_statement_lines": [
+        173,
+        173
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Write F_i*=sqrt(d/(d-1))*(Y_i-Ybar) for iid standard normal Y and calculate unit variances, off-diagonal covariance -1/(d-1), and zero sum.",
+      "lean_argument": "Prove the actual centered linear image is jointly Gaussian, compute coefficient norms and coordinate-difference variance, obtain covariance by polarization, and cancel the coordinate sum identically.",
+      "precise_method_comparison": "The same linear-Gaussian moment calculation is expanded. Polarization is an algebraic way to compute the stated cross covariance, not an extra hypothesis.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.scaledCenteredGaussian_source",
+          "file": "lean/Antichain/SourceCovariance.lean",
+          "line": 178
+        },
+        {
+          "declaration": "Antichain.scaledCenteredCoordinate_covariance",
+          "file": "lean/Antichain/SourceCovariance.lean",
+          "line": 163
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Dimension d>=2 is required for the displayed positive scaling. The density and uniform marginal statements have additional independently proved Gaussian-law bridges.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The same linear-Gaussian moment calculation is expanded. Polarization is an algebraic way to compute the stated cross covariance, not an extra hypothesis.",
+      "lean_declarations": [
+        "Antichain.scaledCenteredGaussian_source",
+        "Antichain.scaledCenteredCoordinate_covariance"
+      ]
+    },
+    {
+      "id": "ANT-RANK-MIDPOINT-MARGINAL",
+      "display_number": null,
+      "title": "Exact uniform marginals of the rank-box permuton",
+      "source_statement_lines": [
+        1040,
+        1043
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Retargeted from the former explicit midpoint-grid marginal sentence to the actual printed rank-box uniform-marginal assertion. The midpoint marginal is now a supporting definition consequence.",
+      "written_argument": "Each rank interval occurs once in each coordinate and receives mass1/n, so the rank-box measure has uniform coordinate marginals.",
+      "lean_argument": "Prove the exact coordinate pushforward for actual uniform rank boxes; also prove the finite midpoint-grid coordinate law as an intermediate consequence of permutation reindexing.",
+      "precise_method_comparison": "The actual rank-box uniform marginal argument is the printed proof. The retained midpoint-grid theorem is an intermediate definition consequence, not a separately printed claim.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.closedRankBoxProbability_coordinate_uniform",
+          "file": "lean/Antichain/RankPermuton.lean",
+          "line": 291
+        },
+        {
+          "declaration": "Antichain.rankBoxMeasure_coordinate_uniform",
+          "file": "lean/Antichain/RankBoxes.lean",
+          "line": 135
+        },
+        {
+          "declaration": "Antichain.rankEmpiricalProbability_coordinate_map",
+          "file": "lean/Antichain/SourceRankMarginals.lean",
+          "line": 40
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The paper uses positive sample sizes. Explicit empty-sample conventions do not affect eventual limits.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The actual rank-box uniform marginal argument is the printed proof. The retained midpoint-grid theorem is an intermediate definition consequence, not a separately printed claim.",
+      "lean_declarations": [
+        "Antichain.closedRankBoxProbability_coordinate_uniform",
+        "Antichain.rankBoxMeasure_coordinate_uniform",
+        "Antichain.rankEmpiricalProbability_coordinate_map"
+      ]
+    },
+    {
+      "id": "ANT-DIM2-STIRLING",
+      "display_number": null,
+      "title": "Two-dimensional refined logarithmic remainder",
+      "source_statement_lines": [
+        1195,
+        1195
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Use a_n=1/n! and Stirling to give beta2=1 and remainder -(1/2)log(2pi n)+O(1/n).",
+      "lean_argument": "Use the same exact dimension2 identity. Starting with the proved Mathlib Stirling sequence and its logarithmic successive-difference estimate, telescope to its known limit and obtain an absolute remainder bound1/(2n), hence O(1/n).",
+      "precise_method_comparison": "This expands the cited standard Stirling estimate into the required explicit remainder bound. No exact1/(12n) leading correction is asserted.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.antichain_dimension_two_refined_remainder_source",
+          "file": "lean/Antichain/SourceStirling.lean",
+          "line": 88
+        },
+        {
+          "declaration": "Antichain.antichain_dimension_two_refined_remainder_bound",
+          "file": "lean/Antichain/SourceStirling.lean",
+          "line": 59
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The statement concerns the remainder after subtracting -n log n+n; the sign of -(1/2)log(2pi n) agrees with log(1/n!).",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "This expands the cited standard Stirling estimate into the required explicit remainder bound. No exact1/(12n) leading correction is asserted.",
+      "lean_declarations": [
+        "Antichain.antichain_dimension_two_refined_remainder_source",
+        "Antichain.antichain_dimension_two_refined_remainder_bound"
+      ]
+    },
+    {
+      "id": "ANT-RANK-COORDINATE-AVERAGES",
+      "display_number": null,
+      "title": "Deterministic coordinate averages of finite rank measures",
+      "source_statement_lines": [
+        1222,
+        1222
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Observe that rank midpoint coordinates have deterministic averages, in contrast to the original sample coordinates.",
+      "lean_argument": "Sum all midpoint values and reindex by each coordinate rank permutation to prove that every coordinate average is exactly1/2 for n>0.",
+      "precise_method_comparison": "The source has no separate proof environment; the deterministic assertion is proved by the direct finite sum. The sentence that the two models need not share fluctuations is an interpretive consequence, not a claimed fluctuation-limit theorem.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.rankCenterEmpirical_coordinate_mean",
+          "file": "lean/Antichain/SourceRankMarginals.lean",
+          "line": 71
+        },
+        {
+          "declaration": "Antichain.rankEmpiricalProbability_coordinate_average",
+          "file": "lean/Antichain/SourceRankMarginals.lean",
+          "line": 78
+        },
+        {
+          "declaration": "Antichain.permutationRankCloud_coordinate_average",
+          "file": "lean/Antichain/SourceRankMarginals.lean",
+          "line": 82
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "No central limit theorem or nondegenerate fluctuation law of the original conditioned sample is asserted by these endpoints.",
+      "statement_match": "same",
+      "proof_method": "no_separate_proof",
+      "comparison": "The source has no separate proof environment; the deterministic assertion is proved by the direct finite sum. The sentence that the two models need not share fluctuations is an interpretive consequence, not a claimed fluctuation-limit theorem.",
+      "lean_declarations": [
+        "Antichain.rankCenterEmpirical_coordinate_mean",
+        "Antichain.rankEmpiricalProbability_coordinate_average",
+        "Antichain.permutationRankCloud_coordinate_average"
+      ]
+    },
+    {
+      "id": "ANT-CHAIN-COLORING",
+      "display_number": null,
+      "title": "Bounded-chain equivalence and longest-chain antichain coloring",
+      "source_statement_lines": [
+        1224,
+        1224
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "A chain of q rank points is an occurrence of the increasing multidimensional pattern of size q. Color each point by the maximum chain length ending there; equal-color points cannot be comparable.",
+      "lean_argument": "Prove the literal finite-rank pattern/chain equivalence. Define the maximum over all finite chains ending at each label, prove it is attained and strictly increases along a comparison, and use lengths1 through K as the colors.",
+      "precise_method_comparison": "The formal argument is exactly the written longest-chain-ending coloring, with finite maxima and the K-color range made explicit.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.increasing_rank_pattern_iff_chain",
+          "file": "lean/Antichain/SourceColoring.lean",
+          "line": 174
+        },
+        {
+          "declaration": "Antichain.bounded_chain_coloring_source",
+          "file": "lean/Antichain/SourceColoring.lean",
+          "line": 205
+        },
+        {
+          "declaration": "Antichain.longest_chain_antichain_coloring",
+          "file": "lean/Antichain/SourceColoring.lean",
+          "line": 124
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Only the finite equivalence and coloring preceding Conjecture6.9 are proved. Neither the conjectured enumeration nor the conjectured permuton limit for K>=2 is claimed verified.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The formal argument is exactly the written longest-chain-ending coloring, with finite maxima and the K-color range made explicit.",
+      "lean_declarations": [
+        "Antichain.increasing_rank_pattern_iff_chain",
+        "Antichain.bounded_chain_coloring_source",
+        "Antichain.longest_chain_antichain_coloring"
+      ]
+    },
+    {
+      "id": "ANT-RANK-HAUSDORFF",
+      "display_number": "6.3",
+      "title": "Exponential Hausdorff concentration of the rank point cloud",
+      "source_statement_lines": [
+        1092,
+        1099
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Existing verified content is now explicitly tracked at its revised source location.",
+      "written_argument": "Match original reordered points to rank midpoints; their Hausdorff displacement is at most D_n. Apply the Hausdorff triangle inequality, exact finite-n Hoeffding displacement and Theorem1.2.",
+      "lean_argument": "Use actual matched finite clouds and the Euclidean Hausdorff triangle inequality. The new Hoeffding displacement producer and actual original-sample shape tail give the eventual rank-cloud tail. First-coordinate normalization only relabels the finite cloud.",
+      "precise_method_comparison": "The formerly included theorem clause is now a separate numbered remark. Its source-facing producer uses the current Hoeffding coupling and the same matched-cloud triangle argument.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.rank_euclidean_shape_exponential_concentration_hoeffding",
+          "file": "lean/Antichain/RankLimitsHoeffding.lean",
+          "line": 29
+        },
+        {
+          "declaration": "Antichain.rank_euclidean_displacement_hoeffding",
+          "file": "lean/Antichain/RankHoeffding.lean",
+          "line": 278
+        },
+        {
+          "declaration": "Antichain.finite_cloud_euclidean_hausdorff_le",
+          "file": "lean/Antichain/RankShapeTransfer.lean",
+          "line": 19
+        },
+        {
+          "declaration": "Antichain.permutationEuclideanRankSet_normalized",
+          "file": "lean/Antichain/SignedRankLimits.lean",
+          "line": 291
+        }
+      ],
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Actual cube sample, ranks, finite counting carriers and native Euclidean geometry; no externally supplied own-paper conclusion.",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The formerly included theorem clause is now a separate numbered remark. Its source-facing producer uses the current Hoeffding coupling and the same matched-cloud triangle argument. The optional rank exposition also gives the Hausdorff deduction.",
+      "lean_declarations": [
+        "Antichain.rank_euclidean_shape_exponential_concentration_hoeffding",
+        "Antichain.rank_euclidean_displacement_hoeffding",
+        "Antichain.finite_cloud_euclidean_hausdorff_le",
+        "Antichain.permutationEuclideanRankSet_normalized"
+      ],
+      "new_tracked_assertion": true
+    },
+    {
+      "id": "ANT-RANK-SORTING-LAW",
+      "display_number": null,
+      "title": "Uniform normalized ranks, independence of sorted values, and exact antichain count",
+      "source_statement_lines": [
+        1013,
+        1020
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Existing verified content is now explicitly tracked at its revised source location.",
+      "written_argument": "Exchange sample labels in each continuous coordinate, normalize first-coordinate ranks, condition only on relative-rank avoidance, and count the uniform finite class.",
+      "lean_argument": "Prove the actual rank/sorted joint product law, normalized-rank independence, unchanged conditioned sorted law, uniformOn avoidance pushforward, and cardinality=(n!)^(d-1)*a_n.",
+      "precise_method_comparison": "The revised prose expands the already verified finite-symmetry argument. Conditional assertions are justified by actual joint-law independence, not conditioning on an exact sorted tuple event of positive probability.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.cube_rank_sorted_joint_law",
+          "file": "lean/Antichain/RankIndependence.lean",
+          "line": 172
+        },
+        {
+          "declaration": "Antichain.cubeNormalizedRanks_independent_sorted_values",
+          "file": "lean/Antichain/RankIndependence.lean",
+          "line": 326
+        },
+        {
+          "declaration": "Antichain.cubeAntichain_sortedCoordinates_law",
+          "file": "lean/Antichain/RankIndependence.lean",
+          "line": 429
+        },
+        {
+          "declaration": "Antichain.cubeAntichain_normalizedRanks_uniformOn",
+          "file": "lean/Antichain/RankIndependence.lean",
+          "line": 457
+        },
+        {
+          "declaration": "Antichain.avoidance_card_eq_factorial_mul_antichainProbability",
+          "file": "lean/Antichain/RankIndependence.lean",
+          "line": 395
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Actual cube sample, ranks, finite counting carriers and native Euclidean geometry; no externally supplied own-paper conclusion.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The revised prose expands the already verified finite-symmetry argument. Conditional assertions are justified by actual joint-law independence, not conditioning on an exact sorted tuple event of positive probability.",
+      "lean_declarations": [
+        "Antichain.cube_rank_sorted_joint_law",
+        "Antichain.cubeNormalizedRanks_independent_sorted_values",
+        "Antichain.cubeAntichain_sortedCoordinates_law",
+        "Antichain.cubeAntichain_normalizedRanks_uniformOn",
+        "Antichain.avoidance_card_eq_factorial_mul_antichainProbability"
+      ],
+      "new_tracked_assertion": true
+    }
+  ],
+  "new_production_modules": [
+    "Antichain.LipschitzStoneWeierstrass",
+    "Antichain.RankHoeffding",
+    "Antichain.RankBinomial",
+    "Antichain.RankPermutonHoeffding",
+    "Antichain.RankLimitsHoeffding"
+  ],
+  "previous_reviewed_source_sha256": "7223c87d97fc9c97a97b9a9affc490aa6a4f3923587d05ec92b35a4a45a42da5",
+  "production_frozen": true,
+  "modified_production_modules": [
+    "Antichain.LipschitzCubeTests"
+  ],
+  "supporting_exact_finite_n_assertions": [
+    {
+      "source_lines": [
+        1057,
+        1060
+      ],
+      "title": "Conditional Binomial count and fixed-rank Hoeffding tail",
+      "declarations": [
+        "Antichain.conditional_sorted_count_binomial",
+        "Antichain.conditional_sorted_midpoint_hoeffding"
+      ]
+    },
+    {
+      "source_lines": [
+        1062,
+        1069
+      ],
+      "label": "eq:rank-displacement",
+      "title": "Exact Euclidean displacement tail2dn exp(-2ns^2/d)",
+      "declarations": [
+        "Antichain.rankEuclideanDisplacement_le",
+        "Antichain.rank_euclidean_displacement_hoeffding"
+      ]
+    }
+  ],
+  "revision_review": "The surviving statements and all 24 active written proofs match the previous source. The separate mean-square predictor is absent from the active draft and remains supplementary in Lean."
+}

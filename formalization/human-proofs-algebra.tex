@@ -1,0 +1,445 @@
+% Complete readable proofs of the checked manuscript arguments.
+% Reviewed source main.tex SHA256:
+% af9cf13785178b750bb359975ca0f649961191ddd52a20d05a599a0ce2bdf508
+% This is an appendix fragment, using the manuscript's existing notation.
+% These are proofs of the stated results following the Lean development;
+% proof-method correspondence is stated explicitly for each assertion.
+
+\subsection{One-tile bound by the written H\"older argument (ANT-4-1)}
+\label{leanproof:ANT-4-1}
+
+The proof below establishes both inequalities of Lemma~\ref{lem:tile-height}
+with its exact coefficient, by the multiple-function H\"older inequality and
+translation invariance used in the manuscript. Lean also checks all
+measurability, integrability, normalization, and height-coordinate changes.
+
+\begin{proof}[Complete proof following the Lean argument]
+Fix \(r\ge1\), \(c<1/2\), \(\varepsilon>0\), and a tile
+\(B=\varepsilon\Delta'\). Write \(a=1/2-c>0\). The function
+\(w=\psi_E e^\sigma\) is positive and continuous, and \(B\) is compact.
+Consequently \(w_B=\sup_Bw\) is finite, and
+\(\prod_{k=1}^r w(\mathbf f^{(k)})\le w_B^r\) on \(B^r\).
+The integrand is nonnegative, so this proves the first inequality once
+the integrals are known to be finite. We prove that finiteness together
+with the second inequality.
+The floor regions and height fibers are measurable: strict coordinate
+comparability is open, so its exclusion is closed, and the coordinate
+maps are continuous. All kernels used below are nonnegative measurable
+functions.
+
+For fixed floors \(\mathbf f=(\mathbf f^{(1)},\ldots,\mathbf f^{(r)})\),
+use the common height \(s\) and relative heights
+\[
+ \boldsymbol\delta=(0,\delta_2,\ldots,\delta_r),\qquad
+ h^{(1)}=s,\quad h^{(k)}=s+\delta_k\quad (k\ge2).
+\]
+The map \((s,\delta_2,\ldots,\delta_r)\mapsto(h^{(1)},\ldots,h^{(r)})\)
+has determinant \(1\). Adding the same height to every point changes
+no pairwise difference. Thus the allowed relative heights are exactly
+the pinned fiber \(\mathcal H_r^0(\mathbf f)\), independently of \(s\).
+For \(r=1\) the relative-height space is zero dimensional and has
+its usual unit volume.
+
+Put \(g_a(u)=\exp(-au^2)\). Equal-exponent H\"older for the \(r\)
+nonnegative measurable functions \(s\mapsto g_a(s+\delta_k)\) gives
+\[
+ \int_{\mathbb R}\prod_{k=1}^r g_a(s+\delta_k)\,ds
+ \le \prod_{k=1}^r\left(\int_{\mathbb R}g_a(s+\delta_k)^r\,ds\right)^{1/r}
+ =\int_{\mathbb R}e^{-ar s^2}\,ds
+ =\sqrt{\frac\pi{ar}}.
+\]
+Here translation invariance makes every factor identical; the \(r\)th roots
+multiply back to the same integral, including \(r=1\).
+For full precision the formal proof first applies H\"older to nonnegative
+extended-real integrals, so it needs no prior integrability assumption.
+The finite Gaussian value on the right then proves integrability of the
+product. The elementary exponential product identity and normalization yield
+\[
+ (2\pi)^{-r/2}\int_{\mathbb R}
+     \exp\!\left(-a\sum_{k=1}^r(s+\delta_k)^2\right)\,ds
+ \le (2\pi)^{-r/2}\sqrt{\frac\pi{ar}}
+ =\frac{(2\pi)^{-(r-1)/2}}{\sqrt{r(1-2c)}}.
+\]
+This is the manuscript's argument with the constant
+\((2\pi)^{-1/2}\) factored out of its function
+\(\phi(u)e^{cu^2}=(2\pi)^{-1/2}g_a(u)\).
+
+Tonelli's theorem and the determinant-one change of height variables
+now yield
+\[
+ \begin{aligned}
+ &(2\pi)^{-r/2}\int_{\mathcal A_r(B)}
+                  e^{-a\|\mathbf h\|^2}\,d\mathbf f\,d\mathbf h\\
+ &\quad=
+   \int_{B^r}\int_{\mathcal H_r^0(\mathbf f)}
+       \left((2\pi)^{-r/2}\int_{\mathbb R}
+          e^{-a\sum_k(s+\delta_k)^2}\,ds\right)
+       d\boldsymbol\delta\,d\mathbf f\\
+ &\quad\le
+   \frac{(2\pi)^{-(r-1)/2}}{\sqrt{r(1-2c)}}
+   \int_{B^r}\operatorname{Vol}_{r-1}
+                       (\mathcal H_r^0(\mathbf f))\,d\mathbf f\\
+ &\quad=
+   \frac{(2\pi)^{-(r-1)/2}}{\sqrt{r(1-2c)}}\,V_r(B).
+ \end{aligned}
+\]
+The previously proved pinned-volume bound makes the last expression
+finite. Hence the middle integral is an ordinary integrable
+nonnegative function, rather than an undefined integral assigned a
+default value.
+
+The affine coordinate-permutation symmetries of the actual reflection
+tiles preserve pinned volume. Scaling \(r\) floor variables and \(r-1\)
+free heights has Jacobian
+\(\varepsilon^{(d-1)r+r-1}=\varepsilon^{dr-1}\). Therefore
+\[
+ V_r(B)=V_r(\varepsilon\Delta')
+       =\varepsilon^{dr-1}V_r(\Delta).
+\]
+Substitution proves that the middle integral is at most
+\(v_r(\varepsilon,c)\). Multiplying by \(w_B^r\) proves the second
+inequality and, at the same time, integrability of the weighted
+integrand by domination. The separately defined empty coefficient
+\(v_0=1\) is consistent with the empty configuration; the displayed
+common-height argument applies to \(r\ge1\).
+\end{proof}
+
+\begingroup\small\raggedright
+The exact Lean steps are
+\nolinkurl{Antichain.lintegral_translated_product_holder},
+\nolinkurl{Antichain.lintegral_translated_gaussian_holder},
+\nolinkurl{Antichain.translated_gaussian_integrable_holder},
+\nolinkurl{Antichain.integral_translated_gaussian_product_le}, and
+\nolinkurl{Antichain.normalized_common_height_lintegral_le}
+in \nolinkurl{CommonHeightHolder.lean} and
+\nolinkurl{OneTileGaussian.lean};
+\nolinkurl{Antichain.heightCoordinates_measurePreserving} and
+\nolinkurl{Antichain.antichainHeightFiber_lintegral}
+in \nolinkurl{HeightCoordinates.lean};
+and \nolinkurl{Antichain.antichainHeightFiber_gaussian_lintegral_le}
+in \nolinkurl{HeightGaussianBound.lean}.
+The actual tile, scaling, and weight-supremum estimates are combined in
+\nolinkurl{Antichain.oneTile_model_full_spec}.
+The finite ordinary-integral endpoints are
+\nolinkurl{Antichain.oneTile_real_full_spec},
+\nolinkurl{Antichain.oneTile_middle_integrableOn}, and
+\nolinkurl{Antichain.oneTile_weighted_integrableOn}
+in \nolinkurl{OneTileReal.lean}.
+\par\endgroup
+
+\subsection{Poissonization and the written spatial-independence product bound (ANT-4-3)}
+\label{leanproof:ANT-4-3}
+
+The proof below follows the manuscript's finite-intensity Poisson process,
+independent restrictions to disjoint tiles, and finite-union exhaustion.
+The spatial independence is proved from the actual sampled count and marks:
+it is not an assumed property or a replacement by an allocation inequality.
+The allocation calculation appears inside its proof and accounts for the
+factorials explicitly.
+
+\begin{proof}[Complete proof following the Lean argument]
+Fix \(0<\varepsilon\le1\), \(c<1/2\), and bounded continuous
+\(\sigma:E\to\mathbb R\). Put \(a=1/2-c>0\) and
+\(w=\psi_Ee^\sigma\). On \(X=E\times\mathbb R\), let
+\[
+ d\mu(\mathbf f,h)
+    =w(\mathbf f)\frac{e^{-ah^2}}{\sqrt{2\pi}}\,d\mathbf f\,dh.
+\]
+A mark \((\mathbf f,h)\) represents the point
+\(\mathbf f+h\mathbf e\) in \(\mathbb R^d\).
+The orthogonal floor-height change of variables has unit Jacobian;
+thus \(\mu\) is exactly the weighted Gaussian point measure used to
+define \(\mathcal Z_n(\sigma,c)\). Gaussian integration gives
+\[
+ 0<\Lambda:=\mu(X)
+    =\frac{1}{\sqrt{1-2c}}\int_Ew(\mathbf f)\,d\mathbf f<\infty.
+\]
+The finiteness follows from boundedness of \(\sigma\) and
+integrability of \(\psi_E\).
+
+For any finite measure \(\nu\) on \(X\), define
+\[
+ A_n(\nu)=
+   \int_{X^n}\mathbf 1_{\{\text{the represented points form an antichain}\}}
+                  \,d\nu^{\otimes n},\qquad A_0(\nu)=1,
+\]
+and
+\[
+ G_\nu(t)=\sum_{n\ge0}\frac{t^nA_n(\nu)}{n!}\qquad(t\ge0).
+\]
+These are nonnegative integrals and series. Moreover,
+\(A_n(\nu)\le\nu(X)^n\), so \(G_\nu(t)\le e^{t\nu(X)}<\infty\).
+The antichain events are measurable because they exclude finitely
+many open strict-comparability conditions.
+By the actual product-density formula,
+\[
+ A_n(\mu)=\mathcal Z_n(\sigma,c).
+\]
+
+For \(t>0\), construct a random finite configuration by first choosing
+\(N\) with
+\(\mathbb P(N=n)=e^{-t\Lambda}(t\Lambda)^n/n!\), and, conditional on
+\(N=n\), taking \(n\) independent marks with law \(\mu/\Lambda\).
+The antichain event is unchanged by reordering those marks. Its
+conditional probability is \(A_n(\mu)/\Lambda^n\), and hence
+\[
+ \begin{aligned}
+ e^{t\Lambda}\mathbb P(\Pi_t\text{ is an antichain})
+ &=e^{t\Lambda}\sum_{n\ge0}
+      e^{-t\Lambda}\frac{(t\Lambda)^n}{n!}
+      \frac{A_n(\mu)}{\Lambda^n}\\
+ &=\sum_{n\ge0}\frac{\mathcal Z_n(\sigma,c)t^n}{n!}
+ =G_\mu(t).
+ \end{aligned}
+\]
+This is the finite-intensity Poisson configuration representation of
+the source process. At \(t=0\) take the empty configuration almost
+surely; both sides are \(1\).
+
+We prove the required spatial independence before using it.
+A finite configuration is a finite ordered list; restriction \(R_U\) to a
+measurable set \(U\subseteq X\) retains exactly the marks in \(U\),
+keeping their original relative order. This restriction is measurable.
+Indeed, on the count-\(n\) fiber, split the source into the finitely many
+measurable regions
+\[
+       H_S=\{x\in X^n:x_j\in U\ \Longleftrightarrow\ j\in S\},
+                  \qquad S\subseteq\{1,\ldots,n\}.
+\]
+On \(H_S\), the restriction is the fixed coordinate projection to the
+increasing enumeration of \(S\), followed by the measurable inclusion
+of the count-\(|S|\) fiber. Preimages are finite unions of these
+measurable pieces.
+
+For a finite intensity \(\nu\), define its nonnegative configuration
+measure by
+\[
+ \mathfrak S_{t,\nu}(D)
+   =\sum_{n\ge0}\frac{t^n}{n!}\,
+     \nu^{\otimes n}(D_n),
+ \qquad
+ D_n=\{x\in X^n:(n,x)\in D\}.
+\]
+Its total mass is \(e^{t\nu(X)}\), and the sampled Poisson-count and
+independent-mark construction gives the equality of measures
+\[
+         \mathfrak S_{t,\nu}=e^{t\nu(X)}P_{t,\nu}.
+\]
+This includes \(\nu=0\): both normalized laws are concentrated on the
+empty configuration, while the zero-dimensional product measure has
+mass one.
+
+Take any two measurable configuration events \(D,E\). On \(H_S\),
+write \(k=|S|\). Splitting the independent mark coordinates into \(S\)
+and its complement, in their increasing orders, proves the exact identity
+\[
+\begin{aligned}
+ &\nu^{\otimes n}
+   \{x\in H_S:R_U(n,x)\in D,\ R_{U^c}(n,x)\in E\}\\
+ &\hspace{20mm}
+ = (\nu|_U)^{\otimes k}(D_k)
+       (\nu|_{U^c})^{\otimes(n-k)}(E_{n-k}).
+\end{aligned}
+\]
+There is no permutation-invariance assumption on \(D,E\): the increasing
+orders fix which coordinates enter each event. The sets \(H_S\) partition
+\(X^n\). There are \(\binom nk\) of size \(k\), so summing gives
+\[
+ \nu^{\otimes n}\{R_U\in D,\ R_{U^c}\in E\}
+ =\sum_{k=0}^n\binom nk
+       (\nu|_U)^{\otimes k}(D_k)
+       (\nu|_{U^c})^{\otimes(n-k)}(E_{n-k}).
+\]
+Multiply by \(t^n/n!\), use
+\(\binom nk/n!=1/(k!(n-k)!)\), and sum nonnegative terms. Reindexing
+by \((k,n-k)\) yields
+\[
+ \mathfrak S_{t,\nu}\{R_U\in D,\ R_{U^c}\in E\}
+     =\mathfrak S_{t,\nu|_U}(D)
+        \mathfrak S_{t,\nu|_{U^c}}(E).
+\]
+Since \(\nu(X)=\nu(U)+\nu(U^c)\), the finite positive exponential
+normalizers cancel. Therefore
+\[
+ P_{t,\nu}\{R_U\in D,\ R_{U^c}\in E\}
+       =P_{t,\nu|_U}(D)P_{t,\nu|_{U^c}}(E).
+\]
+Taking one event to be the whole configuration space gives the actual
+marginal restriction laws. The displayed rectangle identity is their
+joint product law, and thus proves independence.
+
+For any pairwise disjoint measurable sets \(C_i\), this argument gives
+independence of all their restrictions, in the precise finite-family
+sense. To see this explicitly, restriction of lists is ordinary filtering,
+so \(R_U R_V=R_{U\cap V}\). For a chosen \(C_i\), all other
+\(C_j\)-restrictions are unchanged by first restricting to \(C_i^c\).
+Apply the preceding two-cell identity and induct on the number of sets.
+The result is the product of the actual \(P_{t,\nu|_{C_i}}\) laws.
+In particular the counts are independent Poisson variables with means
+\(t\nu(C_i)\): each restricted process has that count law by its
+sampled Poisson-count definition. This remains true for zero-mass cells.
+
+Now let \(F\) be a finite family of disjoint cells, set
+\(U=\bigcup_{i\in F}C_i\), and apply this proved independence to the
+process of intensity \(t\nu|_U\). A global antichain restricts to an
+antichain in every cell. Hence
+\[
+ P_{t,\nu|_U}(\text{antichain})
+     \le\prod_{i\in F}P_{t,\nu|_{C_i}}(\text{antichain}).
+\]
+Multiplication by \(e^{t\nu(U)}\), and
+\(\nu(U)=\sum_{i\in F}\nu(C_i)\), give exactly
+\[
+             G_{\nu|_U}(t)\le\prod_{i\in F}G_{\nu|_{C_i}}(t).
+\]
+The preceding binomial calculation iterates to the occupancy factor
+\(n!/\prod_i r_i!\) when \(\sum_i r_i=n\); multiplication by
+\(t^n/n!\) cancels this factor into the local factorial denominators.
+Thus the label-allocation and Poisson-independence descriptions agree
+at the level of the actual sampled process.
+
+Index the distinct closed scaled tiles by \(B\).
+Assign each tile boundary point to its first containing tile in a
+fixed enumeration. This gives measurable disjoint cells \(C_B\)
+covering \(E\), with \(C_B\subseteq B\); the difference between \(C_B\)
+and \(B\) has floor measure zero. Such boundary assignment is legitimate
+because the tiles are countable, their boundaries are null, and the
+floor density is absolutely continuous. Set
+\(\mu_B=\mu|_{C_B\times\mathbb R}\).
+For \(r\ge1\), enlarging \(C_B\) to \(B\) and applying
+Lemma~\ref{lem:tile-height} gives
+\[
+ A_r(\mu_B)
+ \le\frac{1}{(2\pi)^{r/2}}
+       \int_{\mathcal A_r(B)}e^{-a\|\mathbf h\|^2}
+                          \prod_{k=1}^rw(\mathbf f^{(k)})
+                          \,d\mathbf f\,d\mathbf h
+ \le w_B^r v_r(\varepsilon,c).
+\]
+The same inequality is equality at \(r=0\). Therefore
+\[
+ G_{\mu_B}(t)\le
+       \sum_{r\ge0}\frac{v_r(\varepsilon,c)(tw_B)^r}{r!}
+       =\mathcal V(tw_B).
+\]
+The finite-family product estimate now implies
+\[
+ G_{\mu|_{U_m\times\mathbb R}}(t)
+       \le\prod_{B\in F_m}\mathcal V(tw_B),
+ \qquad U_m=\bigcup_{B\in F_m}C_B,
+\]
+where \(F_m\) are increasing finite prefixes exhausting all tiles.
+
+We justify both countable limits. First, every finite configuration
+has all its floors in some \(U_m\), since every individual floor
+belongs to a cell and only finitely many floors occur. For fixed
+\(n\), monotone convergence therefore gives
+\[
+ A_n(\mu|_{U_m\times\mathbb R})\uparrow A_n(\mu).
+\]
+Applying monotone convergence again to the nonnegative sum over \(n\)
+proves
+\[
+ G_{\mu|_{U_m\times\mathbb R}}(t)\uparrow G_\mu(t).
+\]
+This is the finite-configuration, or Fock-series, exhaustion used in Lean.
+
+Second, the product on the right is a genuine finite convergent
+product. Here are the needed analytic bounds, established independently
+of the product inequality. Put \(p=(d-1)/d\in(0,1)\) and \(D_0=2d\).
+The proved uniform diameter bound for the actual tiles gives
+\(\|\mathbf u-\mathbf v\|\le D_0\) whenever \(\mathbf u,\mathbf v\)
+lie in the same tile of scale at most \(1\). Hence
+\[
+ \|\mathbf v\|^2\ge\tfrac12\|\mathbf u\|^2-D_0^2.
+\]
+Boundedness of \(\sigma\) thus gives a tile-independent constant \(C\)
+such that
+\[
+       w_B^p\le C e^{-p\|\mathbf u\|^2/4}\qquad(\mathbf u\in B).
+\]
+Every cell has volume
+\(b_\varepsilon=|\varepsilon\Delta|
+=\varepsilon^{d-1}|\Delta|>0\). Integrating over the disjoint
+cells and using the integrable Gaussian majorant yields
+\[
+ b_\varepsilon\sum_Bw_B^p
+ \le C\int_E e^{-p\|\mathbf u\|^2/4}\,d\mathbf u<\infty.
+\]
+Lemma~\ref{lem:series}, with its factorial-series proof, supplies an
+all-argument exponential upper bound
+\(\mathcal V(s)\le A e^{K s^p}\) for \(s\ge0\), where \(A\ge1\)
+and \(K>0\) depend on the fixed parameters.
+For \(0\le s\le1\), nonnegative coefficients and \(v_0=1\) also give
+\[
+ 1\le\mathcal V(s)\le1+s(\mathcal V(1)-1),\qquad
+ \log\mathcal V(s)\le s(\mathcal V(1)-1).
+\]
+For \(s\ge1\), the exponential bound gives
+\(\log\mathcal V(s)\le(\log A+K)s^p\).
+Since \(s\le s^p\) for \(0\le s\le1\), these two bounds imply
+\[
+ 0\le\log\mathcal V(s)\le C_0s^p\qquad(s\ge0).
+\]
+Consequently, for fixed \(t>0\),
+\[
+ \sum_B\log\mathcal V(tw_B)
+       \le C_0t^p\sum_Bw_B^p<\infty.
+\]
+It follows that the finite products converge to
+\[
+ \prod_B\mathcal V(tw_B)
+   =\exp\!\left(\sum_B\log\mathcal V(tw_B)\right)<\infty.
+\]
+At \(t=0\) every factor is \(1\), so the same conclusion holds.
+
+Taking the two countable limits in the finite-family bound proves
+\[
+ \mathcal Z(t)=G_\mu(t)
+       =\sum_{n\ge0}\frac{\mathcal Z_n(\sigma,c)t^n}{n!}
+       \le\prod_B\mathcal V(tw_B)\qquad(t\ge0).
+\]
+Finally, when \(t>0\), nonnegativity makes each series term at most
+the whole sum:
+\[
+ \frac{\mathcal Z_n(\sigma,c)t^n}{n!}
+       \le\prod_B\mathcal V(tw_B).
+\]
+Multiplying by \(n!t^{-n}\) gives the claimed occupancy bound,
+in particular for every \(n\ge1\).
+\end{proof}
+
+\begingroup\small\raggedright
+The actual model and Poissonization are checked by
+\nolinkurl{Antichain.weightedPointLaw_product},
+\nolinkurl{Antichain.weightedPointLaw_antichain},
+\nolinkurl{Antichain.weightedPoissonLaw_isProbabilityMeasure}, and
+\nolinkurl{Antichain.weightedPoisson_source_expansion}.
+The literal filtering maps and fixed-count rectangle expansion are checked by
+\nolinkurl{Antichain.measurable_configurationRestriction} and
+\nolinkurl{Antichain.pi_configurationRestriction_rectangle}.
+The exponential normalization, including zero intensity, is
+\nolinkurl{Antichain.configurationSeriesMeasure_eq_exp_smul_poisson_all}.
+The genuine restriction law and independence are
+\nolinkurl{Antichain.finiteIntensityPoissonLaw_restriction_joint},
+\nolinkurl{Antichain.configurationRestriction_composition}, and
+\nolinkurl{Antichain.finiteIntensityPoissonLaw_disjoint_restrictions_independent}.
+The independent Poisson count laws are
+\nolinkurl{Antichain.finiteIntensityPoissonLaw_regionCount} and
+\nolinkurl{Antichain.finiteIntensityPoissonLaw_disjoint_counts_joint}.
+The finite-union and countable passages use
+\nolinkurl{Antichain.configurationSeriesMeasure_restrict_biUnion_le_poisson} and
+\nolinkurl{Antichain.configurationSeriesMeasure_countable_le_exp_sum_poisson}.
+The one-cell bound is
+\nolinkurl{Antichain.actual_tile_configurationPartition_bound}.
+Product convergence is checked by
+\nolinkurl{Antichain.alcoveWeightSup_rpow_summable},
+\nolinkurl{Antichain.tileSeries_log_uniform_bound},
+\nolinkurl{Antichain.tileSeries_weighted_logs_summable}, and
+\nolinkurl{Antichain.actual_tile_product_hasProd}.
+The final statements, with the alcove facts supplied by their direct
+proofs and no external mathematical parameter, are
+\nolinkurl{Antichain.weightedPartitionSeries_le_tileProduct_direct} and
+\nolinkurl{Antichain.weightedPartition_le_factorial_tileProduct_direct}.
+\par\endgroup
+

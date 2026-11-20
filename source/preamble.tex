@@ -1,0 +1,92 @@
+\pdfminorversion=6
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools,amsthm}
+\usepackage{bm}
+\usepackage[normalem]{ulem}
+\usepackage{xcolor,graphicx,enumitem,dsfont,tikz}
+\usetikzlibrary{arrows.meta,calc}
+
+\usepackage[titles]{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftdotsep}{2}
+\setlength{\cftbeforesecskip}{6pt}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=green!40!black,
+  urlcolor=blue!70!black,
+  linktoc=all,
+  bookmarksdepth=2,
+  pdftitle={The limit shape of uniform random antichains in [0,1] to the power d},
+  pdfsubject={Limit shapes, permutation limits, and applications to coordinate orders}
+}
+
+\usepackage[nameinlink,capitalize,noabbrev]{cleveref}
+\crefname{section}{Section}{Sections}
+\Crefname{section}{Section}{Sections}
+\crefname{subsection}{Section}{Sections}
+\Crefname{subsection}{Section}{Sections}
+\crefname{subsubsection}{Section}{Sections}
+\Crefname{subsubsection}{Section}{Sections}
+\renewcommand*{\sectionautorefname}{Section}
+\renewcommand*{\subsectionautorefname}{Section}
+\renewcommand*{\subsubsectionautorefname}{Section}
+
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  maxalphanames=3,
+  maxnames=8,
+  maxbibnames=20,
+  giveninits=true
+]{biblatex}
+\renewcommand*{\multicitedelim}{\addcomma\space}
+\addbibresource{references.bib}
+\setlength{\bibitemsep}{2pt}
+\AtBeginBibliography{\small\sloppy}
+
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{2em}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\providecommand*{\propositionautorefname}{Proposition}
+\providecommand*{\lemmaautorefname}{Lemma}
+\providecommand*{\corollaryautorefname}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{question}[theorem]{Question}
+\providecommand*{\questionautorefname}{Question}
+
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{conjecture}{Conjecture}{Conjectures}
+\crefname{problem}{Problem}{Problems}
+\crefname{question}{Question}{Questions}
+\Crefname{question}{Question}{Questions}
+
+\setlist{topsep=3pt,itemsep=2pt,parsep=0pt}
+
+\newcommand{\notea}[1]{\textcolor{orange}{#1}}
+

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-20",
+  "reviewed_source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+  "scope": "Mean squared height concentration and the coordinate-average fluctuation claim.",
+  "entries": [
+    {
+      "id": "ANT-COORDINATE-CLT",
+      "statement_match": "same",
+      "source_statement_lines": [
+        1211,
+        1211
+      ],
+      "proof_method": "expanded_argument",
+      "comparison": "Sorting preserves the sample average. The checked equality of pushforward laws transfers the iid uniform CLT unchanged to the conditional cube model. The uniform mean 1/2, variance 1/12, and literal closed-cube empirical integral are proved. The convergence certificate takes the general iid finite-variance CLT as an explicit premise at the current pin.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.coordinateFluctuationLaw_eq_iidUniform",
+          "file": "lean/Antichain/CoordinateFluctuations.lean",
+          "line": 39
+        },
+        {
+          "declaration": "Antichain.cubeCoordinateLaw_mean",
+          "file": "lean/Antichain/CoordinateFluctuations.lean",
+          "line": 68
+        },
+        {
+          "declaration": "Antichain.cubeCoordinateLaw_centered_square",
+          "file": "lean/Antichain/CoordinateFluctuations.lean",
+          "line": 73
+        },
+        {
+          "declaration": "Antichain.scalarCoordinateFluctuation_eq_empiricalIntegral",
+          "file": "lean/Antichain/CoordinateFluctuations.lean",
+          "line": 110
+        },
+        {
+          "declaration": "Antichain.coordinateFluctuationLaw_eq_closed_empirical",
+          "file": "lean/Antichain/CoordinateFluctuations.lean",
+          "line": 127
+        },
+        {
+          "declaration": "Antichain.coordinateFluctuation_clt_of_iid",
+          "file": "lean/Antichain/CoordinateFluctuations.lean",
+          "line": 100
+        }
+      ],
+      "lean_declarations": [
+        "Antichain.coordinateFluctuationLaw_eq_iidUniform",
+        "Antichain.cubeCoordinateLaw_mean",
+        "Antichain.cubeCoordinateLaw_centered_square",
+        "Antichain.scalarCoordinateFluctuation_eq_empiricalIntegral",
+        "Antichain.coordinateFluctuationLaw_eq_closed_empirical",
+        "Antichain.coordinateFluctuation_clt_of_iid"
+      ]
+    },
+    {
+      "id": "ANT-HEIGHT-MEAN-TAIL",
+      "statement_match": "same",
+      "source_statement_lines": [
+        1205,
+        1205
+      ],
+      "proof_method": "same_argument",
+      "comparison": "The displayed application of Markov to the positive height tilt is used directly, with c fixed to 1/4. The actual conditional log-moment limit is zero. For every fixed positive threshold, Lean obtains eventual exponential concentration of T_n/n.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.gaussian_height_exponential_tail",
+          "file": "lean/Antichain/GaussianConcentration.lean",
+          "line": 16
+        },
+        {
+          "declaration": "Antichain.meanSquaredHeight_exponential_tail_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 187
+        }
+      ],
+      "lean_declarations": [
+        "Antichain.gaussian_height_exponential_tail",
+        "Antichain.meanSquaredHeight_exponential_tail_direct"
+      ]
+    }
+  ],
+  "previous_reviewed_source_sha256": "7223c87d97fc9c97a97b9a9affc490aa6a4f3923587d05ec92b35a4a45a42da5",
+  "revision_review": "The surviving statements and all 24 active written proofs match the previous source. The separate mean-square predictor is absent from the active draft and remains supplementary in Lean."
+}

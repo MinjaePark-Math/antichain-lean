@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-20",
+  "reviewed_source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+  "previous_reviewed_source_sha256": "7223c87d97fc9c97a97b9a9affc490aa6a4f3923587d05ec92b35a4a45a42da5",
+  "scope": "Weighted upper bound, counting, coordinate change, and weak-order intervals.",
+  "entries": [
+    {
+      "id": "ANT-1-1",
+      "statement_match": "same",
+      "proof_method": "no_separate_proof",
+      "comparison": "The actual weighted partition at sigma=c=0 is the actual cube antichain probability. Subtract its finite limiting normalized rate and multiply by n to obtain an actual little-o(n) remainder. The direct endpoint supplies the proved alcove record internally. The same stated reduction is used. The current weighted-limit dependencies use the written proof routes recorded in the component ledgers.",
+      "lean_declarations": [
+        "Antichain.antichain_counting_source_direct",
+        "Antichain.antichain_counting_source",
+        "Antichain.weightedPartition_zero",
+        "Antichain.weightedPartition_rate_limit"
+      ],
+      "title": "Logarithmic antichain counting asymptotic",
+      "number": "1.1",
+      "source_statement_lines": [
+        41,
+        47
+      ]
+    },
+    {
+      "id": "ANT-1-3",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "For every positive tolerance, the independently derived eventual upper and lower bounds squeeze normalizedPartitionLog to weightedRateValue. The same actual finite gamma_d is chosen before quantifying over every bounded continuous sigma and every c<1/2. The upper assembly uses the actual written Holder and Poisson-independence source routes; the matching lower branch is reviewed in the geometry ledger. No former alternative 4.1/4.3 component proof is inherited.",
+      "lean_declarations": [
+        "Antichain.weighted_volume_source_direct",
+        "Antichain.weightedPartition_rate_limit_direct",
+        "Antichain.weighted_volume_source",
+        "Antichain.weightedPartition_rate_limit",
+        "Antichain.normalizedPartitionLog_upper",
+        "Antichain.normalizedPartitionLog_lower"
+      ],
+      "title": "Weighted antichain expectation asymptotic",
+      "number": "1.3",
+      "source_statement_lines": [
+        138,
+        143
+      ],
+      "source_proof_lines": [
+        1004,
+        1006
+      ]
+    },
+    {
+      "id": "ANT-1-4",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "Use the proved radial Gaussian integral on the actual native floor, substitute p=(d-1)/d, simplify real powers and logarithms, and rewrite the actual zero-test weighted rate. The displayed calculation is the argument; no different probabilistic model or unevaluated Gaussian-integral premise is used.",
+      "lean_declarations": [
+        "Antichain.counting_constant_calculation_source",
+        "Antichain.standardFloorDensity_power_integral_explicit",
+        "Antichain.weightedRateValue_zero_explicit",
+        "Antichain.antichain_normalized_log_limit_explicit_direct"
+      ],
+      "title": "Counting constant and Gaussian power integral",
+      "number": "1.4",
+      "source_statement_lines": [
+        146,
+        153
+      ]
+    },
+    {
+      "id": "ANT-4-1",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The same two ordinary-integral inequalities and exact coefficient are retained. The pinned volume notation is consistently V_r in the current source (formerly S_r). The actual production common-height bound calls the equal-exponent Holder proof and translation invariance; square-completion estimates remain supplementary.",
+      "lean_declarations": [
+        "Antichain.oneTile_real_full_spec",
+        "Antichain.oneTile_middle_integrableOn",
+        "Antichain.oneTile_weighted_integrableOn",
+        "Antichain.integral_translated_gaussian_holder",
+        "Antichain.normalized_common_height_integral_le"
+      ],
+      "title": "Weighted one-tile common-height bound",
+      "number": "4.1",
+      "source_statement_lines": [
+        564,
+        577
+      ],
+      "source_proof_lines": [
+        578,
+        600
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization",
+      "human_proof_label": "leanproof:ANT-4-1"
+    },
+    {
+      "id": "ANT-4-2",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The actual coefficient sequence and finite local-volume limsup are unchanged. The expanded displayed scaling equality uses |epsilon Delta|=epsilon^(d-1)|Delta|, already proved in the coefficient-rate calculation. Vanishing log(r)/r and constant/r terms are proved internally.",
+      "lean_declarations": [
+        "Antichain.tileCoefficient_log_limsup"
+      ],
+      "title": "Coefficient logarithmic limsup",
+      "number": "4.2",
+      "source_statement_lines": [
+        603,
+        608
+      ],
+      "source_proof_lines": [
+        609,
+        611
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization"
+    },
+    {
+      "id": "ANT-4-3",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The literal finite-intensity Poisson process, its count-conditioned iid law, actual spatial restriction independence, Poisson normalizer cancellation, finite tile exhaustion, and nonnegative coefficient bound are already formalized and used. Omitting finite-exhaustion and factorial bookkeeping from the revised prose abbreviates the same argument; Lean still proves them. The statement now explicitly permits infinite intermediate bounds until summability is established.",
+      "lean_declarations": [
+        "Antichain.weightedPoisson_source_expansion",
+        "Antichain.weightedPartitionSeries_le_tileProduct_direct",
+        "Antichain.weightedPartition_le_factorial_tileProduct_direct"
+      ],
+      "title": "Poissonization, independent-tile product and occupancy bound",
+      "number": "4.3",
+      "source_statement_lines": [
+        631,
+        641
+      ],
+      "source_proof_lines": [
+        642,
+        655
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization",
+      "human_proof_label": "leanproof:ANT-4-3"
+    },
+    {
+      "id": "ANT-4-4",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The actual coefficient rate plus proved Stirling estimate gives the same factorial-power majorant. The newly expanded sum-of-powers inequality is precisely the proved termwise bound a_r^(q-1)<=sum(a)^(q-1), followed by the exponential-series identity. Actual summability and the exact logarithmic limsup are both in tileSeries_growth.",
+      "lean_declarations": [
+        "Antichain.tileSeries_growth"
+      ],
+      "title": "One-tile generating series convergence and growth",
+      "number": "4.4",
+      "source_statement_lines": [
+        659,
+        664
+      ],
+      "source_proof_lines": [
+        665,
+        684
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization"
+    },
+    {
+      "id": "ANT-4-5",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The revised proof now explicitly defines the assigned-tile supremum step function, proves pointwise convergence and Gaussian domination, and invokes dominated convergence. This matches the existing actual alcoveSupStep and tendsto_scaled_alcoveWeightSup_sum proof. A uniform diameter upper bound 2d suffices in Lean in place of writing the exact diameter D. The summable tile-log bound, optimized Poisson parameter, Stirling calculation and final scale limit are unchanged.",
+      "lean_declarations": [
+        "Antichain.weighted_upper_limsup_source_direct",
+        "Antichain.alcoveSupStep_le_majorant",
+        "Antichain.tendsto_alcoveSupStep",
+        "Antichain.tendsto_scaled_alcoveWeightSup_sum"
+      ],
+      "title": "Weighted upper limsup bound",
+      "number": "4.5",
+      "source_statement_lines": [
+        687,
+        693
+      ],
+      "source_proof_lines": [
+        694,
+        748
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization"
+    },
+    {
+      "id": "ANT-INTRO-GAUSSIAN-CHARACTERIZATION",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "Basic proves the barycenter sum-of-squares identity and translation-invariance equivalence. For the asserted converse, two-point centered configurations imply V(m+u)+V(m-u)=2V(m)+V(u)+V(-u)-2V(0). Differentiate twice in u at zero to make V second derivative constant, integrate twice to get a quadratic, use integrability to force positive quadratic coefficient, and use mass one to obtain the exact normalized Gaussian. The written barycenter calculation agrees. For Gaussian uniqueness the prose supplies the characterization claim but not a proof method, so the differentiating-two-point argument is an explicit expansion, not a claim to have checked an unwritten author proof. Smoothness is represented by C2, a weaker regularity premise than smoothness.",
+      "lean_declarations": [
+        "Antichain.gaussian_energy_barycenter",
+        "Antichain.isAntichain_translate_iff",
+        "Antichain.locationArrangementSeparation_centered_identity",
+        "Antichain.separated_potential_quadratic",
+        "Antichain.integrable_exp_neg_quadratic_coefficient_pos",
+        "Antichain.separated_probability_density_gaussian",
+        "Antichain.gaussian_location_arrangement_characterization_source"
+      ],
+      "title": "Gaussian uniqueness from location-arrangement separation",
+      "number": null,
+      "source_statement_lines": [
+        109,
+        113
+      ]
+    },
+    {
+      "id": "ANT-INTRO-COORDINATE-CHANGE",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The source interface supplies actual forward/inverse identities, inverse range and positive actual forward derivative. Lean derives strict monotonicity, continuity and the inverse derivative; proves that the actual derivative matrix is diagonal with determinant product_i q(s_i); applies the injective change-of-variables theorem to prove equality of measures and integrals, including native Euclidean volume; and rewrites the positive product density as the Boltzmann exponential. This expands the same inverse-function and Jacobian argument. The interface is ordinary data for the stipulated bijection, not an assumed Jacobian or model-law conclusion. No smoothness or derivative conclusion about the inverse is supplied as an input.",
+      "lean_declarations": [
+        "Antichain.IntervalCoordinateChange.forwardCoordinates_antichain_iff",
+        "Antichain.IntervalCoordinateChange.inverse_hasDerivAt_density",
+        "Antichain.IntervalCoordinateChange.inverseCoordinatesDerivative_det",
+        "Antichain.IntervalCoordinateChange.inverseCoordinates_map_withDensity",
+        "Antichain.IntervalCoordinateChange.euclidean_lintegral_coordinate_change",
+        "Antichain.IntervalCoordinateChange.product_density_eq_boltzmann"
+      ],
+      "title": "Monotone coordinate Jacobian and Boltzmann density",
+      "number": null,
+      "source_statement_lines": [
+        107,
+        107
+      ]
+    },
+    {
+      "id": "ANT-INTRO-NORMALIZED-QUANTILE",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "For the actual inverse-derivative density, change of variables proves integrability and total mass one. The characterized Gaussian has density sqrt(a/pi)*exp(-a*(s-m)^2), a>0. Equality of derivatives plus the inverse range (0,1) removes the additive CDF constant. Thus Q inverse(s)=Phi(sqrt(2a)*(s-m)) and Q(x)=m+Phi inverse(x)/sqrt(2a); the standard origin and scale give the literal normal quantile. The affine-normal-quantile conclusion is derived for the actual inverse derivative, not assumed as a marginal or covariance condition. This is an explicit proof of a terse source normalization assertion, rather than a different already-written normalization proof.",
+      "lean_declarations": [
+        "Antichain.IntervalCoordinateChange.separated_coordinate_is_affine_normalQuantile",
+        "Antichain.IntervalCoordinateChange.density_integrable",
+        "Antichain.IntervalCoordinateChange.density_integral_one",
+        "Antichain.IntervalCoordinateChange.inverse_eq_of_same_derivative",
+        "Antichain.IntervalCoordinateChange.gaussian_family_coordinate_source"
+      ],
+      "title": "Normalized Gaussian inverse coordinate map equals the actual normal quantile",
+      "number": null,
+      "source_statement_lines": [
+        113,
+        113
+      ]
+    },
+    {
+      "id": "ANT-6-3",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The exact avoidance-to-interval bijection gives I_n=|C_n| and actual iid-uniform comparison probability I_n/(n!)^2. The same dimension-three counting asymptotic proves both formulas, with no additional asymptotic premise.",
+      "lean_declarations": [
+        "Antichain.avoidanceWeakBruhatEquiv",
+        "Antichain.weakBruhatComparabilityProbability_exact",
+        "Antichain.weakBruhat_counting_exponential_source_direct"
+      ],
+      "title": "Weak-order interval enumeration and comparison probability",
+      "number": "6.5",
+      "source_statement_lines": [
+        1128,
+        1133
+      ],
+      "source_proof_lines": [
+        1135,
+        1137
+      ],
+      "statement_change": "unchanged"
+    },
+    {
+      "id": "ANT-6-4",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The source uses the interval bijection and the coordinate map (x1,1−x3,x2) on the rank limit. Lean proves the same uniform interval-law transport with the revised Hoeffding rank route and identifies the Gaussian target for any centered pair with the printed covariance and variances.",
+      "lean_declarations": [
+        "Antichain.weakBruhat_interval_gaussian_source_hoeffding",
+        "Antichain.weakBruhat_interval_gaussian_in_probability_hoeffding",
+        "Antichain.intervalLimitMeasure_eq_centered_bivariate_gaussian"
+      ],
+      "title": "Exponential weak concentration of the interval endpoint law",
+      "number": "6.6",
+      "source_statement_lines": [
+        1142,
+        1148
+      ],
+      "source_proof_lines": [
+        1155,
+        1157
+      ],
+      "statement_change": "The interval law and its proof are unchanged. The manuscript removed the separate predictor consequence."
+    },
+    {
+      "id": "ANT-INTERVAL-INVERSIONS",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "Actual coordinate permutations preserve the limiting Gaussian-CDF law. Two iid points are coordinate-tie-free and form an antichain almost surely, so exactly one of three minority-coordinate events occurs. These events are disjoint and have equal mass, hence each has probability1/3; they are exactly the three printed normalized patterns. An explicit two-subset/increasing-pair equivalence identifies the lower inversion density with (12,21,12) frequency, and the upper density with the sum of (12,21,12) and (12,21,21) frequencies. The current Hoeffding-route pattern tails and a finite union bound give precisely the displayed joint exponential bound. The commented-out Sheppard/Gaussian-angle argument is not used.",
+      "lean_declarations": [
+        "Antichain.weakBruhat_interval_inversion_density_exponential_concentration",
+        "Antichain.weakBruhat_interval_inversion_densities_in_probability",
+        "Antichain.twoPointAntichainPattern_probability",
+        "Antichain.limitingCube_coordinatePermute_measurePreserving",
+        "Antichain.lower_interval_inversion_density_eq_pattern",
+        "Antichain.upper_interval_inversion_density_eq_patterns",
+        "Antichain.interval_inversion_densities_avoidance_map"
+      ],
+      "title": "Joint exponential concentration of the lower and upper inversion densities",
+      "number": "6.7",
+      "source_statement_lines": [
+        1167,
+        1176
+      ],
+      "source_proof_lines": [
+        1177,
+        1181
+      ],
+      "statement_change": "new relative to the previous packaged source; same conclusion as tracked fd1db1f, with clarified coordinate-symmetry proof"
+    }
+  ],
+  "revision_review": "The surviving statements and all 24 active written proofs match the previous source. The separate mean-square predictor is absent from the active draft and remains supplementary in Lean."
+}

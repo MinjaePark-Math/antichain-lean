@@ -1,0 +1,2671 @@
+{
+  "schema_version": 1,
+  "source_file": "source/main.tex",
+  "lean_source_root": ".",
+  "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+  "previous_source_sha256": "7223c87d97fc9c97a97b9a9affc490aa6a4f3923587d05ec92b35a4a45a42da5",
+  "review_date": "2026-11-20",
+  "statement_content_changed": true,
+  "lean_code_changed": false,
+  "new_kernel_run": false,
+  "retained_audit_checked_at": "2026-11-19T14:19:55.810750+00:00",
+  "retained_theorem_count": 3151,
+  "retained_declaration_count": 3708,
+  "lean_source_sha256": {
+    "Antichain/AffineAlcoveGroup.lean": "8f2c7ba7668cdc8e9c6d747c2e98391b82b6e17da0f770227821a7bb4faf3290",
+    "Antichain/AlcoveCover.lean": "f094c01dd4721a5ea41da5edc75e16fb140eae448756990d092da7904310e707",
+    "Antichain/AlcoveDiscreteness.lean": "02e00c2d36cc0f0c992ea80ddd3315ff7892b24ddd5f4670c5c1d12a70cd0556",
+    "Antichain/AlcoveFundamentalDomain.lean": "6e9268c7bb8cfc29919dedd5859f2f5d9818d1c9f19a391a2e6b07e8703d0908",
+    "Antichain/AlcoveTiling.lean": "45e78a14306813c7d7ecdd1aefd57d5f2becfa23fb2c3c613971ad0f014ada38",
+    "Antichain/Applications.lean": "f7f6f8d29d18403f53587d623840170d9ab80e23e7fcc6db47ea9a638f08e319",
+    "Antichain/Asymptotics.lean": "844726e4028671b463fed2313419daeeb11c3345cf98f4cc0f2e1e61ce1addd1",
+    "Antichain/Basic.lean": "28f340d1175f5e0137caf2b3deb8788a25f3fb33e50a1e239c4d20b35b235253",
+    "Antichain/BinaryKLPinsker.lean": "67c7641c5725b7ace8ed777de0d886b6cff9a0dac5a3b5b32817b4a195ae530f",
+    "Antichain/BoundaryMatching.lean": "7b049aaaac8408adc4d175c63bc098a20b6beaf3150b91a28ce952699a57a092",
+    "Antichain/BoundaryProfiles.lean": "045cdbed92080db60092221df48863598f154124a8626d689556209926462875",
+    "Antichain/BoundedMoment.lean": "de5d3a196425f6f61c57d7177a0c6f0816c59837536521eb639e2e5c22afbebf",
+    "Antichain/ChernoffRate.lean": "022ca217c4d4dc311509ddc4a17de9f73cf354fe96c84dac185ff2c58a5983b8",
+    "Antichain/CoefficientRate.lean": "9d75a2ea5d54f007aacbd4fcdd93953db583e368f1e217d46e509998e3208fa2",
+    "Antichain/CommonHeightHolder.lean": "2d9ec192bcfcc03803d94a3513043b2bc66a237248b2eddd99e2d8a8c70b607e",
+    "Antichain/ConditionalMoments.lean": "41412e1be20cf22a799fa05a298f6c79606b602aef4d0eed29b6b549622d3774",
+    "Antichain/ConfigurationContraction.lean": "5dbbedf4d7d0cc77515522cbdd8e68d34247f994abef45e1ded61d41ce6d4522",
+    "Antichain/ConfigurationTube.lean": "cee595ae0d2301d9fd1b57f541896d27595b5e87eb3b41cd0350342ed84d21ce",
+    "Antichain/CoordinateChangeSource.lean": "6cb5f4c9fb9bcea84e7e29126d36dd9e80222dc838b53eac4fba4252496749a9",
+    "Antichain/CoordinateFluctuations.lean": "e93fe35fc883932b24050d38f4824fa64d46a742e31b810c53ef3cd867fc581e",
+    "Antichain/CountableRate.lean": "0dea581853ccbd5c3bb1101b9794b2566c38a4ccc7365d9d5eba271564a9aa36",
+    "Antichain/CountingConstant.lean": "3bcc88627a7453a843b444bdc2b7e5f3d9f20836e3121049e8a46843bdc128ec",
+    "Antichain/CubeConcentration.lean": "97af30e3aead5dc63d0d2df1801c1efdaa2e71780b624ac7e8c3272a5de14316",
+    "Antichain/CubeModel.lean": "28cbde104730a13ca70b8b09916c39614a01206dc89c1a2a808f6eda8fee0f2a",
+    "Antichain/CubeProbabilitySpace.lean": "a40801d8f41deb34292642e399cd3ff8ed2fbab48fe85c9572e1d069bc983b60",
+    "Antichain/CubeSeparation.lean": "34e1fc6ff4d34039f931a0bb6cca055b8b8ea7475fbe17055c55931eeef06c6d",
+    "Antichain/CubeShiftSupport.lean": "1b509b96f6f7bccee680d448942456b08fd1901f659302bec28dc29e37b4c603",
+    "Antichain/CubeTestFloorError.lean": "1f6d54ae94a1f7d50b0a96c3e736d4c4f3223821da4f501cfabe119472b81f3a",
+    "Antichain/CubeTileCount.lean": "61d08ded82d50f1ebc061ad33f288e48c68c40ca4a61ae14bc188ab6d9d402e5",
+    "Antichain/DirectAlcoveInput.lean": "d101e6fd13271169ba10bcf28d799da0dd5187fc4f61ad56cf52c1d7f1d3e710",
+    "Antichain/DirectSourceEndpoints.lean": "aed68721c5eee87ea7b5a61f8ee1a1f692ce96e9797ff462c237affaaa0b006d",
+    "Antichain/DistanceToFloor.lean": "40baf04b156df33ddf094f36bef21af7a6b5847f2c66c282a320d55e1c32b25e",
+    "Antichain/DKWReverseMartingale.lean": "4b2ce53af962eeb6080508df8ef2afab15cd9dc462540bef5ccc1f9b9ff371e6",
+    "Antichain/DKWSaddle.lean": "63522bcf4e0dcfb8bfc10c2a5b5681622bd6e7925fdab90c35ca9088463b3523",
+    "Antichain/DKWStationary.lean": "d71ac15fe91b980beba8c60ba977d265fc1e0fdcbfc48b8290616520868a227d",
+    "Antichain/ElementaryCDFConcentration.lean": "6ddd5fc78a43787619638eed329382b5b3cdbdc8c51e90847ff31e01c2df284e",
+    "Antichain/EmpiricalConcentration.lean": "82ca3528453a54e9a155a4ad85d262f4f30efdbec3d5799de9a516d5a1fd55db",
+    "Antichain/EmpiricalTopology.lean": "282b10cb0be92195e26bb97bd11c4777f0a786424a634ae3351d0f30c5d562c1",
+    "Antichain/ExponentialTail.lean": "cddbcfa4f8f8d62c4f412d968df7c9d614876a76f5438a257eed22e5a396365c",
+    "Antichain/FinalIntervalApplication.lean": "b946d991024db74ef780de24bbe114596bbc9c0c280198558a1178eb6b5f2c64",
+    "Antichain/FiniteConditioning.lean": "4b52ebcd69cc3ec9d6c916989f36a285d7ed723a1b6d4c6064ba19fcc3ffe45c",
+    "Antichain/FloorIntegralApproximation.lean": "5de0c2d73ed37964610e6a9d6d64194a2553ff4555cb6a20706817bd9fb9ba03",
+    "Antichain/FloorSpace.lean": "dff4dba0e02325e7296b8c97101b40205bbf72b6b3311dfff4b8812fe1ef29d1",
+    "Antichain/FloorTilt.lean": "4bacb5b59dd298bae0e4a19f318dccd1e71f8264e98dfaffde631b49173719b4",
+    "Antichain/GaussianCDF.lean": "4c8d71f79869158b5efbf32fbd922a3f1a3a78069a93cdfcd64e32fb0d9264e8",
+    "Antichain/GaussianCharacterization.lean": "c6afed516499de9d1a605526161b690dad2127c53dea75ebf08e78524138484c",
+    "Antichain/GaussianConcentration.lean": "06f6c13dfa35579f2a32c68c4c0b193918ca06146ceab90b7ad283d0fd60a75d",
+    "Antichain/GaussianFloorHeightLaw.lean": "9b550325db935a5d6b97c2c31a8d8eef7712f05188aaeacd19061b89cd345a74",
+    "Antichain/GaussianFloorLaw.lean": "42488bea329c3fe02827e8bb3338a9722ec5181718d2da7dc112426aa399b15b",
+    "Antichain/GaussianPartitionIntegral.lean": "eb3b4943f999a7a73e47fbd316168bfb1cad80cf13c75ce20bbf69483dc97892",
+    "Antichain/GaussianSample.lean": "ac0443858cf9cb2754465dde23da2a39170b2e99ba2618e3ddaaabe3a933ee7f",
+    "Antichain/GaussianWeighted.lean": "1db2acb57dead10b433b71f9d3711d3faf0a9e73e582f095b75ebeb166ca2d88",
+    "Antichain/Geometry.lean": "62300fc8d8835c2387a5199a7b35d17cf592ce543b2d740361caa806f52b7565",
+    "Antichain/GeometryRevisionSource.lean": "74146a8d80ec424421f8df24e2b589582284fd10d78b3f55f0179be6511e8174",
+    "Antichain/GreedyPacking.lean": "6db137f963ffddcb6b96ac9c974a9b4880b5e3355d149e2dfc32d5dc435c79d7",
+    "Antichain/GridBalls.lean": "e89fa7d151817871d2e4610a1f9e5ddd7788c1a66da8a36c063deca4f0252ebe",
+    "Antichain/HeightCoordinates.lean": "cde6f8cf7fb2836e15b6484d35c090af9eefac3b313a998f982b4412ad8c4394",
+    "Antichain/HeightGaussianBound.lean": "db6241f5c06812ff4f13410a8a8c470098431bd7cce8a9afb89b7c019b104f20",
+    "Antichain/IntervalElementary.lean": "5907eb9c6efe44ab3adcb2f50944da4bc55b2ca539da8d2fc53eeff21add5cd6",
+    "Antichain/IntervalGaussianPredictor.lean": "965a2ee77fa49d3068feadd7877e097894fbe1948a7fbed1c61629de84742728",
+    "Antichain/IntervalInversions.lean": "a1950ef5567f17d3e675a8937b8cf42ecb9a863c30e39231f1b49205f67f9345",
+    "Antichain/LimitMarginals.lean": "8ac6f749ca2b3cea86506a1e73cf6f8be1f39de08e724f078caf6c63dc839431",
+    "Antichain/LimitMeasure.lean": "11512778211777732813badd6aa70430279b692eda6daecbe77de444682cd905",
+    "Antichain/LipschitzCubeTests.lean": "e9f2acf7a95991f012b29a777f331e14d885ef795709fb65d536950ea45460a8",
+    "Antichain/LipschitzStoneWeierstrass.lean": "302fe71625f267747c7b9fa8dc8eba21b6d13f4923879b2107e0c9eef3b9d80a",
+    "Antichain/LocalRate.lean": "411921df52a98b4182a4b23539ee6a998d7e3a057d1d51d36c9b8dd5c489e2cb",
+    "Antichain/LowerBound.lean": "4097d31a67448e0e47ac8fa080a39c253b3774d927890229a8889d178299af32",
+    "Antichain/LowerRateAnalysis.lean": "0d48ce06f9251ec122ec2e42351072c00b4b6ca2c222dcecde661d007f2cb3c8",
+    "Antichain/MinimumSpanningTree.lean": "991ca10fddd926d747091b79a64390d4188e624ef9651dd939cb04741328ec62",
+    "Antichain/MSTGaugeBound.lean": "df7b2f5db2c3246eedd51787d381431742a1aaab255dde828968aadd7e656e6c",
+    "Antichain/MSTLargestEdges.lean": "2dd5f68d59f6debd0b0bfdf74bcac1696921fec3cd640c771ad67121d989adb1",
+    "Antichain/MSTPinnedUpper.lean": "2e095d917c77b3127796e9852035c04055b7b7ce63f97203e38d859c40427367",
+    "Antichain/NormalCDFLipschitz.lean": "87e362a1941511e9db8dc7319dbbf313e913060c921f756f58d46aa8eb638413",
+    "Antichain/OnePointIntegral.lean": "a01e223c6ac13ceb88f792c15fa51240cab2e66294e61b880d8c6a79e26c1297",
+    "Antichain/OneTileGaussian.lean": "aba68fc6222a7bd0c8e40d2825641c6280b39048b5a90eda833437e14fe34507",
+    "Antichain/OneTileIntegral.lean": "c8e40a2ff66d3a1fa422061bd787871884d37db42d820dae604fb535d1a4fa5a",
+    "Antichain/OneTileModel.lean": "2d1a32302cf522fcad1bbb8f8f35004395c5272bfd242936db3b070e39907447",
+    "Antichain/OneTileReal.lean": "bed0c08433528a2eaa9c9bf851aaf15d13ddfbc08fd622f503efdb74d3195e00",
+    "Antichain/OrientedCubeLower.lean": "81e14490580a5f0c5eda61fae41e8c64f35d49dc85b34b59e70dcc0fc890ab36",
+    "Antichain/OrientedCubeSeparation.lean": "bed93cae2c72bf7c0425f7181496ade4ec239cc1cd5022561ae1b531537d0a40",
+    "Antichain/OrientedCubeSource.lean": "01fe07991416f8d94f8c6b783e8b1a595262287c49f0fa59cfb82c296eb94ccf",
+    "Antichain/OrientedTileSizeSelection.lean": "0fe4807add9f0cacd36b21ccb1aac6d6dfa1d843eb88a42427618065633ab860",
+    "Antichain/OrientedWeightedCubeLower.lean": "b9c711d981f52d64e1a2f015b940264e3109a243f9a05ccfc3959fd9acc73d3e",
+    "Antichain/ParentHeightCoordinates.lean": "1d8695fdabba60e38469061c814d61296f3aded10f5726d46d88b95f1daa8eb9",
+    "Antichain/ParentHeightFubini.lean": "8098b5ca703bf0a888d619f3b823b379afea962c5c226130023d2c20bfcaa968",
+    "Antichain/PartitionDeletion.lean": "98633ed99391b4cb36907ceeff463b21924a605e666e1b33709f584173a26a75",
+    "Antichain/PartitionInterpolation.lean": "aa3b51d48cecdff599cf192568f6a9aca296308eef1c461a25ab02d3a36534f3",
+    "Antichain/PatternBoxSampling.lean": "087473ae6bde3f0c0abfa6933e54e7d1db6ecd7779570d786ab99f5f8ade7a06",
+    "Antichain/PatternFrequency.lean": "d9cf0b90e38af49525fb05b63bc6e326168c22c5d90f833c6e9f07a8010e9b36",
+    "Antichain/PatternFrequencyElementary.lean": "e61cb4f49bab32ac308ff6d64107554228e7964910bc912903986a687de9028a",
+    "Antichain/PatternFrequencySubsets.lean": "287fac4ca1c876c900ba8dbdc8a8bca4d0c5bbf8db4041ce67f898b0d8a7fc68",
+    "Antichain/PatternSampling.lean": "7776269393a63c626a925216e831a8d0499944dfb8c87d19eca1ebe0e36e9488",
+    "Antichain/PatternSubsets.lean": "19d74ee8faab37fd0361422f0687d535346ac18abbd824ccdfadb5b8ed02a364",
+    "Antichain/PatternWeakContinuity.lean": "74e4f9d8d77814f88bd365c70683598f82f4f4c92ad12bbae44cc5cdf6fe8461",
+    "Antichain/PinnedVolume.lean": "7a26985b069eb78bd073955403baed67ea7d2c3854cd8007b8fe71a2f45a1c75",
+    "Antichain/PinnedVolumeBounds.lean": "6e89340dacb3f22fca2200a59a52e1d24c43b79aaa8ad8507dea66f9dd428e31",
+    "Antichain/PinnedVolumeLower.lean": "9d05dd934296ec0faccab7fee4276a063b151955f51348f2b66e90f59c473623",
+    "Antichain/PinnedVolumeUpper.lean": "0fc9987a2516a3bbccbcca381bea079858006800a58145b485c46672c8fa409f",
+    "Antichain/PoissonConfiguration.lean": "72079a59ffcb54c718ae800a7166f6b974dbf70f1ecdccf59d524b62d7a67248",
+    "Antichain/PoissonConfigurationProduct.lean": "31b0d8acb0be81d18c4850a28b4307a1be6fa7613d51d055394c0b7ff66a66eb",
+    "Antichain/PoissonRestrictionComposition.lean": "da6c7e655bcde11994ee6c2adc8cfdb19b262680fbba0332d51af318d13ebfa0",
+    "Antichain/PoissonRestrictionCounts.lean": "5bc4babce97b78939a0ae503dbc5364c88550fd80153795cda18fbaa4ddb843f",
+    "Antichain/PoissonRestrictionLaw.lean": "0cf1717e7826b271af0522b037866d5863f9609e27071a8f00b9430765c0c8e0",
+    "Antichain/PoissonRestrictions.lean": "9bf1794ef001888a84fdf1cf08e22d7cca4070b3e46f5f48a43d1a7fe061a53d",
+    "Antichain/PoissonRestrictionSeries.lean": "8a96eaeab8eddb76a4c38d80da278e22de4155d17abbd4ee8edb82beb1821e6e",
+    "Antichain/PoissonSpatialIndependence.lean": "1b311943f076ac434b7411542bc33f1a99d8f61e317aa3224d28eab6c6f1627b",
+    "Antichain/ProbabilityConsequences.lean": "7d18f156cacc72c9083bcd1801c23c3a9c7ad6e9fcb1cfcef73f8ba09fc6f722",
+    "Antichain/ProductTranspose.lean": "4b38a63c4578119ddeb37bfbe0b7cced8eba6319c7f29ae2e907902b291d7f28",
+    "Antichain/RandomPosetCounting.lean": "c6dc3fe3333e3922244845cad232ecdc73da63067dc9fd9adb6d521105253a9d",
+    "Antichain/RankBinomial.lean": "31d99d05e0013f411c96ee1ff6dd75219d568901aa79e99f343dc1694e5c4749",
+    "Antichain/RankBoxes.lean": "148738b2cc3ff95f1dbc785701645fb4659ee486e879f0b69638535f34a990a6",
+    "Antichain/RankCDF.lean": "72220f63042a884c75f5dfda3f5582de7599198130abb51c4f5f241a4a4593ec",
+    "Antichain/RankCounting.lean": "942d172133317b2655aaa8e63414ba1a586c7ce1a430881fed55c24dd599b448",
+    "Antichain/RankHoeffding.lean": "666a2c8c8750fe0452d17aa5304a5b9871186ea262dbe6ea5082cdd2be59fa07",
+    "Antichain/RankIndependence.lean": "be20415a41ace2789b1b444641d8104177d36ad78b8aac6535f7eab3b4ccf6ae",
+    "Antichain/RankLimitsDirect.lean": "261b5e5af0fdeb7a38d59a0389e16fc866a01f29582fe22ab6f82aa4d905b4e4",
+    "Antichain/RankLimitsHoeffding.lean": "3f48db345aa8b20264f16fbbe28f455b07cfed83488a313b8f0ff4989a5d0b8f",
+    "Antichain/RankLimitsSharp.lean": "ff44ea9768f8cc1c746a9082655cc05a70c6e4086cc04ed9c91fb53d871a013e",
+    "Antichain/RankModel.lean": "0854c6fb4dfa4b1bb350769f1a54ecc8bf884cc3752187e75850e095fba4261e",
+    "Antichain/RankPermuton.lean": "0bf3019faf08e2e551b597e6027ea06f5af259cbc3d329208f3b7f7ca1610976",
+    "Antichain/RankPermutonElementary.lean": "e8c555086a9d448950f6c2f3445d1a43b152781ae75862dc75aa3943ccfb4f1d",
+    "Antichain/RankPermutonHoeffding.lean": "386ee4061ffb2652fb622c15df22546dc762190b8d81acba03e84fbb7deb217d",
+    "Antichain/RankShapeElementary.lean": "ee0c891d36d324fc959b1eac9e2916cb0c4e0504cb61e586270051b7eaf47387",
+    "Antichain/RankShapeTransfer.lean": "ec0ba62c801e49c8da2dc40bc98c1424367e339d282f0e22b097a459a45ba92a",
+    "Antichain/ReferenceSimplex.lean": "d8e5beb6f79f84d4f619f87995905d890aa2186d293c593b4d7a8306e76945e5",
+    "Antichain/ReflectionGluing.lean": "d303ff552c2d6950f173ebb63df6652e9d542d6bb21b34c2fc29ae62969a2495",
+    "Antichain/Replication.lean": "130a8b29d54dec9820758c909fe5aa290fa177becb808cbef5ab48a47c57d4a5",
+    "Antichain/ReplicationLabels.lean": "5249211afb859ba7bfb0f3f0fe3cd920f70fc9aa8ab3f5136b7fc762480d368f",
+    "Antichain/RootedTreeOrder.lean": "3e8c18fa7f27c898c4a874bbaaed56497e13626d860e24b9ad10aec40cd8619e",
+    "Antichain/SegmentGeometry.lean": "06edc198918796d316db0be99076df7a85a27b828ac73300469cfca924a3b25f",
+    "Antichain/SegmentSubdivision.lean": "33e341bfd3930934aa9a8be5a8d824feaa59e9ca964e76da658dd8704412bda9",
+    "Antichain/SeriesGrowth.lean": "74bb9928d9234ad8b444421aa423a5c641d5adc9654da6e71f977d6ef1f565ae",
+    "Antichain/ShapeGeometry.lean": "f1fab75683354c565ca0a75c97073638dcc657554958fd66e731dbfa213d72d5",
+    "Antichain/SignedRankElementary.lean": "a74128c885980e7c240991fbf750b5a4223e61870b5cdb4c4c28c8ff02a3d001",
+    "Antichain/SignedRankLimits.lean": "1d3bbd31fa7ae77b2ccfbafd022799927da77bffd2f4bd9d51af4a83c8cd065d",
+    "Antichain/SimplicialBarycenter.lean": "9c7b2f03a4e367a9428233bdfcf9b68d763d07795f0e188446cb60d6ad51dd05",
+    "Antichain/SimplicialCubeInterpolation.lean": "30774cf04d6d12caa52ab3c02989b9a4071fe0ca06b2c9f87e8cb44307218eee",
+    "Antichain/SimplicialGridWeights.lean": "1db8731fa5bdbe9d5403a310dc501d2ae316ee5646aaa2761627e4db379cc243",
+    "Antichain/SimplicialInterpolationApproximation.lean": "416f25f5ac0eaae07afef94c32fc98c307996b057c29119c99caeff16d3d556f",
+    "Antichain/SimplicialInterpolationRegularity.lean": "fb649d1a202790cead43e2b53e6f15082d3e1156022d7607dcaf6327439c64bb",
+    "Antichain/SourceCalculations.lean": "d884b63af73d9b69f055d84812a7a519777767cce06636a54f80d0cc3596d463",
+    "Antichain/SourceColoring.lean": "f17a66ae49524547272d72318148580dd37534a7c87ac344a3f170f94c9ff23d",
+    "Antichain/SourceCovariance.lean": "c438b80c2912024b8928d330afde5db606a595c3402173724c3730b1fccfcbd0",
+    "Antichain/SourceEndpoints.lean": "2b049d466e44050ed6eb940d24a0d02d0c2a4a562119d9e6198d4ea71cedec5b",
+    "Antichain/SourceGaugeCalculations.lean": "b2c9f2e8c3cb9cdee7f3699b3ea906dd0064780ba15ac49ddf6242b6d82a29fc",
+    "Antichain/SourcePinnedNormalization.lean": "29a39881622c6e1964dcd60204aa71bdc0304fb48195b8026232cbc5df2e6161",
+    "Antichain/SourceRankMarginals.lean": "28966fa8aca399f807b41b8bf472bb8ea93cab35340de0c7a7c0bf4d90978047",
+    "Antichain/SourceSimplexCalculations.lean": "d150dc3ddcf962d1103418857496cb3f4b427668d6b5116e7152f5e6eb1d1c2d",
+    "Antichain/SourceStirling.lean": "7e869cdfa99c4c60ba6f6f9086db3533f9cd240e1d25c4a3305dd35716c7ae8d",
+    "Antichain/Support.lean": "81ef2a66dcc4f2e451771de2f3f823db6930e8987f22350983537fd3fc695854",
+    "Antichain/SurfaceClosure.lean": "403da053d05eb8533636da0f30e34ebd2a450968320402cda9107a8b968d35e0",
+    "Antichain/SymmetricGaugePacking.lean": "b34246e1e68d6a2e75456f9fb9143c62fb42e12e4060ab457123b5cf5072a27b",
+    "Antichain/TileCoefficients.lean": "b92abdfd8389133d656fecc29d24f990d6c684ff27d77d3b949dd533ea23da3b",
+    "Antichain/TileGaussianSums.lean": "abd1eabc422f7640a6eebc1f4eb0d49f7a4326b00d988b91ce5ba389caebec90",
+    "Antichain/TileLogGrowth.lean": "03bae13151f385cf82e909bdb2724afd83ed98e40dafa3a820a7a8ccca97a75a",
+    "Antichain/TileProduct.lean": "7ff1150f7027e4c79e0f2742a158f047ee68e3e99726012130f145608ee254aa",
+    "Antichain/TileSeries.lean": "f203fc75ba9734f83f5c3c23bac4982d0c257e2a88e5c97838678d95ffd4b72b",
+    "Antichain/TileSeriesLocal.lean": "257018867b1f3a5b0c61943719df5f744f8bee2b0a64d253b3c2dc8b41e008a8",
+    "Antichain/TileSizeSelection.lean": "6dd1d5fe908fcf9dedc94ece3a17963a281efc6561b748cd4f51e7978f07be0b",
+    "Antichain/TileSymmetries.lean": "317b80ca38f31d5072bb2bffbd028eef3023776127f93960b9e6650864c0d9fa",
+    "Antichain/TreeComponentCount.lean": "e0ad2ffcabb8bda20fd4372c1cc3ffe94b2dde92a37c0c177b0b7193d5e7b952",
+    "Antichain/TwoPointAntichainPatterns.lean": "61598808195764a412e2cb75f202b38b8e3b6881469f8fd48d1c356d5527b9b9",
+    "Antichain/UniformCDFConcentration.lean": "bc02d052ca871fc85b84083a67b4a203b42f78185912207126109775e4837d2f",
+    "Antichain/UnpinnedInfiniteVolume.lean": "616b29f558033d9094bd2ca0051d86280dfd779f785f8285c237f6d3a0ba1c48",
+    "Antichain/UpperBound.lean": "39b3163554e9bba46c9af12d721e980e8122fc58508eed89ad3fb7d1245d5290",
+    "Antichain/WeakBruhatIntervals.lean": "439d08f3511d68d5099c9c49ffb5c33ac279aae833638ba1737ba43f75880ee0",
+    "Antichain/WeakVanishingTest.lean": "15e9e7534e434402c79da99c42a6961c3261886f3262e1a0402f75156b3ce9c6",
+    "Antichain/WeightedCubeLower.lean": "d361ac844154369db4b1ca13f8ed1814a68bb552bb17a6532a0eda274e811178",
+    "Antichain/WeightedLimit.lean": "d69f66f1bd6eae63e339e20fc3e87195218f8340c5b0979ad1d1625a6ab30cd2",
+    "Antichain.lean": "a46c66679a18b896a14e53ce53b64890e8ff076d739f61ca26328c729915b2fa"
+  },
+  "configuration_sha256": {
+    "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "lakefile.lean": "29f54fe588bbbd9d4d4698064339479175313ff4dbd996376432ffa2895a6bcf",
+    "lake-manifest.json": "09b746bca9ee724cbf077bc7b6b7c67cd5cde42070cca688a5118e252615b421",
+    "verify.py": "f178dcb87a60a6b49f2f90648002f08785132c6caab7f18e5b2105dbf62911c8"
+  },
+  "audit_source_sha256": "8c3a3b34969c26ed07a6c84f719125e74e47f8119d07a045c384b2f018a6048b",
+  "comparison_scope": "Mathematical statements and proof strategies are reviewed separately; method labels do not assert literal equality of proof objects or verification of every quoted external theorem.",
+  "counts": {
+    "same_argument": 17,
+    "no_separate_proof": 7,
+    "expanded_argument": 22
+  },
+  "branch_review_files": {
+    "proof-review-geometry.json": "a4590a4d8fa1dc338207a2b8c01548d04278e65e1980f56f204941c249c20cfd",
+    "proof-review-algebra.json": "d37f27a8c35d34f36206907bf2e8c3c853f8706320b64c6d1227a556cc8baa75",
+    "proof-review-probability.json": "de1f8d596d4f0fc788cdc69bc2649ad7eb0c859608c8c7bd530f945808011e00",
+    "proof-review-revision.json": "94d521ceb50789b4f5f8ec99a543925ebe99dee47c0afeb6614b57ea63819dac"
+  },
+  "human_proof_files": {
+    "human-proofs-geometry.tex": "5f66953e9d31fd0c10309f5c5b90402627eb88b9cb773ce443e1a95ee65fbd46",
+    "human-proofs-algebra.tex": "d4962d79e1f3668281aa0c9c974680762541dfc6f6e859c8a3a38efdea261361",
+    "human-proofs-probability.tex": "7edfbde179c08150a54bb5e5edbbfed1de5770ec9f653eb6d8d0996a8bb0c212"
+  },
+  "entries": [
+    {
+      "id": "ANT-1-1",
+      "statement_match": "same",
+      "proof_method": "no_separate_proof",
+      "comparison": "The actual weighted partition at sigma=c=0 is the actual cube antichain probability. Subtract its finite limiting normalized rate and multiply by n to obtain an actual little-o(n) remainder. The direct endpoint supplies the proved alcove record internally. The same stated reduction is used. The current weighted-limit dependencies use the written proof routes recorded in the component ledgers.",
+      "lean_declarations": [
+        "Antichain.antichain_counting_source_direct",
+        "Antichain.antichain_counting_source",
+        "Antichain.weightedPartition_zero",
+        "Antichain.weightedPartition_rate_limit"
+      ],
+      "title": "Logarithmic antichain counting asymptotic",
+      "number": "1.1",
+      "source_statement_lines": [
+        41,
+        47
+      ],
+      "statement_sha256": "9246513c57ee00bb276993f3be0905940bf7dd32d527be0d5c64e4b4c8460316",
+      "certificate_declarations": [
+        "Antichain.antichain_counting_source_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.antichain_counting_source_direct": "7f1369d97bb2dab93aa69b35b9ee44510bc0bad5d519e310d3ec6b34ca3f99e4"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-1-2",
+      "display_number": "1.2",
+      "title": "Exponential Hausdorff concentration",
+      "source_statement_lines": [
+        69,
+        75
+      ],
+      "source_proof_lines": [
+        295,
+        319
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Use empirical weak concentration, finite positive bump tests detecting holes in the support, and the comparable-witness lemma plus compactness to detect isolated outliers of an antichain.",
+      "lean_argument": "Construct a fixed weak neighborhood whose empirical measures rule out holes and outliers, then apply actual empirical exponential concentration; explicitly bridge the Pi sup metric and native Euclidean Hausdorff distance.",
+      "precise_method_comparison": "The same compactness/bump-function/comparability argument is formalized. Metric conversions and closed-cube embeddings are explicit bookkeeping; the conclusion is the stated Euclidean distance.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.euclidean_shape_exponential_concentration_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 51
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The delayed proof is attached to Theorem1.2, not Lemma2.2. Nonempty sample clouds are required only eventually (n>0).",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The same compactness/bump-function/comparability argument is formalized. Metric conversions and closed-cube embeddings are explicit bookkeeping; the conclusion is the stated Euclidean distance.",
+      "lean_declarations": [
+        "Antichain.euclidean_shape_exponential_concentration_direct"
+      ],
+      "statement_sha256": "567aa8696ef5ad19969c6332179fb5a29f9990e4c53334e7ad89d4393161ba53",
+      "certificate_declarations": [
+        "Antichain.euclidean_shape_exponential_concentration_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.euclidean_shape_exponential_concentration_direct": "f1bfa12a4fb92e8f2680444031b107505cdf09b211cde43ef237e24a1f541350"
+      },
+      "written_proof_sha256": "f32cf6bac7cb227f40aaedd24e140509ffe420b8cc405cb227a708c47df51fb4"
+    },
+    {
+      "id": "ANT-1-3",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "For every positive tolerance, the independently derived eventual upper and lower bounds squeeze normalizedPartitionLog to weightedRateValue. The same actual finite gamma_d is chosen before quantifying over every bounded continuous sigma and every c<1/2. The upper assembly uses the actual written Holder and Poisson-independence source routes; the matching lower branch is reviewed in the geometry ledger. No former alternative 4.1/4.3 component proof is inherited.",
+      "lean_declarations": [
+        "Antichain.weighted_volume_source_direct",
+        "Antichain.weightedPartition_rate_limit_direct",
+        "Antichain.weighted_volume_source",
+        "Antichain.weightedPartition_rate_limit",
+        "Antichain.normalizedPartitionLog_upper",
+        "Antichain.normalizedPartitionLog_lower"
+      ],
+      "title": "Weighted antichain expectation asymptotic",
+      "number": "1.3",
+      "source_statement_lines": [
+        138,
+        143
+      ],
+      "source_proof_lines": [
+        1004,
+        1006
+      ],
+      "statement_sha256": "8e6714153062244d9ffa7561b39b6a519bf54fb513c8683834012307e43ce176",
+      "certificate_declarations": [
+        "Antichain.weighted_volume_source_direct",
+        "Antichain.weightedPartition_rate_limit_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.weighted_volume_source_direct": "2b24a4186ca31bf796de31eb049134e6608f474031c2f6136c71541de2a4235e",
+        "Antichain.weightedPartition_rate_limit_direct": "eee9eda2fe66110e21644eabf526e70f6abbac05fe12c49565d0c3084f46619b"
+      },
+      "written_proof_sha256": "4e7d8994e29da93688bde2413a47bb2d8b9515461d10ffb50bc30347bd3106a8"
+    },
+    {
+      "id": "ANT-1-4",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "Use the proved radial Gaussian integral on the actual native floor, substitute p=(d-1)/d, simplify real powers and logarithms, and rewrite the actual zero-test weighted rate. The displayed calculation is the argument; no different probabilistic model or unevaluated Gaussian-integral premise is used.",
+      "lean_declarations": [
+        "Antichain.counting_constant_calculation_source",
+        "Antichain.standardFloorDensity_power_integral_explicit",
+        "Antichain.weightedRateValue_zero_explicit",
+        "Antichain.antichain_normalized_log_limit_explicit_direct"
+      ],
+      "title": "Counting constant and Gaussian power integral",
+      "number": "1.4",
+      "source_statement_lines": [
+        146,
+        153
+      ],
+      "statement_sha256": "1d3aff9b1a84310de8ea233ed58ba4435e35fe526699c146ad07fc567316c537",
+      "certificate_declarations": [
+        "Antichain.counting_constant_calculation_source",
+        "Antichain.antichain_normalized_log_limit_explicit_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.counting_constant_calculation_source": "bdb7a85f96062e744802ab750f01e3c929b97dd98006c50ed762222d154920fa",
+        "Antichain.antichain_normalized_log_limit_explicit_direct": "7b5486154148c54e7625daad5c426b93ac4188f96b90912a1b9ced9935b22628"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-2-1",
+      "display_number": "2.1",
+      "title": "Exponential empirical-law concentration",
+      "source_statement_lines": [
+        189,
+        200
+      ],
+      "source_proof_lines": [
+        201,
+        273
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Use the actual conditional Laplace limit, Markov height and centered floor-mgf bounds, Stone-Weierstrass density of Lipschitz cube tests, the normal-CDF Lipschitz bound and Cauchy-Schwarz square-root height transfer; finish with finite weak tests and continuity-set Portmanteau.",
+      "lean_argument": "The actual compact-metric Lipschitz sublattice contains constants, is closed under minimum and maximum, and strongly separates pairs by an affine distance function. The proved lattice Stone-Weierstrass theorem gives uniform approximation. Coordinate clamping extends the approximant to a globally bounded ambient Lipschitz function. The production concentration call uses that producer and the written Cauchy-Schwarz estimate.",
+      "precise_method_comparison": "The revised Stone-Weierstrass/Lipschitz route is now the actual production proof. Lean supplies the explicit Lipschitz sublattice, its strong two-point separation, and the one-Lipschitz clamp extension. The earlier finite Kuhn interpolation is supplementary. Absolute two-sided test estimates also imply the source one-sided finite-test estimates. Lean carries out the probability-logarithm step as direct exponential Markov bounds, including zero-probability events; the written logarithmic bound uses the usual extended-real convention log(0)=-infinity.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.closed_cube_empirical_source_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 58
+        },
+        {
+          "declaration": "Antichain.closed_cube_continuity_set_concentration_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 64
+        },
+        {
+          "declaration": "Antichain.closed_cube_continuity_set_in_probability_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 71
+        },
+        {
+          "declaration": "Antichain.compact_lipschitz_density_stoneWeierstrass",
+          "file": "Antichain/LipschitzStoneWeierstrass.lean",
+          "line": 11
+        },
+        {
+          "declaration": "Antichain.cube_lipschitz_approximation_stoneWeierstrass",
+          "file": "Antichain/LipschitzStoneWeierstrass.lean",
+          "line": 61
+        },
+        {
+          "declaration": "Antichain.lipschitz_cubeTest_empirical_floor_error",
+          "file": "Antichain/LipschitzCubeTests.lean",
+          "line": 29
+        },
+        {
+          "declaration": "Antichain.cubeTest_approximation_sqrt_transfer",
+          "file": "Antichain/LipschitzCubeTests.lean",
+          "line": 79
+        },
+        {
+          "declaration": "Antichain.gaussian_cube_test_exponential_tail_lipschitz",
+          "file": "Antichain/LipschitzCubeTests.lean",
+          "line": 110
+        },
+        {
+          "declaration": "Antichain.boundedTest_cgf_quadratic_bigO",
+          "file": "Antichain/BoundedMoment.lean",
+          "line": 37
+        },
+        {
+          "declaration": "Antichain.boundedTest_mgf_quadratic_bigO",
+          "file": "Antichain/BoundedMoment.lean",
+          "line": 70
+        },
+        {
+          "declaration": "Antichain.boundedTest_exists_negative_tilt",
+          "file": "Antichain/BoundedMoment.lean",
+          "line": 104
+        }
+      ],
+      "human_proof_label": "leanproof:ANT-2-1",
+      "recommended_annotation": "The statement is fully Lean-verified. The formal proof follows the written argument with its finite triangulation and probability steps expanded; a complete matching proof is supplied at leanproof:ANT-2-1.",
+      "scope_note": "The paper concludes continuity-set frequencies converge in probability. Lean proves the stronger fixed-tolerance exponential tail; this does not claim a fluctuation scale or a large-deviation rate function.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The revised Stone-Weierstrass/Lipschitz route is now the actual production proof. Lean supplies the explicit Lipschitz sublattice, its strong two-point separation, and the one-Lipschitz clamp extension. The earlier finite Kuhn interpolation is supplementary. Absolute two-sided test estimates also imply the source one-sided finite-test estimates. Lean carries out the probability-logarithm step as direct exponential Markov bounds, including zero-probability events; the written logarithmic bound uses the usual extended-real convention log(0)=-infinity. The centered moment generating function has its written quadratic Taylor remainder. Lean checks both mgf(t)−1=O(t²) and log mgf(t)=O(t²). The actual negative tilt uses the quadratic log-moment bound.",
+      "lean_declarations": [
+        "Antichain.closed_cube_empirical_source_direct",
+        "Antichain.closed_cube_continuity_set_concentration_direct",
+        "Antichain.closed_cube_continuity_set_in_probability_direct",
+        "Antichain.compact_lipschitz_density_stoneWeierstrass",
+        "Antichain.cube_lipschitz_approximation_stoneWeierstrass",
+        "Antichain.lipschitz_cubeTest_empirical_floor_error",
+        "Antichain.cubeTest_approximation_sqrt_transfer",
+        "Antichain.gaussian_cube_test_exponential_tail_lipschitz",
+        "Antichain.boundedTest_cgf_quadratic_bigO",
+        "Antichain.boundedTest_mgf_quadratic_bigO",
+        "Antichain.boundedTest_exists_negative_tilt"
+      ],
+      "statement_sha256": "d1402d0946e4af77e849f4054384aa99469725ee6ec65da124dc4316e6d8c2b6",
+      "certificate_declarations": [
+        "Antichain.closed_cube_empirical_source_direct",
+        "Antichain.closed_cube_continuity_set_concentration_direct",
+        "Antichain.closed_cube_continuity_set_in_probability_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.closed_cube_empirical_source_direct": "c4a8e7cdf160626922a4cc28ff70d121dc6bb06ff63a3448d606cae2488e0d74",
+        "Antichain.closed_cube_continuity_set_concentration_direct": "b9fc1c0b6d701c371a5e61737f3ce3218ae4ba27c0948eccfba33c8c8b3e38c2",
+        "Antichain.closed_cube_continuity_set_in_probability_direct": "0e6bba308266e1e5a16d24b0664ac42c866ddd82fb50fef92d7f73fbb0d83d11"
+      },
+      "written_proof_sha256": "dc3aaf4f11437a74a09aed0cfffe5192b62a662da94d96a041b19e057c4076de",
+      "human_proof_file": "human-proofs-probability.tex"
+    },
+    {
+      "id": "ANT-2-2",
+      "display_number": "2.2",
+      "title": "Support closure and strict comparable witness",
+      "source_statement_lines": [
+        278,
+        284
+      ],
+      "source_proof_lines": [
+        285,
+        293
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Use the positive Gaussian floor density to identify support as closure(Phi(E)). Characterize boundary limits using inverse-normal endpoint divergence and an explicit balanced zero/one construction. Obtain comparable points by a common shift of the cube coordinates and a scalar intermediate-value argument.",
+      "lean_argument": "Use the actual full-support Gaussian pushforward to identify support as closure(Phi(E)). Prove the upper closure inclusion by continuity in the open cube and one-sign inverse-normal divergence on unmixed boundary faces. For the converse use the written balanced zero/one inverse-normal construction. For an exterior cube point prove min-max span<1, both endpoint limits and strict monotonicity of the common-shift quantile sum, then use IVT to find the actual nonzero cube-coordinate shift.",
+      "precise_method_comparison": "The earlier centered inverse-coordinate witness has been replaced in the source-facing support and shape chain by the literal manuscript common cube-shift IVT witness. Both the endpoint-divergence closure argument and the explicit mixed-boundary approximation are now formalized as written.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.limitingAntichainMeasure_support_cubeShift_source",
+          "file": "Antichain/CubeShiftSupport.lean",
+          "line": 365
+        },
+        {
+          "declaration": "Antichain.normalQuantile_surface_closure_written",
+          "file": "Antichain/CubeShiftSupport.lean",
+          "line": 304
+        },
+        {
+          "declaration": "Antichain.exists_nonzero_cubeShift_comparable",
+          "file": "Antichain/CubeShiftSupport.lean",
+          "line": 332
+        },
+        {
+          "declaration": "Antichain.normalQuantile_cube_outside_closure_exists_comparable_cubeShift",
+          "file": "Antichain/CubeShiftSupport.lean",
+          "line": 355
+        }
+      ],
+      "human_proof_label": "leanproof:ANT-2-2",
+      "recommended_annotation": "Statement matches. The written support/closure and scalar cube-shift argument is fully Lean-verified; a complete readable presentation is provided in Appendix leanproof:ANT-2-2.",
+      "scope_note": "All actual Gaussian scale factors, the inverse-normal surface, the closed cube and both boundary cases are included. No support or comparable-witness conclusion is an input.",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The earlier centered inverse-coordinate witness has been replaced in the source-facing support and shape chain by the literal manuscript common cube-shift IVT witness. Both the endpoint-divergence closure argument and the explicit mixed-boundary approximation are now formalized as written.",
+      "lean_declarations": [
+        "Antichain.limitingAntichainMeasure_support_cubeShift_source",
+        "Antichain.normalQuantile_surface_closure_written",
+        "Antichain.exists_nonzero_cubeShift_comparable",
+        "Antichain.normalQuantile_cube_outside_closure_exists_comparable_cubeShift"
+      ],
+      "statement_sha256": "4ad8bb0a075fe3933c6adc5b349db6c3957009d75dcecace84bac1ebf2af6ae3",
+      "certificate_declarations": [
+        "Antichain.limitingAntichainMeasure_support_cubeShift_source",
+        "Antichain.exists_nonzero_cubeShift_comparable"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.limitingAntichainMeasure_support_cubeShift_source": "2994d5119a9346402b854e247b1bf0237e6e9b7184ac48a5840a7a6cee3d78a0",
+        "Antichain.exists_nonzero_cubeShift_comparable": "5522c23c39a7f0eddbc9cf9704090035a95ff621c2f1071cd5faaa13b43595d5"
+      },
+      "written_proof_sha256": "8b26533bc04e022f16a1ba0c1e8bde56721f6c3500f65db8688d525c769c0d25",
+      "human_proof_file": "human-proofs-probability.tex"
+    },
+    {
+      "id": "ANT-3-1",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "The actual floor/height coordinates and both ordered constraints match the paper. Lean first proves the comparison with a positive scalar and then instantiates sqrt(d); this generality changes neither assumptions nor conclusion.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.all_coordinates_lt_iff_heightGauge_lt",
+          "file": "Antichain/Geometry.lean",
+          "line": 61
+        },
+        {
+          "declaration": "Antichain.floor_antichain_iff_height_constraints",
+          "file": "Antichain/Geometry.lean",
+          "line": 391
+        },
+        {
+          "declaration": "Antichain.heightGauge_eq_neg_mul_min",
+          "file": "Antichain/Geometry.lean",
+          "line": 45
+        }
+      ],
+      "source_labels": [
+        "prop:L_definition",
+        "eq:constraints"
+      ],
+      "source_lines": [
+        332,
+        337
+      ],
+      "proof_lines": [
+        338,
+        346
+      ],
+      "lean_declarations": [
+        "Antichain.all_coordinates_lt_iff_heightGauge_lt",
+        "Antichain.floor_antichain_iff_height_constraints",
+        "Antichain.heightGauge_eq_neg_mul_min"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "9cd37272cf10c5b08b3a2d440d60e83f8b18326c07ea3afee5a82f54f354210a",
+      "certificate_declarations": [
+        "Antichain.floor_antichain_iff_height_constraints",
+        "Antichain.heightGauge_eq_neg_mul_min"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.floor_antichain_iff_height_constraints": "932f63f04ce81cffc1c8b8b6e8082d983b7d998d8478762abf7c9e6a87bb5df6",
+        "Antichain.heightGauge_eq_neg_mul_min": "c72cc9855632cad0c1b6d695d689e03876cff7f2ee6729c5dbf00de640a537ab"
+      },
+      "written_proof_sha256": "6e637fe5727bff691e505ddee966646853ba54980b1ea9a999a7b93dd886d4f5"
+    },
+    {
+      "id": "ANT-3-2",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "Subadditivity, nonnegative homogeneity, permutation invariance and both sharp ordinary Euclidean bounds follow by the written argument. The equality with the native Euclidean norm is proved explicitly.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.heightGauge_add_le",
+          "file": "Antichain/Geometry.lean",
+          "line": 87
+        },
+        {
+          "declaration": "Antichain.heightGauge_smul",
+          "file": "Antichain/Geometry.lean",
+          "line": 96
+        },
+        {
+          "declaration": "Antichain.heightGauge_equiv",
+          "file": "Antichain/Geometry.lean",
+          "line": 111
+        },
+        {
+          "declaration": "Antichain.sum_sq_le_card_sub_one_mul_heightGauge_sq",
+          "file": "Antichain/Geometry.lean",
+          "line": 135
+        },
+        {
+          "declaration": "Antichain.heightGauge_sq_le_card_sub_one_mul_sum_sq",
+          "file": "Antichain/Geometry.lean",
+          "line": 175
+        },
+        {
+          "declaration": "Antichain.heightGauge_norm_bounds_euclidean",
+          "file": "Antichain/Geometry.lean",
+          "line": 256
+        }
+      ],
+      "source_labels": [
+        "eq:height-bound"
+      ],
+      "source_lines": [
+        349,
+        355
+      ],
+      "proof_lines": [
+        356,
+        366
+      ],
+      "lean_declarations": [
+        "Antichain.heightGauge_add_le",
+        "Antichain.heightGauge_smul",
+        "Antichain.heightGauge_equiv",
+        "Antichain.sum_sq_le_card_sub_one_mul_heightGauge_sq",
+        "Antichain.heightGauge_sq_le_card_sub_one_mul_sum_sq",
+        "Antichain.heightGauge_norm_bounds_euclidean"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "8f0ffb1dee77a867df3983debf9eec3d4073f7cfadf85220f7c88780ed0e7e63",
+      "certificate_declarations": [
+        "Antichain.heightGauge_add_le",
+        "Antichain.heightGauge_smul",
+        "Antichain.heightGauge_equiv",
+        "Antichain.heightGauge_norm_bounds_euclidean"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.heightGauge_add_le": "42d46dd3c9b758114ce47936f3d8cf515d18f8cf04fab1dfcdfe81f5f16c94cc",
+        "Antichain.heightGauge_smul": "8809e5e520c0fa04af623aad06d4d2b79e3cd444d59d2973579fe3a9e0199c8f",
+        "Antichain.heightGauge_equiv": "380a19ceca67e0d24205ac8e685b84783fb4c7b13dd822eac39b453f6929667d",
+        "Antichain.heightGauge_norm_bounds_euclidean": "7d45b6fd4a07a864ff9e7681668a601afd1b61ea662b94cbdd4fff3798581b24"
+      },
+      "written_proof_sha256": "6bfa908bf1528c076dd840c4ab5c94c5273fbd58a62248943aeb23761d78914e"
+    },
+    {
+      "id": "ANT-3-3",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "no_separate_proof",
+      "comparison": "There is no separate written proof environment. The existing checked proof supplies the indicated immediate consequence without changing its Lipschitz constant.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.antichain_height_lipschitz",
+          "file": "Antichain/Geometry.lean",
+          "line": 422
+        }
+      ],
+      "source_labels": [
+        "lem:height",
+        "cor:height"
+      ],
+      "source_lines": [
+        370,
+        372
+      ],
+      "lean_declarations": [
+        "Antichain.antichain_height_lipschitz"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "07af904da860d7857c936d8b234da2636c6816b14f5615815653b97522868416",
+      "certificate_declarations": [
+        "Antichain.antichain_height_lipschitz"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.antichain_height_lipschitz": "8e5fdabc4f3f899d18a119d30f5881b2bbe8b2de785ecc31a4a4af25772ee705"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-3-4",
+      "source_file": "main.tex",
+      "statement_comparison": "strengthened_by_explicit_previously_proved_orbit_representative_clause",
+      "proof_method": "expanded_argument",
+      "comparison": "The statement newly includes existence and uniqueness of the point of the closed reference simplex in each actual generated orbit. GeometryRevisionSource now gives that literal forall x existsUnique y endpoint. Other tiling, local-finiteness, unique-map and tile-count conclusions are unchanged. The revised root-hyperplane and affine-Weyl terminology is cited background, expanded by directly proved type-A geometric facts, not a claimed formalization of abstract Coxeter theory.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.alcove_unique_representative_source",
+          "file": "Antichain/GeometryRevisionSource.lean",
+          "line": 17
+        },
+        {
+          "declaration": "Antichain.interior_referenceSimplex_iff_pair_differences",
+          "file": "Antichain/GeometryRevisionSource.lean",
+          "line": 34
+        },
+        {
+          "declaration": "Antichain.reflectionWordMap_integer_normal_form",
+          "file": "Antichain/AffineAlcoveGroup.lean",
+          "line": 35
+        },
+        {
+          "declaration": "Antichain.reflectionWordMap_reverse_left",
+          "file": "Antichain/AffineAlcoveGroup.lean",
+          "line": 99
+        },
+        {
+          "declaration": "Antichain.reflectionWordOrbit_has_dist_minimizer",
+          "file": "Antichain/AlcoveDiscreteness.lean",
+          "line": 85
+        },
+        {
+          "declaration": "Antichain.alcoveTile_locallyFinite_direct",
+          "file": "Antichain/AlcoveDiscreteness.lean",
+          "line": 123
+        },
+        {
+          "declaration": "Antichain.affineCoordinateReflection_dist_sq",
+          "file": "Antichain/AlcoveCover.lean",
+          "line": 40
+        },
+        {
+          "declaration": "Antichain.alcoveTile_covers_direct",
+          "file": "Antichain/AlcoveCover.lean",
+          "line": 171
+        },
+        {
+          "declaration": "Antichain.integer_shift_preserves_sums",
+          "file": "Antichain/AlcoveFundamentalDomain.lean",
+          "line": 22
+        },
+        {
+          "declaration": "Antichain.closed_alcove_representative_unique_direct",
+          "file": "Antichain/AlcoveFundamentalDomain.lean",
+          "line": 152
+        },
+        {
+          "declaration": "Antichain.same_tile_map_unique_direct",
+          "file": "Antichain/AlcoveFundamentalDomain.lean",
+          "line": 211
+        },
+        {
+          "declaration": "Antichain.alcoveTile_disjoint_interiors_direct",
+          "file": "Antichain/AlcoveFundamentalDomain.lean",
+          "line": 277
+        },
+        {
+          "declaration": "Antichain.completeCubeTile_volume_sandwich",
+          "file": "Antichain/CubeTileCount.lean",
+          "line": 125
+        },
+        {
+          "declaration": "Antichain.completeCubeTile_count_error_bound",
+          "file": "Antichain/CubeTileCount.lean",
+          "line": 195
+        },
+        {
+          "declaration": "Antichain.completeCubeTile_count_isBigO_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 90
+        }
+      ],
+      "source_labels": [
+        "prop:tiling",
+        "eq:tile-number"
+      ],
+      "source_lines": [
+        440,
+        445
+      ],
+      "proof_lines": [
+        446,
+        457
+      ],
+      "lean_declarations": [
+        "Antichain.alcove_unique_representative_source",
+        "Antichain.interior_referenceSimplex_iff_pair_differences",
+        "Antichain.reflectionWordMap_integer_normal_form",
+        "Antichain.reflectionWordMap_reverse_left",
+        "Antichain.reflectionWordOrbit_has_dist_minimizer",
+        "Antichain.alcoveTile_locallyFinite_direct",
+        "Antichain.affineCoordinateReflection_dist_sq",
+        "Antichain.alcoveTile_covers_direct",
+        "Antichain.integer_shift_preserves_sums",
+        "Antichain.closed_alcove_representative_unique_direct",
+        "Antichain.same_tile_map_unique_direct",
+        "Antichain.alcoveTile_disjoint_interiors_direct",
+        "Antichain.completeCubeTile_volume_sandwich",
+        "Antichain.completeCubeTile_count_error_bound",
+        "Antichain.completeCubeTile_count_isBigO_direct"
+      ],
+      "statement_match": "same",
+      "human_proof_label": "leanproof:ANT-3-4",
+      "statement_sha256": "e953642d7a2fa933c886df6442f76d9cc7b28d9b91d9c74575b10dd667c3ce01",
+      "certificate_declarations": [
+        "Antichain.scaledAlcove_covers_direct",
+        "Antichain.scaledAlcove_disjoint_interiors_direct",
+        "Antichain.scaledAlcove_locallyFinite_direct",
+        "Antichain.same_tile_map_unique_direct",
+        "Antichain.closed_alcove_representative_unique_direct",
+        "Antichain.completeCubeTile_count_isBigO_direct",
+        "Antichain.alcove_unique_representative_source",
+        "Antichain.interior_referenceSimplex_iff_pair_differences"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.scaledAlcove_covers_direct": "a92194944f1fd713b98f086f76b3d88bc930234e23a9cb39a5c429eeda982bc6",
+        "Antichain.scaledAlcove_disjoint_interiors_direct": "7d58851c3641aa852b4e9e13376b0d19afa643e36785e38dd0f908a58def2a16",
+        "Antichain.scaledAlcove_locallyFinite_direct": "47416a61841015fe9dcd67fb7ad503361ea5ddfe3ae02a22c58a86eb1033afee",
+        "Antichain.same_tile_map_unique_direct": "e3a8fcc1eaf19427b2a453cadc4e665a2eff6dfbabd1041216c4ef1a39033778",
+        "Antichain.closed_alcove_representative_unique_direct": "c5f3a685f2ad296b874b27b65ece8fdd29e1d179290b29681fe744e31773dec1",
+        "Antichain.completeCubeTile_count_isBigO_direct": "894cf40e43798934bc8fcbebf60659a9d562564a84886c1dac80e900b712f50e",
+        "Antichain.alcove_unique_representative_source": "5c3a1c81f81f5fb892504bbe944d470d5a1801d45a2f13904aaff6583def7837",
+        "Antichain.interior_referenceSimplex_iff_pair_differences": "a9bda6949cdaa39d5538bdcc2563c49e05b0e2cea1e6ae265ff5fc75791cc236"
+      },
+      "written_proof_sha256": "67ea6260368fef5c80cd88c3f9ad756f6fa823b33cbca6a469ca132dab0a9d27",
+      "human_proof_file": "human-proofs-geometry.tex"
+    },
+    {
+      "id": "ANT-3-5",
+      "source_file": "main.tex",
+      "statement_comparison": "equivalent_after_S_r_to_V_r_pinned_volume_rename",
+      "proof_method": "same_argument",
+      "comparison": "The sample count is positive in both versions. The pinned convention is checked explicitly: r paper points have r-1 free heights, giving exponent dr-1. No tiling theorem is needed for this map identity.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.pinnedVolume_reflectionTile_scale",
+          "file": "Antichain/TileSymmetries.lean",
+          "line": 95
+        }
+      ],
+      "source_labels": [
+        "eq:cut-scale"
+      ],
+      "source_lines": [
+        487,
+        492
+      ],
+      "proof_lines": [
+        493,
+        495
+      ],
+      "lean_declarations": [
+        "Antichain.pinnedVolume_reflectionTile_scale"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "fe9af2cbe6934eae9b2f518a4975bc8d081a43b945b38e9fcdedad8b2abae396",
+      "certificate_declarations": [
+        "Antichain.pinnedVolume_reflectionTile_scale"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.pinnedVolume_reflectionTile_scale": "9f3e7bbb82d3d044ba430bb5e683c0e76cb7da0554b845726d8a78f283907750"
+      },
+      "written_proof_sha256": "ab33959d0d22601e5953e3932a0ecdfc21a3ae91359b0b895dfb64db6fcf6bdf"
+    },
+    {
+      "id": "ANT-3-6",
+      "source_file": "main.tex",
+      "statement_comparison": "equivalent_after_S_r_to_V_r_pinned_volume_rename",
+      "proof_method": "same_argument",
+      "comparison": "The statement is unchanged after renaming pinned volume S_r to V_r. The written upper proof genuinely changes: delete exactly the j largest actual tree edges, yielding exactly j+1 components, and integrate parent-height intervals leaf to root rather than use a height-difference Jacobian. Both revised routes are now proved and called by the unchanged original pinned-volume source endpoint. Ties, coincident floors and the one-point zero-dimensional fiber remain included.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.volume_sequentialIntervalRegion",
+          "file": "Antichain/ParentHeightFubini.lean",
+          "line": 62
+        },
+        {
+          "declaration": "Antichain.pinnedHeightFiber_volume_le_parentWidth_fubini",
+          "file": "Antichain/ParentHeightFubini.lean",
+          "line": 153
+        },
+        {
+          "declaration": "Antichain.tree_delete_component_count",
+          "file": "Antichain/MSTLargestEdges.lean",
+          "line": 88
+        },
+        {
+          "declaration": "Antichain.minimumSpanningTree_delete_separation",
+          "file": "Antichain/MSTLargestEdges.lean",
+          "line": 106
+        },
+        {
+          "declaration": "Antichain.largestTreeEdges_card",
+          "file": "Antichain/MSTLargestEdges.lean",
+          "line": 126
+        },
+        {
+          "declaration": "Antichain.mst_sorted_edge_bound_largest",
+          "file": "Antichain/MSTLargestEdges.lean",
+          "line": 140
+        },
+        {
+          "declaration": "Antichain.mst_edge_product_bound_largest",
+          "file": "Antichain/MSTLargestEdges.lean",
+          "line": 189
+        },
+        {
+          "declaration": "Antichain.pinnedHeightFiber_referenceSimplex_factorial_bound",
+          "file": "Antichain/PinnedVolumeUpper.lean",
+          "line": 121
+        },
+        {
+          "declaration": "Antichain.pinnedVolume_referenceSimplex_factorial_bound",
+          "file": "Antichain/PinnedVolumeUpper.lean",
+          "line": 190
+        },
+        {
+          "declaration": "Antichain.pinnedVolume_referenceSimplex_grid_lower",
+          "file": "Antichain/PinnedVolumeLower.lean",
+          "line": 148
+        },
+        {
+          "declaration": "Antichain.localGammaSequence_bounded",
+          "file": "Antichain/LocalRate.lean",
+          "line": 17
+        },
+        {
+          "declaration": "Antichain.localGammaConstant_bounded",
+          "file": "Antichain/LocalRate.lean",
+          "line": 40
+        }
+      ],
+      "source_labels": [
+        "lem:constant",
+        "eq:gamma"
+      ],
+      "source_lines": [
+        498,
+        504
+      ],
+      "proof_lines": [
+        505,
+        538
+      ],
+      "lean_declarations": [
+        "Antichain.volume_sequentialIntervalRegion",
+        "Antichain.pinnedHeightFiber_volume_le_parentWidth_fubini",
+        "Antichain.tree_delete_component_count",
+        "Antichain.minimumSpanningTree_delete_separation",
+        "Antichain.largestTreeEdges_card",
+        "Antichain.mst_sorted_edge_bound_largest",
+        "Antichain.mst_edge_product_bound_largest",
+        "Antichain.pinnedHeightFiber_referenceSimplex_factorial_bound",
+        "Antichain.pinnedVolume_referenceSimplex_factorial_bound",
+        "Antichain.pinnedVolume_referenceSimplex_grid_lower",
+        "Antichain.localGammaSequence_bounded",
+        "Antichain.localGammaConstant_bounded"
+      ],
+      "statement_match": "same",
+      "human_proof_label": "leanproof:ANT-3-6",
+      "statement_sha256": "3f2e06953d91c74ad74ac6bb7bcd650a873ca099058332e78e30719cd7ccc768",
+      "certificate_declarations": [
+        "Antichain.localGammaSequence_bounded",
+        "Antichain.localGammaConstant_bounded"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.localGammaSequence_bounded": "0a9be20bda2266186f483556fdf09df652a92d9a0d32ba7112430362740deebb",
+        "Antichain.localGammaConstant_bounded": "d7d0df98dca2d34ad8f321613d6abf1c70ee624218f75489299cd72fdda558ca"
+      },
+      "written_proof_sha256": "3bd6f28adaa202af61830496a0ceb5a996900f52b1d8484ecd98e0239432d74b",
+      "human_proof_file": "human-proofs-geometry.tex"
+    },
+    {
+      "id": "ANT-4-1",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The same two ordinary-integral inequalities and exact coefficient are retained. The pinned volume notation is consistently V_r in the current source (formerly S_r). The actual production common-height bound calls the equal-exponent Holder proof and translation invariance; square-completion estimates remain supplementary.",
+      "lean_declarations": [
+        "Antichain.oneTile_real_full_spec",
+        "Antichain.oneTile_middle_integrableOn",
+        "Antichain.oneTile_weighted_integrableOn",
+        "Antichain.integral_translated_gaussian_holder",
+        "Antichain.normalized_common_height_integral_le"
+      ],
+      "title": "Weighted one-tile common-height bound",
+      "number": "4.1",
+      "source_statement_lines": [
+        564,
+        577
+      ],
+      "source_proof_lines": [
+        578,
+        600
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization",
+      "human_proof_label": "leanproof:ANT-4-1",
+      "statement_sha256": "f845f4af3fb3d73f96ddad127d0519b3353a03cc72718344bff8e9b456be4d32",
+      "certificate_declarations": [
+        "Antichain.oneTile_real_full_spec",
+        "Antichain.oneTile_middle_integrableOn",
+        "Antichain.oneTile_weighted_integrableOn"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.oneTile_real_full_spec": "16bd738d65ddebd3eb26f1794a19f61cdbcc2577b5901a78b63ed8182e2198c8",
+        "Antichain.oneTile_middle_integrableOn": "cdcfd0729f9294ef7826ca726d5c0cce85679b31ee9e73962142db8326a5f372",
+        "Antichain.oneTile_weighted_integrableOn": "7bf9b36a14ba79a0222699c0d740482afd509019c2f28cc823b13a27c13c236f"
+      },
+      "written_proof_sha256": "adeacc087f676dcad2282ce21523f8dabc4d943823afb7d0edd9155e86342c8c",
+      "human_proof_file": "human-proofs-algebra.tex"
+    },
+    {
+      "id": "ANT-4-2",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The actual coefficient sequence and finite local-volume limsup are unchanged. The expanded displayed scaling equality uses |epsilon Delta|=epsilon^(d-1)|Delta|, already proved in the coefficient-rate calculation. Vanishing log(r)/r and constant/r terms are proved internally.",
+      "lean_declarations": [
+        "Antichain.tileCoefficient_log_limsup"
+      ],
+      "title": "Coefficient logarithmic limsup",
+      "number": "4.2",
+      "source_statement_lines": [
+        603,
+        608
+      ],
+      "source_proof_lines": [
+        609,
+        611
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization",
+      "statement_sha256": "fd2aaf49126c64a1da5c4103f9fa95f99e15fe3ee5bf91d60e6593e79f392364",
+      "certificate_declarations": [
+        "Antichain.tileCoefficient_log_limsup"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.tileCoefficient_log_limsup": "121d3a0e9d347d0ab451fed55033c411ea9de06f0f51e9e330eb7ae8b016f5c9"
+      },
+      "written_proof_sha256": "fdcc694814e544182ac60c0e35fb493dd7ad8b8e4552c9ce05d42b03c08a7563"
+    },
+    {
+      "id": "ANT-4-3",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The literal finite-intensity Poisson process, its count-conditioned iid law, actual spatial restriction independence, Poisson normalizer cancellation, finite tile exhaustion, and nonnegative coefficient bound are already formalized and used. Omitting finite-exhaustion and factorial bookkeeping from the revised prose abbreviates the same argument; Lean still proves them. The statement now explicitly permits infinite intermediate bounds until summability is established.",
+      "lean_declarations": [
+        "Antichain.weightedPoisson_source_expansion",
+        "Antichain.weightedPartitionSeries_le_tileProduct_direct",
+        "Antichain.weightedPartition_le_factorial_tileProduct_direct"
+      ],
+      "title": "Poissonization, independent-tile product and occupancy bound",
+      "number": "4.3",
+      "source_statement_lines": [
+        631,
+        641
+      ],
+      "source_proof_lines": [
+        642,
+        655
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization",
+      "human_proof_label": "leanproof:ANT-4-3",
+      "statement_sha256": "c9072e66988294f15321ecacb020c344c7848a6d20e246dcfb87d1b3bbe24d4d",
+      "certificate_declarations": [
+        "Antichain.weightedPoisson_source_expansion",
+        "Antichain.weightedPartitionSeries_le_tileProduct_direct",
+        "Antichain.weightedPartition_le_factorial_tileProduct_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.weightedPoisson_source_expansion": "0ac44076d006f254ffee86e89e46ed2699cf25fff44065e125e024de7209cc16",
+        "Antichain.weightedPartitionSeries_le_tileProduct_direct": "c4e699cee737c1d587e6d11ddc12d63866a04a45cd97dbc355515c756c8ea4cd",
+        "Antichain.weightedPartition_le_factorial_tileProduct_direct": "e042c78f721de2117ae6f77aee2cfc0d50e9c487ca843c93d17ee9cdd7bb3d0d"
+      },
+      "written_proof_sha256": "daa6980b6553ceacf3e6be09d0a77fb169786a337daafb4878b8346ae91b4428",
+      "human_proof_file": "human-proofs-algebra.tex"
+    },
+    {
+      "id": "ANT-4-4",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The actual coefficient rate plus proved Stirling estimate gives the same factorial-power majorant. The newly expanded sum-of-powers inequality is precisely the proved termwise bound a_r^(q-1)<=sum(a)^(q-1), followed by the exponential-series identity. Actual summability and the exact logarithmic limsup are both in tileSeries_growth.",
+      "lean_declarations": [
+        "Antichain.tileSeries_growth"
+      ],
+      "title": "One-tile generating series convergence and growth",
+      "number": "4.4",
+      "source_statement_lines": [
+        659,
+        664
+      ],
+      "source_proof_lines": [
+        665,
+        684
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization",
+      "statement_sha256": "7436bb0e36f709d25b476fab6e66cddd1f7dd559d5b1d3ca3272de052c7e6e2e",
+      "certificate_declarations": [
+        "Antichain.tileSeries_growth"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.tileSeries_growth": "f157d96d1056d2a4ca92e8a3c085388e4760a2f413c80ad2d0d325fa09e61fe6"
+      },
+      "written_proof_sha256": "ba1797bda1dbdd7e293444e57a6bec2b0f5de2ab4315d7f4181684e2e55a07ee"
+    },
+    {
+      "id": "ANT-4-5",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The revised proof now explicitly defines the assigned-tile supremum step function, proves pointwise convergence and Gaussian domination, and invokes dominated convergence. This matches the existing actual alcoveSupStep and tendsto_scaled_alcoveWeightSup_sum proof. A uniform diameter upper bound 2d suffices in Lean in place of writing the exact diameter D. The summable tile-log bound, optimized Poisson parameter, Stirling calculation and final scale limit are unchanged.",
+      "lean_declarations": [
+        "Antichain.weighted_upper_limsup_source_direct",
+        "Antichain.alcoveSupStep_le_majorant",
+        "Antichain.tendsto_alcoveSupStep",
+        "Antichain.tendsto_scaled_alcoveWeightSup_sum"
+      ],
+      "title": "Weighted upper limsup bound",
+      "number": "4.5",
+      "source_statement_lines": [
+        687,
+        693
+      ],
+      "source_proof_lines": [
+        694,
+        748
+      ],
+      "statement_change": "mathematically unchanged; notation/editorial reorganization",
+      "statement_sha256": "391b463e7fa9fae6bee571c47cd0a6d18b091a29e658f5a301f9f9c02f8c6624",
+      "certificate_declarations": [
+        "Antichain.weighted_upper_limsup_source_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.weighted_upper_limsup_source_direct": "8598e8901cc5b7af78a2b886e122a65aaadb09af6ae25919a134fc5004d3f63e"
+      },
+      "written_proof_sha256": "81c096420aebdfc8471e20c80089c4654805de81c40443b6c77ce9f01f99c17c"
+    },
+    {
+      "id": "ANT-5-1",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "Lean proves a slightly stronger theorem requiring only a lower bound on the original heights and no boundedness of the original floor set. The paper's bounded data on nonempty bounded B satisfy these premises, so there is no domain or assumption gap.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.floor_heightExtension_spec",
+          "file": "Antichain/Geometry.lean",
+          "line": 446
+        }
+      ],
+      "source_labels": [
+        "prop:extension",
+        "eq:height-data"
+      ],
+      "source_lines": [
+        759,
+        773
+      ],
+      "proof_lines": [
+        774,
+        780
+      ],
+      "lean_declarations": [
+        "Antichain.floor_heightExtension_spec"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "87b8ed59e8d5fda61c456b960364886d1de064b17ed4ca7d5ce436dfdfc3cfc1",
+      "certificate_declarations": [
+        "Antichain.floor_heightExtension_spec",
+        "Antichain.euclideanLength_eq_norm"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.floor_heightExtension_spec": "c239df1aec014bc5f53baa5e09aaf16a4b878a531df742b3f1d399955855ed85",
+        "Antichain.euclideanLength_eq_norm": "dfa3b3cf0301155bb102b25d22cdaa106e4c566a0da5e417eb5190b91fc65995"
+      },
+      "written_proof_sha256": "f35d67aa9ff4a129427b8c225fa205c016e2b52b497f5d8e001b4467e85cd6a5"
+    },
+    {
+      "id": "ANT-5-2",
+      "source_file": "main.tex",
+      "statement_comparison": "equivalent_after_S_r_to_V_r_pinned_volume_rename",
+      "proof_method": "expanded_argument",
+      "comparison": "Only notation/editorial changes. The exact full-volume factor is still (2/M)(1−eta)^(d*r)(1−lambda)^r V_r(Delta). Lean chooses C once before eta/lambda/r, M after eta/lambda and before r, and then the measurable family and common boundary profile for each r. The common profile may depend on r; each configuration may have its own extension. The actual tube/contractions/Arzela–Ascoli net/measurable class/slack proof is unchanged.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.contractedTube_volume",
+          "file": "Antichain/ConfigurationTube.lean",
+          "line": 97
+        },
+        {
+          "declaration": "Antichain.admissibleBoundaryProfiles_compact_closure",
+          "file": "Antichain/BoundaryProfiles.lean",
+          "line": 69
+        },
+        {
+          "declaration": "Antichain.finite_admissible_boundary_profile_net",
+          "file": "Antichain/BoundaryProfiles.lean",
+          "line": 82
+        },
+        {
+          "declaration": "Antichain.finiteBoundaryProfile_continuous",
+          "file": "Antichain/BoundaryMatching.lean",
+          "line": 95
+        },
+        {
+          "declaration": "Antichain.exists_large_profile_ball",
+          "file": "Antichain/BoundaryMatching.lean",
+          "line": 199
+        },
+        {
+          "declaration": "Antichain.close_boundary_profile_has_common_extension",
+          "file": "Antichain/BoundaryMatching.lean",
+          "line": 317
+        },
+        {
+          "declaration": "Antichain.measurable_matching_family_from_profile_net",
+          "file": "Antichain/BoundaryMatching.lean",
+          "line": 358
+        },
+        {
+          "declaration": "Antichain.boundary_matching_source",
+          "file": "Antichain/BoundaryMatching.lean",
+          "line": 504
+        }
+      ],
+      "source_labels": [
+        "lem:matching",
+        "item:fit-bounds",
+        "item:fit-extension",
+        "item:fit-volume",
+        "eq:matching"
+      ],
+      "source_lines": [
+        784,
+        804
+      ],
+      "proof_lines": [
+        807,
+        844
+      ],
+      "lean_declarations": [
+        "Antichain.contractedTube_volume",
+        "Antichain.admissibleBoundaryProfiles_compact_closure",
+        "Antichain.finite_admissible_boundary_profile_net",
+        "Antichain.finiteBoundaryProfile_continuous",
+        "Antichain.exists_large_profile_ball",
+        "Antichain.close_boundary_profile_has_common_extension",
+        "Antichain.measurable_matching_family_from_profile_net",
+        "Antichain.boundary_matching_source"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "f581c2566fcebc12bb3e050a111e299cf7acc3d282fa76a38a08b24d778f216e",
+      "certificate_declarations": [
+        "Antichain.boundary_matching_source"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.boundary_matching_source": "eb1f21e29cbad986dd8a2a7f84cdfe170b5e7e917e0665a3645be0019c829e47"
+      },
+      "written_proof_sha256": "76e9bdf4e4975afbe69e208c58f3f2e396399b6b9e442b3acb808c6fec196f75"
+    },
+    {
+      "id": "ANT-5-3",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "The production gluedAlcoveHeight_directional now uses an actually constructed finite subsegment chain, not the former closed-set interval-induction substitute. The subdivision also has a literal finite endpoint-list theorem. Its source call discharges convexity and local finiteness with the actual tiles. All replication family, height and exact volume conclusions are unchanged.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.finite_closed_interval_subdivision_list",
+          "file": "Antichain/SegmentSubdivision.lean",
+          "line": 79
+        },
+        {
+          "declaration": "Antichain.locallyFinite_closed_convex_segment_subdivision_list",
+          "file": "Antichain/SegmentSubdivision.lean",
+          "line": 132
+        },
+        {
+          "declaration": "Antichain.global_directional_of_finite_segment_subdivision",
+          "file": "Antichain/SegmentSubdivision.lean",
+          "line": 144
+        },
+        {
+          "declaration": "Antichain.transported_extensions_agree_on_overlap",
+          "file": "Antichain/ReflectionGluing.lean",
+          "line": 168
+        },
+        {
+          "declaration": "Antichain.gluedAlcoveHeight_directional",
+          "file": "Antichain/ReflectionGluing.lean",
+          "line": 206
+        },
+        {
+          "declaration": "Antichain.card_balancedLabeling_real",
+          "file": "Antichain/ReplicationLabels.lean",
+          "line": 110
+        },
+        {
+          "declaration": "Antichain.volume_replicatedLabelFamily",
+          "file": "Antichain/Replication.lean",
+          "line": 105
+        },
+        {
+          "declaration": "Antichain.replicationFamily_pairwise_disjoint",
+          "file": "Antichain/Replication.lean",
+          "line": 226
+        },
+        {
+          "declaration": "Antichain.replicationFamily_volume_formula",
+          "file": "Antichain/Replication.lean",
+          "line": 280
+        },
+        {
+          "declaration": "Antichain.matching_replication_source_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 117
+        }
+      ],
+      "source_labels": [
+        "lem:replication",
+        "eq:replication"
+      ],
+      "source_lines": [
+        846,
+        855
+      ],
+      "proof_lines": [
+        856,
+        868
+      ],
+      "lean_declarations": [
+        "Antichain.finite_closed_interval_subdivision_list",
+        "Antichain.locallyFinite_closed_convex_segment_subdivision_list",
+        "Antichain.global_directional_of_finite_segment_subdivision",
+        "Antichain.transported_extensions_agree_on_overlap",
+        "Antichain.gluedAlcoveHeight_directional",
+        "Antichain.card_balancedLabeling_real",
+        "Antichain.volume_replicatedLabelFamily",
+        "Antichain.replicationFamily_pairwise_disjoint",
+        "Antichain.replicationFamily_volume_formula",
+        "Antichain.matching_replication_source_direct"
+      ],
+      "statement_match": "same",
+      "human_proof_label": "leanproof:ANT-5-3",
+      "statement_sha256": "14fb659ec45ef52e480b9a15c2e650eb50714bd85330d7753882172ff766841c",
+      "certificate_declarations": [
+        "Antichain.matching_replication_source_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.matching_replication_source_direct": "4cd2b3b98e7bfa293dee479cab4862aaff8d2f638b25a0624a893ad124218544"
+      },
+      "written_proof_sha256": "620ec70fe728cf97d348650c622d5e3b3361ca8f0188372aac56018fa48d67a6",
+      "human_proof_file": "human-proofs-geometry.tex"
+    },
+    {
+      "id": "ANT-5-4",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "expanded_argument",
+      "comparison": "The full finite-family statement permits independently rotated cubes. Lean chooses an orthonormal frame for each cube, counts complete tiles in its own frame and uses the common tiling to replicate matched families. The weighted size selection and deletion proofs reach all sample sizes. Separate concentric shrinks handle touching boundaries. The final liminf follows using the independent upper estimate for boundedness and the actual cube lower bound.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.OrientedCube.cube_lower_liminf_source_direct",
+          "file": "Antichain/OrientedCubeSource.lean",
+          "line": 62
+        },
+        {
+          "declaration": "Antichain.OrientedCube.cubeLowerSum_eq_volume",
+          "file": "Antichain/OrientedCubeSource.lean",
+          "line": 22
+        },
+        {
+          "declaration": "Antichain.OrientedCube.normalizedPartitionLog_cubes_lower",
+          "file": "Antichain/OrientedCubeLower.lean",
+          "line": 135
+        },
+        {
+          "declaration": "Antichain.OrientedCube.normalizedPartitionLog_separated_cubes_lower",
+          "file": "Antichain/OrientedCubeLower.lean",
+          "line": 34
+        },
+        {
+          "declaration": "Antichain.OrientedCube.shrunkenCubes_positive_separation",
+          "file": "Antichain/OrientedCubeSeparation.lean",
+          "line": 27
+        },
+        {
+          "declaration": "Antichain.OrientedCube.matching_weighted_cubes_finite_scale",
+          "file": "Antichain/OrientedWeightedCubeLower.lean",
+          "line": 137
+        },
+        {
+          "declaration": "Antichain.OrientedCube.weightedCube_size_selection",
+          "file": "Antichain/OrientedTileSizeSelection.lean",
+          "line": 144
+        }
+      ],
+      "source_labels": [
+        "lem:cube-lower",
+        "eq:lower-rate"
+      ],
+      "source_lines": [
+        874,
+        884
+      ],
+      "proof_lines": [
+        885,
+        987
+      ],
+      "lean_declarations": [
+        "Antichain.OrientedCube.cube_lower_liminf_source_direct",
+        "Antichain.OrientedCube.cubeLowerSum_eq_volume",
+        "Antichain.OrientedCube.normalizedPartitionLog_cubes_lower",
+        "Antichain.OrientedCube.normalizedPartitionLog_separated_cubes_lower",
+        "Antichain.OrientedCube.shrunkenCubes_positive_separation",
+        "Antichain.OrientedCube.matching_weighted_cubes_finite_scale",
+        "Antichain.OrientedCube.weightedCube_size_selection"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "9a2211a9d48e199b08f3df884ed8c0a04807ae2af8fde5a86f58026bb9bda20c",
+      "certificate_declarations": [
+        "Antichain.OrientedCube.cube_lower_liminf_source_direct",
+        "Antichain.OrientedCube.cubeLowerSum_eq_volume"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.OrientedCube.cube_lower_liminf_source_direct": "56bdc7b0b37a84ae877a98d8b7be180176a35e03fb03bcc54566b63dd56f3795",
+        "Antichain.OrientedCube.cubeLowerSum_eq_volume": "d12815eaeda2c0b8de1ad1a50cae73c97a978dfeb9520aa225c530e0e35a745a"
+      },
+      "written_proof_sha256": "ff55063a89378f7f212647cccf0862cf9611c5b89bd212ebabea4dce143d0b14"
+    },
+    {
+      "id": "ANT-5-5",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "The source now writes the same bounded-sigma Gaussian majorant explicitly as C exp(−(d−1)||u||²/(2d)). Its large-cube tail and lower Riemann sum by uniform continuity are unchanged. Existing actual integral approximation and final lower-rate endpoints cover it.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.exists_floorCube_lower_approximation",
+          "file": "Antichain/FloorIntegralApproximation.lean",
+          "line": 425
+        },
+        {
+          "declaration": "Antichain.normalizedPartitionLog_lower",
+          "file": "Antichain/LowerBound.lean",
+          "line": 191
+        },
+        {
+          "declaration": "Antichain.weighted_lower_liminf_source_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 149
+        }
+      ],
+      "source_labels": [
+        "lem:lower",
+        "eq:lower-conclusion"
+      ],
+      "source_lines": [
+        989,
+        995
+      ],
+      "proof_lines": [
+        996,
+        1002
+      ],
+      "lean_declarations": [
+        "Antichain.exists_floorCube_lower_approximation",
+        "Antichain.normalizedPartitionLog_lower",
+        "Antichain.weighted_lower_liminf_source_direct"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "865116c151ff259f180b3ff7094e55d40246ea20df929f189994387fc995d468",
+      "certificate_declarations": [
+        "Antichain.weighted_lower_liminf_source_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.weighted_lower_liminf_source_direct": "a2c1615b034a9f6ad35c9ac60fadf1a5f9c416d78195e641a5eeb93156f5b53b"
+      },
+      "written_proof_sha256": "b96a0d11871627a138a58e7a4b82c25aaa809762deb895914e7b2fd3a6ed821c"
+    },
+    {
+      "id": "ANT-6-2",
+      "display_number": "6.1",
+      "title": "Normalized two-point avoidance enumeration",
+      "source_statement_lines": [
+        1022,
+        1028
+      ],
+      "source_proof_lines": [
+        1029,
+        1035
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Combine |C_n|=(n!)^(d-1)a_n with the counting theorem and Stirling. Reverse coordinate axes for other two-point orientations. In dimension2 only reversal remains.",
+      "lean_argument": "Prove the exact finite rank-count identity from iid cube ranks, then perform the same logarithmic/Stirling calculation and exhibit the actual coordinate-reversal bijection. Derive the dimension2 uniqueness and constants.",
+      "precise_method_comparison": "The written algebra and combinatorial symmetries are the formal argument. Lean explicitly constructs a little-o remainder to give the displayed exponential form.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.avoidanceClassCard_exact",
+          "file": "Antichain/RankIndependence.lean",
+          "line": 409
+        },
+        {
+          "declaration": "Antichain.avoidance_counting_exponential_source_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 158
+        },
+        {
+          "declaration": "Antichain.signed_avoidance_counting_exponential_source_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 167
+        },
+        {
+          "declaration": "Antichain.dimension_two_avoidance_unique",
+          "file": "Antichain/RankCounting.lean",
+          "line": 65
+        },
+        {
+          "declaration": "Antichain.antichain_counting_dimension_two",
+          "file": "Antichain/RankCounting.lean",
+          "line": 167
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The stable ID is ANT-6-2 while the current displayed proposition number is6.3. Growth constants remain defined by the actual counting limit, not evaluated for d>=3.",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The written algebra and combinatorial symmetries are the formal argument. Lean explicitly constructs a little-o remainder to give the displayed exponential form.",
+      "lean_declarations": [
+        "Antichain.avoidanceClassCard_exact",
+        "Antichain.avoidance_counting_exponential_source_direct",
+        "Antichain.signed_avoidance_counting_exponential_source_direct",
+        "Antichain.dimension_two_avoidance_unique",
+        "Antichain.antichain_counting_dimension_two"
+      ],
+      "statement_sha256": "5ba7341a717ba6ecc8d4912c6233be54ed451130aa7d007f65e761fde92508aa",
+      "certificate_declarations": [
+        "Antichain.avoidance_counting_exponential_source_direct",
+        "Antichain.signed_avoidance_counting_exponential_source_direct",
+        "Antichain.dimension_two_avoidance_unique",
+        "Antichain.antichain_counting_dimension_two"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.avoidance_counting_exponential_source_direct": "0c5ef1c6bbc6c27c59c0a534c53fa5348d962ff20182ce0076981ecbcbab6b20",
+        "Antichain.signed_avoidance_counting_exponential_source_direct": "4eb9052c8a441175f33bb3c62fbc1abefc67af9539f3722fe5c8f53d68ba2dd1",
+        "Antichain.dimension_two_avoidance_unique": "8c23e82f5269ede8fbe6792e67e0862dd46826390de5fdf8ebacb0fc2edfe43d",
+        "Antichain.antichain_counting_dimension_two": "55e14eaf36e458a3b8ebc569a15562bfd1536cc33a1a13530a1964ec2080064d"
+      },
+      "written_proof_sha256": "349f6e0b4a887dbeb3d4df11de3b89bb37bd8a3145f4e7a831effc6bc306468a"
+    },
+    {
+      "id": "ANT-6-1",
+      "display_number": "6.2",
+      "title": "Exponential concentration of both rank measures",
+      "source_statement_lines": [
+        1045,
+        1051
+      ],
+      "source_proof_lines": [
+        1052,
+        1081
+      ],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Under antichain conditioning the full sorted-coordinate law is unchanged. Use actual Binomial(n,t) counts and fixed-rank Hoeffding tails2exp(-2ns^2). Union over dn rank-coordinate pairs and use the Euclidean norm comparison to prove P(D_n>s)<=2dn exp(-2ns^2/d). Then use uniform continuity, finite weak tests and the rank-box radius sqrt(d)/(2n).",
+      "lean_argument": "RankBinomial proves the exact unconditional and conditioned count pushforward to PMF.binomial, including t=0,1. RankHoeffding proves the Bernoulli subgaussian parameter1/4, fixed-rank tails with the midpoint half-step margin, out-of-range empty events, conditional sorted-law transfer, finite unions and the precise Euclidean finite-n displacement bound. The actual weak/box transport bodies use this new producer.",
+      "precise_method_comparison": "The active source replaces DKW by fixed-order-statistic Hoeffding. That exact route is now formalized and used by the source-facing endpoints, including2dn exp(-2ns^2/d). The sharp DKW library theorem remains supplementary. The former Hausdorff clause is relocated to separate Remark6.3 without a new mathematical conclusion.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.rank_permuton_source_hoeffding",
+          "file": "Antichain/RankLimitsHoeffding.lean",
+          "line": 20
+        },
+        {
+          "declaration": "Antichain.conditional_sorted_count_binomial",
+          "file": "Antichain/RankBinomial.lean",
+          "line": 121
+        },
+        {
+          "declaration": "Antichain.conditional_sorted_midpoint_hoeffding",
+          "file": "Antichain/RankHoeffding.lean",
+          "line": 225
+        },
+        {
+          "declaration": "Antichain.rank_euclidean_displacement_hoeffding",
+          "file": "Antichain/RankHoeffding.lean",
+          "line": 278
+        },
+        {
+          "declaration": "Antichain.rank_displacement_exponential_tail_hoeffding",
+          "file": "Antichain/RankHoeffding.lean",
+          "line": 319
+        },
+        {
+          "declaration": "Antichain.closedRankBoxProbability_coordinate_uniform",
+          "file": "Antichain/RankPermuton.lean",
+          "line": 291
+        },
+        {
+          "declaration": "Antichain.cubeAntichain_sortedCoordinates_law",
+          "file": "Antichain/RankIndependence.lean",
+          "line": 429
+        }
+      ],
+      "human_proof_label": "leanproof:ANT-6-1",
+      "recommended_annotation": "Statement and revised Hoeffding/order-statistic argument match Lean; Appendix leanproof:ANT-6-1 is a supplementary readable expansion.",
+      "scope_note": "Exact finite-n bounds for n>0,s>0 under actual laws; no DKW/alcove record occurs in the closed source-facing types. The separate rank-cloud remark is reviewed as ANT-RANK-HAUSDORFF.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The active source replaces DKW by fixed-order-statistic Hoeffding. That exact route is now formalized and used by the source-facing endpoints, including2dn exp(-2ns^2/d). The sharp DKW library theorem remains supplementary. The former Hausdorff clause is relocated to separate Remark6.3 without a new mathematical conclusion.",
+      "lean_declarations": [
+        "Antichain.rank_permuton_source_hoeffding",
+        "Antichain.conditional_sorted_count_binomial",
+        "Antichain.conditional_sorted_midpoint_hoeffding",
+        "Antichain.rank_euclidean_displacement_hoeffding",
+        "Antichain.rank_displacement_exponential_tail_hoeffding",
+        "Antichain.closedRankBoxProbability_coordinate_uniform",
+        "Antichain.cubeAntichain_sortedCoordinates_law"
+      ],
+      "statement_sha256": "92dfc24c2f14b77f20be39d48f756f7f134a4f05c5668c207387af01aaf8cca5",
+      "certificate_declarations": [
+        "Antichain.rank_permuton_source_hoeffding",
+        "Antichain.conditional_sorted_count_binomial",
+        "Antichain.rank_euclidean_displacement_hoeffding",
+        "Antichain.closedRankBoxProbability_coordinate_uniform"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.rank_permuton_source_hoeffding": "78393a9359b67023584bba106d12da37dd6862d2edde8c10ad5780aea15a27bc",
+        "Antichain.conditional_sorted_count_binomial": "15561557b5826ac5960f0e0f6a117d4b97bb7900a3abdf06f74cc27eb1684643",
+        "Antichain.rank_euclidean_displacement_hoeffding": "a670b2238cae5b030859c0224a423da809f0e5e2f69d2dec9a7e7cbaec6cfef9",
+        "Antichain.closedRankBoxProbability_coordinate_uniform": "3adb96545c390ba6333715ef1c02e5a90e8288842bb6eb6c0436bebcb13d470d"
+      },
+      "written_proof_sha256": "aaa9a60c2761586e7e39ac373b8b225a03c8b2b85863b5911cd961f7208e29e2",
+      "human_proof_file": "human-proofs-probability.tex"
+    },
+    {
+      "id": "ANT-RANK-HAUSDORFF",
+      "display_number": "6.3",
+      "title": "Exponential Hausdorff concentration of the rank point cloud",
+      "source_statement_lines": [
+        1092,
+        1099
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Existing verified content is now explicitly tracked at its revised source location.",
+      "written_argument": "Match original reordered points to rank midpoints; their Hausdorff displacement is at most D_n. Apply the Hausdorff triangle inequality, exact finite-n Hoeffding displacement and Theorem1.2.",
+      "lean_argument": "Use actual matched finite clouds and the Euclidean Hausdorff triangle inequality. The new Hoeffding displacement producer and actual original-sample shape tail give the eventual rank-cloud tail. First-coordinate normalization only relabels the finite cloud.",
+      "precise_method_comparison": "The formerly included theorem clause is now a separate numbered remark. Its source-facing producer uses the current Hoeffding coupling and the same matched-cloud triangle argument.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.rank_euclidean_shape_exponential_concentration_hoeffding",
+          "file": "Antichain/RankLimitsHoeffding.lean",
+          "line": 29
+        },
+        {
+          "declaration": "Antichain.rank_euclidean_displacement_hoeffding",
+          "file": "Antichain/RankHoeffding.lean",
+          "line": 278
+        },
+        {
+          "declaration": "Antichain.finite_cloud_euclidean_hausdorff_le",
+          "file": "Antichain/RankShapeTransfer.lean",
+          "line": 19
+        },
+        {
+          "declaration": "Antichain.permutationEuclideanRankSet_normalized",
+          "file": "Antichain/SignedRankLimits.lean",
+          "line": 291
+        }
+      ],
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Actual cube sample, ranks, finite counting carriers and native Euclidean geometry; no externally supplied own-paper conclusion.",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The formerly included theorem clause is now a separate numbered remark. Its source-facing producer uses the current Hoeffding coupling and the same matched-cloud triangle argument. The optional rank exposition also gives the Hausdorff deduction.",
+      "lean_declarations": [
+        "Antichain.rank_euclidean_shape_exponential_concentration_hoeffding",
+        "Antichain.rank_euclidean_displacement_hoeffding",
+        "Antichain.finite_cloud_euclidean_hausdorff_le",
+        "Antichain.permutationEuclideanRankSet_normalized"
+      ],
+      "new_tracked_assertion": true,
+      "statement_sha256": "ddbe6820a91755f162720ad992284f54ebbd7bc753fc0ef79f84d197746c3c23",
+      "certificate_declarations": [
+        "Antichain.rank_euclidean_shape_exponential_concentration_hoeffding"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.rank_euclidean_shape_exponential_concentration_hoeffding": "c5b0dccc287e10b9ff0699997ec9192014da3adbfdc6e48e24fbe92a75e7714d"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-6-PATTERN",
+      "display_number": "6.4",
+      "title": "Exponential fixed-pattern concentration",
+      "source_statement_lines": [
+        1101,
+        1103
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Invoke continuity of pattern probability as a function of the permuton and the collision-error bound binom(q,2)/n, then apply Proposition6.1; the revised remark cites BL for the two ingredients.",
+      "lean_argument": "Define the actual q-point multidimensional pattern after first-coordinate sorting, prove its chamber frontier is contained in coordinate-tie walls, use uniform marginals to make those walls null, and apply finite-iid weak continuity/Portmanteau. Couple actual rank-box sampling with uniform distinct-label sampling; a repeated label has probability <=binom(q,2)/n. Identify the distinct-label frequency exactly with the ordinary q-subset count divided by choose(n,q).",
+      "precise_method_comparison": "This expands the two cited ingredients into internal proofs of exactly the stated continuity and finite collision estimate. The source's fixed-pattern argument is followed, rather than an abstract continuous-functional substitute. The source-facing concentration now uses the current proved Hoeffding rank route.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.patternProbability_continuousAt_permuton",
+          "file": "Antichain/PatternFrequency.lean",
+          "line": 124
+        },
+        {
+          "declaration": "Antichain.permutationPatternFrequency_box_error",
+          "file": "Antichain/PatternFrequency.lean",
+          "line": 204
+        },
+        {
+          "declaration": "Antichain.permutationPatternFrequency_count_formula",
+          "file": "Antichain/PatternFrequency.lean",
+          "line": 194
+        },
+        {
+          "declaration": "Antichain.permutationSubsetPatternFrequency_eq",
+          "file": "Antichain/PatternFrequencySubsets.lean",
+          "line": 17
+        },
+        {
+          "declaration": "Antichain.permutationSubsetPatternFrequency_box_error",
+          "file": "Antichain/PatternFrequencySubsets.lean",
+          "line": 25
+        },
+        {
+          "declaration": "Antichain.fixed_pattern_frequency_source_hoeffding",
+          "file": "Antichain/RankLimitsHoeffding.lean",
+          "line": 97
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Pattern size q is fixed before n tends to infinity. The frequency is the usual subset frequency; no assertion is made about a growing q or a joint limit over all patterns. The empty/small n conventions do not affect eventual n>=q.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "This expands the two cited ingredients into internal proofs of exactly the stated continuity and finite collision estimate. The source's fixed-pattern argument is followed, rather than an abstract continuous-functional substitute. The source-facing concentration now uses the current proved Hoeffding rank route.",
+      "lean_declarations": [
+        "Antichain.patternProbability_continuousAt_permuton",
+        "Antichain.permutationPatternFrequency_box_error",
+        "Antichain.permutationPatternFrequency_count_formula",
+        "Antichain.permutationSubsetPatternFrequency_eq",
+        "Antichain.permutationSubsetPatternFrequency_box_error",
+        "Antichain.fixed_pattern_frequency_source_hoeffding"
+      ],
+      "statement_sha256": "9819ae47b727ac6a70bf6e4171236180345295ad5041335ecaffd0139d92459f",
+      "certificate_declarations": [
+        "Antichain.patternProbability_continuousAt_permuton",
+        "Antichain.permutationPatternFrequency_box_error",
+        "Antichain.permutationPatternFrequency_count_formula",
+        "Antichain.permutationSubsetPatternFrequency_eq",
+        "Antichain.permutationSubsetPatternFrequency_box_error",
+        "Antichain.fixed_pattern_frequency_source_hoeffding"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.patternProbability_continuousAt_permuton": "72f09f52a17439e6453fd17860427038daec0c7683624a3007622b0667054231",
+        "Antichain.permutationPatternFrequency_box_error": "ccf30aae8f1f1e6c7ebd16f6dcf30da3e9e9105a7a2697fd4562322c0490e1ef",
+        "Antichain.permutationPatternFrequency_count_formula": "451d8d7ccc5740ede9fc25f37b6ee2a751dccf8527840c0f96407e73036abc44",
+        "Antichain.permutationSubsetPatternFrequency_eq": "7ad02c843ce3c8ad5b10c84da6c27a4530beb79920c6e49229497b4d2576dbe5",
+        "Antichain.permutationSubsetPatternFrequency_box_error": "1a232ded15253027be8ace93e7f13653cb633e84173d168fea1570744e597a71",
+        "Antichain.fixed_pattern_frequency_source_hoeffding": "ca9dc3f1ed39a1abc5ebc52e5e416bf94ef1405bbdb1536755822442f56eb000"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-6-3",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "The exact avoidance-to-interval bijection gives I_n=|C_n| and actual iid-uniform comparison probability I_n/(n!)^2. The same dimension-three counting asymptotic proves both formulas, with no additional asymptotic premise.",
+      "lean_declarations": [
+        "Antichain.avoidanceWeakBruhatEquiv",
+        "Antichain.weakBruhatComparabilityProbability_exact",
+        "Antichain.weakBruhat_counting_exponential_source_direct"
+      ],
+      "title": "Weak-order interval enumeration and comparison probability",
+      "number": "6.5",
+      "source_statement_lines": [
+        1128,
+        1133
+      ],
+      "source_proof_lines": [
+        1135,
+        1137
+      ],
+      "statement_change": "unchanged",
+      "statement_sha256": "7d5a8f2fca4af367d99eb8b723ffa4344bac8524904cc4c5fccb5743a9f6087b",
+      "certificate_declarations": [
+        "Antichain.avoidanceWeakBruhatEquiv",
+        "Antichain.weakBruhatComparabilityProbability_exact",
+        "Antichain.weakBruhat_counting_exponential_source_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.avoidanceWeakBruhatEquiv": "ae8a2833c5b4ac1e56f7789282b6731546c56e491130a03d0a52ff5ad1c128d7",
+        "Antichain.weakBruhatComparabilityProbability_exact": "c000dbd1f348e594dbf720ddc7bf2730efdb9a2b2848d331468e6b8e7e5a4f2b",
+        "Antichain.weakBruhat_counting_exponential_source_direct": "79699ec81316770b92eb117be97dd95eacd4b6e3391cbeacae352ac0a075c9f7"
+      },
+      "written_proof_sha256": "5c51132d1013f0e76c6c4f8b5f7970dceae13d8cb75a014b15dc113e230e7eb2"
+    },
+    {
+      "id": "ANT-6-4",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The source uses the interval bijection and the coordinate map (x1,1−x3,x2) on the rank limit. Lean proves the same uniform interval-law transport with the revised Hoeffding rank route and identifies the Gaussian target for any centered pair with the printed covariance and variances.",
+      "lean_declarations": [
+        "Antichain.weakBruhat_interval_gaussian_source_hoeffding",
+        "Antichain.weakBruhat_interval_gaussian_in_probability_hoeffding",
+        "Antichain.intervalLimitMeasure_eq_centered_bivariate_gaussian"
+      ],
+      "title": "Exponential weak concentration of the interval endpoint law",
+      "number": "6.6",
+      "source_statement_lines": [
+        1142,
+        1148
+      ],
+      "source_proof_lines": [
+        1155,
+        1157
+      ],
+      "statement_change": "The interval law and its proof are unchanged. The manuscript removed the separate predictor consequence.",
+      "statement_sha256": "cae8338585bfbcecaccb5ccb12dfe169f48ab3ff07ba97ba7b60ad0a0b4199cc",
+      "certificate_declarations": [
+        "Antichain.weakBruhat_interval_gaussian_source_hoeffding",
+        "Antichain.weakBruhat_interval_gaussian_in_probability_hoeffding",
+        "Antichain.intervalLimitMeasure_eq_centered_bivariate_gaussian"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.weakBruhat_interval_gaussian_source_hoeffding": "9bf8ec8031e87025dfd380bfe34012e7c4a48a3ef4d49d6157d490abf189d529",
+        "Antichain.weakBruhat_interval_gaussian_in_probability_hoeffding": "3b559f0ff7f14e6bd589e29eec2767baf504aab9f2278b90b19e0fc415678bbe",
+        "Antichain.intervalLimitMeasure_eq_centered_bivariate_gaussian": "e334c30c719071daf950ad3dfc9550d222131330c44f4dfb92477d2366981b4d"
+      },
+      "written_proof_sha256": "8576f4e9ee5db571a3485ec18d36aa766381a7b5cd3891537a31dacd66d1130b"
+    },
+    {
+      "id": "ANT-INTERVAL-INVERSIONS",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "Actual coordinate permutations preserve the limiting Gaussian-CDF law. Two iid points are coordinate-tie-free and form an antichain almost surely, so exactly one of three minority-coordinate events occurs. These events are disjoint and have equal mass, hence each has probability1/3; they are exactly the three printed normalized patterns. An explicit two-subset/increasing-pair equivalence identifies the lower inversion density with (12,21,12) frequency, and the upper density with the sum of (12,21,12) and (12,21,21) frequencies. The current Hoeffding-route pattern tails and a finite union bound give precisely the displayed joint exponential bound. The commented-out Sheppard/Gaussian-angle argument is not used.",
+      "lean_declarations": [
+        "Antichain.weakBruhat_interval_inversion_density_exponential_concentration",
+        "Antichain.weakBruhat_interval_inversion_densities_in_probability",
+        "Antichain.twoPointAntichainPattern_probability",
+        "Antichain.limitingCube_coordinatePermute_measurePreserving",
+        "Antichain.lower_interval_inversion_density_eq_pattern",
+        "Antichain.upper_interval_inversion_density_eq_patterns",
+        "Antichain.interval_inversion_densities_avoidance_map"
+      ],
+      "title": "Joint exponential concentration of the lower and upper inversion densities",
+      "number": "6.7",
+      "source_statement_lines": [
+        1167,
+        1176
+      ],
+      "source_proof_lines": [
+        1177,
+        1181
+      ],
+      "statement_change": "new relative to the previous packaged source; same conclusion as tracked fd1db1f, with clarified coordinate-symmetry proof",
+      "statement_sha256": "ab58e56312c5a4fadebcf64a1c5e7bfa6f225089c28e71e808d8161cbeff20ca",
+      "certificate_declarations": [
+        "Antichain.twoPointAntichainPattern_probability",
+        "Antichain.weakBruhat_interval_inversion_density_exponential_concentration"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.twoPointAntichainPattern_probability": "8940a34ac79a0e74dd6341b7d7d7efcadd3bc9a070cbe63a9a2012ff360f9486",
+        "Antichain.weakBruhat_interval_inversion_density_exponential_concentration": "ec8d0c99315ececc8524618a64db73fd181f6eadedfb688ca53b0d05a4cbf29e"
+      },
+      "written_proof_sha256": "be36f4b574c00bd90d66662568f31f3e89e158e0e53abe4ab454d5099d67252a"
+    },
+    {
+      "id": "ANT-INTRO-SIGNED-LIMITS",
+      "display_number": null,
+      "title": "Reflected shape and permuton limits for every two-point orientation",
+      "source_statement_lines": [
+        82,
+        82
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "By symmetry, reverse selected coordinate axes to reduce any two-point pattern to the increasing two-point pattern and reflect the geometric/permuton limits back.",
+      "lean_argument": "Construct the involutive rank-coordinate reversal and prove its actual finite uniform signed-class pushforward. Identify the corresponding cube reflection of midpoint clouds, actual box laws, weak neighborhoods and the Euclidean limit surface.",
+      "precise_method_comparison": "The same symmetry is expanded into measure identities and an actual Euclidean isometry. The first coordinate stays increasing; signs concern the remaining d-1 pattern coordinates. The source-facing concentration now uses the current proved Hoeffding rank route.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.uniformSignedAvoidanceLaw_reflect",
+          "file": "Antichain/SignedRankLimits.lean",
+          "line": 27
+        },
+        {
+          "declaration": "Antichain.signed_rank_closed_cube_permuton_concentration_hoeffding",
+          "file": "Antichain/RankLimitsHoeffding.lean",
+          "line": 67
+        },
+        {
+          "declaration": "Antichain.signed_rank_euclidean_shape_exponential_concentration_hoeffding",
+          "file": "Antichain/RankLimitsHoeffding.lean",
+          "line": 77
+        },
+        {
+          "declaration": "Antichain.signedEuclideanLimitShape_eq_closure_reflectedSurface",
+          "file": "Antichain/SignedRankLimits.lean",
+          "line": 270
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The reflected target depends on the prescribed orientation. This is not a claim that all orientations have the unreflected limiting law.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The same symmetry is expanded into measure identities and an actual Euclidean isometry. The first coordinate stays increasing; signs concern the remaining d-1 pattern coordinates. The source-facing concentration now uses the current proved Hoeffding rank route.",
+      "lean_declarations": [
+        "Antichain.uniformSignedAvoidanceLaw_reflect",
+        "Antichain.signed_rank_closed_cube_permuton_concentration_hoeffding",
+        "Antichain.signed_rank_euclidean_shape_exponential_concentration_hoeffding",
+        "Antichain.signedEuclideanLimitShape_eq_closure_reflectedSurface"
+      ],
+      "statement_sha256": "ec95257c0a00eec29170280c637edb752b2921d10304383e2530aad07c08b7e1",
+      "certificate_declarations": [
+        "Antichain.uniformSignedAvoidanceLaw_reflect",
+        "Antichain.signed_rank_closed_cube_permuton_concentration_hoeffding",
+        "Antichain.signed_rank_euclidean_shape_exponential_concentration_hoeffding",
+        "Antichain.signedEuclideanLimitShape_eq_closure_reflectedSurface"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.uniformSignedAvoidanceLaw_reflect": "6bc0479f4e536d22550058066ca5d260920ca74c2288fb8c52cc8fbfbe22452b",
+        "Antichain.signed_rank_closed_cube_permuton_concentration_hoeffding": "10b26f56a83ec1a27c8587d8db048b2a759c360b772aa708c85d7b466c1fef00",
+        "Antichain.signed_rank_euclidean_shape_exponential_concentration_hoeffding": "44bdbe1b70633b921a06dfd1665dac85a10055d74bdd7bb8c9e51d5b1c242e95",
+        "Antichain.signedEuclideanLimitShape_eq_closure_reflectedSurface": "a0d7bae2639a36b5581f01d1c6a20439b447e80ebadb70d5fd71dcec07c1d498"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-INTRO-RANDOM-ORDER",
+      "display_number": null,
+      "title": "Expected linear-extension identity for random multidimensional orders",
+      "source_statement_lines": [
+        94,
+        99
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Intersect the first d-1 independent uniform ranking orders. The reversed final ranking is a linear extension of their intersection exactly when the full point sample is an antichain; condition on the first rankings.",
+      "lean_argument": "Use actual independent finite uniform ranking orders to define the intersection partial order and its literal bijective linear extensions. Construct the same reverse-last-ranking equivalence and average the exact finite counts.",
+      "precise_method_comparison": "This is the same conditional finite-uniform counting argument. The ranking-order and linear-extension carriers are made explicit.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.antichainProbability_random_poset_source",
+          "file": "Antichain/RandomPosetCounting.lean",
+          "line": 161
+        },
+        {
+          "declaration": "Antichain.linearExtensionFullRankPairEquiv",
+          "file": "Antichain/RandomPosetCounting.lean",
+          "line": 94
+        },
+        {
+          "declaration": "Antichain.expected_posetLinearExtensionCount",
+          "file": "Antichain/RandomPosetCounting.lean",
+          "line": 141
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The identity a_n=E[e(P_(d-1)(n))]/n! is proved. The subsequent comparison with the quoted Brightwell lower bound is literature context and is not a new theorem certified by this identity.",
+      "statement_match": "same",
+      "proof_method": "same_argument",
+      "comparison": "This is the same conditional finite-uniform counting argument. The ranking-order and linear-extension carriers are made explicit.",
+      "lean_declarations": [
+        "Antichain.antichainProbability_random_poset_source",
+        "Antichain.linearExtensionFullRankPairEquiv",
+        "Antichain.expected_posetLinearExtensionCount"
+      ],
+      "statement_sha256": "655c29a544e2f4c939cdbc3f3478283320b719f40659971bd5cbae0fac26dcfc",
+      "certificate_declarations": [
+        "Antichain.antichainProbability_random_poset_source"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.antichainProbability_random_poset_source": "54366cc79ac0e54105e44328764a3db4c14ab6b65f937f9bb580cf4e2168bf3c"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-INTRO-GAUSSIAN-CHARACTERIZATION",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "Basic proves the barycenter sum-of-squares identity and translation-invariance equivalence. For the asserted converse, two-point centered configurations imply V(m+u)+V(m-u)=2V(m)+V(u)+V(-u)-2V(0). Differentiate twice in u at zero to make V second derivative constant, integrate twice to get a quadratic, use integrability to force positive quadratic coefficient, and use mass one to obtain the exact normalized Gaussian. The written barycenter calculation agrees. For Gaussian uniqueness the prose supplies the characterization claim but not a proof method, so the differentiating-two-point argument is an explicit expansion, not a claim to have checked an unwritten author proof. Smoothness is represented by C2, a weaker regularity premise than smoothness.",
+      "lean_declarations": [
+        "Antichain.gaussian_energy_barycenter",
+        "Antichain.isAntichain_translate_iff",
+        "Antichain.locationArrangementSeparation_centered_identity",
+        "Antichain.separated_potential_quadratic",
+        "Antichain.integrable_exp_neg_quadratic_coefficient_pos",
+        "Antichain.separated_probability_density_gaussian",
+        "Antichain.gaussian_location_arrangement_characterization_source"
+      ],
+      "title": "Gaussian uniqueness from location-arrangement separation",
+      "number": null,
+      "source_statement_lines": [
+        109,
+        113
+      ],
+      "statement_sha256": "57cd5843ad1ec4bd926f6806ccad2366ccf903d919e86f41a1f4029213e669d4",
+      "certificate_declarations": [
+        "Antichain.gaussian_energy_barycenter",
+        "Antichain.isAntichain_translate_iff",
+        "Antichain.gaussian_location_arrangement_characterization_source"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.gaussian_energy_barycenter": "d99d6507ba86ea4f631bae11a7187bf2c3cd32567fca812286a4baa14ae3fe14",
+        "Antichain.isAntichain_translate_iff": "8a246a29305868768f3f8c7ec31d852431e0603c5b06932afbb309389a097cf7",
+        "Antichain.gaussian_location_arrangement_characterization_source": "22a730682bbdb52d706b892f8850de81c390a46db7e7a82f453dce7cfdd1b27c"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-GAUSSIAN-COVARIANCE",
+      "display_number": null,
+      "title": "Means, variances, off-diagonal covariance and zero sum of the actual limiting Gaussian",
+      "source_statement_lines": [
+        173,
+        173
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Write F_i*=sqrt(d/(d-1))*(Y_i-Ybar) for iid standard normal Y and calculate unit variances, off-diagonal covariance -1/(d-1), and zero sum.",
+      "lean_argument": "Prove the actual centered linear image is jointly Gaussian, compute coefficient norms and coordinate-difference variance, obtain covariance by polarization, and cancel the coordinate sum identically.",
+      "precise_method_comparison": "The same linear-Gaussian moment calculation is expanded. Polarization is an algebraic way to compute the stated cross covariance, not an extra hypothesis.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.scaledCenteredGaussian_source",
+          "file": "Antichain/SourceCovariance.lean",
+          "line": 178
+        },
+        {
+          "declaration": "Antichain.scaledCenteredCoordinate_covariance",
+          "file": "Antichain/SourceCovariance.lean",
+          "line": 163
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Dimension d>=2 is required for the displayed positive scaling. The density and uniform marginal statements have additional independently proved Gaussian-law bridges.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The same linear-Gaussian moment calculation is expanded. Polarization is an algebraic way to compute the stated cross covariance, not an extra hypothesis.",
+      "lean_declarations": [
+        "Antichain.scaledCenteredGaussian_source",
+        "Antichain.scaledCenteredCoordinate_covariance"
+      ],
+      "statement_sha256": "0022e9c8ab460492858ce23180b99bcad8763804cce0a646cb31e8c6a30d4a9b",
+      "certificate_declarations": [
+        "Antichain.scaledCenteredGaussian_source"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.scaledCenteredGaussian_source": "a67ae9945c45cf7c493687a50ff90bf78cd8c9d3d527e834fc47eba702f658f8"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-SIMPLEX-VERTICES",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "no_separate_proof",
+      "comparison": "The literal vertices and simplex definition are unchanged. The three-dimensional edge length is sqrt(2/3); Lean proves actual equilateral geometry rather than merely permutation symmetry.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.referenceSimplex_barycentric_identity",
+          "file": "Antichain/SourceSimplexCalculations.lean",
+          "line": 121
+        },
+        {
+          "declaration": "Antichain.referenceSimplex_vertices_source",
+          "file": "Antichain/SourceSimplexCalculations.lean",
+          "line": 259
+        },
+        {
+          "declaration": "Antichain.referenceSimplex_three_equilateral",
+          "file": "Antichain/SourceSimplexCalculations.lean",
+          "line": 244
+        }
+      ],
+      "source_lines": [
+        379,
+        379
+      ],
+      "lean_declarations": [
+        "Antichain.referenceSimplex_barycentric_identity",
+        "Antichain.referenceSimplex_vertices_source",
+        "Antichain.referenceSimplex_three_equilateral"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "6825b73bb0b1250849738f2c57260aa55a95d1c544ed6c4f24f8fe16a92dd8c9",
+      "certificate_declarations": [
+        "Antichain.referenceSimplex_vertices_source",
+        "Antichain.referenceSimplex_three_equilateral"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.referenceSimplex_vertices_source": "a0bd720e17efc2312a948282ad0d019056c188d9be5fce2ca0c67b740cda9fa0",
+        "Antichain.referenceSimplex_three_equilateral": "bf938ac1567a55648f8648fd8c8deac8c42b38c6f453925a938ab2efd129a009"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-UNPINNED-INFINITE",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "no_separate_proof",
+      "comparison": "This supplies the positivity and Fubini details needed for the source's measurable positive-floor-volume claim, without requiring an interior or finite volume for B. The actual pinned/common-height Jacobian is one.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.floor_sample_injective_ae",
+          "file": "Antichain/UnpinnedInfiniteVolume.lean",
+          "line": 15
+        },
+        {
+          "declaration": "Antichain.pinnedHeightFiber_pos_of_injective",
+          "file": "Antichain/UnpinnedInfiniteVolume.lean",
+          "line": 48
+        },
+        {
+          "declaration": "Antichain.unpinned_antichain_volume_infinite_source",
+          "file": "Antichain/UnpinnedInfiniteVolume.lean",
+          "line": 114
+        }
+      ],
+      "source_lines": [
+        460,
+        468
+      ],
+      "lean_declarations": [
+        "Antichain.floor_sample_injective_ae",
+        "Antichain.pinnedHeightFiber_pos_of_injective",
+        "Antichain.unpinned_antichain_volume_infinite_source"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "7caf4489842e4497dd6b1002e7ad589dab9d3281d404f7f0d3a3ab512979ad46",
+      "certificate_declarations": [
+        "Antichain.unpinned_antichain_volume_infinite_source"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.unpinned_antichain_volume_infinite_source": "f1d9b4e3d3d921daef695042ffa3b790bb9cc19e81d01b5c9ac9d74ce2c6e444"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-SYMMETRIC-GAUGE-NORM",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "no_separate_proof",
+      "comparison": "The assertion is unchanged despite redistribution of author-color wrappers. Its norm and interval-width proof is independent of the local-volume packing argument.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.symmetric_gauge_source",
+          "file": "Antichain/SourceGaugeCalculations.lean",
+          "line": 145
+        },
+        {
+          "declaration": "Antichain.allowedHeightDifference_eq_interval",
+          "file": "Antichain/SourceGaugeCalculations.lean",
+          "line": 119
+        },
+        {
+          "declaration": "Antichain.allowedHeightDifference_volume",
+          "file": "Antichain/SourceGaugeCalculations.lean",
+          "line": 138
+        }
+      ],
+      "source_lines": [
+        506,
+        506
+      ],
+      "lean_declarations": [
+        "Antichain.symmetric_gauge_source",
+        "Antichain.allowedHeightDifference_eq_interval",
+        "Antichain.allowedHeightDifference_volume"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "aa79de4745261a49c1838b79588e97fab2f36fdfcea3d846c9dc921319cdc755",
+      "certificate_declarations": [
+        "Antichain.symmetric_gauge_source",
+        "Antichain.allowedHeightDifference_eq_interval",
+        "Antichain.allowedHeightDifference_volume"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.symmetric_gauge_source": "d79a567348a0f547f56a714148e27e9b24ac457629e790d19a093fac08b19a9c",
+        "Antichain.allowedHeightDifference_eq_interval": "f07438cf72e6ae51541d7655186a4a16e40d6e00400d5be827399c93c42d8f48",
+        "Antichain.allowedHeightDifference_volume": "8ee2335880408748c16bcc7f172832a0271caeba0a95582c07be3aefe7f3ab4b"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-RANK-MIDPOINT-MARGINAL",
+      "display_number": null,
+      "title": "Exact uniform marginals of the rank-box permuton",
+      "source_statement_lines": [
+        1040,
+        1043
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Retargeted from the former explicit midpoint-grid marginal sentence to the actual printed rank-box uniform-marginal assertion. The midpoint marginal is now a supporting definition consequence.",
+      "written_argument": "Each rank interval occurs once in each coordinate and receives mass1/n, so the rank-box measure has uniform coordinate marginals.",
+      "lean_argument": "Prove the exact coordinate pushforward for actual uniform rank boxes; also prove the finite midpoint-grid coordinate law as an intermediate consequence of permutation reindexing.",
+      "precise_method_comparison": "The actual rank-box uniform marginal argument is the printed proof. The retained midpoint-grid theorem is an intermediate definition consequence, not a separately printed claim.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.closedRankBoxProbability_coordinate_uniform",
+          "file": "Antichain/RankPermuton.lean",
+          "line": 291
+        },
+        {
+          "declaration": "Antichain.rankBoxMeasure_coordinate_uniform",
+          "file": "Antichain/RankBoxes.lean",
+          "line": 135
+        },
+        {
+          "declaration": "Antichain.rankEmpiricalProbability_coordinate_map",
+          "file": "Antichain/SourceRankMarginals.lean",
+          "line": 40
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The paper uses positive sample sizes. Explicit empty-sample conventions do not affect eventual limits.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The actual rank-box uniform marginal argument is the printed proof. The retained midpoint-grid theorem is an intermediate definition consequence, not a separately printed claim.",
+      "lean_declarations": [
+        "Antichain.closedRankBoxProbability_coordinate_uniform",
+        "Antichain.rankBoxMeasure_coordinate_uniform",
+        "Antichain.rankEmpiricalProbability_coordinate_map"
+      ],
+      "statement_sha256": "97ca5317179ac91f7e48c27a9504268823b68d3e1f1617180cd7d217578fca12",
+      "certificate_declarations": [
+        "Antichain.rankCenterEmpirical_coordinate_map",
+        "Antichain.rankEmpiricalProbability_coordinate_map",
+        "Antichain.permutationRankEmpiricalProbability_coordinate_map",
+        "Antichain.closedRankBoxProbability_coordinate_uniform"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.rankCenterEmpirical_coordinate_map": "854f5c01a9e09c1ee2de157b4b43ac7e276db69f6309f207bdd456d3218589d6",
+        "Antichain.rankEmpiricalProbability_coordinate_map": "d154a676c82ac85f0ea8a0578163b029fed26a5f5e76e1213ca690287e37ecb7",
+        "Antichain.permutationRankEmpiricalProbability_coordinate_map": "468b227a35431f765a3437b839ff57339673e34efd8374f967be99a5c1523f3c",
+        "Antichain.closedRankBoxProbability_coordinate_uniform": "3adb96545c390ba6333715ef1c02e5a90e8288842bb6eb6c0436bebcb13d470d"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-DIM2-STIRLING",
+      "display_number": null,
+      "title": "Two-dimensional refined logarithmic remainder",
+      "source_statement_lines": [
+        1195,
+        1195
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Use a_n=1/n! and Stirling to give beta2=1 and remainder -(1/2)log(2pi n)+O(1/n).",
+      "lean_argument": "Use the same exact dimension2 identity. Starting with the proved Mathlib Stirling sequence and its logarithmic successive-difference estimate, telescope to its known limit and obtain an absolute remainder bound1/(2n), hence O(1/n).",
+      "precise_method_comparison": "This expands the cited standard Stirling estimate into the required explicit remainder bound. No exact1/(12n) leading correction is asserted.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.antichain_dimension_two_refined_remainder_source",
+          "file": "Antichain/SourceStirling.lean",
+          "line": 88
+        },
+        {
+          "declaration": "Antichain.antichain_dimension_two_refined_remainder_bound",
+          "file": "Antichain/SourceStirling.lean",
+          "line": 59
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "The statement concerns the remainder after subtracting -n log n+n; the sign of -(1/2)log(2pi n) agrees with log(1/n!).",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "This expands the cited standard Stirling estimate into the required explicit remainder bound. No exact1/(12n) leading correction is asserted.",
+      "lean_declarations": [
+        "Antichain.antichain_dimension_two_refined_remainder_source",
+        "Antichain.antichain_dimension_two_refined_remainder_bound"
+      ],
+      "statement_sha256": "e222278307fe8ceece1bdd3780a354b5325150799cca38633e539ac8ebe70bd4",
+      "certificate_declarations": [
+        "Antichain.antichain_dimension_two_refined_remainder_source"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.antichain_dimension_two_refined_remainder_source": "be7639d5ae58585395fa6ccf528062957e66b508cd03e97c2c590c29eade69bd"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-RANK-COORDINATE-AVERAGES",
+      "display_number": null,
+      "title": "Deterministic coordinate averages of finite rank measures",
+      "source_statement_lines": [
+        1222,
+        1222
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "Observe that rank midpoint coordinates have deterministic averages, in contrast to the original sample coordinates.",
+      "lean_argument": "Sum all midpoint values and reindex by each coordinate rank permutation to prove that every coordinate average is exactly1/2 for n>0.",
+      "precise_method_comparison": "The source has no separate proof environment; the deterministic assertion is proved by the direct finite sum. The sentence that the two models need not share fluctuations is an interpretive consequence, not a claimed fluctuation-limit theorem.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.rankCenterEmpirical_coordinate_mean",
+          "file": "Antichain/SourceRankMarginals.lean",
+          "line": 71
+        },
+        {
+          "declaration": "Antichain.rankEmpiricalProbability_coordinate_average",
+          "file": "Antichain/SourceRankMarginals.lean",
+          "line": 78
+        },
+        {
+          "declaration": "Antichain.permutationRankCloud_coordinate_average",
+          "file": "Antichain/SourceRankMarginals.lean",
+          "line": 82
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "No central limit theorem or nondegenerate fluctuation law of the original conditioned sample is asserted by these endpoints.",
+      "statement_match": "same",
+      "proof_method": "no_separate_proof",
+      "comparison": "The source has no separate proof environment; the deterministic assertion is proved by the direct finite sum. The sentence that the two models need not share fluctuations is an interpretive consequence, not a claimed fluctuation-limit theorem.",
+      "lean_declarations": [
+        "Antichain.rankCenterEmpirical_coordinate_mean",
+        "Antichain.rankEmpiricalProbability_coordinate_average",
+        "Antichain.permutationRankCloud_coordinate_average"
+      ],
+      "statement_sha256": "425b41e7d700655eff74ae364da105de54d15f6e533edbadb61ad7d9f7990963",
+      "certificate_declarations": [
+        "Antichain.rankCenterEmpirical_coordinate_mean",
+        "Antichain.rankEmpiricalProbability_coordinate_average",
+        "Antichain.permutationRankCloud_coordinate_average"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.rankCenterEmpirical_coordinate_mean": "44bac0ee7a689599fc6223a64b4dececb509f24768d800c66a966fa5afc67ad2",
+        "Antichain.rankEmpiricalProbability_coordinate_average": "027e0ea1644173807e0f6856318000b6573befee24d924f0f16a4e49aa4c556a",
+        "Antichain.permutationRankCloud_coordinate_average": "381791da1412440202de9b737a3490a7e0f57309954d0ffe77a66cc63f73ddf3"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-CHAIN-COLORING",
+      "display_number": null,
+      "title": "Bounded-chain equivalence and longest-chain antichain coloring",
+      "source_statement_lines": [
+        1224,
+        1224
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Mathematical conclusion retained; updated source locations and proof-method comparison bind this review to the current F6E3BB4D manuscript.",
+      "written_argument": "A chain of q rank points is an occurrence of the increasing multidimensional pattern of size q. Color each point by the maximum chain length ending there; equal-color points cannot be comparable.",
+      "lean_argument": "Prove the literal finite-rank pattern/chain equivalence. Define the maximum over all finite chains ending at each label, prove it is attained and strictly increases along a comparison, and use lengths1 through K as the colors.",
+      "precise_method_comparison": "The formal argument is exactly the written longest-chain-ending coloring, with finite maxima and the K-color range made explicit.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.increasing_rank_pattern_iff_chain",
+          "file": "Antichain/SourceColoring.lean",
+          "line": 174
+        },
+        {
+          "declaration": "Antichain.bounded_chain_coloring_source",
+          "file": "Antichain/SourceColoring.lean",
+          "line": 205
+        },
+        {
+          "declaration": "Antichain.longest_chain_antichain_coloring",
+          "file": "Antichain/SourceColoring.lean",
+          "line": 124
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Only the finite equivalence and coloring preceding Conjecture6.9 are proved. Neither the conjectured enumeration nor the conjectured permuton limit for K>=2 is claimed verified.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The formal argument is exactly the written longest-chain-ending coloring, with finite maxima and the K-color range made explicit.",
+      "lean_declarations": [
+        "Antichain.increasing_rank_pattern_iff_chain",
+        "Antichain.bounded_chain_coloring_source",
+        "Antichain.longest_chain_antichain_coloring"
+      ],
+      "statement_sha256": "27021f4dc593acd22f09a60907b419ce3eedb11680a947551b944ac1ba2c2e81",
+      "certificate_declarations": [
+        "Antichain.increasing_rank_pattern_iff_chain",
+        "Antichain.bounded_chain_coloring_source"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.increasing_rank_pattern_iff_chain": "ea724fc18ba85f6cf9ab3eb656f91d84fe04a522f0cddfb0de820226bfc01665",
+        "Antichain.bounded_chain_coloring_source": "7f5844b6d9114fe06994eda1c820982c26adaf66abda5f7938a1cdad6d98b925"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-INTRO-COORDINATE-CHANGE",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The source interface supplies actual forward/inverse identities, inverse range and positive actual forward derivative. Lean derives strict monotonicity, continuity and the inverse derivative; proves that the actual derivative matrix is diagonal with determinant product_i q(s_i); applies the injective change-of-variables theorem to prove equality of measures and integrals, including native Euclidean volume; and rewrites the positive product density as the Boltzmann exponential. This expands the same inverse-function and Jacobian argument. The interface is ordinary data for the stipulated bijection, not an assumed Jacobian or model-law conclusion. No smoothness or derivative conclusion about the inverse is supplied as an input.",
+      "lean_declarations": [
+        "Antichain.IntervalCoordinateChange.forwardCoordinates_antichain_iff",
+        "Antichain.IntervalCoordinateChange.inverse_hasDerivAt_density",
+        "Antichain.IntervalCoordinateChange.inverseCoordinatesDerivative_det",
+        "Antichain.IntervalCoordinateChange.inverseCoordinates_map_withDensity",
+        "Antichain.IntervalCoordinateChange.euclidean_lintegral_coordinate_change",
+        "Antichain.IntervalCoordinateChange.product_density_eq_boltzmann"
+      ],
+      "title": "Monotone coordinate Jacobian and Boltzmann density",
+      "number": null,
+      "source_statement_lines": [
+        107,
+        107
+      ],
+      "statement_sha256": "05f016e7d1cc256eb2618dabc9c1fef46761b3bcca4980631749024d19cd7ae3",
+      "certificate_declarations": [
+        "Antichain.IntervalCoordinateChange.forwardCoordinates_antichain_iff",
+        "Antichain.IntervalCoordinateChange.inverse_hasDerivAt_density",
+        "Antichain.IntervalCoordinateChange.inverseCoordinatesDerivative_det",
+        "Antichain.IntervalCoordinateChange.inverseCoordinates_map_withDensity",
+        "Antichain.IntervalCoordinateChange.euclidean_lintegral_coordinate_change",
+        "Antichain.IntervalCoordinateChange.product_density_eq_boltzmann"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.IntervalCoordinateChange.forwardCoordinates_antichain_iff": "3102b6a2ad0956dec854d6ee44585a1cc8e0e20c6303a59f8179216a1b2d7c47",
+        "Antichain.IntervalCoordinateChange.inverse_hasDerivAt_density": "a8b9d7513e67d986048ab2c53ab371275ef76e637a1bdb9ecf6fb700c4874cb6",
+        "Antichain.IntervalCoordinateChange.inverseCoordinatesDerivative_det": "6f95c1733237e383ff462f4de1b44b5f2b474748c6587984c962b7f94fb391c9",
+        "Antichain.IntervalCoordinateChange.inverseCoordinates_map_withDensity": "50af64052e9321b6a0628648fcf7800dc5b7f4eb9d23d3d5a3e5d98956f4015b",
+        "Antichain.IntervalCoordinateChange.euclidean_lintegral_coordinate_change": "2eb84361822c90e2017154f1530b7fe7f2f68b2a5f4f00aa471036861f095e56",
+        "Antichain.IntervalCoordinateChange.product_density_eq_boltzmann": "d3b277c4267f856cd0142d55f5d0b487d62054500fcb76f663c5b7b528c0f5c3"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-INTRO-NORMALIZED-QUANTILE",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "For the actual inverse-derivative density, change of variables proves integrability and total mass one. The characterized Gaussian has density sqrt(a/pi)*exp(-a*(s-m)^2), a>0. Equality of derivatives plus the inverse range (0,1) removes the additive CDF constant. Thus Q inverse(s)=Phi(sqrt(2a)*(s-m)) and Q(x)=m+Phi inverse(x)/sqrt(2a); the standard origin and scale give the literal normal quantile. The affine-normal-quantile conclusion is derived for the actual inverse derivative, not assumed as a marginal or covariance condition. This is an explicit proof of a terse source normalization assertion, rather than a different already-written normalization proof.",
+      "lean_declarations": [
+        "Antichain.IntervalCoordinateChange.separated_coordinate_is_affine_normalQuantile",
+        "Antichain.IntervalCoordinateChange.density_integrable",
+        "Antichain.IntervalCoordinateChange.density_integral_one",
+        "Antichain.IntervalCoordinateChange.inverse_eq_of_same_derivative",
+        "Antichain.IntervalCoordinateChange.gaussian_family_coordinate_source"
+      ],
+      "title": "Normalized Gaussian inverse coordinate map equals the actual normal quantile",
+      "number": null,
+      "source_statement_lines": [
+        113,
+        113
+      ],
+      "statement_sha256": "aa38127bd4f061fac579d1b70a3652b4f39aeac9746cfd00e0bc7872969bc920",
+      "certificate_declarations": [
+        "Antichain.IntervalCoordinateChange.separated_coordinate_is_affine_normalQuantile"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.IntervalCoordinateChange.separated_coordinate_is_affine_normalQuantile": "45ee67f4144e39a8c435482a1b3d1752563a90f0da64a0bf458363a22c47fcd1"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-PINNED-ONE-POINT",
+      "source_file": "main.tex",
+      "statement_comparison": "equivalent_after_S_r_to_V_r_pinned_volume_rename",
+      "proof_method": "no_separate_proof",
+      "comparison": "Both nonnegative measure and ordinary real-volume normalizations are proved for arbitrary measurable B, with no added positivity or finiteness premise.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.pinned_one_point_source",
+          "file": "Antichain/SourcePinnedNormalization.lean",
+          "line": 45
+        }
+      ],
+      "source_lines": [
+        485,
+        485
+      ],
+      "lean_declarations": [
+        "Antichain.pinned_one_point_source"
+      ],
+      "statement_match": "same",
+      "statement_sha256": "69fddec44985e69d93bbce4f489ab720e18c2347d8b8a40ad35926286f3b9dcb",
+      "certificate_declarations": [
+        "Antichain.pinned_one_point_source"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.pinned_one_point_source": "cac0c756e68065b6e4f91209af4ba0d663397150c2e1b2cfda6749d5f9137ea2"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-RANK-SORTING-LAW",
+      "display_number": null,
+      "title": "Uniform normalized ranks, independence of sorted values, and exact antichain count",
+      "source_statement_lines": [
+        1013,
+        1020
+      ],
+      "source_proof_lines": [],
+      "statement_changed": false,
+      "conclusion_matches_verified_endpoint": true,
+      "source_revision_change": "Existing verified content is now explicitly tracked at its revised source location.",
+      "written_argument": "Exchange sample labels in each continuous coordinate, normalize first-coordinate ranks, condition only on relative-rank avoidance, and count the uniform finite class.",
+      "lean_argument": "Prove the actual rank/sorted joint product law, normalized-rank independence, unchanged conditioned sorted law, uniformOn avoidance pushforward, and cardinality=(n!)^(d-1)*a_n.",
+      "precise_method_comparison": "The revised prose expands the already verified finite-symmetry argument. Conditional assertions are justified by actual joint-law independence, not conditioning on an exact sorted tuple event of positive probability.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.cube_rank_sorted_joint_law",
+          "file": "Antichain/RankIndependence.lean",
+          "line": 172
+        },
+        {
+          "declaration": "Antichain.cubeNormalizedRanks_independent_sorted_values",
+          "file": "Antichain/RankIndependence.lean",
+          "line": 326
+        },
+        {
+          "declaration": "Antichain.cubeAntichain_sortedCoordinates_law",
+          "file": "Antichain/RankIndependence.lean",
+          "line": 429
+        },
+        {
+          "declaration": "Antichain.cubeAntichain_normalizedRanks_uniformOn",
+          "file": "Antichain/RankIndependence.lean",
+          "line": 457
+        },
+        {
+          "declaration": "Antichain.avoidance_card_eq_factorial_mul_antichainProbability",
+          "file": "Antichain/RankIndependence.lean",
+          "line": 395
+        }
+      ],
+      "human_proof_label": null,
+      "recommended_annotation": "The statement is fully Lean-verified; the written proof follows the formal argument, with the expansions recorded here.",
+      "scope_note": "Actual cube sample, ranks, finite counting carriers and native Euclidean geometry; no externally supplied own-paper conclusion.",
+      "statement_match": "same",
+      "proof_method": "expanded_argument",
+      "comparison": "The revised prose expands the already verified finite-symmetry argument. Conditional assertions are justified by actual joint-law independence, not conditioning on an exact sorted tuple event of positive probability.",
+      "lean_declarations": [
+        "Antichain.cube_rank_sorted_joint_law",
+        "Antichain.cubeNormalizedRanks_independent_sorted_values",
+        "Antichain.cubeAntichain_sortedCoordinates_law",
+        "Antichain.cubeAntichain_normalizedRanks_uniformOn",
+        "Antichain.avoidance_card_eq_factorial_mul_antichainProbability"
+      ],
+      "new_tracked_assertion": true,
+      "statement_sha256": "64d6f9d105a4a8f06969bdb68464e469fe92958b763fe0f183253606196bddf3",
+      "certificate_declarations": [
+        "Antichain.cubeNormalizedRanks_uniform_law",
+        "Antichain.cubeNormalizedRanks_independent_sorted_values",
+        "Antichain.cubeAntichain_normalizedRanks_uniformOn",
+        "Antichain.avoidanceClassCard_exact"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.cubeNormalizedRanks_uniform_law": "007575a2d0215bd902305b023aefba423216335796188cd3b8cf25e282156c70",
+        "Antichain.cubeNormalizedRanks_independent_sorted_values": "75c41a283a7efdb593a255f2f654ffb4959c14fd058466e98742143f4405fcdd",
+        "Antichain.cubeAntichain_normalizedRanks_uniformOn": "fb0538bddb06c78e94dde1f10af152436d862378153aa4b2bec726b088d1e27f",
+        "Antichain.avoidanceClassCard_exact": "d3592976e71917f6a7a137900a22d132a88e7f185909bf8587520033b1ebccc3"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-COORDINATE-CLT",
+      "statement_match": "same",
+      "source_statement_lines": [
+        1211,
+        1211
+      ],
+      "proof_method": "expanded_argument",
+      "comparison": "Sorting preserves the sample average. The checked equality of pushforward laws transfers the iid uniform CLT unchanged to the conditional cube model. The uniform mean 1/2, variance 1/12, and literal closed-cube empirical integral are proved. The convergence certificate takes the general iid finite-variance CLT as an explicit premise at the current pin.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.coordinateFluctuationLaw_eq_iidUniform",
+          "file": "Antichain/CoordinateFluctuations.lean",
+          "line": 39
+        },
+        {
+          "declaration": "Antichain.cubeCoordinateLaw_mean",
+          "file": "Antichain/CoordinateFluctuations.lean",
+          "line": 68
+        },
+        {
+          "declaration": "Antichain.cubeCoordinateLaw_centered_square",
+          "file": "Antichain/CoordinateFluctuations.lean",
+          "line": 73
+        },
+        {
+          "declaration": "Antichain.scalarCoordinateFluctuation_eq_empiricalIntegral",
+          "file": "Antichain/CoordinateFluctuations.lean",
+          "line": 110
+        },
+        {
+          "declaration": "Antichain.coordinateFluctuationLaw_eq_closed_empirical",
+          "file": "Antichain/CoordinateFluctuations.lean",
+          "line": 127
+        },
+        {
+          "declaration": "Antichain.coordinateFluctuation_clt_of_iid",
+          "file": "Antichain/CoordinateFluctuations.lean",
+          "line": 100
+        }
+      ],
+      "lean_declarations": [
+        "Antichain.coordinateFluctuationLaw_eq_iidUniform",
+        "Antichain.cubeCoordinateLaw_mean",
+        "Antichain.cubeCoordinateLaw_centered_square",
+        "Antichain.scalarCoordinateFluctuation_eq_empiricalIntegral",
+        "Antichain.coordinateFluctuationLaw_eq_closed_empirical",
+        "Antichain.coordinateFluctuation_clt_of_iid"
+      ],
+      "statement_sha256": "49765f6e77f72232aad3cefdd2111d97438e3fe6d2810627529387d56f5b1147",
+      "certificate_declarations": [
+        "Antichain.coordinateFluctuationLaw_eq_iidUniform",
+        "Antichain.cubeCoordinateLaw_mean",
+        "Antichain.cubeCoordinateLaw_centered_square",
+        "Antichain.scalarCoordinateFluctuation_eq_empiricalIntegral",
+        "Antichain.coordinateFluctuationLaw_eq_closed_empirical",
+        "Antichain.coordinateFluctuation_clt_of_iid"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.coordinateFluctuationLaw_eq_iidUniform": "ef7025306f08d3bfee4bddbe0d06701eddd3664fb19c3418a935d7ae07a70b51",
+        "Antichain.cubeCoordinateLaw_mean": "77c77df2e23306419100113a8eeb4890f95b272c86b184bb9ab08a1e865f56d1",
+        "Antichain.cubeCoordinateLaw_centered_square": "23d4ab51d13face3d7bc27f9c01a6bd9bd82ce187a9ebbd1b546d9efaa1d901c",
+        "Antichain.scalarCoordinateFluctuation_eq_empiricalIntegral": "af0951477580a5c7f88cb26cfbd07f6355b01399e3bc769410b2d38dd19341d9",
+        "Antichain.coordinateFluctuationLaw_eq_closed_empirical": "7512d96a50e7e48542e3a508358fbfe74e4f50c0ef34808d1632f7bb3a88f54e",
+        "Antichain.coordinateFluctuation_clt_of_iid": "2b8fb7a92690e8decd98239f0df2137b45cfc0dc30299c766d361461124036af"
+      },
+      "written_proof_sha256": null
+    },
+    {
+      "id": "ANT-HEIGHT-MEAN-TAIL",
+      "statement_match": "same",
+      "source_statement_lines": [
+        1205,
+        1205
+      ],
+      "proof_method": "same_argument",
+      "comparison": "The displayed application of Markov to the positive height tilt is used directly, with c fixed to 1/4. The actual conditional log-moment limit is zero. For every fixed positive threshold, Lean obtains eventual exponential concentration of T_n/n.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.gaussian_height_exponential_tail",
+          "file": "Antichain/GaussianConcentration.lean",
+          "line": 16
+        },
+        {
+          "declaration": "Antichain.meanSquaredHeight_exponential_tail_direct",
+          "file": "Antichain/DirectSourceEndpoints.lean",
+          "line": 187
+        }
+      ],
+      "lean_declarations": [
+        "Antichain.gaussian_height_exponential_tail",
+        "Antichain.meanSquaredHeight_exponential_tail_direct"
+      ],
+      "statement_sha256": "4f068b31dda5e39220b4b34287f99cea10c3de2fa0d0306829d5d314397a0e09",
+      "certificate_declarations": [
+        "Antichain.meanSquaredHeight_exponential_tail_direct"
+      ],
+      "certificate_type_sha256": {
+        "Antichain.meanSquaredHeight_exponential_tail_direct": "bbb3b456994427062ed9208d323ff173a69addc02abe5d28e2bd11d046a6987a"
+      },
+      "written_proof_sha256": null
+    }
+  ]
+}

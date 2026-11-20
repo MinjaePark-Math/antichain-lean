@@ -1,0 +1,17 @@
+.lake/
+logs/
+__pycache__/
+*.aux
+*.bcf
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Complete lossless release evidence must also survive global *.gz ignores.
+!release/*.json.gz

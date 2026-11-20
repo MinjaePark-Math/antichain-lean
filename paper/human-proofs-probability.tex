@@ -1,0 +1,379 @@
+
+\subsection{Empirical concentration by Stone--Weierstrass approximation}
+\label{leanproof:ANT-2-1}
+
+The formal proof follows the manuscript's Stone--Weierstrass
+approximation and Cauchy--Schwarz height transfer. The approximation is
+proved for the actual compact cube, then extended by its coordinate clamp.
+
+\begin{proof}[Complete proof following the Lean argument]
+Fix $d\ge2$, put $p=(d-1)/d$, and let $\nu^\ast$ be the law of
+$\vF^\ast$ on $E$. Write $T_n=\sum_{k=1}^n(H^{(k)})^2$.
+The Gaussian power integral identifies
+$\rho^\ast=\psi_E^p/\int_E\psi_E^p$.
+For a bounded continuous function $b:E\to\R$, define
+\[
+ m_b=\int_E b\,\dd\nu^\ast,
+ \qquad
+ \Lambda_b(t)=\frac1p\log\int_E e^{ptb}\,\dd\nu^\ast.
+\]
+Subtracting the instance $(\sigma,c)=(0,0)$ of
+Proposition~\ref{prop:volume} from its instance $(tb,c)$ gives the actual
+conditional identity and limit
+\[
+ \E_n e^{t\sum_{k=1}^n b(\vF^{(k)})+cT_n}
+   =\frac{\cZ_n(tb,c)}{\cZ_n(0,0)},
+ \qquad
+ \frac1n\log\E_n
+ e^{t\sum_{k=1}^n b(\vF^{(k)})+cT_n}
+ \longrightarrow\Lambda_b(t),                 \tag{P1}
+\]
+for every real $t$ and every $c<1/2$. These conditional expectations are
+well defined: the antichain event has positive probability, and boundedness
+of $b$ together with $c<1/2$ makes the weighted Gaussian integrals finite.
+
+We first deduce two elementary exponential tails from (P1). Setting $b=0$
+and taking, for example, $c=1/4$, gives
+$n^{-1}\log\E_n e^{cT_n}\to0$. Consequently, for every $a>0$ and all
+sufficiently large $n$,
+\[
+ \P_n(T_n\ge an)
+ \le e^{-can}\E_n e^{cT_n}
+ \le e^{-can/2}.                              \tag{P2}
+\]
+For the floor average, put $Z=b(\vF^\ast)-m_b$, so $\E Z=0$. Since $Z$ is
+bounded, all its exponential moments are finite. Differentiation under
+the integral is justified on each bounded interval of $t$ by the
+uniform bounds on $Z^j e^{tZ}$ for $j=0,1,2$. Thus $M(t)=\E e^{tZ}$
+and $K(t)=\log M(t)$ are twice continuously differentiable near zero.
+Their values at zero are $M(0)=1$ and $K(0)=0$, and
+$M'(0)=K'(0)=\E Z=0$. Taylor's theorem gives
+$M(t)=1+O(t^2)$ and $K(t)=O(t^2)$, hence
+$\Lambda_{b-m_b}(t)=p^{-1}K(pt)=O(t^2)$.
+Given $a>0$, choose $t>0$ sufficiently small that
+$\Lambda_{b-m_b}(t)<ta/2$. Markov's inequality and (P1), at $c=0$, imply
+\[
+ \P_n\left(\frac1n\sum_k b(\vF^{(k)})-m_b\ge a\right)
+ \le \exp\{-tan+n\Lambda_{b-m_b}(t)+o(n)\}
+ \le e^{-tan/4}
+\]
+for all sufficiently large $n$. Apply the same argument to $-b$ and
+absorb the factor $2$ into a smaller positive exponential rate. We have
+proved that, for every bounded continuous $b$ and every $a>0$, there is
+$\alpha_b>0$ such that
+\[
+ \P_n\left(\left|\frac1n\sum_k b(\vF^{(k)})-m_b\right|\ge a\right)
+ \le e^{-\alpha_b n}                          \tag{P3}
+\]
+for all sufficiently large $n$.
+
+Now let $g$ be any continuous test on the closed cube, and fix an
+approximation tolerance $\eta>0$.
+Here is the precise Stone--Weierstrass step used in Lean. On a compact
+metric space $K$, let $\mathcal L\subset C(K,\mathbb R)$ be the set of
+Lipschitz functions, allowing an arbitrary finite Lipschitz constant.
+It contains constants and is closed under pointwise minimum and maximum:
+if $f,g$ have constants $L_f,L_g$, then $\min(f,g)$ and $\max(f,g)$ have
+constant $\max(L_f,L_g)$.
+It also separates points strongly. Given any prescribed values $v(x),v(y)$
+at distinct points $x,y$, the function
+\[
+ z\longmapsto v(x)+\frac{v(y)-v(x)}{\operatorname{dist}(x,y)}
+                                  \operatorname{dist}(x,z)
+                                                        \tag{P4}
+\]
+is Lipschitz and takes those values; if $x=y$, use the constant function.
+The lattice form of the Stone--Weierstrass theorem therefore gives
+$\overline{\mathcal L}=C(K,\mathbb R)$ in the uniform norm.
+Apply it to $K=[0,1]^d$: for every $\eta>0$ there is a Lipschitz function
+$f$ on the cube such that
+\[
+                 \sup_{x\in[0,1]^d}|g(x)-f(x)|<\eta.       \tag{P5}
+\]
+The coordinate clamp $c(x)_i=\max(0,\min(1,x_i))$ is $1$-Lipschitz
+in the coordinate maximum metric and fixes the cube. Replacing $f$ by
+$f\circ c$ makes it a globally bounded Lipschitz function without
+changing any cube value. It is bounded because the original $f$ is
+continuous on the compact cube. A Lipschitz constant in the coordinate
+maximum metric is also valid in Euclidean distance, which dominates that
+metric. Thus (P5) supplies an actual bounded ambient function and its
+finite Lipschitz constant; this approximation is not an assumed input.
+
+Let $f$ satisfy (P5), with Lipschitz constant $K$.
+The coordinatewise normal CDF is $L$-Lipschitz in Euclidean distance,
+where $L=(2\pi)^{-1/2}$, because $0<\Phi'\le L$.
+Put $b=f\circ\Phi$ on $E$. This is a bounded continuous floor test,
+and $m_b=\int f\,\dd\mu^\ast$ by the actual pushforward law.
+For $\vG=\vF+H\ve$ with $\|\ve\|=1$,
+\[
+ |f(\Phi(\vG))-f(\Phi(\vF))|\le KL|H|.
+\]
+For $n>0$, the triangle inequality and Cauchy--Schwarz give exactly
+\[
+ \left|\frac1n\sum_k f(\vX^{(k)})
+       -\frac1n\sum_k f(\Phi(\vF^{(k)}))\right|
+ \le\frac{KL}{n}\sum_k|H^{(k)}|
+ \le KL\sqrt{\frac{T_n}{n}}.                 \tag{P6}
+\]
+The approximation changes each of the empirical and limiting averages
+by at most $\eta$. Combining (P5)--(P6),
+\[
+ \left|\frac1n\sum_k g(\vX^{(k)})-\int g\,\dd\mu^\ast\right|
+ \le2\eta+KL\sqrt{\frac{T_n}{n}}
+       +\left|\frac1n\sum_k b(\vF^{(k)})-m_b\right|. \tag{P7}
+\]
+For a prescribed deviation $\varepsilon>0$, choose
+$\eta=\varepsilon/8$, put $C=KL\ge0$, and set
+$a_0=(\varepsilon/[4(C+1)])^2>0$.
+If $T_n/n<a_0$ and the floor-test deviation is less than
+$\varepsilon/4$, then the right side of (P7) is less than
+$\varepsilon$. The height tail (P2), the floor tail (P3), and a union
+bound therefore give an exponential tail for every fixed positive
+deviation of every continuous cube test.
+
+Finally, the weak topology on probability measures on the compact cube is
+generated by the integrals of continuous functions. Any prescribed open
+weak neighborhood $\mathcal U$ of $\mu^\ast$ therefore contains a set
+\[
+ \left\{\nu:
+   \left|\int g_j\,\dd\nu-\int g_j\,\dd\mu^\ast\right|
+      <\varepsilon_j\quad(1\le j\le m)\right\},
+\]
+for finitely many continuous tests and positive tolerances. The preceding
+test bounds and a finite union bound prove the first assertion of
+Theorem~\ref{thm:empirical-limit}. Explicitly, if finitely many bad events
+have probabilities at most $e^{-a_jn}$ eventually, put
+$a=\min_j a_j>0$. Their union has probability at most
+$m e^{-an}\le e^{-an/2}$ once $n\ge2\log m/a$.
+An empty collection of bad events has probability zero.
+
+For a Borel set $B$ with $\mu^\ast(\partial B)=0$, the
+Portmanteau continuity-set theorem says that
+$\nu\mapsto\nu(B)$ is continuous at $\mu^\ast$.
+For every positive tolerance, some open weak neighborhood of $\mu^\ast$
+therefore forces that tolerance for $\nu(B)$.
+Applying the first assertion gives convergence of the literal empirical
+frequency of $B$ in probability, and indeed gives an exponential tail
+for each fixed positive tolerance. All measures here are the actual
+closed-cube measures, so no extension of the state space changes either
+conclusion.
+\end{proof}
+
+\subsection{The support lemma by the written cube-shift argument}
+\label{leanproof:ANT-2-2}
+
+The support and closure formula and the common cube-coordinate shift in
+Lemma~\ref{lem:support} are now proved by the argument written in the
+manuscript. The earlier inverse-coordinate-centering construction is
+retained only as a supplementary proof.
+
+\begin{proof}[Complete proof following the Lean argument]
+Put $S=\Phi(E)$ and
+\[
+ C=S\cup\{x\in[0,1]^d:\text{$x$ has a zero coordinate and a one coordinate}\}.
+\]
+The actual limiting measure is the pushforward of a full-support Gaussian
+measure by the continuous map
+$Y\mapsto\Phi(\sqrt{d/(d-1)}\Proj_EY)$.
+Its range is exactly $S$: the inverse-normal coordinates always sum to zero,
+and each $f\in E$ is obtained by taking $Y=f/\sqrt{d/(d-1)}$.
+The support of a continuous pushforward of a full-support measure is the
+closure of its range. Indeed, an open neighborhood of a range point has
+a nonempty open preimage, of positive measure, and the pushforward is
+concentrated on the closed closure of its range. Consequently
+$\operatorname{supp}\mu^\ast=\overline S$.
+
+We characterize that closure directly. Suppose points of $S$ approach
+$x$ in the closed cube. If every coordinate of $x$ is interior, continuity
+of the inverse-normal coordinates implies
+$\sum_i\Phi^{-1}(x_i)=0$, so $x\in S$.
+If some $x_j=0$ and no coordinate is $1$, then all other inverse-normal
+coordinates are eventually bounded above, while the $j$th tends to
+$-\infty$. Thus their sum tends to $-\infty$, contradicting its constant
+value zero along $S$.
+The case of a coordinate equal to $1$ and no zero coordinate is identical
+with signs reversed: all other terms are eventually bounded below, while
+one tends to $+\infty$.
+This proves $\overline S\subseteq C$, including every boundary case.
+The same reasoning can be expressed by limits along the neighborhood
+filter restricted to $S$, so no assumption that a chosen sequence exists
+is needed.
+
+Conversely, a mixed zero--one boundary point belongs to the closure by the
+explicit construction in the manuscript. Let
+$I_0=\{i:x_i=0\}$ and $I_1=\{i:x_i=1\}$, both nonempty, and put
+$A=\sum_{i\notin I_0\cup I_1}\Phi^{-1}(x_i)$.
+For $t\to+\infty$, set
+\[
+ f_i(t)=
+ \begin{cases}
+  -t/|I_0|,&i\in I_0,\\
+  (t-A)/|I_1|,&i\in I_1,\\
+  \Phi^{-1}(x_i),&i\notin I_0\cup I_1.
+ \end{cases}
+\]
+The sum is $-t+(t-A)+A=0$, and hence $\Phi(f(t))\in S$.
+The endpoint limits of $\Phi$ give $\Phi(f(t))\to x$.
+Together with $S\subseteq\overline S$, this proves $\overline S=C$.
+
+Now let $x\in[0,1]^d\setminus\overline S$.
+Write $m=\min_i x_i$ and $M=\max_i x_i$.
+The closure formula implies $M-m<1$, because equality would give both a
+zero and a one coordinate. The interval $J=(-m,1-M)$ is therefore nonempty.
+For $t\in J$, all $x_i+t$ belong to $(0,1)$ and
+\[
+ A_x(t)=\sum_{i=1}^d\Phi^{-1}(x_i+t)
+\]
+is continuous and strictly increasing.
+As $t\downarrow-m$, a coordinate attaining $m$ has inverse-normal value
+tending to $-\infty$; all other terms are bounded above, since their upper
+limits are at most $M-m<1$. Thus $A_x(t)\to-\infty$.
+As $t\uparrow1-M$, a coordinate attaining $M$ has inverse-normal value
+tending to $+\infty$; every other term is bounded below, since its lower
+limit is at least $1-(M-m)>0$. Thus $A_x(t)\to+\infty$.
+The intermediate value theorem supplies $t_0\in J$ with $A_x(t_0)=0$.
+If $t_0=0$, then $x$ itself would be an interior zero-sum inverse-normal
+point and therefore belong to $S$, contrary to the hypothesis.
+Consequently $t_0\ne0$, and
+$y_i=x_i+t_0$ lies in $S$. A positive $t_0$ gives $x\prec y$; a negative
+$t_0$ gives $y\prec x$.
+This proves every assertion of Lemma~\ref{lem:support} by its written route.
+\end{proof}
+
+\subsection{The rank limit by the written Hoeffding argument}
+\label{leanproof:ANT-6-1}
+
+The proof below follows the revised manuscript: condition the sorted-value
+law, apply Hoeffding separately to each order statistic, take the finite
+union bound, and transfer continuous tests and Hausdorff distance. The
+previously proved sharp DKW theorem remains a separate library result.
+
+\begin{proof}[Complete proof following the Lean argument]
+We first justify the exact conditional laws. For a scalar iid continuous
+sample, ties have probability zero. Let $\rho$ be the assignment of the
+ordered values to labels and $V=(U_{(1)},\ldots,U_{(n)})$ its sorted list.
+For any Borel set $A$ of sorted lists, relabeling the iid sample preserves
+its law and $V$, and carries each rank assignment to every other one.
+The $n!$ disjoint rank assignments therefore each have joint probability
+$\mathbb P(V\in A)/n!$ with $V\in A$.
+Thus the assignment is uniform and independent of the sorted list.
+Apply this in each independent coordinate. The entire rank tuple is
+independent of the full collection of sorted coordinate values.
+Sorting the sample by its first coordinate reparameterizes the uniform
+rank tuple into its common label order and its $d-1$ relative permutations.
+The antichain event depends only on the relative permutations and is
+exactly membership in $\mathcal C_n$.
+Consequently, after conditioning, that tuple is uniform on $\mathcal C_n$
+and the joint law of all sorted coordinate values is unchanged.
+This also gives $|\mathcal C_n|=(n!)^{d-1}a_n$.
+The conditional law is legitimate because $a_n>0$ for $d\ge2$.
+
+Fix a coordinate, $n\ge1$, and $t\in[0,1]$. Sorting preserves the number
+of sample values at most $t$. Before conditioning that count is a sum
+of $n$ independent Bernoulli variables with success probability $t$.
+More explicitly, each prescribed set of $k$ successful labels has
+probability $t^k(1-t)^{n-k}$; the $\binom nk$ such disjoint choices give
+\[
+ \mathbb P_n(N_i(t)=k)=\binom nk t^k(1-t)^{n-k},
+ \qquad 0\le k\le n.                           \tag{H1}
+\]
+The unchanged sorted law proves (H1) under $\mathbb P_n$ as well,
+including $t=0,1$ with the usual $0^0=1$ convention.
+
+For completeness, the Hoeffding bound used in Lean follows from the
+bounded-variable subgaussian estimate. If $B$ is Bernoulli with mean $t$,
+then
+\[
+        \mathbb E e^{\lambda(B-t)}\le e^{\lambda^2/8}
+        \qquad(\lambda\in\mathbb R).
+\]
+One can see the constant directly: the log moment-generating function
+has value and derivative zero at zero; its second derivative is the
+variance of a tilted Bernoulli variable, which is at most $1/4$.
+Integrating that derivative bound twice gives the displayed inequality.
+At $t=0,1$ the centered variable is identically zero.
+Independence and exponential Markov, with $\lambda=4a/n$, therefore give
+both tails
+\[
+ \mathbb P_n(N_i(t)-nt\ge a)\le e^{-2a^2/n},\qquad
+ \mathbb P_n(nt-N_i(t)\ge a)\le e^{-2a^2/n}
+ \quad(a>0).                                  \tag{H2}
+\]
+The formal proof uses the same unit-width Bernoulli range and its
+subgaussian parameter $1/4$, rather than a DKW premise.
+
+Write $u_{r,n}=(r-1/2)/n$ for $1\le r\le n$, and fix $s>0$.
+If $S_{i,r}>u_{r,n}+s$ and $t=u_{r,n}+s\le1$, then
+$N_i(t)\le r-1$, whereas $nt=r-1/2+ns$.
+This is a downward deviation of at least $ns$.
+The threshold is positive; if it exceeds $1$, the event is empty.
+Similarly, if $S_{i,r}<u_{r,n}-s$ and $t=u_{r,n}-s\ge0$, then
+$N_i(t)\ge r$ and $nt=r-1/2-ns$, an upward deviation of at least $ns$.
+If this threshold is negative, the event is empty.
+Apply (H2) with $a=ns$ to obtain the exact finite-sample bound
+\[
+ \mathbb P_n\bigl(|S_{i,r}-u_{r,n}|>s\bigr)
+                       \le2e^{-2ns^2}.        \tag{H3}
+\]
+The two endpoint threshold cases $t=0,1$ are included.
+
+Relabel the points in increasing first-coordinate order as
+$\widetilde{\mathbf X}^{(k)}$. Its $i$th coordinate is
+$S_{i,\pi_i(k)}$, while the corresponding midpoint rank coordinate is
+$u_{\pi_i(k),n}$. Thus
+\[
+ D_n:=\max_k\|\widetilde{\mathbf X}^{(k)}-\mathbf R^{(k)}\|
+       \le\sqrt d\max_{i,r}|S_{i,r}-u_{r,n}|.
+\]
+A common relabeling changes neither maximum nor empirical measure.
+Apply (H3) at tolerance $s/\sqrt d$ and take the union over the $dn$
+coordinate/rank choices. This proves exactly
+\[
+       \mathbb P_n(D_n>s)\le2dn e^{-2ns^2/d}
+       \qquad(n\ge1,\ s>0).                  \tag{H4}
+\]
+For a fixed $s>0$, the prefactor is absorbed into a smaller exponential
+rate: $\log(2dn)/n\to0$, so, eventually,
+$2dn e^{-2ns^2/d}\le e^{-ns^2/d}$.
+
+Let $\mathcal U$ be any prescribed open weak neighborhood of $\mu^\ast$
+in probability measures on the closed cube. Choose finitely many
+continuous tests $g_j$ and $\varepsilon>0$ so that all integral
+deviations less than $\varepsilon$ imply membership in $\mathcal U$.
+Uniform continuity supplies $s>0$ such that moving any cube point by at
+most $s$ changes every $g_j$ by less than $\varepsilon/3$.
+On $\{D_n\le s\}$, replacing original points by their rank midpoints
+therefore changes each empirical test average by less than
+$\varepsilon/3$.
+Spreading a midpoint over its rank box moves it by at most
+$\sqrt d/(2n)$, and hence changes every test average by less than another
+$\varepsilon/3$ for large $n$.
+Theorem~\ref{thm:empirical-limit} at the finitely many tolerances
+$\varepsilon/3$, together with (H4), proves simultaneous membership of
+both rank measures in $\mathcal U$ outside a finite union of exponentially
+rare events. If those probabilities are at most $e^{-a_j n}$ eventually,
+choose $a=\min_j a_j>0$ and use $m e^{-an}\le e^{-an/2}$ for large $n$.
+An empty test family has no bad event.
+This proves Theorem~\ref{thm:permuton}.
+
+The rank-box measure has exactly uniform coordinate marginals: every
+coordinate rank occurs once, and the equal mixture of the $n$ uniform
+interval laws on $[(r-1)/n,r/n]$ is uniform measure on $[0,1]$.
+The shared endpoints have measure zero. The midpoint marginal is exactly
+uniform on its midpoint grid.
+
+Finally, two finite clouds matched by their labels satisfy
+\[
+ d_{\rm H}(\{\widetilde{\mathbf X}^{(k)}\}_k,
+                    \{\mathbf R^{(k)}\}_k)\le D_n.
+\]
+The Hausdorff triangle inequality gives
+\[
+ d_{\rm H}(A_n^{\mathrm{rk}},\overline{\mathcal S_d})
+             \le D_n+d_{\rm H}(A_n,\overline{\mathcal S_d}).
+\]
+For any fixed $\delta>0$, (H4) at $s=\delta/2$ and
+Theorem~\ref{thm:shape} at $\delta/2$ show that a distance greater than
+$\delta$ is exponentially rare. Absorbing their two-event union into a
+smaller positive rate proves Remark~\ref{rem:rank-hausdorff}.
+\end{proof}

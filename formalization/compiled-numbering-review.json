@@ -1,0 +1,704 @@
+{
+  "status": "passed",
+  "pdf_snapshot_stable": true,
+  "checked_at": "2026-11-20T14:58:50.989783+00:00",
+  "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+  "pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+  "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+  "auxiliary_sha256": "ec3653df7264248e735de29978fec05b2e3d1e9357edb169d8b797c9926d63da",
+  "page_count": 50,
+  "numbered_items": 35,
+  "auxiliary_label_checks": 28,
+  "checks": [
+    {
+      "id": "ANT-1-1",
+      "number": "1.1",
+      "page": "3",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Theorem 1.1.",
+      "pdf_heading_pages": [
+        3,
+        8
+      ],
+      "label": "thm:counting",
+      "auxiliary_line": "\\newlabel{thm:counting}{{1.1}{3}{}{theorem.1.1}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-1-2",
+      "number": "1.2",
+      "page": "4",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Theorem 1.2.",
+      "pdf_heading_pages": [
+        4
+      ],
+      "label": "thm:shape",
+      "auxiliary_line": "\\newlabel{thm:shape}{{1.2}{4}{}{theorem.1.2}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-1-3",
+      "number": "1.3",
+      "page": "8",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Proposition 1.3.",
+      "pdf_heading_pages": [
+        8
+      ],
+      "label": "prop:volume",
+      "auxiliary_line": "\\newlabel{prop:volume}{{1.3}{8}{}{theorem.1.3}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-1-4",
+      "number": "1.4",
+      "page": "8",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Remark1.4.",
+      "pdf_heading_pages": [
+        8
+      ],
+      "label": "rem:proof-thm-1",
+      "auxiliary_line": "\\newlabel{rem:proof-thm-1}{{1.4}{8}{}{theorem.1.4}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-1-5",
+      "number": "1.5",
+      "page": "9",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Remark1.5.",
+      "pdf_heading_pages": [
+        9
+      ],
+      "evidence_kind": "fresh_pdf_heading_and_source_counter"
+    },
+    {
+      "id": "ANT-2-1",
+      "number": "2.1",
+      "page": "10",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Theorem 2.1.",
+      "pdf_heading_pages": [
+        10
+      ],
+      "label": "prop:empirical-limit",
+      "auxiliary_line": "\\newlabel{prop:empirical-limit}{{2.1}{10}{}{theorem.2.1}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-2-2",
+      "number": "2.2",
+      "page": "10",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 2.2.",
+      "pdf_heading_pages": [
+        10
+      ],
+      "label": "lem:support",
+      "auxiliary_line": "\\newlabel{lem:support}{{2.2}{10}{}{theorem.2.2}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-3-1",
+      "number": "3.1",
+      "page": "11",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Proposition 3.1.",
+      "pdf_heading_pages": [
+        11
+      ],
+      "label": "prop:L_definition",
+      "auxiliary_line": "\\newlabel{prop:L_definition}{{3.1}{11}{}{theorem.3.1}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-3-2",
+      "number": "3.2",
+      "page": "11",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 3.2.",
+      "pdf_heading_pages": [
+        11
+      ],
+      "evidence_kind": "fresh_pdf_heading_and_source_counter"
+    },
+    {
+      "id": "ANT-3-3",
+      "number": "3.3",
+      "page": "12",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 3.3.",
+      "pdf_heading_pages": [
+        12
+      ],
+      "label": "lem:height",
+      "auxiliary_line": "\\newlabel{lem:height}{{3.3}{12}{}{theorem.3.3}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-3-4",
+      "number": "3.4",
+      "page": "13",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Proposition 3.4.",
+      "pdf_heading_pages": [
+        13
+      ],
+      "label": "prop:tiling",
+      "auxiliary_line": "\\newlabel{prop:tiling}{{3.4}{13}{}{theorem.3.4}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-3-5",
+      "number": "3.5",
+      "page": "15",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 3.5.",
+      "pdf_heading_pages": [
+        15
+      ],
+      "evidence_kind": "fresh_pdf_heading_and_source_counter"
+    },
+    {
+      "id": "ANT-3-6",
+      "number": "3.6",
+      "page": "15",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 3.6.",
+      "pdf_heading_pages": [
+        15
+      ],
+      "label": "lem:constant",
+      "auxiliary_line": "\\newlabel{lem:constant}{{3.6}{15}{}{theorem.3.6}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-4-1",
+      "number": "4.1",
+      "page": "16",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 4.1.",
+      "pdf_heading_pages": [
+        16
+      ],
+      "label": "lem:tile-height",
+      "auxiliary_line": "\\newlabel{lem:tile-height}{{4.1}{16}{}{theorem.4.1}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-4-2",
+      "number": "4.2",
+      "page": "17",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 4.2.",
+      "pdf_heading_pages": [
+        17
+      ],
+      "evidence_kind": "fresh_pdf_heading_and_source_counter"
+    },
+    {
+      "id": "ANT-4-3",
+      "number": "4.3",
+      "page": "17",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 4.3.",
+      "pdf_heading_pages": [
+        17
+      ],
+      "label": "lem:tile-product",
+      "auxiliary_line": "\\newlabel{lem:tile-product}{{4.3}{17}{}{theorem.4.3}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-4-4",
+      "number": "4.4",
+      "page": "18",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 4.4.",
+      "pdf_heading_pages": [
+        18
+      ],
+      "label": "lem:series",
+      "auxiliary_line": "\\newlabel{lem:series}{{4.4}{18}{}{theorem.4.4}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-4-5",
+      "number": "4.5",
+      "page": "18",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 4.5.",
+      "pdf_heading_pages": [
+        18
+      ],
+      "label": "lem:upper",
+      "auxiliary_line": "\\newlabel{lem:upper}{{4.5}{18}{}{theorem.4.5}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-5-1",
+      "number": "5.1",
+      "page": "19",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Proposition 5.1.",
+      "pdf_heading_pages": [
+        19
+      ],
+      "label": "prop:extension",
+      "auxiliary_line": "\\newlabel{prop:extension}{{5.1}{19}{}{theorem.5.1}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-5-2",
+      "number": "5.2",
+      "page": "19",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 5.2.",
+      "pdf_heading_pages": [
+        19
+      ],
+      "label": "lem:matching",
+      "auxiliary_line": "\\newlabel{lem:matching}{{5.2}{19}{}{theorem.5.2}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-5-3",
+      "number": "5.3",
+      "page": "20",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 5.3.",
+      "pdf_heading_pages": [
+        20
+      ],
+      "label": "lem:replication",
+      "auxiliary_line": "\\newlabel{lem:replication}{{5.3}{20}{}{theorem.5.3}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-5-4",
+      "number": "5.4",
+      "page": "21",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 5.4.",
+      "pdf_heading_pages": [
+        21
+      ],
+      "label": "lem:cube-lower",
+      "auxiliary_line": "\\newlabel{lem:cube-lower}{{5.4}{21}{}{theorem.5.4}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-5-5",
+      "number": "5.5",
+      "page": "21",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Lemma 5.5.",
+      "pdf_heading_pages": [
+        21
+      ],
+      "label": "lem:lower",
+      "auxiliary_line": "\\newlabel{lem:lower}{{5.5}{21}{}{theorem.5.5}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-6-2",
+      "number": "6.1",
+      "page": "22",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Proposition 6.1.",
+      "pdf_heading_pages": [
+        22
+      ],
+      "label": "prop:counting",
+      "auxiliary_line": "\\newlabel{prop:counting}{{6.1}{22}{}{theorem.6.1}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-6-1",
+      "number": "6.2",
+      "page": "23",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Theorem 6.2(The antichain permuton).",
+      "pdf_heading_pages": [
+        23
+      ],
+      "label": "prop:permuton",
+      "auxiliary_line": "\\newlabel{prop:permuton}{{6.2}{23}{The antichain permuton}{theorem.6.2}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-RANK-HAUSDORFF",
+      "number": "6.3",
+      "page": "24",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Remark6.3.",
+      "pdf_heading_pages": [
+        24,
+        49
+      ],
+      "label": "rem:rank-hausdorff",
+      "auxiliary_line": "\\newlabel{rem:rank-hausdorff}{{6.3}{24}{}{theorem.6.3}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-6-PATTERN",
+      "number": "6.4",
+      "page": "24",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Remark6.4.",
+      "pdf_heading_pages": [
+        24
+      ],
+      "label": "rem:pattern-concentration",
+      "auxiliary_line": "\\newlabel{rem:pattern-concentration}{{6.4}{24}{}{theorem.6.4}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-6-3",
+      "number": "6.5",
+      "page": "25",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Proposition 6.5.",
+      "pdf_heading_pages": [
+        25
+      ],
+      "evidence_kind": "fresh_pdf_heading_and_source_counter"
+    },
+    {
+      "id": "ANT-6-4",
+      "number": "6.6",
+      "page": "25",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Proposition 6.6.",
+      "pdf_heading_pages": [
+        25
+      ],
+      "label": "prop:intervals",
+      "auxiliary_line": "\\newlabel{prop:intervals}{{6.6}{25}{}{theorem.6.6}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-INTERVAL-INVERSIONS",
+      "number": "6.7",
+      "page": "25",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Corollary 6.7.",
+      "pdf_heading_pages": [
+        25
+      ],
+      "label": "cor:interval-inversions",
+      "auxiliary_line": "\\newlabel{cor:interval-inversions}{{6.7}{25}{}{theorem.6.7}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-6-5",
+      "number": "6.8",
+      "page": "26",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Question 6.8.",
+      "pdf_heading_pages": [
+        22,
+        26
+      ],
+      "label": "ques:constant",
+      "auxiliary_line": "\\newlabel{ques:constant}{{6.8}{26}{}{theorem.6.8}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-6-6",
+      "number": "6.9",
+      "page": "26",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Question 6.9.",
+      "pdf_heading_pages": [
+        26
+      ],
+      "evidence_kind": "fresh_pdf_heading_and_source_counter"
+    },
+    {
+      "id": "ANT-6-7",
+      "number": "6.10",
+      "page": "27",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Question 6.10.",
+      "pdf_heading_pages": [
+        27
+      ],
+      "evidence_kind": "fresh_pdf_heading_and_source_counter"
+    },
+    {
+      "id": "ANT-6-8",
+      "number": "6.11",
+      "page": "28",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Conjecture 6.11.",
+      "pdf_heading_pages": [
+        28
+      ],
+      "label": "conj:bounded-chains",
+      "auxiliary_line": "\\newlabel{conj:bounded-chains}{{6.11}{28}{}{theorem.6.11}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    },
+    {
+      "id": "ANT-6-9",
+      "number": "6.12",
+      "page": "28",
+      "matches_reconstructed_number": true,
+      "fresh_source_check": true,
+      "compiled_pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634",
+      "compiled_page_count": 50,
+      "compiled_at": "2026-11-20T14:58:50.989783+00:00",
+      "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+      "annotated_main_sha256": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+      "evidence_file": "formalization/compiled-numbering-review.json",
+      "pdf_heading": "Question 6.12.",
+      "pdf_heading_pages": [
+        28
+      ],
+      "label": "ques:universality",
+      "auxiliary_line": "\\newlabel{ques:universality}{{6.12}{28}{}{theorem.6.12}{}}",
+      "evidence_kind": "fresh_auxiliary_label_and_pdf_heading"
+    }
+  ],
+  "scope": "Actual PDF headings and current auxiliary labels; visual layout is reviewed separately."
+}

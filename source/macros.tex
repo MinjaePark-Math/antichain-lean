@@ -1,0 +1,174 @@
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,\mathrm d}
+
+\renewcommand{\P}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\law}{\operatorname{Law}}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\NB}{\operatorname{NB}}
+\newcommand{\Ext}{\mathsf{Ext}}
+\newcommand{\Surv}{\mathsf{Surv}}
+\newcommand{\dto}[1][]{\xrightarrow[#1]{\enskip\mathrm d\enskip}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\PV}{\operatorname{PV}}
+\newcommand{\supp}{\operatorname{supp}}
+\renewcommand{\th}{\vartheta}
+\newcommand{\euler}{\bm{\gamma}_{E}}
+
+\DeclareMathOperator{\wt}{wt}
+\newcommand{\rv}{v_\partial}
+\newcommand{\hgt}{H}
+\newcommand{\Dk}[1]{\mathsf D_{#1}}
+\newcommand{\Rk}[2]{\mathsf R^{#1}_{#2}}
+\newcommand{\tc}{t_{\mathrm c}}
+\newcommand{\muA}{\mu_{\mathrm A}}
+\newcommand{\CLE}[1]{\mathrm{CLE}_{#1}}
+\newcommand{\cm}{\mathbf{c}_{\mathrm M}}
+\newcommand{\cl}{\mathbf{c}_{\mathrm L}}
+\newcommand{\bQ}{\bm{\beta}_Q}
+\newcommand{\bg}{\mathbf g}
+\newcommand{\bh}{\mathbf h}
+
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+
+\newcommand{\fA}{\mathfrak A}
+\newcommand{\fB}{\mathfrak B}
+\newcommand{\fC}{\mathfrak C}
+\newcommand{\fD}{\mathfrak D}
+\newcommand{\fE}{\mathfrak E}
+\newcommand{\fF}{\mathfrak F}
+\newcommand{\fG}{\mathfrak G}
+\newcommand{\fH}{\mathfrak H}
+\newcommand{\fI}{\mathfrak I}
+\newcommand{\fJ}{\mathfrak J}
+\newcommand{\fK}{\mathfrak K}
+\newcommand{\fL}{\mathfrak L}
+\newcommand{\fM}{\mathfrak M}
+\newcommand{\fN}{\mathfrak N}
+\newcommand{\fO}{\mathfrak O}
+\newcommand{\fP}{\mathfrak P}
+\newcommand{\fQ}{\mathfrak Q}
+\newcommand{\fR}{\mathfrak R}
+\newcommand{\fS}{\mathfrak S}
+\newcommand{\fT}{\mathfrak T}
+\newcommand{\fU}{\mathfrak U}
+\newcommand{\fV}{\mathfrak V}
+\newcommand{\fW}{\mathfrak W}
+\newcommand{\fX}{\mathfrak X}
+\newcommand{\fY}{\mathfrak Y}
+\newcommand{\fZ}{\mathfrak Z}
+
+\newcommand{\fa}{\mathfrak a}
+\newcommand{\fb}{\mathfrak b}
+\newcommand{\fc}{\mathfrak c}
+\newcommand{\fd}{\mathfrak d}
+\newcommand{\fe}{\mathfrak e}
+\newcommand{\ff}{\bm{\mathfrak f}}
+\newcommand{\fg}{\mathfrak g}
+\newcommand{\fh}{\mathfrak h}
+\newcommand{\fri}{\mathfrak i}
+\newcommand{\fj}{\mathfrak j}
+\newcommand{\fk}{\mathfrak k}
+\newcommand{\fl}{\mathfrak l}
+\newcommand{\fm}{\mathfrak m}
+\newcommand{\fn}{\mathfrak n}
+\newcommand{\fo}{\mathfrak o}
+\newcommand{\fp}{\mathfrak p}
+\newcommand{\fq}{\mathfrak q}
+\newcommand{\fr}{\mathfrak r}
+\newcommand{\fs}{\mathfrak s}
+\newcommand{\ft}{\mathfrak t}
+\newcommand{\fu}{\mathfrak u}
+\newcommand{\fv}{\mathfrak v}
+\newcommand{\fw}{\mathfrak w}
+\newcommand{\fx}{\mathfrak x}
+\newcommand{\fy}{\mathfrak y}
+\newcommand{\fz}{\mathfrak z}
+
+\newcommand{\mref}[1]{\ref*{P-#1}}
+\newcommand{\figp}[3]{\begin{figure}[htbp]\centering
+    \begin{minipage}{.87\linewidth}\small\itshape\centering
+      [Figure placeholder: #1]\end{minipage}\caption{#2}\label{#3}\end{figure}}
+\newcommand{\appx}{%
+  \par\bigskip
+  \section*{Appendix}%
+  \addcontentsline{toc}{section}{Appendix}%
+  \setcounter{subsection}{0}%
+  \renewcommand{\thesubsection}{\Alph{subsection}}%
+  \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}%
+  \numberwithin{theorem}{subsection}%
+  \numberwithin{equation}{subsection}%
+  \renewcommand{\theHsubsection}{appendix.\Alph{subsection}}%
+  \renewcommand{\theHsubsubsection}{\theHsubsection.\arabic{subsubsection}}%
+  \renewcommand{\theHtheorem}{\theHsubsection.\arabic{theorem}}%
+  \renewcommand{\theHequation}{\theHsubsection.\arabic{equation}}%
+}
+
+\newif\iftdo
+  \tdotrue
+  \newcommand{\todo}[1]{\iftdo\textcolor{red}{\textbf{[TODO:} #1\textbf{]}}\fi}
+  \DeclareRobustCommand{\andrew}[1]{\iftdo{\normalfont\color{magenta!70!black}#1}\fi}
+\DeclareRobustCommand{\ewain}[1]{\iftdo{\normalfont\color{green!40!black}#1}\fi}
+\DeclareRobustCommand{\minjae}[1]{\iftdo{\normalfont\color{magenta!70!black}#1}\fi}
+
+\DeclareMathOperator{\Var}{Var}
+\newcommand{\ind}{\mathds 1}
+\newcommand{\vx}{\mathbf x}
+\newcommand{\vy}{\mathbf y}
+\newcommand{\vz}{\mathbf z}
+\newcommand{\vf}{\mathbf f}
+\newcommand{\vg}{\mathbf g}
+\newcommand{\vh}{\mathbf h}
+\newcommand{\ve}{\mathbf e}
+\newcommand{\vv}{\mathbf v}
+\newcommand{\vu}{\mathbf u}
+\newcommand{\vw}{\mathbf w}
+\newcommand{\vX}{\mathbf X}
+\newcommand{\vY}{\mathbf Y}
+\newcommand{\vG}{\mathbf G}
+\newcommand{\vF}{\mathbf F}
+\newcommand{\vR}{\mathbf R}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\Ldir}[1]{\mathcal L\left\{#1\right\}}
+\newcommand{\Vfit}{V_r^{\mathrm{fit}}}
+\DeclareMathOperator{\Vol}{vol}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\diam}{diam}
+
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Inv}{Inv}
+\DeclareMathOperator{\inv}{inv}
+\DeclareMathOperator{\LE}{LE}

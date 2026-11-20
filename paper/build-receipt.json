@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "built",
+  "completed_at": "2026-11-20T14:58:49.507986+00:00",
+  "command": [
+    "C:\\texlive\\2025\\bin\\windows\\latexmk.EXE",
+    "-g",
+    "-pdf",
+    "-interaction=nonstopmode",
+    "-halt-on-error",
+    "main.tex"
+  ],
+  "working_directory": ".",
+  "exit_code": 0,
+  "build_log": "build-output.log",
+  "source_sha256": {
+    "figures/limit_shape_both.pdf": "f64040f92c3dbdf3a4ad4a68b8e44b82f3e842b44f2bd928704cedceaf80c2ac",
+    "figures/limit_shape_cube.pdf": "2dba2b46dd11f8801c5c937ddd40819ce31d2d00aec678afad4b068f72069aa5",
+    "figures/limit_shape_gaussian.pdf": "cd5af194cc2c4de65f93b1cab668c7ca3930d1b6de37214937ee24f03f95c2cb",
+    "human-proofs-algebra.tex": "721c3f127dc0c86e0cfcea9d749a75200f35d84b48dd3a2a57178eb80dbce478",
+    "human-proofs-geometry.tex": "e09a2a4d71d9586f9634747facf4224f5f9b50a5720fd6a69ac6a9b6544c8f8e",
+    "human-proofs-probability.tex": "e2cb91acc9e2e517696e6593f57ab74ce44c64ffb2eb441dfe92f83a61b74060",
+    "macros.tex": "3552a15ff7a7b540f5a2598cdd30fd82e2f076ae7264e459f8203e86ce5a97e5",
+    "main.tex": "0d707163877f7da81416b6a8b1183f52296cf448119a1b3ec87c9fb1cf0a5a05",
+    "preamble.tex": "7ddfa98a042dd5a3dde3671bcb28bed84f82918b0df5ebcbb92d5be3f29a0bc9",
+    "references.bib": "3bb3a05eaf49afdbf8ffe1372b3510e1629e593750399f1306d288486c971a3a",
+    "verification-appendix.tex": "1305340fea240653c6f68f2fe124643c3a160e96cdc48ccd70083924cbc4e26f",
+    "verification-full-proofs.tex": "c442b02d7ad42ff7c0b859e7aca389d7ebb469b1ee0e597fc89e0ebd4f3c6b0f",
+    "verification-preamble.tex": "a1e955dcfe5f58bf713500805719d10589395f8aedf8c4b307ee143c5e16e6a3"
+  },
+  "pdf": "main.pdf",
+  "pdf_sha256": "15f25694862154fda3a5547dd418db9e208618ff45fdeb03222ba645f2705634"
+}

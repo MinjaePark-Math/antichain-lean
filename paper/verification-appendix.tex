@@ -1,0 +1,115 @@
+\clearpage\appendix\section{Lean verification status}\label{sec:lean-status}
+
+The code uses Lean 4.24.0 and Mathlib revision \texttt{f897ebcf72cd16f89ab4577d0c826cd14afaafc7}. The audit compiles every included source module and checks the complete types and transitive axioms of all declarations defined by these modules. Only \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound} are allowed. These logical axioms supply no unproved mathematical input.
+
+The audit checked 3,151 theorems and 3,708 declarations. The Lean sources and audit inputs match the previous audited snapshot. Each tracked assertion has a short proof idea and a comparison of the manuscript and Lean arguments. The introductory surface-tension claim cites a private communication. The functional and admissible class are not specified in the draft, so the variational claim is outside the verification scope.
+
+\paragraph{What proof agreement means.} A matching statement alone does not certify its written proof. ``Same argument'' means that the mathematical strategy agrees, after the documented coordinate and measure identifications. ``Additional formal details'' identifies expansions or local implementation distinctions, explained individually below. ``Different argument'' identifies a substantive replacement, with a complete readable proof in Appendix~\ref{sec:lean-full-proofs}. These are reviewed mathematical correspondence judgments, separate from kernel checking. The revised rank proof uses the checked finite-sample Hoeffding estimate. Lean also proves the specialized type-A alcove facts used by the paper.
+
+\small\begin{longtable}{@{}p{0.12\linewidth}p{0.29\linewidth}p{0.53\linewidth}@{}}
+
+\textbf{Item} & \textbf{Status} & \textbf{Scope}\\\hline\endhead
+
+1.1 & Fully Lean-verified & Logarithmic antichain counting asymptotic. Complete assertion. No external mathematical input. No separate written proof. \\
+
+1.2 & Fully Lean-verified & Exponential Hausdorff concentration. Complete assertion. No external mathematical input. Same written argument. \\
+
+1.3 & Fully Lean-verified & Weighted antichain expectation asymptotic. Complete assertion. No external mathematical input. Same written argument. \\
+
+1.4 & Fully Lean-verified & Counting constant and Gaussian power integral. Complete assertion. No external mathematical input. Same written argument. \\
+
+2.1 & Fully Lean-verified & Exponential empirical-law concentration. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+2.2 & Fully Lean-verified & Support closure and strict comparable witness. Complete assertion. No external mathematical input. Same written argument. \\
+
+3.1 & Fully Lean-verified & Antichain equivalence with directional height constraints. Complete assertion. No external mathematical input. Same written argument. \\
+
+3.2 & Fully Lean-verified & Directional cost subadditivity, homogeneity and norm bounds. Complete assertion. No external mathematical input. Same written argument. \\
+
+3.3 & Fully Lean-verified & Height Lipschitz bound for an antichain. Complete assertion. No external mathematical input. No separate written proof. \\
+
+3.4 & Fully Lean-verified & Affine type-A alcove tiling and complete-tile count. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+3.5 & Fully Lean-verified & Pinned volume tile invariance and scaling. Complete assertion. No external mathematical input. Same written argument. \\
+
+3.6 & Fully Lean-verified & Uniform boundedness of local rate and finite limsup. Complete assertion. No external mathematical input. Same written argument. \\
+
+4.1 & Fully Lean-verified & Weighted one-tile common-height bound. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+4.2 & Fully Lean-verified & Coefficient logarithmic limsup. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+4.3 & Fully Lean-verified & Poissonization, independent-tile product and occupancy bound. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+4.4 & Fully Lean-verified & One-tile generating series convergence and growth. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+4.5 & Fully Lean-verified & Weighted upper limsup bound. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+5.1 & Fully Lean-verified & Asymmetric infimum extension and Lipschitz bound. Complete assertion. No external mathematical input. Same written argument. \\
+
+5.2 & Fully Lean-verified & Measurable boundary-matched family with volume retention. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+5.3 & Fully Lean-verified & Replication across reflected tiles and exact volume. Complete assertion. No external mathematical input. Same written argument. \\
+
+5.4 & Fully Lean-verified & Finite-cube weighted lower bound. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+5.5 & Fully Lean-verified & Global weighted lower liminf bound. Complete assertion. No external mathematical input. Same written argument. \\
+
+6.1 & Fully Lean-verified & Normalized two-point avoidance enumeration. Complete assertion. No external mathematical input. Same written argument. \\
+
+6.2 & Fully Lean-verified & Exponential concentration of both rank measures. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+6.3 & Fully Lean-verified & Exponential Hausdorff concentration of the rank point cloud. Complete assertion. No external mathematical input. Same written argument. \\
+
+6.4 & Fully Lean-verified & Exponential fixed-pattern concentration. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+6.5 & Fully Lean-verified & Weak-order interval enumeration and comparison probability. Complete assertion. No external mathematical input. Same written argument. \\
+
+6.6 & Fully Lean-verified & Exponential weak concentration of the interval endpoint law. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+6.7 & Fully Lean-verified & Joint exponential concentration of the lower and upper inversion densities. Complete assertion. No external mathematical input. Same written argument. \\
+
+Prose claim & Fully Lean-verified & Reflected shape and permuton limits for every two-point orientation. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+Prose claim & Fully Lean-verified & Expected linear-extension identity for random multidimensional orders. Complete assertion. No external mathematical input. Same written argument. \\
+
+Prose claim & Fully Lean-verified & Gaussian uniqueness from location-arrangement separation. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+Prose claim & Fully Lean-verified & Means, variances, off-diagonal covariance and zero sum of the actual limiting Gaussian. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+Prose claim & Fully Lean-verified & Actual reference-simplex vertices and three-dimensional equilateral geometry. Complete assertion. No external mathematical input. No separate written proof. \\
+
+Prose claim & Fully Lean-verified & Infinite unpinned antichain volume over a positive-volume floor set. Complete assertion. No external mathematical input. No separate written proof. \\
+
+Prose claim & Fully Lean-verified & Symmetrized directional gauge is a norm and exact height-interval width. Complete assertion. No external mathematical input. No separate written proof. \\
+
+Prose claim & Fully Lean-verified & Exact uniform marginals of the rank-box permuton. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+Prose claim & Fully Lean-verified & Two-dimensional refined logarithmic remainder. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+Prose claim & Fully Lean-verified & Deterministic coordinate averages of finite rank measures. Complete assertion. No external mathematical input. No separate written proof. \\
+
+Prose claim & Fully Lean-verified & Bounded-chain equivalence and longest-chain antichain coloring. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+Prose claim & Fully Lean-verified & Monotone coordinate Jacobian and Boltzmann density. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+Prose claim & Fully Lean-verified & Normalized Gaussian inverse coordinate map equals the actual normal quantile. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+Prose claim & Fully Lean-verified & One-point pinned-volume normalization. Complete assertion. No external mathematical input. No separate written proof. \\
+
+Prose claim & Fully Lean-verified & Uniform normalized ranks, independence of sorted values, and exact antichain count. Complete assertion. No external mathematical input. Written argument expanded in Lean. \\
+
+Prose claim & Lean-verified assuming the iid CLT & Gaussian limit of the centered empirical coordinate average. Checked assuming the general iid central limit theorem. Written argument expanded in Lean. \\
+
+Prose claim & Fully Lean-verified & Exponential concentration of the mean squared height near zero. Complete assertion. No external mathematical input. Same written argument. \\
+
+\end{longtable}\normalsize
+
+\paragraph{Direct alcove geometry.} The code proves that the actual side-reflection images of the printed simplex cover the floor, have disjoint interiors and form a locally finite family, and proves uniqueness of their affine maps and closed-alcove orbit representatives. Integer translations and coordinate permutations give orbit discreteness. Minimizing distance to an explicit interior point and reflecting a violated wall gives coverage. The ordered-coordinate and integer-shift argument proves uniqueness. Thus no external Humphreys theorem is required by the final certificates.
+
+\paragraph{Order-statistic concentration.} The rank proof follows the current manuscript. Under the actual conditioned sorted-value law, uniform threshold counts are binomial. Hoeffding bounds the deviation of each order statistic, and a finite union over the coordinate/rank pairs gives the printed Euclidean displacement bound. The earlier sharp DKW theorem remains proved as a supplementary result.
+
+\paragraph{Actual model.} The repository constructs the uniform cube sample, its Gaussian CDF and quantile transforms, actual conditional laws, induced Euclidean floor volume, pinned configurations, exact Jacobians and Gaussian integrals. It proves the local entropy bounds, tile summation, matching and replication arguments, all-size weighted upper and lower rates, and their probabilistic consequences for the original model. No theorem of this paper is used as an unproved model assumption.
+
+\paragraph{Source correspondence and future edits.} Stable identifiers such as \texttt{ANT-3-1} map the paper to exact Lean names in \texttt{formalization/coverage.json}. The package freezes complete structural declaration types, source fingerprints, dependency revisions, and the reviewed original manuscript. Changes to statements, definitions or imports require a fresh build, axiom audit and correspondence review; changing an index alone cannot update the certificate.
+
+\paragraph{Reproduction.} In the repository root, run \texttt{lake exe cache get}, then \texttt{python verify.py}, then \texttt{python scripts/check\_release.py}. The first command obtains pinned library artifacts; the second checks Lean code; the third checks the manuscript mapping and frozen source/type snapshot. The full source package includes the annotated paper and its bibliography and figures. No hosted GitHub Actions success is asserted by this local release.

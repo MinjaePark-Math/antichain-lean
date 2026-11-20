@@ -1,0 +1,843 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-20",
+  "reviewer": "lean_geometry",
+  "source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+  "reviewed_snapshot": "source/main.tex",
+  "packaged_baseline_sha256": "fddf30aa7db66df3b250b668f6be432e9a9a49ec077caa9e0ff80feb2c824fa6",
+  "tracked_comparison_commit": "fd1db1f",
+  "scope": "Sections 3 and 5: 11 numbered assertions and 4 inventoried geometric prose claims. No main.tex, shared inventory, generator or Lean root edits.",
+  "summary": {
+    "owned_claims": 15,
+    "new_statement_clause": "ANT-3-4 unique closed-alcove orbit representative, added as an exact endpoint from the existing proved geometry.",
+    "notation_change": "S_r(B) to V_r(B): same pinned Euclidean measure, paper point count = Lean free count+1.",
+    "changed_written_strategies_completed": [
+      "Exact j-largest-edge deletion and exact j+1 components",
+      "Leaf-to-root iterated Fubini height-width product"
+    ],
+    "section5_mathematical_changes": false,
+    "new_production_modules": [
+      "Antichain.ParentHeightFubini",
+      "Antichain.MSTLargestEdges",
+      "Antichain.GeometryRevisionSource"
+    ],
+    "modified_production_modules": [
+      "Antichain.PinnedVolumeUpper"
+    ],
+    "compile_status": "clean",
+    "production_frozen": true,
+    "narrow_axiom_audit": "8 endpoints; only propext, Classical.choice, Quot.sound",
+    "whole_project_audit": "Parent coordinates the fresh whole-project audit; no final whole-audit claim here."
+  },
+  "implementation_distinctions": [
+    "Source diameter is bounded explicitly by 2*sqrt(d); 8*d*sqrt(d−1) is a valid concrete source constant.",
+    "The j+1 packing yields the stronger (paper point count)! denominator, which implies the printed (point count−1)! bound.",
+    "Coincident floors and the one-point zero-dimensional fiber are handled directly rather than excluded a.e.",
+    "Lower grid-ball packing uses explicit centers/radii in a fixed interior region; same construction, harmless constant choices.",
+    "Cited abstract affine-Weyl/group terminology is background exposition; all actual required geometric conclusions and the new pairwise interior characterization are proved without an external tiling premise."
+  ],
+  "source_label_removed_without_math_change": [
+    "eq:reweighted-law"
+  ],
+  "human_proof_file": "formalization/human-proofs-geometry.tex",
+  "retained_human_proof_labels": [
+    "leanproof:ANT-3-4",
+    "leanproof:ANT-3-6",
+    "leanproof:ANT-5-3"
+  ],
+  "entries": [
+    {
+      "id": "ANT-3-1",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "The actual floor/height coordinates and both ordered constraints match the paper. Lean first proves the comparison with a positive scalar and then instantiates sqrt(d); this generality changes neither assumptions nor conclusion.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.all_coordinates_lt_iff_heightGauge_lt",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 61
+        },
+        {
+          "declaration": "Antichain.floor_antichain_iff_height_constraints",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 391
+        },
+        {
+          "declaration": "Antichain.heightGauge_eq_neg_mul_min",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 45
+        }
+      ],
+      "source_labels": [
+        "prop:L_definition",
+        "eq:constraints"
+      ],
+      "source_lines": [
+        332,
+        337
+      ],
+      "proof_lines": [
+        338,
+        346
+      ],
+      "lean_declarations": [
+        "Antichain.all_coordinates_lt_iff_heightGauge_lt",
+        "Antichain.floor_antichain_iff_height_constraints",
+        "Antichain.heightGauge_eq_neg_mul_min"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-3-2",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "Subadditivity, nonnegative homogeneity, permutation invariance and both sharp ordinary Euclidean bounds follow by the written argument. The equality with the native Euclidean norm is proved explicitly.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.heightGauge_add_le",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 87
+        },
+        {
+          "declaration": "Antichain.heightGauge_smul",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 96
+        },
+        {
+          "declaration": "Antichain.heightGauge_equiv",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 111
+        },
+        {
+          "declaration": "Antichain.sum_sq_le_card_sub_one_mul_heightGauge_sq",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 135
+        },
+        {
+          "declaration": "Antichain.heightGauge_sq_le_card_sub_one_mul_sum_sq",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 175
+        },
+        {
+          "declaration": "Antichain.heightGauge_norm_bounds_euclidean",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 256
+        }
+      ],
+      "source_labels": [
+        "eq:height-bound"
+      ],
+      "source_lines": [
+        349,
+        355
+      ],
+      "proof_lines": [
+        356,
+        366
+      ],
+      "lean_declarations": [
+        "Antichain.heightGauge_add_le",
+        "Antichain.heightGauge_smul",
+        "Antichain.heightGauge_equiv",
+        "Antichain.sum_sq_le_card_sub_one_mul_heightGauge_sq",
+        "Antichain.heightGauge_sq_le_card_sub_one_mul_sum_sq",
+        "Antichain.heightGauge_norm_bounds_euclidean"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-3-3",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "no_separate_proof",
+      "comparison": "There is no separate written proof environment. The existing checked proof supplies the indicated immediate consequence without changing its Lipschitz constant.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.antichain_height_lipschitz",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 422
+        }
+      ],
+      "source_labels": [
+        "lem:height",
+        "cor:height"
+      ],
+      "source_lines": [
+        370,
+        372
+      ],
+      "lean_declarations": [
+        "Antichain.antichain_height_lipschitz"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-3-4",
+      "source_file": "main.tex",
+      "statement_comparison": "strengthened_by_explicit_previously_proved_orbit_representative_clause",
+      "proof_method": "expanded_argument",
+      "comparison": "The statement newly includes existence and uniqueness of the point of the closed reference simplex in each actual generated orbit. GeometryRevisionSource now gives that literal forall x existsUnique y endpoint. Other tiling, local-finiteness, unique-map and tile-count conclusions are unchanged. The revised root-hyperplane and affine-Weyl terminology is cited background, expanded by directly proved type-A geometric facts, not a claimed formalization of abstract Coxeter theory.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.alcove_unique_representative_source",
+          "file": "lean/Antichain/GeometryRevisionSource.lean",
+          "line": 17
+        },
+        {
+          "declaration": "Antichain.interior_referenceSimplex_iff_pair_differences",
+          "file": "lean/Antichain/GeometryRevisionSource.lean",
+          "line": 34
+        },
+        {
+          "declaration": "Antichain.reflectionWordMap_integer_normal_form",
+          "file": "lean/Antichain/AffineAlcoveGroup.lean",
+          "line": 35
+        },
+        {
+          "declaration": "Antichain.reflectionWordMap_reverse_left",
+          "file": "lean/Antichain/AffineAlcoveGroup.lean",
+          "line": 99
+        },
+        {
+          "declaration": "Antichain.reflectionWordOrbit_has_dist_minimizer",
+          "file": "lean/Antichain/AlcoveDiscreteness.lean",
+          "line": 85
+        },
+        {
+          "declaration": "Antichain.alcoveTile_locallyFinite_direct",
+          "file": "lean/Antichain/AlcoveDiscreteness.lean",
+          "line": 123
+        },
+        {
+          "declaration": "Antichain.affineCoordinateReflection_dist_sq",
+          "file": "lean/Antichain/AlcoveCover.lean",
+          "line": 40
+        },
+        {
+          "declaration": "Antichain.alcoveTile_covers_direct",
+          "file": "lean/Antichain/AlcoveCover.lean",
+          "line": 171
+        },
+        {
+          "declaration": "Antichain.integer_shift_preserves_sums",
+          "file": "lean/Antichain/AlcoveFundamentalDomain.lean",
+          "line": 22
+        },
+        {
+          "declaration": "Antichain.closed_alcove_representative_unique_direct",
+          "file": "lean/Antichain/AlcoveFundamentalDomain.lean",
+          "line": 152
+        },
+        {
+          "declaration": "Antichain.same_tile_map_unique_direct",
+          "file": "lean/Antichain/AlcoveFundamentalDomain.lean",
+          "line": 211
+        },
+        {
+          "declaration": "Antichain.alcoveTile_disjoint_interiors_direct",
+          "file": "lean/Antichain/AlcoveFundamentalDomain.lean",
+          "line": 277
+        },
+        {
+          "declaration": "Antichain.completeCubeTile_volume_sandwich",
+          "file": "lean/Antichain/CubeTileCount.lean",
+          "line": 125
+        },
+        {
+          "declaration": "Antichain.completeCubeTile_count_error_bound",
+          "file": "lean/Antichain/CubeTileCount.lean",
+          "line": 195
+        },
+        {
+          "declaration": "Antichain.completeCubeTile_count_isBigO_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 90
+        }
+      ],
+      "source_labels": [
+        "prop:tiling",
+        "eq:tile-number"
+      ],
+      "source_lines": [
+        440,
+        445
+      ],
+      "proof_lines": [
+        446,
+        457
+      ],
+      "lean_declarations": [
+        "Antichain.alcove_unique_representative_source",
+        "Antichain.interior_referenceSimplex_iff_pair_differences",
+        "Antichain.reflectionWordMap_integer_normal_form",
+        "Antichain.reflectionWordMap_reverse_left",
+        "Antichain.reflectionWordOrbit_has_dist_minimizer",
+        "Antichain.alcoveTile_locallyFinite_direct",
+        "Antichain.affineCoordinateReflection_dist_sq",
+        "Antichain.alcoveTile_covers_direct",
+        "Antichain.integer_shift_preserves_sums",
+        "Antichain.closed_alcove_representative_unique_direct",
+        "Antichain.same_tile_map_unique_direct",
+        "Antichain.alcoveTile_disjoint_interiors_direct",
+        "Antichain.completeCubeTile_volume_sandwich",
+        "Antichain.completeCubeTile_count_error_bound",
+        "Antichain.completeCubeTile_count_isBigO_direct"
+      ],
+      "statement_match": "same",
+      "human_proof_label": "leanproof:ANT-3-4"
+    },
+    {
+      "id": "ANT-3-5",
+      "source_file": "main.tex",
+      "statement_comparison": "equivalent_after_S_r_to_V_r_pinned_volume_rename",
+      "proof_method": "same_argument",
+      "comparison": "The sample count is positive in both versions. The pinned convention is checked explicitly: r paper points have r-1 free heights, giving exponent dr-1. No tiling theorem is needed for this map identity.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.pinnedVolume_reflectionTile_scale",
+          "file": "lean/Antichain/TileSymmetries.lean",
+          "line": 95
+        }
+      ],
+      "source_labels": [
+        "eq:cut-scale"
+      ],
+      "source_lines": [
+        487,
+        492
+      ],
+      "proof_lines": [
+        493,
+        495
+      ],
+      "lean_declarations": [
+        "Antichain.pinnedVolume_reflectionTile_scale"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-3-6",
+      "source_file": "main.tex",
+      "statement_comparison": "equivalent_after_S_r_to_V_r_pinned_volume_rename",
+      "proof_method": "same_argument",
+      "comparison": "The statement is unchanged after renaming pinned volume S_r to V_r. The written upper proof genuinely changes: delete exactly the j largest actual tree edges, yielding exactly j+1 components, and integrate parent-height intervals leaf to root rather than use a height-difference Jacobian. Both revised routes are now proved and called by the unchanged original pinned-volume source endpoint. Ties, coincident floors and the one-point zero-dimensional fiber remain included.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.volume_sequentialIntervalRegion",
+          "file": "lean/Antichain/ParentHeightFubini.lean",
+          "line": 62
+        },
+        {
+          "declaration": "Antichain.pinnedHeightFiber_volume_le_parentWidth_fubini",
+          "file": "lean/Antichain/ParentHeightFubini.lean",
+          "line": 153
+        },
+        {
+          "declaration": "Antichain.tree_delete_component_count",
+          "file": "lean/Antichain/MSTLargestEdges.lean",
+          "line": 88
+        },
+        {
+          "declaration": "Antichain.minimumSpanningTree_delete_separation",
+          "file": "lean/Antichain/MSTLargestEdges.lean",
+          "line": 106
+        },
+        {
+          "declaration": "Antichain.largestTreeEdges_card",
+          "file": "lean/Antichain/MSTLargestEdges.lean",
+          "line": 126
+        },
+        {
+          "declaration": "Antichain.mst_sorted_edge_bound_largest",
+          "file": "lean/Antichain/MSTLargestEdges.lean",
+          "line": 140
+        },
+        {
+          "declaration": "Antichain.mst_edge_product_bound_largest",
+          "file": "lean/Antichain/MSTLargestEdges.lean",
+          "line": 189
+        },
+        {
+          "declaration": "Antichain.pinnedHeightFiber_referenceSimplex_factorial_bound",
+          "file": "lean/Antichain/PinnedVolumeUpper.lean",
+          "line": 121
+        },
+        {
+          "declaration": "Antichain.pinnedVolume_referenceSimplex_factorial_bound",
+          "file": "lean/Antichain/PinnedVolumeUpper.lean",
+          "line": 190
+        },
+        {
+          "declaration": "Antichain.pinnedVolume_referenceSimplex_grid_lower",
+          "file": "lean/Antichain/PinnedVolumeLower.lean",
+          "line": 148
+        },
+        {
+          "declaration": "Antichain.localGammaSequence_bounded",
+          "file": "lean/Antichain/LocalRate.lean",
+          "line": 17
+        },
+        {
+          "declaration": "Antichain.localGammaConstant_bounded",
+          "file": "lean/Antichain/LocalRate.lean",
+          "line": 40
+        }
+      ],
+      "source_labels": [
+        "lem:constant",
+        "eq:gamma"
+      ],
+      "source_lines": [
+        498,
+        504
+      ],
+      "proof_lines": [
+        505,
+        538
+      ],
+      "lean_declarations": [
+        "Antichain.volume_sequentialIntervalRegion",
+        "Antichain.pinnedHeightFiber_volume_le_parentWidth_fubini",
+        "Antichain.tree_delete_component_count",
+        "Antichain.minimumSpanningTree_delete_separation",
+        "Antichain.largestTreeEdges_card",
+        "Antichain.mst_sorted_edge_bound_largest",
+        "Antichain.mst_edge_product_bound_largest",
+        "Antichain.pinnedHeightFiber_referenceSimplex_factorial_bound",
+        "Antichain.pinnedVolume_referenceSimplex_factorial_bound",
+        "Antichain.pinnedVolume_referenceSimplex_grid_lower",
+        "Antichain.localGammaSequence_bounded",
+        "Antichain.localGammaConstant_bounded"
+      ],
+      "statement_match": "same",
+      "human_proof_label": "leanproof:ANT-3-6"
+    },
+    {
+      "id": "ANT-5-1",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "Lean proves a slightly stronger theorem requiring only a lower bound on the original heights and no boundedness of the original floor set. The paper's bounded data on nonempty bounded B satisfy these premises, so there is no domain or assumption gap.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.floor_heightExtension_spec",
+          "file": "lean/Antichain/Geometry.lean",
+          "line": 446
+        }
+      ],
+      "source_labels": [
+        "prop:extension",
+        "eq:height-data"
+      ],
+      "source_lines": [
+        759,
+        773
+      ],
+      "proof_lines": [
+        774,
+        780
+      ],
+      "lean_declarations": [
+        "Antichain.floor_heightExtension_spec"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-5-2",
+      "source_file": "main.tex",
+      "statement_comparison": "equivalent_after_S_r_to_V_r_pinned_volume_rename",
+      "proof_method": "expanded_argument",
+      "comparison": "Only notation/editorial changes. The exact full-volume factor is still (2/M)(1−eta)^(d*r)(1−lambda)^r V_r(Delta). Lean chooses C once before eta/lambda/r, M after eta/lambda and before r, and then the measurable family and common boundary profile for each r. The common profile may depend on r; each configuration may have its own extension. The actual tube/contractions/Arzela–Ascoli net/measurable class/slack proof is unchanged.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.contractedTube_volume",
+          "file": "lean/Antichain/ConfigurationTube.lean",
+          "line": 97
+        },
+        {
+          "declaration": "Antichain.admissibleBoundaryProfiles_compact_closure",
+          "file": "lean/Antichain/BoundaryProfiles.lean",
+          "line": 69
+        },
+        {
+          "declaration": "Antichain.finite_admissible_boundary_profile_net",
+          "file": "lean/Antichain/BoundaryProfiles.lean",
+          "line": 82
+        },
+        {
+          "declaration": "Antichain.finiteBoundaryProfile_continuous",
+          "file": "lean/Antichain/BoundaryMatching.lean",
+          "line": 95
+        },
+        {
+          "declaration": "Antichain.exists_large_profile_ball",
+          "file": "lean/Antichain/BoundaryMatching.lean",
+          "line": 199
+        },
+        {
+          "declaration": "Antichain.close_boundary_profile_has_common_extension",
+          "file": "lean/Antichain/BoundaryMatching.lean",
+          "line": 317
+        },
+        {
+          "declaration": "Antichain.measurable_matching_family_from_profile_net",
+          "file": "lean/Antichain/BoundaryMatching.lean",
+          "line": 358
+        },
+        {
+          "declaration": "Antichain.boundary_matching_source",
+          "file": "lean/Antichain/BoundaryMatching.lean",
+          "line": 504
+        }
+      ],
+      "source_labels": [
+        "lem:matching",
+        "item:fit-bounds",
+        "item:fit-extension",
+        "item:fit-volume",
+        "eq:matching"
+      ],
+      "source_lines": [
+        784,
+        804
+      ],
+      "proof_lines": [
+        807,
+        844
+      ],
+      "lean_declarations": [
+        "Antichain.contractedTube_volume",
+        "Antichain.admissibleBoundaryProfiles_compact_closure",
+        "Antichain.finite_admissible_boundary_profile_net",
+        "Antichain.finiteBoundaryProfile_continuous",
+        "Antichain.exists_large_profile_ball",
+        "Antichain.close_boundary_profile_has_common_extension",
+        "Antichain.measurable_matching_family_from_profile_net",
+        "Antichain.boundary_matching_source"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-5-3",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "The production gluedAlcoveHeight_directional now uses an actually constructed finite subsegment chain, not the former closed-set interval-induction substitute. The subdivision also has a literal finite endpoint-list theorem. Its source call discharges convexity and local finiteness with the actual tiles. All replication family, height and exact volume conclusions are unchanged.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.finite_closed_interval_subdivision_list",
+          "file": "lean/Antichain/SegmentSubdivision.lean",
+          "line": 79
+        },
+        {
+          "declaration": "Antichain.locallyFinite_closed_convex_segment_subdivision_list",
+          "file": "lean/Antichain/SegmentSubdivision.lean",
+          "line": 132
+        },
+        {
+          "declaration": "Antichain.global_directional_of_finite_segment_subdivision",
+          "file": "lean/Antichain/SegmentSubdivision.lean",
+          "line": 144
+        },
+        {
+          "declaration": "Antichain.transported_extensions_agree_on_overlap",
+          "file": "lean/Antichain/ReflectionGluing.lean",
+          "line": 168
+        },
+        {
+          "declaration": "Antichain.gluedAlcoveHeight_directional",
+          "file": "lean/Antichain/ReflectionGluing.lean",
+          "line": 206
+        },
+        {
+          "declaration": "Antichain.card_balancedLabeling_real",
+          "file": "lean/Antichain/ReplicationLabels.lean",
+          "line": 110
+        },
+        {
+          "declaration": "Antichain.volume_replicatedLabelFamily",
+          "file": "lean/Antichain/Replication.lean",
+          "line": 105
+        },
+        {
+          "declaration": "Antichain.replicationFamily_pairwise_disjoint",
+          "file": "lean/Antichain/Replication.lean",
+          "line": 226
+        },
+        {
+          "declaration": "Antichain.replicationFamily_volume_formula",
+          "file": "lean/Antichain/Replication.lean",
+          "line": 280
+        },
+        {
+          "declaration": "Antichain.matching_replication_source_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 117
+        }
+      ],
+      "source_labels": [
+        "lem:replication",
+        "eq:replication"
+      ],
+      "source_lines": [
+        846,
+        855
+      ],
+      "proof_lines": [
+        856,
+        868
+      ],
+      "lean_declarations": [
+        "Antichain.finite_closed_interval_subdivision_list",
+        "Antichain.locallyFinite_closed_convex_segment_subdivision_list",
+        "Antichain.global_directional_of_finite_segment_subdivision",
+        "Antichain.transported_extensions_agree_on_overlap",
+        "Antichain.gluedAlcoveHeight_directional",
+        "Antichain.card_balancedLabeling_real",
+        "Antichain.volume_replicatedLabelFamily",
+        "Antichain.replicationFamily_pairwise_disjoint",
+        "Antichain.replicationFamily_volume_formula",
+        "Antichain.matching_replication_source_direct"
+      ],
+      "statement_match": "same",
+      "human_proof_label": "leanproof:ANT-5-3"
+    },
+    {
+      "id": "ANT-5-4",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "expanded_argument",
+      "comparison": "The full finite-family statement permits independently rotated cubes. Lean chooses an orthonormal frame for each cube, counts complete tiles in its own frame and uses the common tiling to replicate matched families. The weighted size selection and deletion proofs reach all sample sizes. Separate concentric shrinks handle touching boundaries. The final liminf follows using the independent upper estimate for boundedness and the actual cube lower bound.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.OrientedCube.cube_lower_liminf_source_direct",
+          "file": "lean/Antichain/OrientedCubeSource.lean",
+          "line": 62
+        },
+        {
+          "declaration": "Antichain.OrientedCube.cubeLowerSum_eq_volume",
+          "file": "lean/Antichain/OrientedCubeSource.lean",
+          "line": 22
+        },
+        {
+          "declaration": "Antichain.OrientedCube.normalizedPartitionLog_cubes_lower",
+          "file": "lean/Antichain/OrientedCubeLower.lean",
+          "line": 135
+        },
+        {
+          "declaration": "Antichain.OrientedCube.normalizedPartitionLog_separated_cubes_lower",
+          "file": "lean/Antichain/OrientedCubeLower.lean",
+          "line": 34
+        },
+        {
+          "declaration": "Antichain.OrientedCube.shrunkenCubes_positive_separation",
+          "file": "lean/Antichain/OrientedCubeSeparation.lean",
+          "line": 27
+        },
+        {
+          "declaration": "Antichain.OrientedCube.matching_weighted_cubes_finite_scale",
+          "file": "lean/Antichain/OrientedWeightedCubeLower.lean",
+          "line": 137
+        },
+        {
+          "declaration": "Antichain.OrientedCube.weightedCube_size_selection",
+          "file": "lean/Antichain/OrientedTileSizeSelection.lean",
+          "line": 144
+        }
+      ],
+      "source_labels": [
+        "lem:cube-lower",
+        "eq:lower-rate"
+      ],
+      "source_lines": [
+        874,
+        884
+      ],
+      "proof_lines": [
+        885,
+        987
+      ],
+      "lean_declarations": [
+        "Antichain.OrientedCube.cube_lower_liminf_source_direct",
+        "Antichain.OrientedCube.cubeLowerSum_eq_volume",
+        "Antichain.OrientedCube.normalizedPartitionLog_cubes_lower",
+        "Antichain.OrientedCube.normalizedPartitionLog_separated_cubes_lower",
+        "Antichain.OrientedCube.shrunkenCubes_positive_separation",
+        "Antichain.OrientedCube.matching_weighted_cubes_finite_scale",
+        "Antichain.OrientedCube.weightedCube_size_selection"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-5-5",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "same_argument",
+      "comparison": "The source now writes the same bounded-sigma Gaussian majorant explicitly as C exp(−(d−1)||u||²/(2d)). Its large-cube tail and lower Riemann sum by uniform continuity are unchanged. Existing actual integral approximation and final lower-rate endpoints cover it.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.exists_floorCube_lower_approximation",
+          "file": "lean/Antichain/FloorIntegralApproximation.lean",
+          "line": 425
+        },
+        {
+          "declaration": "Antichain.normalizedPartitionLog_lower",
+          "file": "lean/Antichain/LowerBound.lean",
+          "line": 191
+        },
+        {
+          "declaration": "Antichain.weighted_lower_liminf_source_direct",
+          "file": "lean/Antichain/DirectSourceEndpoints.lean",
+          "line": 149
+        }
+      ],
+      "source_labels": [
+        "lem:lower",
+        "eq:lower-conclusion"
+      ],
+      "source_lines": [
+        989,
+        995
+      ],
+      "proof_lines": [
+        996,
+        1002
+      ],
+      "lean_declarations": [
+        "Antichain.exists_floorCube_lower_approximation",
+        "Antichain.normalizedPartitionLog_lower",
+        "Antichain.weighted_lower_liminf_source_direct"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-SIMPLEX-VERTICES",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "no_separate_proof",
+      "comparison": "The literal vertices and simplex definition are unchanged. The three-dimensional edge length is sqrt(2/3); Lean proves actual equilateral geometry rather than merely permutation symmetry.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.referenceSimplex_barycentric_identity",
+          "file": "lean/Antichain/SourceSimplexCalculations.lean",
+          "line": 121
+        },
+        {
+          "declaration": "Antichain.referenceSimplex_vertices_source",
+          "file": "lean/Antichain/SourceSimplexCalculations.lean",
+          "line": 259
+        },
+        {
+          "declaration": "Antichain.referenceSimplex_three_equilateral",
+          "file": "lean/Antichain/SourceSimplexCalculations.lean",
+          "line": 244
+        }
+      ],
+      "source_lines": [
+        379,
+        379
+      ],
+      "lean_declarations": [
+        "Antichain.referenceSimplex_barycentric_identity",
+        "Antichain.referenceSimplex_vertices_source",
+        "Antichain.referenceSimplex_three_equilateral"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-UNPINNED-INFINITE",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "no_separate_proof",
+      "comparison": "This supplies the positivity and Fubini details needed for the source's measurable positive-floor-volume claim, without requiring an interior or finite volume for B. The actual pinned/common-height Jacobian is one.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.floor_sample_injective_ae",
+          "file": "lean/Antichain/UnpinnedInfiniteVolume.lean",
+          "line": 15
+        },
+        {
+          "declaration": "Antichain.pinnedHeightFiber_pos_of_injective",
+          "file": "lean/Antichain/UnpinnedInfiniteVolume.lean",
+          "line": 48
+        },
+        {
+          "declaration": "Antichain.unpinned_antichain_volume_infinite_source",
+          "file": "lean/Antichain/UnpinnedInfiniteVolume.lean",
+          "line": 114
+        }
+      ],
+      "source_lines": [
+        460,
+        468
+      ],
+      "lean_declarations": [
+        "Antichain.floor_sample_injective_ae",
+        "Antichain.pinnedHeightFiber_pos_of_injective",
+        "Antichain.unpinned_antichain_volume_infinite_source"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-SYMMETRIC-GAUGE-NORM",
+      "source_file": "main.tex",
+      "statement_comparison": "same_mathematical_statement",
+      "proof_method": "no_separate_proof",
+      "comparison": "The assertion is unchanged despite redistribution of author-color wrappers. Its norm and interval-width proof is independent of the local-volume packing argument.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.symmetric_gauge_source",
+          "file": "lean/Antichain/SourceGaugeCalculations.lean",
+          "line": 145
+        },
+        {
+          "declaration": "Antichain.allowedHeightDifference_eq_interval",
+          "file": "lean/Antichain/SourceGaugeCalculations.lean",
+          "line": 119
+        },
+        {
+          "declaration": "Antichain.allowedHeightDifference_volume",
+          "file": "lean/Antichain/SourceGaugeCalculations.lean",
+          "line": 138
+        }
+      ],
+      "source_lines": [
+        506,
+        506
+      ],
+      "lean_declarations": [
+        "Antichain.symmetric_gauge_source",
+        "Antichain.allowedHeightDifference_eq_interval",
+        "Antichain.allowedHeightDifference_volume"
+      ],
+      "statement_match": "same"
+    },
+    {
+      "id": "ANT-PINNED-ONE-POINT",
+      "source_file": "main.tex",
+      "statement_comparison": "equivalent_after_S_r_to_V_r_pinned_volume_rename",
+      "proof_method": "no_separate_proof",
+      "comparison": "Both nonnegative measure and ordinary real-volume normalizations are proved for arbitrary measurable B, with no added positivity or finiteness premise.",
+      "lean_references": [
+        {
+          "declaration": "Antichain.pinned_one_point_source",
+          "file": "lean/Antichain/SourcePinnedNormalization.lean",
+          "line": 45
+        }
+      ],
+      "source_lines": [
+        485,
+        485
+      ],
+      "lean_declarations": [
+        "Antichain.pinned_one_point_source"
+      ],
+      "statement_match": "same"
+    }
+  ],
+  "reviewed_source_sha256": "841526a75ae6026dbd15fdf886b9a5e86054fa2d2b1d5b108f4d0a669db35466",
+  "previous_reviewed_source_sha256": "7223c87d97fc9c97a97b9a9affc490aa6a4f3923587d05ec92b35a4a45a42da5",
+  "revision_review": "The surviving statements and all 24 active written proofs match the previous source. The separate mean-square predictor is absent from the active draft and remains supplementary in Lean."
+}

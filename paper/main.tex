@@ -1,0 +1,1063 @@
+\documentclass[11pt,letterpaper]{article}
+\input{preamble}
+\input{macros}
+\input{verification-preamble}
+
+\title{The limit shape of uniform random antichains in $[0,1]^d$}
+\author{Andrew Elvey Price\thanks{CNRS, Université de Tours, Université d'Orléans, IDP, UMR 7013, F-37200 Tours, France.}\and Minjae Park\thanks{Department of Mathematics and Statistics, Auburn University, USA.}}
+\date{\today}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+      For each $d\ge2$, we study $n$ independent uniform points in $[0,1]^d$, conditioned to form an antichain: no point is strictly smaller than another in every coordinate. We prove that the point cloud converges in Hausdorff distance to the closure of the hypersurface
+      \[
+            \mathcal S_d=\left\{\mathbf x\in(0,1)^d: \sum_{i=1}^d\Phi^{-1}(\mathbf x_i)=0\right\}
+      \]
+      in probability as $n\to\infty$, where $\Phi$ is the standard normal cumulative distribution function. The proof also shows that the antichain probability $a_n$ satisfies $\log a_n=-\frac{n}{d-1}\log n+\beta_d n+o(n)$ for a finite constant $\beta_d$.
+      We identify the limiting empirical distribution and hence the limiting permuton of uniform random $d$-dimensional permutations avoiding a single pattern of size $2$.
+\end{abstract}
+
+\begin{center}\begin{minipage}{0.93\linewidth}\small
+\textbf{Lean verification companion, 20 November 2026.}
+The inventory covers 29 numbered proved assertions (including substantive remarks) and 17 separately tracked claims in the prose. Lean verifies 45 without external mathematical inputs. The coordinate-average central limit statement is checked modulo the general iid central limit theorem. Each proved assertion separately records whether the written
+argument follows the same method as Lean. Appendix~\ref{sec:lean-full-proofs} gives
+optional detailed expositions for selected results.
+Open questions, the conjecture and the heuristic remark retain their original status.
+Each statement is annotated; Appendix~\ref{sec:lean-status}
+records the exact scope and reproducible checks. The original manuscript is preserved separately.
+\end{minipage}\end{center}
+
+
+\begin{figure}[!htbp]
+      \centering
+      \includegraphics[width=0.47\linewidth]{figures/limit_shape_cube.pdf}\qquad
+      \includegraphics[width=0.47\linewidth]{figures/limit_shape_gaussian.pdf}
+      \caption{\textbf{Left:} The surface $\mathcal S_3=\{\mathbf x\in(0,1)^3: \Phi^{-1}(\mathbf x_1)+\Phi^{-1}(\mathbf x_2) +\Phi^{-1}(\mathbf x_3)=0\}$ and a uniform $900$-point antichain sampled by Markov chain Monte Carlo. \textbf{Right:} The same points in Gaussian coordinates $\mathbf g=\Phi^{-1}(\mathbf x)$, with $\Phi^{-1}$ applied coordinatewise, together with a truncated portion of the plane $E=\{\mathbf g\in\R^3: \mathbf g_1+\mathbf g_2+\mathbf g_3=0\}$. Colors indicate $\|\mathbf g\|$ in both coordinate systems.}
+      \label{fig:limit-shape}
+\end{figure}
+
+\newpage
+
+\tableofcontents
+
+\section{Introduction}
+
+For two points $\vx=(\vx_{1},\ldots,\vx_{d})\in\R^d$ and $\vy=(\vy_{1},\ldots,\vy_{d})\in\R^d$, we write $\vx\prec\vy$ if $\vx_{i}<\vy_{i}$ for each $i\in\{1,\ldots,d\}$. We call a set of points in $\R^d$ an \emph{antichain} if it contains no distinct points $\vx,\vy$ with $\vx\prec\vy$, that is, it is an antichain with respect to the order $\prec$. We study the behavior of uniform random antichains of $n$ points in the cube $[0,1]^d$ as $n\to\infty$. Our main results determine the limit shape of a random antichain and the distribution over this shape. We also improve on previous results regarding the asymptotic form of the probability that $n$ uniform random points form an antichain.
+
+Throughout this paper we fix the dimension $d\ge2$. Let $\vX^{(1)},\ldots,\vX^{(n)}$ be independent uniform points in $[0,1]^d$, and define $\cA_n$ to be the event that these points form an antichain, and $a_{n}$ to be the probability that this occurs:
+\[
+      \cA_n=\{\vX^{(k)}\not\prec\vX^{(\ell)}\text{ for all }k\ne\ell\}, \qquad a_n=\P(\cA_n).
+\]
+The first result establishes a linear-order correction to the leading asymptotic of $\log a_n$:
+
+\verificationstatus{ANT-1-1}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The draft gives no separate proof; the checked deduction is described below.}
+\begin{theorem}\label{thm:counting}
+      There is a finite constant $\beta_d$ such that
+
+      \begin{equation}\label{eq:counting}
+            \log a_n=-\frac n{d-1}\log n+\beta_d n+o(n).
+      \end{equation}
+\end{theorem}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Set the weight and height tilt to zero in the proved weighted limit. The actual normal-coordinate change identifies this partition function with the uniform-cube antichain probability. Evaluate the floor Gaussian power integral and absorb its finite contribution into $\beta_d$. Multiplication by $n$ converts the normalized limit into the printed $o(n)$ formula. The underlying weighted proof uses the internally proved alcove geometry.
+\end{proof}
+As we will discuss, the leading term of this asymptotic was already known. However, the fact that the remaining term, divided by $n$, converges to a finite constant is new for $d\ge3$. The result follows directly from Proposition~\ref{prop:volume}; see Remark~\ref{rem:proof-thm-1}.
+
+Our other results involve the cumulative distribution function $\Phi$ of the standard normal distribution, and its density $\phi$, defined as follows:
+\[
+      \phi(s)=\frac1{\sqrt{2\pi}}e^{-\frac{s^2}{2}},\qquad \Phi(s)=\int_{-\infty}^s\phi(u)\dd u.
+\]
+In particular, we show in Theorem~\ref{thm:shape} that uniform random antichains typically approximate the hypersurface
+\[
+      \cS_d=\left\{\vx\in(0,1)^d:\sum_{i=1}^d\Phi^{-1}(\vx_i)=0\right\}.
+\]
+Writing $\ve=\frac{1}{\sqrt d}(1,\ldots,1)$ and $E=\ve^\perp$, the limit shape $\cS_d$ can be defined as $\cS_d=\Phi(E)$, where $\Phi$ acts coordinatewise.
+
+To make this statement precise, we define the Hausdorff distance between nonempty compact subsets $A,B\subset[0,1]^d$ by
+\[
+      d_{\rm H}(A,B)=\max\left\{\sup_{\vx\in A}\dist(\vx,B), \sup_{\vy\in B}\dist(\vy,A)\right\}, \qquad \dist(\vx,B)=\inf_{\vy\in B}\|\vx-\vy\|,
+\]
+where closures and distances are taken in the closed Euclidean cube $[0,1]^d$.
+The Hausdorff distance controls both outliers and holes. Let $A_n=\{\vX^{(1)},\ldots,\vX^{(n)}\}$ denote the uniformly sampled point set and write $\P_n=\P(\,\cdot\mid\cA_n)$ for probability under the uniform antichain model.
+The following theorem identifies the shape filled by this set as $\overline{\cS_d}$.
+See Figure~\ref{fig:limit-shape} for an illustration when $d=3$.
+
+
+\verificationstatus{ANT-1-2}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{theorem}\label{thm:shape}
+      For every $\delta>0$, there is some $\alpha=\alpha(d,\delta)>0$ such that
+      \[
+            \P_n\left(d_{\rm H}(A_n,\overline{\cS_d})>\delta \right) \le e^{-\alpha n}
+      \]
+      for all sufficiently large $n$. In particular, the entire sample fills $\overline{\cS_d}$.
+\end{theorem}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Every point in the limiting support has positive mass in each neighborhood, so finitely many continuous tests detect any fixed-size hole. Each point outside the surface closure has a strictly comparable support witness; finitely many such witness tests exclude all distant outliers from an antichain. Apply the empirical exponential bounds and a finite union. The explicit $\sqrt d$ coordinate-to-Euclidean estimate gives the stated native Euclidean Hausdorff bound.
+\end{proof}
+The proof is given at the end of Section~\ref{sec:shortcuts}, after we identify the limiting distribution of points along this shape and establish empirical concentration. This concentration, together with the antichain condition, yields Theorem~\ref{thm:shape}.
+
+\subsection{Related results and applications}\label{sec:background}
+A $d$-permutation of $[n]=\{1,\ldots,n\}$ is a $d$-tuple of permutations $(\mathrm{id},\pi_{2},\ldots,\pi_{d})$ of $[n]$ with $\mathrm{id}$ denoting the identity permutation on $[n]$. There is a natural correspondence between samples $\vX^{(1)},\ldots,\vX^{(n)}\in[0,1]^{d}$ and $d$-permutations, since coordinate ties occur with probability zero. Sorting the points $\vX^{(1)},\ldots,\vX^{(n)}$ by their first coordinate and recording the remaining coordinate ranks gives a $d$-permutation $\pi=(\mathrm{id},\pi_2,\ldots,\pi_d)$ of $[n]$. In the case that the original sample is uniform, $\pi$ is a uniform $d$-permutation. Moreover, the original sample is an antichain if and only if there is no $k<\ell$ satisfying $\pi_i(k)<\pi_i(\ell)$ for every $i\ge2$, that is, if $\pi$ lies in the class $\cC_n$ of $d$-permutations avoiding the pattern $(12,12,\ldots,12)$, which we define below. Theorem~\ref{thm:counting} yields information about the number of these permutations, as $|\cC_n|=(n!)^{d-1}a_n$ (see Proposition~\ref{cor:counting}). A \emph{$d$-dimensional permuton} is a probability measure on $[0,1]^d$ with uniform coordinate marginals; such measures describe permutation limits~\cite{HKMRS,BL}. Theorem~\ref{thm:permuton} identifies the limiting permuton of $\cC_n$.
+
+A $d$-permutation $\pi=(\mathrm{id},\pi_{2},\ldots,\pi_{d})$ of $[n]$ is said to contain a $d$-permutation $\tau=(\mathrm{id},\tau_{2},\ldots,\tau_{d})$ of $[m]$, with $m\le n$, as a pattern if there are indices $1\le i_{1}<\cdots<i_{m}\le n$ such that $(\pi_{j}(i_k))_{k\in[m]}$ has the same relative order as $(\tau_{j}(k))_{k\in[m]}$ for $j=2,\ldots,d$. Otherwise $\pi$ {\em avoids} $\tau$.
+
+\verificationstatus{ANT-INTRO-SIGNED-LIMITS}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+By symmetry, Theorems~\ref{thm:shape} and~\ref{thm:empirical-limit} determine the geometric and permuton limits of $d$-permutations avoiding a pattern of length $2$ (see Theorem~\ref{thm:permuton} and Remark~\ref{rem:rank-hausdorff}), while Theorem~\ref{thm:counting} determines the asymptotic enumeration of these $d$-permutations (see Proposition~\ref{cor:counting}).
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Reverse the values in each coordinate whose forbidden orientation is decreasing. This is an involutive bijection from the actual signed avoidance class to the increasing-pair avoidance class and preserves its uniform law. The corresponding cube reflection pushes forward the limiting measure and is a native Euclidean isometry. Transport the proved rank weak and Hausdorff bounds through these exact maps; the same bijection preserves the counting asymptotic.
+\end{proof}
+
+The modern study of classical pattern-avoiding permutations, corresponding to $d=2$, grew from Knuth's work on permutation sorting in {\em The Art of Computer Programming}~\cite{Knuth} and has since been studied extensively; see~\cite{Vatter} for a survey. In particular, the Marcus--Tardos theorem~\cite{marcus2004excluded} shows that for any single pattern $\tau$, the number of $\tau$-avoiding permutations of length $n$ grows at most exponentially in $n$. In recent years, the study of limit permutons has attracted a lot of attention~\cite{borga2020local,garbe2024pattern,hohmeier2025permuton,bassino2018brownian}. Early examples of pattern-avoiding $3$-permutations arose in the consideration of transformations via priority queues~\cite{atkinson1995priority}. While a number of articles have addressed the enumeration of $d$-permutations avoiding multiple patterns~\cite{aldred2005permuting,EP2026stretched,BM}, single-pattern classes remain much less understood.
+
+The Marcus--Tardos theorem was generalized to $d>2$ independently in~\cite[Theorem~1.9]{CK} and~\cite[Theorem~3.4]{GP}, which show that for any fixed single pattern $\tau$ of size at least $2$, the number $\text{Av}_{n}(\tau)$ of $d$-permutations of $[n]$ avoiding $\tau$ satisfies, for some $C=C(d,\tau)>0$,
+\[
+      e^{-C n}\le\text{Av}_{n}(\tau)\Big/(n!)^{d-1-\frac1{d-1}}\le e^{C n}.
+\]
+Question~9.3 of~\cite{CK} and the last section of~\cite{GP} ask whether the $n$th root of this ratio converges to a positive constant. In Proposition~\ref{cor:counting}, we answer this question in the affirmative in the case that $\tau$ has size $2$.
+
+Permuton limits of $d$-permutations avoiding multiple patterns for $d>2$ have also been studied in~\cite{BL}. To our knowledge, for $d>2$, Theorem~\ref{thm:permuton} is the first determination of a permuton limit for a class avoiding a single pattern. We believe that this opens the door to further results; in particular, we expect that many different classes of $d$-permutations avoiding a single pattern share this same limit shape (see Conjecture~\ref{conj:bounded-chains} and Question~\ref{ques:universality}). The methods may also allow other $d$-permutation classes to be analyzed, whose permuton limits have different shapes. The Gaussian coordinate change $\Phi^{-1}$ offers a new geometric approach to such problems, and may even be useful for classes of permutations ($d=2$) that are so far not well understood.
+
+
+\verificationstatus{ANT-INTRO-RANDOM-ORDER}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+Our model is also related to random multidimensional orders, which were introduced in~\cite{winkler1985random}. The random partial order $P_k(n)$ is defined as the intersection of $k$ independent uniform
+linear orders on $[n]$, meaning that $a<b$ in this order if and only if $a<b$ in each of the $k$ linear orders. Let $e(P)$ count the linear
+extensions of $P$, that is, the total linear orders respecting all
+comparisons in $P$. Given uniform points $\vX^{(1)},\ldots,\vX^{(n)}\in [0,1]^{d}$, a partial order with the law of $P_{d-1}(n)$ can be defined by taking $a<b$ if and only if $\vX^{(a)}_{i}<\vX^{(b)}_{i}$ for each $i\in\{1,\ldots,d-1\}$. Since the reversed last coordinate order
+extends this order if and only if $\vX^{(1)},\ldots,\vX^{(n)}$ form an antichain, we have
+$a_n=\E[e(P_{d-1}(n))]/n!$. Indeed, applying the estimate~\cite[Corollary~4]{Brightwell} to the right-hand side yields the lower bound for $a_n$ obtained in~\cite[Theorem~8.4]{CK}.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Construct the random partial order as the intersection of the actual independent uniform coordinate rankings. Reversing the final ranking gives a linear extension exactly when the complete rank array is an antichain. An explicit finite bijection and uniform expectation yield the factor $1/n!$. Lean checks the order, extension count and cube-rank law.
+\end{proof}
+
+In dimension three, $\cC_n$ is in bijection with intervals in the weak Bruhat order through the correspondence with avoidance of pairs of permutations~\cite{GP,BM}. This links the model to the comparability problems studied in~\cite{HP,BCHHLM}. Proposition~\ref{prop:intervals} identifies the joint limiting geometry of the two bounding permutations of an interval.
+Their limiting inversion densities are also identified in Corollary~\ref{cor:interval-inversions}. Section~\ref{sec:applications} contains these applications and open questions. Related stepped surfaces have also been studied through surface tension~\cite{Sheffield}. For our model in dimension three, the surface tension was identified in~\cite{KenyonComm}, and our theorem confirms that the limit shape is the minimizer of the corresponding surface tension functional.
+
+\verificationstatus{ANT-SURFACE-TENSION}{Cited variational context (outside Lean scope)}
+
+\subsection{Setting and proof strategy}
+
+
+\verificationstatus{ANT-INTRO-COORDINATE-CHANGE}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+We start by discussing the relevance of the coordinatewise Gaussian transform $\Phi^{-1}:(0,1)^d\to\R^{d}$. The use of this transformation was suggested by OpenAI's ChatGPT (see~\nameref{sec:ai}), and we do not know how this idea arose exactly, but we give some discussion here of where it could have come from. Fundamentally, this transformation is useful because it separates a point cloud's location from its arrangement. Starting with $\mathbf x\in(0,1)^d$, apply a smooth bijection $Q:(0,1)\to\R$ with $Q'>0$ to each coordinate, setting $s_i=Q(x_i)$. This gives $\mathbf s\in\R^d$ and preserves the antichain condition. The change of variables gives $\dd\mathbf x=(\prod_iq(s_i))\,\dd\mathbf s$, where $q=(Q^{-1})'$. We can view this density as a Boltzmann weight $e^{-\sum_iV(s_i)}$, with $V=-\log q$ assigning an energy to each coordinate. The logarithm of the unweighted volume of available arrangements plays the role of counting entropy.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Positive derivative and the actual inverse identities give strict monotonicity, inverse continuity and the inverse derivative formula. The coordinate map has diagonal derivative, so its determinant is the product of these positive derivatives. The proved change-of-variables theorem gives the actual Lebesgue and native Euclidean volume formulas. Taking logarithms of the positive factors gives the stated Boltzmann weight.
+\end{proof}
+
+
+\verificationstatus{ANT-INTRO-GAUSSIAN-CHARACTERIZATION}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+For $n$ transformed points $\mathbf s_1,\ldots,\mathbf s_n\in\R^d$, let $\mathbf m$ be their average and write $\mathbf s_j=\mathbf m+\mathbf u_j$. The centered points $\mathbf u_1,\ldots,\mathbf u_n$ retain all pairwise differences, and hence the antichain condition. Since $\sum_j\mathbf u_j=0$, the quadratic part of the Gaussian energy splits as
+\[
+      \frac12\sum_{j=1}^n\|\mathbf s_j\|^2=\frac n2\|\mathbf m\|^2+\frac12\sum_{j=1}^n\|\mathbf u_j\|^2.
+\]
+
+\verificationstatus{ANT-INTRO-NORMALIZED-QUANTILE}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+The first term depends only on the group's location, and the second only on its arrangement. Moving the barycenter therefore changes every centered arrangement's weight by the same factor, allowing us to study arrangements separately from the cost of their location. Among smooth positive densities on $\R$, requiring this separation for every configuration singles out the Gaussian family. Choosing an origin and scale then gives $Q=\Phi^{-1}$.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Centering the actual point cloud cancels the quadratic cross terms, giving the exact barycenter energy split; translation preserves every strict coordinate comparison. For the converse, it suffices to separate the potential for two points $m+u,m-u$. Differentiate twice to show that the potential is quadratic. Integrability forces its leading coefficient to be positive, and the Gaussian integral fixes its normalization and positive scale.
+\end{proof}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+The actual inverse derivative has integral one by the interval change of variables. Separation forces its Gaussian density form. Integrating this derivative identifies the inverse map with an affine normal CDF; its range fixes the integration constant. Applying the genuine CDF inverse gives $Q(x)=m+\Phi^{-1}(x)/\sqrt{2a}$, so centering and rescaling give the printed normal quantile.
+\end{proof}
+
+Accordingly, we set
+\begin{equation}\label{eq:transform_Phi}
+      \vG^{(k)}=\Phi^{-1}(\vX^{(k)})\qquad \text{for $k=1,\ldots,n$}.
+\end{equation}
+This is well defined almost surely and gives independent standard Gaussian vectors before conditioning, with $\cA_n$ unchanged. In these coordinates, the candidate limit shape $\cS_d=\Phi(E)$ becomes the hyperplane $E$. We now split each point $\vG^{(k)}$ into its {\em floor position} $\vF^{(k)}\in E$ and its (signed) {\em height} $H^{(k)}=\langle\vG^{(k)},\ve\rangle$:
+\begin{equation}\label{eq:split}
+      \vG^{(k)}=\vF^{(k)}+H^{(k)}\ve,\qquad \vF^{(k)}=\Proj_E\vG^{(k)}.
+\end{equation}
+Here $\Proj_E\vg=\vg-\langle\vg,\ve\rangle\ve$ is orthogonal projection onto $E$.
+Since the Gaussian distribution on $\R^{d}$ is rotationally invariant, these floor positions and heights are independent standard Gaussians on $E$ and $\R$, respectively (before conditioning). On the other hand, after conditioning on the antichain event $\cA_{n}$, our results will imply that in the limit $n\to\infty$, the typical height $H^{(k)}$ converges to $0$, while the vectors $\vF^{(k)}$ follow a rescaled Gaussian distribution on $E$.
+
+Our main Theorems~\ref{thm:counting}, \ref{thm:shape} and~\ref{thm:empirical-limit} are all proven using Proposition~\ref{prop:volume}, an asymptotic estimate for a weighted Gaussian expectation. For a bounded continuous floor weight $\sigma:E\to\R$ and a parameter $c\in\R$, define the (possibly infinite) weighted expectation
+\begin{equation}\label{eq:def-zn}
+      \cZ_n(\sigma,c) =\E\left[\ind_{\cA_n} \exp\biggl\{\sum_{k=1}^n\Bigl(\sigma(\vF^{(k)})+c(H^{(k)})^2\Bigr)\biggr\}\right].
+\end{equation}
+Here $\ind_{\cA_n}$ is $1$ on antichains and $0$ otherwise, so this expectation is an integral over labeled antichains in the cube. The factor $e^\sigma$ weights floor positions, while positive $c$ favors larger absolute heights. Boundedness of $\sigma$ makes the integral finite for $c<1/2$. In particular, $\cZ_n(0,0)=a_n$.
+
+The density of a standard Gaussian floor position is
+\begin{equation}\label{eq:rho}
+      \psi_E(\vu) =(2\pi)^{-\frac{d-1}{2}}e^{-\frac{\|\vu\|^2}{2}},\qquad \vu\in E.
+\end{equation}
+Integration on $E$ uses its induced Euclidean measure, equivalently Lebesgue measure in any orthonormal coordinates on $E$. The following proposition gives the weighted estimate underlying Theorem~\ref{thm:counting}.
+
+
+\verificationstatus{ANT-1-3}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{proposition}\label{prop:volume}\label{thm:volume}
+      There is a finite constant $\gamma_d$ such that, for every bounded continuous $\sigma:E\to\R$ and every $c<1/2$,
+      \begin{equation}\label{eq:weighted}
+            \lim_{n\to\infty}\left(\frac1n\log\cZ_n(\sigma,c)+\frac{\log n}{d-1}\right) =\gamma_d-\frac12\log(2\pi)+\frac d{d-1}\log\int_E(\psi_E(\vu)e^{\sigma(\vu)})^{\frac{d-1}d}\dd\vu.
+      \end{equation}
+\end{proposition}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+The actual floor-height decomposition gives the weighted Gaussian integral. One-tile estimates, the directly proved alcove partition and Gaussian Riemann sums give the upper bound. Measurable matching families, exact replicated volumes and all-size interpolation give the matching lower bound. Their common finite local-volume limsup is independent of the weight and height tilt. The two bounds yield the stated limit with one constant before all choices of $\sigma$ and $c<1/2$.
+\end{proof}
+
+
+
+\verificationstatus{ANT-1-4}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{remark}\label{rem:proof-thm-1}
+      The constant $\gamma_d$ is defined in~\eqref{eq:gamma}. Setting $(\sigma,c)=(0,0)$ yields Theorem~\ref{thm:counting}, with $\beta_d=\gamma_d+\frac d2\log\frac d{d-1}$ and the Gaussian integral from~\eqref{eq:rho}:
+      \[
+            \int_E\psi_E(\vu)^{\frac{d-1}{d}}\dd\vu
+            =(2\pi)^{\frac{d-1}{2d}}
+            \left(\frac d{d-1}\right)^{\frac{d-1}{2}}.
+      \]
+\end{remark}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+In orthonormal coordinates on the $(d-1)$-dimensional floor, integrate the stated Gaussian density to the power $(d-1)/d$. The Gaussian integral gives exactly the displayed factors. Set the weight and height tilt to zero in the actual weighted limit, identify its partition function with $a_n$, and simplify to obtain the stated relation between the counting and local-volume constants.
+\end{proof}
+
+\verificationstatus{ANT-1-5}{Explanatory remark}
+\begin{remark}
+      The following heuristic explains the exponent $p=\frac{d-1}{d}$ in~\eqref{eq:weighted}. We tile the floor $E$ with equal-sized tiles. For $r$ points in a single $(d-1)$-dimensional floor tile, the typical separation is of order $r^{-1/(d-1)}$. The antichain constraint restricts neighboring height differences to this scale, suggesting a volume factor $r^{-r/(d-1)}$. Label allocations contribute $1/r!$ per tile, of order $r^{-r}$ up to exponential factors. Writing $w_j$ for the approximately constant floor weight $\psi_E e^\sigma$ on tile $j$, the tile contributes roughly $w_j^r/r^{r/p}$. Maximizing the product over occupancies $r_j$ with $\sum_jr_j=n$ suggests $r_j\propto w_j^p$. Thus, asymptotically, conditioning on the antichain event replaces the original floor weights by their normalized $p$th powers. Sections~\ref{sec:counting_proof}--\ref{sec:lower-bound} make this heuristic precise.
+\end{remark}
+
+Section~\ref{sec:shortcuts} derives empirical concentration from Proposition~\ref{prop:volume}: varying $c$ controls heights, while varying $\sigma$ identifies the floor distribution. Together with the antichain condition, this concentration yields Theorem~\ref{thm:shape}.
+
+Sections~\ref{sec:counting_proof}--\ref{sec:lower-bound} prove Proposition~\ref{prop:volume}. We tile $E$ by small reflected copies of a simplex $\Delta$. The one-tile volume estimates define $\gamma_d$ in Section~\ref{sec:counting_proof}. For the upper bound in Section~\ref{sec:upper-bound}, we discard comparisons between different tiles. For the lower bound in Section~\ref{sec:lower-bound}, we retain configurations away from tile boundaries that admit height extensions with common boundary values. Reflections match these values across adjacent tiles, allowing the independently chosen interiors to form one antichain.
+
+\section{From weighted expectations to the limit shape}\label{sec:shortcuts}
+
+We now identify the distribution of points along the limit shape and then deduce the Hausdorff statement. We assume Proposition~\ref{prop:volume}, whose proof occupies Sections~\ref{sec:counting_proof}--\ref{sec:lower-bound}.
+
+\subsection{The limiting distribution}
+
+
+Let $\vY\in\R^d$ have independent standard normal coordinates, and put
+\begin{equation}\label{eq:Fstar_definition}
+      \vF^\ast=\sqrt{\frac d{d-1}}\Proj_E\vY.
+\end{equation}
+
+\verificationstatus{ANT-GAUSSIAN-COVARIANCE}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+Writing $\bar Y=\frac1d\sum_iY_i$ gives $F_i^\ast=\sqrt{\frac{d}{d-1}}(Y_i-\bar Y)$. Hence by direct calculation, every coordinate of $\vF^\ast$ has variance $1$, distinct coordinates have covariance $-\frac1{d-1}$, and the sum of the coordinates is zero. The density $\rho^\ast$ of $\vF^\ast$ on $E$ is
+\begin{equation}\label{eq:rho-star}
+      \rho^\ast(\vu)=\left(\frac{d-1}{2\pi d}\right)^{\frac{d-1}{2}}
+      e^{-\frac{d-1}{2d}\|\vu\|^2},\qquad \vu\in E.
+\end{equation}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Write each scaled centered coordinate as a linear form of the actual independent standard Gaussians. The coefficient norms give unit variances. The variance of a coordinate difference is $2d/(d-1)$, so polarization gives covariance $-1/(d-1)$. The coordinate sum cancels identically. Lean checks the joint Gaussian law and all moments.
+\end{proof}
+Comparing with~\eqref{eq:rho}, we see that $\rho^\ast$ is the normalized power $\psi_E^{(d-1)/d}$.
+
+The empirical measure of the sample and the limiting measure are
+\begin{equation}\label{eq:mu_n_hat_definition}
+      \widehat\mu_n=\frac1n\sum_{k=1}^n\delta_{\vX^{(k)}}, \qquad \mu^\ast=\law\bigl(\Phi(\vF^\ast)\bigr).
+\end{equation}
+Here $\Phi$ acts coordinatewise, and $\delta_{\vx}$ denotes unit mass at $\vx$, so $\widehat\mu_n(B)$ is the fraction of sampled points in $B$.
+Each coordinate marginal of $\mu^\ast$ is uniform, because $\P(\Phi(Z)\le x)=x$ for a standard normal $Z$ and $0<x<1$. Recall that under $\P_n$, the sample is conditioned to form an antichain.
+
+Let $\mathcal P_d$ denote the set of probability measures on $[0,1]^d$, equipped with the weak topology generated by the maps $\nu\mapsto\int g\dd\nu$ for continuous $g$; see~\cite[Chapter~1]{Billingsley}.
+
+
+\verificationstatus{ANT-2-1}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{theorem}
+      \label{prop:empirical-limit}\label{thm:empirical-limit}\label{thm:distribution}
+      For every open neighborhood $\cU$ of $\mu^\ast$ in $\mathcal P_d$, there is $\alpha=\alpha(d,\cU)>0$ such that
+      \begin{equation}\label{eq:empirical}
+            \P_n(\widehat\mu_n\notin\cU)\le e^{-\alpha n}
+      \end{equation}
+      for all sufficiently large $n$. In particular, for every Borel set $B$ with $\mu^\ast(\partial B)=0$,
+      \[
+            \frac1n\#\{k:\vX^{(k)}\in B\}\longrightarrow\mu^\ast(B)
+            \quad\text{in }\P_n\text{-probability}.
+      \]
+\end{theorem}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Ratios of the actual weighted partition functions give conditional exponential moments of floor tests. Differentiate the limiting rate at zero and use positive and negative tilts to obtain exponential deviations. Use Stone--Weierstrass to approximate continuous cube tests by Lipschitz functions. The Lipschitz normal CDF and Cauchy--Schwarz give an error bounded by a constant times $\sqrt{T_n/n}$; the quadratic-height tail controls this error exponentially. Finitely many tests determine each weak neighborhood, so a finite union proves concentration. Continuity-set Portmanteau gives the literal frequency conclusion.
+\end{proof}
+
+\subsection{From empirical concentration to the shape}
+
+In this section, we prove Theorem~\ref{thm:shape} using Theorem~\ref{thm:distribution}. To exclude isolated outliers, we use the following comparison property of the support.
+
+\verificationstatus{ANT-2-2}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{lemma}\label{lem:support}
+      The support of $\mu^\ast$ is
+      \begin{equation}\label{eq:closure}
+            \overline{\cS_d} =\cS_d\cup\{\vx\in[0,1]^d:\min_i\vx_i=0,\ \max_i\vx_i=1\}.
+      \end{equation}
+      For every $\vx\in[0,1]^d\setminus\overline{\cS_d}$, there is $\vy\in\cS_d$ such that $\vx\prec\vy$ or $\vy\prec\vx$.
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+The full-support Gaussian pushforward has support equal to the closure of the inverse-normal surface. Quantile endpoint divergence excludes boundary points with only zero or only one coordinates; the explicit zero-sum approximation includes mixed boundary points. For a point outside the closure, shift every cube coordinate by a common scalar. The quantile sum is continuous and strictly increasing, with opposite infinite endpoint limits. The intermediate value theorem gives a nonzero shift to the surface, hence the required strictly comparable witness.
+\end{proof}
+
+
+\section{Asymptotic results on tiles}\label{sec:counting_proof}
+
+We develop the local geometry needed to prove the weighted estimate in Proposition~\ref{prop:volume}. First we describe the constraints on the heights $H^{(k)}$ in an antichain in terms of the floor positions $\vF^{(k)}$. We then describe a tiling of the floor hyperplane $E$ with simplices. Finally we determine (unweighted) volume estimates within one tile after fixing one height. These estimates define the finite constant $\gamma_d$ in Proposition~\ref{prop:volume}. The weights $\sigma$ and $c$ enter in Section~\ref{sec:upper-bound}.
+\subsection{Reinterpretation of antichains}
+Recall that $\ve=\frac{1}{\sqrt d}(1,\ldots,1)$ and $E=\ve^\perp$.
+Before describing the tiling, we describe antichains in terms of the coordinates $\vf^{(k)}$ and $h^{(k)}$ denoting floor positions and heights respectively. To do this we define the function $\mathcal L:E\to[0,\infty)$ as follows:
+\[
+      \Ldir{\vu}=-\sqrt d\min_{1\le i\le d}\vu_i, \qquad  \vu\in E.
+\]
+The function $\mathcal L$ gives an upper bound on the allowed height increment for a given floor displacement.
+
+
+\verificationstatus{ANT-3-1}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{proposition} \label{prop:L_definition}
+      For $\ff=(\vf^{(1)},\ldots,\vf^{(r)})\in E^r$ and $\fh=(h^{(1)},\ldots,h^{(r)})\in\R^r$, the points $\vf^{(k)}+h^{(k)}\ve$, $1\le k\le r$, form an antichain if and only if
+      \begin{equation}\label{eq:constraints}
+            h^{(k)}-h^{(\ell)}\le\Ldir{\vf^{(k)}-\vf^{(\ell)}} \qquad\text{for every ordered pair }(k,\ell).
+      \end{equation}
+\end{proposition}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+For each ordered pair, multiply the strict coordinate inequalities by $\sqrt d>0$. They are equivalent to the height difference exceeding $\max_i(-\sqrt d\,u_i)=\mathcal L(u)$. Negating this comparison gives the weak constraint, including equality. Lean checks the equivalence for the actual strictly coordinatewise antichain definition.
+\end{proof}
+
+We now prove some basic properties of $\mathcal L$.
+
+\verificationstatus{ANT-3-2}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{lemma}
+      For $\vu,\vv\in E$ and $s\ge0$,
+      \begin{equation}\label{eq:height-bound}
+            \Ldir{\vu+\vv}\le\Ldir{\vu}+\Ldir{\vv},\qquad \Ldir{s\vu}=s\Ldir{\vu},\qquad \frac{\|\vu\|}{\sqrt{d-1}}\le\Ldir{\vu} \le\sqrt{d-1}\|\vu\|.
+      \end{equation}
+      The function $\mathcal L$ is invariant under coordinate permutations.
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Write $\mathcal L(u)=\max_i(-\sqrt d\,u_i)$. This gives subadditivity, nonnegative homogeneity and permutation invariance. The zero-sum condition makes $\mathcal L$ nonnegative. Applying the sum-of-squares bound to the shifted nonnegative coordinates gives the lower norm bound; Cauchy--Schwarz on the other $d-1$ coordinates gives the upper bound. Lean checks both sharp inequalities and their square-root conversion.
+\end{proof}
+
+Applying~\eqref{eq:constraints} in both orders and using~\eqref{eq:height-bound} gives the following Lipschitz property.
+
+
+\verificationstatus{ANT-3-3}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The draft gives no separate proof; the checked deduction is described below.}
+\begin{lemma}\label{lem:height}\label{cor:height}
+      If the points $\vf^{(k)}+h^{(k)}\ve$, $1\le k\le r$, form an antichain then they satisfy the Lipschitz condition $|h^{(k)}-h^{(\ell)}|\le\sqrt{d-1}\|\vf^{(k)}-\vf^{(\ell)}\|$.
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Apply the directed constraints from Proposition~\ref{prop:L_definition} in both orders and then the upper norm bound of Lemma~3.2. The two inequalities bound the absolute height difference. Lean checks this consequence directly from the antichain hypothesis.
+\end{proof}
+
+\subsection{Tiling of \texorpdfstring{$E$}{E} with simplices}\label{sec:tiling}
+We will use a tiling of the space $E$ by simplices. This tiling is the Coxeter complex for the affine Coxeter group $\widetilde{A}_{d-1}$. Consider the reference simplex
+\[
+      \Delta=\{\vf\in E:\vf_1\ge\cdots\ge\vf_d,\quad \vf_1-\vf_d\le1\}.
+\]
+
+\verificationstatus{ANT-SIMPLEX-VERTICES}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The draft gives no separate proof; the checked deduction is described below.}
+Its vertices are $\mathbf0$ and, for $1\le j<d$, the vectors with first $j$ coordinates $\frac{d-j}{d}$ and remaining coordinates $-\frac jd$. For $d=3$ it is an equilateral triangle, as depicted in Figure~\ref{fig:triangles}.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Use the successive coordinate gaps and the remaining span to construct nonnegative barycentric weights summing to one. They express every point of the actual simplex as a convex combination of the printed vertices; each vertex satisfies the defining inequalities. In dimension three, direct Euclidean edge calculations give equal positive lengths.
+\end{proof}
+Consider the family $\cT$ of images of $\Delta$ under compositions of its side reflections. Its tiles $\Delta'$ have disjoint interiors and are translates of coordinate permutations of $\Delta$; see Proposition~\ref{prop:tiling}.
+For $1\le i<d$, let $r_i$ be reflection in $\vf_i=\vf_{i+1}$, which exchanges those coordinates. The remaining side reflection of $\Delta$ is
+\[
+      r_0(\vf)=(\vf_d+1,\vf_2,\ldots,\vf_{d-1},\vf_1-1).
+\]
+Importantly, these reflections preserve $\mathcal L$, in the sense that for $\vf^{(k)},\vf^{(\ell)}\in E$, we have
+\[\Ldir{r_{i}(\vf^{(k)})-r_{i}(\vf^{(\ell)})}=\Ldir{\vf^{(k)}-\vf^{(\ell)}},\]
+for $0\leq i\leq d-1$. The translation part cancels in the difference, leaving a coordinate permutation. Figure~\ref{fig:triangles} shows part of the tiling in dimension three, with a nonadjacent tile $\Delta'$ highlighted.
+\begin{figure}[!htbp]
+      \centering
+      \resizebox{0.60\linewidth}{!}{            \begin{tikzpicture}[
+                        x=3.55cm, y=3.55cm,
+                        every node/.style={font=\small,inner sep=1pt},
+                        tiling wall/.style={dash pattern=on 3.2pt off 3.2pt,line width=0.45pt},
+                        side label/.style={fill=white,inner sep=1.2pt,font=\footnotesize}
+                  ]
+                                    \pgfmathsetmacro{\tileH}{sqrt(3)/2}
+                  \path[use as bounding box] (-1.08,{-0.43*\tileH}) rectangle (2.58,{2.17*\tileH});
+                  \begin{scope}
+                        \clip (-1.08,{-0.43*\tileH}) rectangle (2.58,{2.17*\tileH});
+                        \fill[yellow!12] (0,0)--(1,0)--(0.5,\tileH)--cycle;
+                        \fill[black!18] (1,{2*\tileH})--(2,{2*\tileH})--(1.5,\tileH)--cycle;
+                        \foreach \j in {-4,...,5} {
+                                    \draw[tiling wall] (-4,{\j*\tileH})--(5,{\j*\tileH});
+                              }
+                        \foreach \j in {-5,...,5} {
+                                    \draw[tiling wall] ({\j-4},{-4*sqrt(3)})--({\j+4},{4*sqrt(3)});
+                                    \draw[tiling wall] ({\j-4},{4*sqrt(3)})--({\j+4},{-4*sqrt(3)});
+                              }
+                        \draw[line width=0.8pt] (0,0)--(1,0)--(0.5,\tileH)--cycle;
+                        \draw[line width=0.8pt] (1,{2*\tileH})--(2,{2*\tileH})--(1.5,\tileH)--cycle;
+
+                        \node[font=\large] at (0.5,{\tileH/3}) {$\Delta$};
+                        \node at (0,{2*\tileH/3}) {$r_1\Delta$};
+                        \node at (1,{2*\tileH/3}) {$r_0\Delta$};
+                        \node at (-0.5,{\tileH/3}) {$r_1r_2\Delta$};
+                        \node at (1.5,{\tileH/3}) {$r_0r_2\Delta$};
+                        \node at (2,{2*\tileH/3}) {$r_0r_2r_1\Delta$};
+                        \node at (0,{4*\tileH/3}) {$r_1r_0\Delta$};
+                        \node at (1,{4*\tileH/3}) {$r_0r_1\Delta$};
+                        \node at (2,{4*\tileH/3}) {$r_0r_1r_2r_1\Delta$};
+                        \node at (-0.5,{5*\tileH/3}) {$r_1r_0r_2\Delta$};
+                        \node at (0.5,{5*\tileH/3}) {$r_0r_1r_0\Delta$};
+                        \node[align=center] at (1.5,{5*\tileH/3}) {\large $\Delta'$\\[-1pt]$=r_0r_1r_2\Delta$};
+
+                        \node at (-0.5,{-0.25*\tileH}) {$r_1r_2r_1\Delta$};
+                        \node at (0.5,{-0.25*\tileH}) {$r_2\Delta$};
+                        \node at (1.5,{-0.25*\tileH}) {$r_0r_2r_0\Delta$};
+                        \node[side label] at (0.25,{\tileH/2}) {$r_1$};
+                        \node[side label] at (0.75,{\tileH/2}) {$r_0$};
+                        \node[side label] at (0.5,0) {$r_2$};
+                  \end{scope}
+            \end{tikzpicture}}
+      \caption{A view of the tiling of the floor $E=\{(x,y,z):x+y+z=0\}$ when $d=3$. The yellow triangle is the reference tile $\Delta$, and the gray triangle is $\Delta'=r_0r_1r_2\Delta$. The generators $r_i$ are the fixed reflections in the three sides of $\Delta$ and products act from right to left.}
+      \label{fig:triangles}
+\end{figure}
+
+For a measurable set $B\subset E$, write $|B|$ for its $(d-1)$-dimensional Euclidean volume. Denote by $\Omega=\langle r_0,\ldots,r_{d-1}\rangle$ the group of affine isometries of $E$ generated by the side reflections above.
+
+\verificationstatus{ANT-3-4}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{proposition}\label{prop:tiling}
+      The reflected copies of $\Delta$ tile $E$ with disjoint interiors, and every compact set meets only finitely many tiles. For each tile $\Delta'$, there is a unique map $\omega\in \Omega$ generated by the side reflections such that $\Delta'=\omega\Delta$. For each $x\in E$ there is a unique point $y\in\Delta$ such that $\omega y=x$ for some $\omega\in \Omega$. For any fixed cube $\square\subset E$ in orthonormal coordinates, the number of scale-$\eps$ tiles $\eps\Delta'$ completely contained in $\square$ satisfies
+      \begin{equation}\label{eq:tile-number}
+            q(\eps,\square)=\frac{|\square|}{\eps^{d-1}|\Delta|}+O(\eps^{2-d})\qquad(\eps\downarrow0).
+      \end{equation}
+\end{proposition}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Every actual reflection word is a coordinate permutation plus a zero-sum integer translation, so bounded orbit subsets are finite. A closest orbit point to a strict interior reference point cannot violate a simplex wall: the corresponding reflection would reduce its squared distance. This proves coverage. Endpoint-exchange and sorted-coordinate arguments prove closed-representative uniqueness; strict-interior stabilizers give unique tile maps and disjoint interiors. Discreteness gives local finiteness. Equal tile volumes and the cube boundary layer give the stated counting error.
+\end{proof}
+
+\subsection{One-tile estimates and exponential rates}
+
+\verificationstatus{ANT-UNPINNED-INFINITE}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The draft gives no separate proof; the checked deduction is described below.}
+Let $B\subset E$ be measurable with $|B|>0$. We will estimate volumes of sets of antichains with floor values in $B$, then specialize to $B=\eps\Delta'$ for a tile $\Delta'\in\cT$.
+For $r$ labeled points, write $\ff=(\vf^{(1)},\ldots,\vf^{(r)})\in E^r$ and $\fh=(h^{(1)},\ldots,h^{(r)})\in\R^r$. The configuration space just described is
+\begin{equation}\label{eq:A_n_of_B_definition}
+      \cA_r(B)=\{(\ff,\fh)\in B^r\times\R^r:
+      \vf^{(k)}+h^{(k)}\ve\not\prec\vf^{(\ell)}+h^{(\ell)}\ve\text{ for all }k\ne\ell\}.
+\end{equation}
+We use product Lebesgue measure $\dd\ff\dd\fh=\prod_k\dd\vf^{(k)}\dd h^{(k)}$, with the induced Euclidean measure on $E$, and write $\Vol_q$ for $q$-dimensional volume.
+
+The volume of $\cA_r(B)$ is infinite because translating all heights preserves admissibility. We remove this common translation by fixing the first height.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Almost every floor configuration has distinct points, since each collision lies in a proper linear subspace of measure zero. For distinct floors the admissible pinned heights contain an open neighborhood of zero, hence have positive volume. The actual common-height change of variables leaves an unrestricted real translation factor, so Fubini gives infinite unpinned volume over every measurable floor set of positive volume.
+\end{proof}
+\begin{equation}\label{eq:pinned-set}
+      \cA_r^0(B):=\{(\ff,\fh)\in\cA_r(B):h^{(1)}=0\},\qquad r\ge1.
+\end{equation}
+For fixed floor positions $\ff\in E^r$, we define the set $\cH_r^0(\ff)$ of heights forming antichains with these floor positions:
+\[
+      \cH_r^0(\ff):= \left\{\fh\in\R^r:(\ff,\fh)\in\cA_r(E),\ h^{(1)}=0\right\}.
+\]
+This set carries $(r-1)$-dimensional Lebesgue measure in the free coordinates $(h^{(2)},\ldots,h^{(r)})$. For fixed $\ff$, every admissible height list is uniquely obtained by the map
+\[
+      (s,\fh)\longmapsto (s,s+h^{(2)},\ldots,s+h^{(r)}), \qquad s\in\R,\quad\fh\in\cH_r^0(\ff).
+\]
+The Jacobian of this map in the free coordinates $(s,h^{(2)},\ldots,h^{(r)})$ is one. Define the pinned volume
+\begin{equation}\label{eq:slice}
+      V_r(B):=\Vol_{dr-1}\bigl(\cA_r^0(B)\bigr)
+      =\int_{B^r} \Vol_{r-1}\bigl(\cH_r^0(\ff)\bigr)\dd\ff.
+\end{equation}
+
+\verificationstatus{ANT-PINNED-ONE-POINT}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The draft gives no separate proof; the checked deduction is described below.}
+In particular, $V_1(B)=|B|$. We apply this definition to $B=\eps\Delta'$ for a fixed tile $\Delta'\in \cT$ and $\eps>0$, whose volume is $|B|=\eps^{d-1}|\Delta|$.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+There are no free heights and no distinct pair to compare. The actual pinned configuration set is the one-point floor product times the zero-dimensional height space. Product Lebesgue measure gives the floor volume times the empty-product factor one, proving $S_1(B)=|B|$.
+\end{proof}
+
+
+\verificationstatus{ANT-3-5}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{lemma}
+      For every integer $r\ge1$, $\eps>0$, and $\Delta'\in\cT$,
+      \begin{equation}\label{eq:cut-scale}
+            V_r(\eps\Delta') =\eps^{dr-1}V_r(\Delta') =\eps^{dr-1}V_r(\Delta).
+      \end{equation}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Express each literal side-reflection word as a translation followed by a coordinate permutation. These maps preserve the antichain constraints and induced Euclidean volume. Simultaneously scaling all floor positions and the free pinned height differences gives the exact exponent $dr-1$. Lean checks the maps, pin and Jacobian; this identity does not require the external tiling theorem.
+\end{proof}
+
+The next lemma gives $\log V_r(\Delta)=-\frac r{d-1}\log r+O_d(r)$ and defines $\gamma_d$ using a limit superior. We give a direct proof, while the analogous cube estimate appears in~\cite{GP}.
+
+\verificationstatus{ANT-3-6}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{lemma}\label{lem:constant}
+      For $r\in\N=\{1,2,\ldots\}$, set
+      \begin{equation}\label{eq:gamma}
+            \gamma_{d,r}=\frac1r\log V_r(\Delta)+\frac1{d-1}\log\frac r{|\Delta|^d}, \qquad \gamma_d=\limsup_{r\to\infty}\gamma_{d,r}.
+      \end{equation}
+      The sequence $(\gamma_{d,r})_{r\in\N}$ is uniformly bounded, so $\gamma_d$ is finite.
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+For the upper bound, construct an actual minimum spanning tree for the symmetric gauge, order its vertices from the root and use leaf-to-root Fubini to multiply the interval widths. Removing the longest tree edges separates components. Minimum-tree exchange and disjoint symmetric-gauge balls bound the sorted edge lengths and their product by a factorial power. For the lower bound, construct separated small balls inside the actual simplex and an admissible height box, then count disjoint label assignments. The two estimates bound the normalized logarithms and their limsup. Lean proves every packing, volume and asymptotic input.
+\end{proof}
+
+\verificationstatus{ANT-SYMMETRIC-GAUGE-NORM}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The draft gives no separate proof; the checked deduction is described below.}
+
+The quantity $\|\vu\|_{\mathcal L}:=\Ldir{\vu}+\Ldir{-\vu}=\sqrt d(\max_i\vu_i-\min_i\vu_i)$ is a norm on $E$ and is equal to the width of the allowed height-difference interval for floor displacement $\vu$ (by~\eqref{eq:constraints}, applied in both orders).
+
+\begin{proof}[Proof idea; fully Lean-verified]
+The maximum-coordinate formula gives \[\mathcal L(u)+\mathcal L(-u)=\sqrt d(\max_i u_i-\min_i u_i).\] Subadditivity, definiteness on the zero-sum floor and absolute scalar homogeneity make this a norm. The two ordered antichain constraints give the literal closed interval of allowed height differences; its Lebesgue length equals this norm.
+\end{proof}
+
+\section{The upper bound for Proposition~\ref{prop:volume}}
+
+\label{sec:upper-bound}
+We start by translating Proposition~\ref{prop:volume} to a more convenient form. Throughout this section, we fix a bounded continuous function $\sigma:E\to\R$ and $c<1/2$. Define the floor weight
+\begin{equation}\label{eq:floor_weight_def}
+      w(\vu)=\psi_E(\vu)e^{\sigma(\vu)}=(2\pi)^{-\frac{d-1}{2}}e^{\sigma(\vu)-\frac{\|\vu\|^2}{2}},\qquad \vu\in E.
+\end{equation}
+As described after~\eqref{eq:split}, the floors $\vF^{(k)}$ and heights $H^{(k)}$ follow independent standard Gaussian distributions (before conditioning). Hence, the weighted volume $\cZ_n(\sigma,c)$ defined in~\eqref{eq:def-zn} can be written as
+\begin{equation}\label{eq:Z-integral}
+      \cZ_n(\sigma,c)=(2\pi)^{-n/2}\int_{\cA_n(E)}
+      e^{-(\frac12-c)\|\fh\|^2}\prod_{k=1}^n w(\vf^{(k)})\dd\ff\dd\fh.
+\end{equation}
+With this notation, Proposition~\ref{prop:volume} becomes
+\begin{equation}\label{eq:integral-target}
+      \lim_{n\to\infty}\left(\frac1n\log\cZ_n(\sigma,c)+\frac{\log n}{d-1}\right)
+      =\gamma_d-\frac12\log(2\pi)
+      +\frac d{d-1}\log\int_Ew(\vu)^{\frac{d-1}{d}}\dd\vu.
+\end{equation}
+
+The purpose of this section is to prove the upper bound for~\eqref{eq:integral-target}, namely \eqref{eq:upper-bound}. We do this by considering sets of points for which the restriction to any single tile is an antichain. To determine the corresponding weighted volume, we start with estimates in one floor tile, then we extend this to $E$ using a Poisson point process whose restrictions to different floor tiles are independent. Section~\ref{sec:lower-bound} proves the matching lower bound.
+
+\subsection{Weighted contribution of one tile}
+For a tile $B=\eps\Delta'$, set $w_B=\sup_Bw$. We estimate the contribution in~\eqref{eq:Z-integral} from $r\ge1$ labeled points with floors in $B$. The pinned volume $V_r(B)$ already integrates over their floor positions and relative heights; the next lemma integrates the remaining common height translation.
+
+
+\verificationstatus{ANT-4-1}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{lemma}\label{lem:tile-height}
+      For every $r\in\N$, $\eps>0$, $c<1/2$, and $\Delta'\in\cT$, put $B=\eps\Delta'$. Then
+      \begin{equation}\label{eq:tile-weight-bound}
+            \frac1{(2\pi)^{r/2}}\int_{\cA_r(B)}e^{-(\frac12-c)\|\fh\|^2}
+            \prod_{k=1}^rw(\vf^{(k)})\dd\ff\dd\fh
+            \le\frac{w_B^r}{(2\pi)^{r/2}}
+            \int_{\cA_r(B)}e^{-(\frac12-c)\|\fh\|^2}\dd\ff\dd\fh
+            \le w_B^rv_r(\eps,c),
+      \end{equation}
+      where $v_0(\eps,c):=1$ and, for $r\ge1$,
+      \begin{equation}\label{eq:coefficients}
+            v_r(\eps,c):=\frac{(2\pi)^{-\frac{r-1}{2}}}{\sqrt{r(1-2c)}}\eps^{dr-1} V_r(\Delta).
+      \end{equation}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Bound each floor weight by its actual supremum on the tile. Separate common height translation from pinned height differences by a measure-preserving change of variables. Applying equal-exponent multi-function H\"older, translation invariance, and the exact Gaussian integral to the common-height coordinate gives exactly the displayed coefficient. Tile symmetry and scaling identify the remaining pinned volume. Lean checks both finite ordinary-integral inequalities, including the weight-one middle kernel and all integrability assertions.
+\end{proof}
+
+In particular, the values $v_r(\eps,c)$ are independent of the tile. The following lemma records their logarithmic asymptotics.
+
+\verificationstatus{ANT-4-2}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{lemma}
+      For fixed $\eps>0$ and $c<1/2$,
+      \begin{equation}\label{eq:coefficient-rate}
+            \limsup_{r\to\infty}\left(\frac{\log v_r(\eps,c)}{r}+\frac{\log r}{d-1}\right) =b_\eps:=\gamma_d-\frac12\log(2\pi)+\frac d{d-1}\log|\eps\Delta|.
+      \end{equation}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Expand the logarithm of the actual coefficient using the proved pinned-volume normalization and exact simplex scaling. The common-height Gaussian factor contributes $-\tfrac12\log(2\pi)$; the logarithms divided by sample size vanish. Passing to the limsup gives the stated coefficient rate. Lean checks the actual sequence, finite gamma and every correction limit.
+\end{proof}
+
+\subsection{Poissonization and independent tiles}
+
+Fix $0<\eps\le1$. We use the Poisson point process $\Pi_t$ on $E\times\R$ with intensity
+\[
+      t\,w(\vf)\frac{e^{-(\frac12-c)h^2}}{\sqrt{2\pi}}\dd\vf\dd h,
+      \qquad t\ge0.
+\]
+This means that counts in disjoint regions are independent Poisson random variables with means given by the intensity integral. Its total mean is $t\Lambda$, where
+\begin{equation}\label{eq:poisson-mass}
+      \Lambda=\frac1{\sqrt{1-2c}}\int_Ew(\vu)\dd\vu<\infty.
+\end{equation}
+Thus $\Pi_t$ contains finitely many points almost surely. We call it an antichain when the corresponding points $\vf+h\ve$ form an antichain; the empty configuration is allowed. Define
+\[
+      \mathcal Z(t)=e^{t\Lambda}\P(\Pi_t\text{ is an antichain}),
+      \qquad \mathcal V(t)=\sum_{r\ge0}\frac{v_r(\eps,c)t^r}{r!}.
+\]
+The exponential factor removes the common Poisson normalization.
+The next lemma explains why this configuration model generates the fixed-size quantities $\cZ_n$. A priori, the upper bounds in the lemma below could be infinite, in which case the inequalities would hold trivially. However, Lemmas~\ref{lem:series} and~\ref{lem:upper} show that these bounds are finite.
+
+\verificationstatus{ANT-4-3}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{lemma}\label{lem:tile-product}
+      For $t\ge0$, with $\cZ_0=1$,
+      \begin{equation}\label{eq:poissonization}
+            \mathcal Z(t)=\sum_{n\ge0}\frac{\cZ_n(\sigma,c)t^n}{n!}
+            \le\prod_{\Delta'\in\cT}\mathcal V(tw_{\eps\Delta'}).
+      \end{equation}
+      Consequently, for $n\ge1$ and $t>0$,
+      \begin{equation}\label{eq:occupancy}
+            \cZ_n(\sigma,c)\le \frac{n!}{t^{n}}\prod_{\Delta'\in\cT}\cV(tw_{\eps\Delta'}).
+      \end{equation}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Construct the actual finite-intensity Poisson configuration from its Poisson count and iid marks. Prove that its literal restrictions to disjoint measurable tiles have the product of their restricted-intensity laws. A global antichain restricts to an antichain in every tile; independence and the one-tile estimate bound the finite products. The Poisson normalizers cancel, and exhaustion removes the intensity outside the finite union. The Gaussian and series bounds make the countable product finite. Nonnegativity bounds its $n$th coefficient. The factorial label allocations are proved in the derivation of the actual restriction law.
+\end{proof}
+
+It remains to bound the growth of the one-tile series, then sum its logarithm over the tiles.
+
+
+\verificationstatus{ANT-4-4}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{lemma}\label{lem:series}
+      For fixed $\eps>0$ and $c<1/2$, the exponential generating function $\cV(t)=\sum_{r\ge0}\frac{v_r(\eps,c)t^r}{r!}$ is finite for $t\ge0$, and
+      \begin{equation}\label{eq:series}
+            \limsup_{t\to\infty}\left(t^{-\frac{d-1}{d}} \log \cV(t)\right) \le\frac d{d-1}\exp\left(\frac{d-1}{d}b_\eps-\frac1d\right).
+      \end{equation}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Use the actual coefficient rate and Stirling asymptotics to obtain a factorial-power majorant. The power-sum inequality bounds its series by an exponential. This proves genuine summability at every nonnegative argument and the precise normalized logarithmic limsup. Lean derives the Stirling estimate and coefficient majorant inside the proof.
+\end{proof}
+
+Finally we prove the upper bound for~\eqref{eq:integral-target}:
+
+\verificationstatus{ANT-4-5}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{lemma}\label{lem:upper}
+      For every bounded continuous $\sigma:E\to\R$ and $c<1/2$, with $w=\psi_Ee^\sigma$,
+      \begin{equation}\label{eq:upper-bound}
+            \limsup_{n\to\infty}\left(\frac1n\log\cZ_n(\sigma,c)+\frac{\log n}{d-1}\right)
+            \le\gamma_d-\frac12\log(2\pi)+\frac d{d-1}\log\int_Ew(\vu)^{\frac{d-1}{d}}\dd\vu.
+      \end{equation}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Insert the actual coefficient rate and generating-series estimate into the proved tile-product bound. Gaussian decay makes the tile logarithms summable. As the tile scale tends to zero, their weighted sums approach the integral of $w^{(d-1)/d}$ in the actual induced floor measure. Choose the Poisson parameter at the resulting optimal scale and apply Stirling's asymptotic. The vanishing scale and coefficient errors give the displayed upper limsup.
+\end{proof}
+
+\section{The lower bound for Proposition~\ref{prop:volume}}\label{sec:lower-bound}
+
+The purpose of this section is to prove the lower bound for~\eqref{eq:integral-target}, namely~\eqref{eq:lower-conclusion}.
+Lemma~\ref{lem:matching} constructs measurable sets $\cB_r\subset\cA_r(\Delta)$ such that independent copies of antichains in $\cB_r$ in different tiles $\Delta'$ always combine into an antichain. The volume of $\cB_r$ retains the logarithmic rate per point of $V_r(\Delta)$ as $r\to\infty$ and the contraction parameters tend to zero. We fill finitely many separated cubes with tiles, choosing the scale in each cube according to its floor weight, and then approximate the integral over $E$.
+
+\subsection{Matching boundary values}
+
+An antichain has a single height at each floor position. To combine independent choices in different tiles, we will select $\cB_r\subset\cA_r(\Delta)$ so that every configuration admits a height extension with the same boundary values on $\Delta$. The following proposition provides the extension used in this construction.
+
+
+\verificationstatus{ANT-5-1}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{proposition}\label{prop:extension}
+      Let $B\subset E$ be nonempty and bounded, and let $h:B\to\R$ be bounded. Suppose
+      \begin{equation}\label{eq:height-data}
+            h(\vu)-h(\vv)\le\Ldir{\vu-\vv} \qquad(\vu,\vv\in B).
+      \end{equation}
+      Then
+      \[
+            \widehat h(\vu):=\inf_{\vw\in B} \bigl(h(\vw)+\Ldir{\vu-\vw}\bigr),\qquad \vu\in E,
+      \]
+      is finite, agrees with $h$ on $B$, and satisfies
+      \[
+            \widehat h(\vu)-\widehat h(\vv)\le\Ldir{\vu-\vv} \qquad(\vu,\vv\in E).
+      \]
+      In particular, $\widehat h$ is $\sqrt{d-1}$-Lipschitz.
+\end{proposition}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Nonnegativity of the directed cost and a lower bound on the data make the set in the infimum bounded below, while nonemptiness gives a finite competitor. Compatibility and the zero self-cost give agreement with the original data. The triangle inequality passes through the infimum and bounds the directed difference. Apply the bound in both orders and the sharp norm estimate to obtain the stated Lipschitz constant. Lean checks the infimum on arbitrary nonempty sets; bounded-below data suffice.
+\end{proof}
+
+To construct $\cB_r$ and prove the following lemma, we first contract configurations toward an interior floor point to separate them from the boundary. We then contract the heights to leave enough room to replace nearby boundary functions by a common representative.
+
+
+\verificationstatus{ANT-5-2}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{lemma}\label{lem:matching}
+      Fix $\eta,\lambda\in (0,\frac12)$. There are $C=C(d)\ge 1$ and an integer $M=M(d,\eta,\lambda)\ge1$ such that, for every $r\in\N$, there exist a measurable set $\cB_r\subset\cA_r(\Delta)$ and a function $h_\partial:\partial\Delta\to\R$ with the following properties:
+      \begin{enumerate}[label=\textup{(\roman*)},ref=\textup{(\roman*)},leftmargin=*]
+            \item \label{item:fit-bounds}
+                  Every $(\ff,\fh)\in\cB_r$ satisfies, for $1\le k\le r$,
+                  \[
+                        |h^{(k)}|\le C, \qquad \dist(\vf^{(k)},\partial\Delta)\ge\frac{\eta}{C}.
+                  \]
+            \item \label{item:fit-extension}
+                  Every $(\ff,\fh)\in\cB_r$ admits an extension $\widehat h:\Delta\to\R$ such that
+                  \[
+                        \widehat h(\vf^{(k)})=h^{(k)},\qquad \widehat h|_{\partial\Delta}=h_\partial,\qquad \widehat h(\vu)-\widehat h(\vv)\le\Ldir{\vu-\vv} \quad(\vu,\vv\in\Delta).
+                  \]
+                  The extension may depend on the configuration, but its boundary values do not. The common boundary function may depend on $r$.
+            \item \label{item:fit-volume}
+                  The volume of $\cB_r$ satisfies
+                  \begin{equation}\label{eq:matching}
+                        \Vol_{dr}(\cB_r)\ge\frac{2}M(1-\eta)^{dr}(1-\lambda)^r V_r(\Delta).
+                  \end{equation}
+      \end{enumerate}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Release the common height over $[-1,1]$ to obtain the exact initial volume $2S_r$. Simultaneously contract floors and heights into the simplex interior. The directional extensions have uniformly bounded boundary profiles; Arzel\`a--Ascoli gives a finite net independent of sample count. Select a measurable large profile class and contract heights again, leaving enough slack for one common boundary profile. Lean constructs the extensions and measurable families and checks both Jacobians, boundary separation, quantifier order and ordinary-volume bound.
+\end{proof}
+
+
+
+
+\verificationstatus{ANT-5-3}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{lemma}\label{lem:replication}
+      Fix $\eta,\lambda\in(0,\frac12)$ and $r\in\N$, and let $C$, $\cB_r$, and $h_\partial$ be as in Lemma~\ref{lem:matching}. Choose $q\ge1$ distinct tiles at a common scale $\eps>0$, and put $N=rq$. In each tile $\eps\Delta'=\eps(\omega\Delta)$ where $\omega$ is a composition of side reflections, copy a configuration from $\cB_r$ by
+      \[
+            (\vf^{(k)},h^{(k)})\longmapsto(\eps\,\omega(\vf^{(k)}),\eps h^{(k)}).
+      \]
+      Independent choices in the tiles give an admissible $N$-point configuration, with every height bounded in absolute value by $C\eps$. Assigning an unordered $r$-element label set to each tile, using increasing label order within that tile, gives a measurable family of volume
+      \begin{equation}\label{eq:replication}
+            \frac{N!}{(r!)^q}\bigl(\eps^{dr}\Vol_{dr}(\cB_r)\bigr)^q.
+      \end{equation}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Transport each matching extension by its actual tile reflection and common scale. On overlaps, closed-alcove representative uniqueness identifies the reference boundary point, so the common boundary profiles agree. The locally finite convex cover and continuity along segments give the global directional constraint. Each tile chart has Jacobian $\epsilon^{dr}$. Distinct tile interiors make different label allocations disjoint; canonical increasing order within each label set gives exactly $N!/(r!)^q$ allocations and the printed measurable-family volume.
+\end{proof}
+
+\subsection{Weighted lower bound}
+Fix a bounded continuous function $\sigma:E\to\R$ and $c<1/2$.
+We use finitely many cubes $\square_j$, placing $r$ points in each complete simplex $\eps_j\Delta'$ inside a cube. We choose the tile scales $\eps_{j}$ using the value of $w=\psi_Ee^\sigma$ in each cube $\square_{j}$.
+
+
+\verificationstatus{ANT-5-4}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{lemma}\label{lem:cube-lower}
+      Let $\square_1,\ldots,\square_J\subset E$ be closed cubes of positive volume with disjoint interiors. Set
+      \[
+            w_j=\inf_{\square_j}w>0,\qquad S=\sum_{j=1}^J|\square_j|w_j^{\frac{d-1}{d}}.
+      \]
+      Then
+      \begin{equation}\label{eq:lower-rate}
+            \liminf_{n\to\infty}\left(\frac1n\log\cZ_n(\sigma,c)+\frac{\log n}{d-1}\right)
+            \ge\gamma_d-\frac12\log(2\pi)+\frac d{d-1}\log S.
+      \end{equation}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Use an individual orthonormal frame for each cube. First shrink the cubes to obtain positive separation. In cube $j$, fill complete tiles at scale $\epsilon w_j^{-1/d}$ and use the matching families with a common local sample count. Their exact volumes, label allocations and height bounds give an actual weighted partition lower bound. Quantitative tile counts choose the total size close enough to every prescribed $n$; the actual deletion inequality supplies all sizes. Let the local rates approach their limsup and remove the matching and cube contractions.
+\end{proof}
+
+
+\verificationstatus{ANT-5-5}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{lemma}\label{lem:lower}
+      For every bounded continuous $\sigma:E\to\R$ and $c<1/2$, with $w=\psi_Ee^\sigma$,
+      \begin{equation}\label{eq:lower-conclusion}
+            \liminf_{n\to\infty}\left(\frac1n\log\cZ_n(\sigma,c)+\frac{\log n}{d-1}\right)
+            \ge\gamma_d-\frac12\log(2\pi)+\frac d{d-1}\log\int_Ew(\vu)^{\frac{d-1}{d}}\dd\vu.
+      \end{equation}
+\end{lemma}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Continuity and positivity of the actual weight allow finite closed cubes with positive separation whose lower weighted sums approach the integral of $w^{(d-1)/d}$ from below. Gaussian decay makes this integral finite and positive. Apply the finite-cube lower bound to each such family and pass to the approximation limit through the logarithm. This yields the stated global lower liminf with the same local-volume constant.
+\end{proof}
+
+
+\section{Applications and open questions}\label{sec:applications}
+In this section, we discuss several applications of our results to limits and enumeration of pattern-avoiding permutations and intervals in the weak Bruhat order. We conclude with some related open questions.
+
+\subsection{Permutons and enumeration}\label{sec:ranks}
+
+\verificationstatus{ANT-RANK-SORTING-LAW}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+
+Let $\mathfrak S_n$ denote the set of permutations of $[n]=\{1,\ldots,n\}$. Before conditioning on $\cA_n$, the points $\vX^{(1)},\ldots,\vX^{(n)}$ are independent and uniform on $[0,1]^d$. For each coordinate $i$, write $S_{i,1}<\cdots<S_{i,n}$ for the values $\vX_i^{(1)},\ldots,\vX_i^{(n)}$ in increasing order; coordinate ties have probability zero.
+Order the sample by its first coordinate, and let $\pi_i(k)$ be the rank of the $i$th coordinate of the $k$th point among these $n$ values, so $\pi_1=\mathrm{id}$. The coordinate samples $\vX_i^{(j)}$ are independent. By symmetry, conditional on the sorted values $S_{i,1}<\cdots<S_{i,n}$ in each coordinate, all $n!$ orders of the sample labels are equally likely.
+Thus the rank tuple is uniform over the $(n!)^{d-1}$ possible $d$-permutations $(\mathrm{id},\pi_2,\ldots,\pi_d)$, with $\pi_i\in\mathfrak S_n$, and independent of the full collection of sorted coordinate values $(S_{i,r})_{i,r}$.
+
+The antichain event depends only on the ranks, so conditioning on $\cA_n$ makes the corresponding rank tuple uniform on the set $\cC_n$ of $d$-permutations avoiding the pattern $(12,12,\ldots,12)$; see Section~\ref{sec:background} for definitions. Recalling $a_n=\P(\cA_n)$, we obtain
+\begin{equation}\label{eq:rank-count}
+      |\cC_n|=(n!)^{d-1}a_n.
+\end{equation}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Use label symmetry separately in every coordinate, then order by the first coordinate. The relative rank tuple is uniform and independent of all sorted values. Its avoidance event is precisely the antichain event, which gives the uniform avoidance law and the stated factorial counting identity.
+\end{proof}
+As a consequence, Theorem~\ref{thm:counting} translates to the following enumerative result:
+
+\verificationstatus{ANT-6-2}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{proposition}\label{prop:counting}\label{cor:counting}
+      Set $\beta_d'=\exp\!\left(\beta_d-\frac1{d-1}\right)>0$. Then
+      \[
+            |\cC_n|=(n!)^{d-1-\frac1{d-1}}(\beta_d')^n e^{o(n)}.
+      \]
+      The same asymptotic formula holds for avoidance of any prescribed two-point $d$-dimensional permutation pattern. In particular, $\beta_2'=1$.
+\end{proposition}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+The exact conditioned rank law gives $|\mathcal C_n|=(n!)^{d-1}a_n$. Substitute the proved antichain logarithmic asymptotic and Stirling's formula, keeping the linear correction $-1/(d-1)$ in the exponential constant. Coordinate value reversals are explicit bijections for every prescribed two-point orientation. In dimension two the avoiding permutation is uniquely the reversal, so its exact count forces $\beta'_2=1$.
+\end{proof}
+The earlier estimates~\cite{CK,GP} determine the factorial scale up to exponential factors. The values of the growth constants for $d\ge3$ and the error term are not determined here; see Question~\ref{ques:constant}. Nonetheless, this answers the two-point case of~\cite[Question~9.3]{CK}. The more general question asks whether the same formula (with a pattern-dependent positive constant in place of $\beta_d'$) holds for avoidance of any $d$-dimensional pattern of length at least $2$.
+
+We now describe the permuton limit of $(12,\ldots,12)$-avoiding $d$-permutations $(\pi_1,\ldots,\pi_d)$.
+
+\verificationstatus{ANT-RANK-MIDPOINT-MARGINAL}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+Write
+\[
+      u_{r,n}=\frac{r-\tfrac12}{n},\qquad \vR^{(k)}=(u_{\pi_1(k),n},\ldots,u_{\pi_d(k),n}),\qquad \widehat\mu_n^{\mathrm{rk}}=\frac1n\sum_{k=1}^n\delta_{\vR^{(k)}}.
+\]
+Following~\cite{BL}, define $\mu_n^{\mathrm{rk}}$ by spreading each point mass $\frac1n$ at $\vR^{(k)}$ of $\widehat\mu_n^{\mathrm{rk}}$ uniformly over the cube of side $\frac1n$ centered at that rank point $\vR^{(k)}$. In each coordinate, every rank interval $[\frac{r-1}{n},\frac{r}{n}]$ occurs once and receives mass $\frac1n$, so $\mu_n^{\mathrm{rk}}$ has uniform marginals and is a permuton. Recall that $\mathcal P_d$ denotes the probability measures on $[0,1]^d$ with the weak topology, and that $\mu^\ast=\law(\Phi(\vF^\ast))$ is the limiting measure in~\eqref{eq:mu_n_hat_definition}.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Reindex the midpoint-grid atoms by the corresponding permutation. Their average has one atom at each rank midpoint. The box spreading replaces these atoms by one uniform law per equal-length rank interval, each with mass $1/n$. Their sum has exactly the uniform marginal.
+\end{proof}
+
+
+\verificationstatus{ANT-6-1}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+      \begin{theorem}[The antichain permuton]\label{thm:permuton}\label{prop:permuton}\label{cor:permuton}
+            For every open neighborhood $\cU$ of $\mu^\ast$ in $\mathcal P_d$, there is $\alpha=\alpha(d,\cU)>0$ such that
+            \[
+                  \P_n\bigl(\widehat\mu_n^{\mathrm{rk}}\notin\cU \text{ or }\mu_n^{\mathrm{rk}}\notin\cU\bigr) \le e^{-\alpha n}
+            \]
+            for all sufficiently large $n$.
+      \end{theorem}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Rank independence leaves each coordinate's sorted-value law unchanged. At each midpoint \(u_{r,n}\), apply the binomial Hoeffding bound at \(u_{r,n}\pm s\) to control both order-statistic tails. Let \(D_n=\max_k\|\widetilde{\vX}^{(k)}-\vR^{(k)}\|\) be the greatest Euclidean displacement after ordering the sampled points by their first coordinate. A union bound over the \(dn\) coordinate/rank pairs gives
+\begin{equation}\label{eq:rank-displacement}
+  \P_n(D_n>s)\le2dn\exp\left(-\frac{2ns^2}{d}\right).
+\end{equation}
+Uniform continuity of finitely many tests transfers concentration to the empirical rank measure, then to the spread measure because each box has radius \(\sqrt d/(2n)\).
+\end{proof}
+
+
+
+\verificationstatus{ANT-RANK-HAUSDORFF}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{remark}\label{rem:rank-hausdorff}
+      For the rank point cloud $A_n^{\mathrm{rk}}=\{\vR^{(1)},\ldots,\vR^{(n)}\}$, matching points and applying the triangle inequality gives
+      \[
+            d_{\rm H}(A_n^{\mathrm{rk}},\overline{\cS_d})
+            \le D_n+d_{\rm H}(A_n,\overline{\cS_d}).
+      \]
+      For each $\delta>0$, \eqref{eq:rank-displacement} and Theorem~\ref{thm:shape} bound the probability that this distance exceeds $\delta$ by $e^{-\alpha n}$, for some $\alpha=\alpha(d,\delta)>0$ and all sufficiently large $n$.
+\end{remark}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Pair points by their rank labels. The Euclidean Hausdorff triangle inequality and the checked displacement bound transfer exponential concentration from the sample cloud to the rank point cloud.
+\end{proof}
+
+
+\verificationstatus{ANT-6-PATTERN}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{remark}\label{rem:pattern-concentration}
+      Theorem~\ref{thm:permuton} also gives exponential concentration of every fixed pattern frequency around its probability under independent sampling from $\mu^\ast$. Pattern probabilities are continuous in the permuton, and for a pattern on $q$ points the permutation frequency differs from its permuton probability by at most $\binom{q}{2}/n$; see~\cite[Lemma~2.3 and Proposition~2.4]{BL}.
+\end{remark}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+The boundary of the actual pattern chamber lies in coordinate-tie sets, which have zero probability under independent samples from a permuton. Weak continuity of finite product measures and Portmanteau therefore give continuity of pattern probabilities at the limiting law. Comparing independent rank-box samples with distinct label samples costs at most $\binom q2/n$. The direct rank-box concentration then gives the asserted exponential bound for the literal subset count divided by $\binom nq$.
+\end{proof}
+
+
+
+\subsection{Intervals in the weak Bruhat order}
+
+In this section, set $d=3$, so a rank tuple in $\cC_n$ is $(\mathrm{id},\pi_2,\pi_3)$. For $\pi\in\mathfrak S_n$, define the inversion set of $\pi$ by
+\[
+      \Inv(\pi)=\{(k,\ell):k<\ell,\ \pi(k)>\pi(\ell)\}.
+\]
+The {\em weak Bruhat order} $\le_{\rm W}$ on $\mathfrak S_n$ is defined by $\pi^-\le_{\rm W}\pi^+$ when $\Inv(\pi^-)\subseteq\Inv(\pi^+)$. Thus moving upward in this order adds inversions. The interval
+\[
+      [\pi^-,\pi^+]_{\rm W}=\{\pi\in\mathfrak S_n:\pi^-\le_{\rm W}\pi\le_{\rm W}\pi^+\}
+\]
+is determined by its lower and upper endpoints $\pi^-$ and $\pi^+$. With $w_0(r)=n+1-r$, the correspondence with simultaneous pattern avoidance takes the form below; see~\cite{GP} and~\cite[Proposition~5]{BM}:
+\begin{equation}\label{eq:interval-map}
+      (\mathrm{id},\pi_2,\pi_3)\longmapsto (\pi^-,\pi^+)=(w_0\circ\pi_3,\pi_2).
+\end{equation}
+Indeed,
+\[
+      \Inv(w_0\circ\pi_3)=\{(k,\ell)\in[n]^2:k<\ell\}\setminus\Inv(\pi_3).
+\]
+The antichain condition says precisely that every increasing pair of $\pi_3$, hence every inversion of $w_0\circ\pi_3$, is an inversion of $\pi_2$. The inverse map is $(\pi_2,\pi_3)=(\pi^+,w_0\circ\pi^-)$, so a uniform tuple in $\cC_n$ gives a uniform weak-order interval.
+
+
+\verificationstatus{ANT-6-3}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{proposition}
+      Let $I_n$ be the number of weak-order intervals in $\mathfrak S_n$, and let $\Pi_1,\Pi_2$ be independent uniform permutations in $\mathfrak S_n$. Then
+      \[
+            I_n=(n!)^{3/2}(\beta_3')^n e^{o(n)},\qquad \P(\Pi_1\le_{\rm W}\Pi_2)=(n!)^{-1/2}(\beta_3')^n e^{o(n)}.
+      \]
+\end{proposition}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+The explicit rank-permutation correspondence identifies increasing-pair avoidance in three coordinates with inversion inclusion after the required value reversal. Its inverse proves a bijection with actual weak-order intervals, including the endpoint order. Thus the interval count equals the three-dimensional avoidance count. Under two independent uniform permutations the comparison probability is exactly that count divided by $(n!)^2$. Apply the proved dimension-three enumeration formula to obtain both asymptotics.
+\end{proof}
+
+
+This probability was first studied by Hammett and Pittel~\cite{HP}. The leading asymptotic $\exp((-\frac12+o(1))n\log n)$ is given in~\cite[Theorem~1.1]{BCHHLM} and also follows from the earlier coordinate-order and pattern-avoidance bounds~\cite{CK,GP}.
+The permuton limit also describes the joint geometry of the interval endpoints.
+
+
+\verificationstatus{ANT-6-4}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+\begin{proposition}\label{prop:intervals}
+      Let $(\pi^-,\pi^+)$ be a uniformly chosen weak-order interval in $\mathfrak S_n$. If $(A,B)$ is a centered bivariate Gaussian with variances one and covariance $-1/2$, then
+      \begin{equation}\label{eq:interval-law}
+            \frac1n\sum_{k=1}^n \delta_{(u_{k,n},u_{\pi^-(k),n},u_{\pi^+(k),n})} \longrightarrow \law\bigl(\Phi(A),\Phi(A+B),\Phi(B)\bigr)
+      \end{equation}
+      in probability, with exponential concentration outside every fixed weak neighborhood.
+\end{proposition}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Use the verified interval bijection and the coordinate map \(\vx\mapsto(\vx_1,1-\vx_3,\vx_2)\) to push the rank limit to the joint endpoint law \(\law(\Phi(A),\Phi(A+B),\Phi(B))\).
+\end{proof}
+
+
+
+\verificationstatus{ANT-INTERVAL-INVERSIONS}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+\begin{corollary}\label{cor:interval-inversions}
+      For $n\ge2$, let $(\pi^-,\pi^+)$ be a uniformly chosen weak-order interval in $\mathfrak S_n$, and write $\inv(\pi):=|\Inv(\pi)|/\binom n2$ for the inversion density of $\pi\in\mathfrak S_n$. For every $\delta>0$, there is $\alpha=\alpha(\delta)>0$ such that
+      \[
+            \P\left(\max\left\{
+            \Bigl|\inv(\pi^-)-\frac13\Bigr|,
+            \Bigl|\inv(\pi^+)-\frac23\Bigr|\right\}
+            >\delta\right)\le e^{-\alpha n}
+      \]
+      for all sufficiently large $n$.
+\end{corollary}
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Under the interval bijection, lower inversions have pattern $(12,21,12)$ and upper inversions have this pattern or $(12,21,21)$. Two independent points from $\mu^\ast$ have different coordinates almost surely and are incomparable. Permutation symmetry gives probability $1/3$ to each choice of singleton sign coordinate. Exponential pattern concentration and a union bound give joint control of both inversion densities.
+\end{proof}
+
+
+
+\Needspace{5\baselineskip}
+\subsection{Open questions}
+
+
+\verificationstatus{ANT-DIM2-STIRLING}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+Theorem~\ref{thm:counting} determines the logarithmic counting asymptotic up to an $o(n)$ error, but does not evaluate the constant $\beta_d$ for $d\ge3$. For comparison, when $d=2$ the identity $a_n=1/n!$ gives $\beta_2=1$ and remainder $-\frac12\log(2\pi n)+O(\frac1n)$ by Stirling's formula.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Use the exact probability $a_n=1/n!$. Bound successive logarithms of Mathlib's Stirling sequence by a telescoping reciprocal difference and pass to its proved limit $\sqrt\pi$. The resulting absolute logarithmic error is at most $1/(2n)$, which gives the printed $O(1/n)$ remainder.
+\end{proof}
+
+
+\verificationstatus{ANT-6-5}{Open statement}
+\begin{question}\label{ques:constant}
+            What are the values of $\beta_d$, or equivalently $\gamma_d$, for $d\ge3$? Additionally, determine the order of the remainder
+            \[
+                  \log a_n+\frac{n}{d-1}\log n-\beta_dn.
+            \]
+            In particular, what is the weak-order interval constant $\beta_3'$, and is the remainder $O(\sqrt n)$ when $d=3$?
+      \end{question}
+
+
+\verificationstatus{ANT-HEIGHT-MEAN-TAIL}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The written proof and Lean use the same argument.}
+Recall the total squared height $T_n=\sum_{k=1}^n(H^{(k)})^2$. The proof of Theorem~\ref{thm:empirical-limit} gives exponential concentration of $T_n/n$ near zero, while Theorem~\ref{thm:shape} controls outliers and holes. Neither result identifies the scale of the geometric deviations.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Tilt the total squared Gaussian height by $c=1/4$. The weighted partition ratio has vanishing limiting logarithmic rate at this tilt. Apply the exponential Markov inequality to obtain a strictly negative rate for every fixed positive deviation of $T_n/n$.
+\end{proof}
+
+
+\verificationstatus{ANT-6-6}{Open statement}
+\begin{question}
+      What are the typical orders of $T_n$ and $d_{\rm H}(A_n,\overline{\cS_d})$ under $\P_n$? Do these quantities have nondegenerate limiting distributions after suitable centering and rescaling?
+\end{question}
+
+
+\verificationstatus{ANT-COORDINATE-CLT}{Lean-verified assuming the iid CLT}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+For $g(\vx)=\vx_i$, the rank independence in Section~\ref{sec:ranks} leaves the empirical average's law unchanged by conditioning. Thus $\sqrt n(\int g\dd\widehat\mu_n-\frac12)$ converges in distribution to $\mathcal N(0,1/12)$. For general smooth test functions, the scale and limiting law of empirical fluctuations remain open. Recall that $\E_n=\E(\,\cdot\mid\cA_n)$.
+
+\begin{proof}[Proof idea; modulo the iid central limit theorem]
+The mean of a coordinate is invariant under sorting. Rank independence therefore gives exactly the unconditioned uniform average law at each sample size. The uniform law has mean $1/2$ and variance $1/12$. The classical iid central limit theorem gives the displayed limit. Lean checks the exact law transfer, moments and specialization with the general iid central limit theorem as an explicit input.
+\end{proof}
+
+
+\verificationstatus{ANT-6-7}{Open statement}
+\begin{question}
+      For fixed $d\ge3$ and a smooth function $g:[0,1]^d\to\R$, determine the normalization and limiting distribution of
+      \[
+            \int g\dd\widehat\mu_n
+            -\E_n\left[\int g\dd\widehat\mu_n\right].
+      \]
+      For which such $g$ is the limiting distribution Gaussian? \end{question}
+
+
+\verificationstatus{ANT-RANK-COORDINATE-AVERAGES}{Fully Lean-verified}
+\verificationcomparison{Statement matches. The draft gives no separate proof; the checked deduction is described below.}
+Coordinate averages of $\widehat\mu_n^{\mathrm{rk}}$ are deterministic, unlike those of $\widehat\mu_n$, so the two measures need not have the same fluctuations.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+The sum of the $n$ midpoint ranks is $n/2$. Reindexing by any coordinate permutation and dividing by $n$ gives exactly $1/2$. Lean proves this for the literal finite averages and the actual empirical-measure coordinate integrals.
+\end{proof}
+
+
+\verificationstatus{ANT-CHAIN-COLORING}{Fully Lean-verified}
+\verificationcomparison{Statement matches. Lean follows the written argument with additional formal details.}
+For an integer $K\ge1$, let $\cC_{n,K}$ denote the set of $d$-permutations of $[n]$ avoiding the increasing pattern of size $K+1$; equivalently, their rank point set contains no chain of length $K+1$ under $\prec$. Let $\mu_{n,K}^{\mathrm{rk}}$ be the rank-box permuton of a uniform member of $\cC_{n,K}$, as in Section~\ref{sec:ranks}. Coloring each point by the length of a longest chain ending there gives a $K$-coloring, and each color class forms an antichain. This suggests the following extension of our results.
+
+\begin{proof}[Proof idea; fully Lean-verified]
+Sort any finite rank-coordinate chain by its first coordinate to identify it with an increasing pattern, and conversely. The longest chain ending at a point is attained among actual finite subsets and strictly increases along every comparison. Its value minus one gives a color in $\{0,\ldots,K-1\}$; equal colors cannot be comparable. No conjectured asymptotic is used.
+\end{proof}
+
+\verificationstatus{ANT-6-8}{Open statement}
+\begin{conjecture}\label{conj:bounded-chains} For every fixed $d\ge3$ and $K\ge2$, as $n\to\infty$,
+      \begin{equation}\label{eq:bounded-chains-counting}
+            |\cC_{n,K}|=(n!)^{d-1-\frac1{d-1}}
+            \left(\beta_d' K^{\frac d{d-1}}\right)^n e^{o(n)},
+      \end{equation}
+      where $\beta_d'$ is the counting constant in Proposition~\ref{cor:counting}. Moreover, the corresponding permuton $\mu_{n,K}^{\mathrm{rk}}$ converges weakly in probability to $\mu^\ast$.
+\end{conjecture}
+
+This leads to a question regarding the universality of pattern-avoiding permutations.
+
+\verificationstatus{ANT-6-9}{Open statement}
+\begin{question}\label{ques:universality} For which patterns $\tau$ of size at least $3$ is $\mu^\ast$ (or its reflection in some coordinate axes) the permuton limit of uniform $\tau$-avoiding $d$-permutations?
+\end{question}
+The same question can be asked for avoidance of several patterns, provided the classes are nonempty for every $n$. A general classification remains open even for $d=2$; see~\cite{hohmeier2025permuton}.
+
+
+\section*{Acknowledgments}
+Part of this work was carried out during visits hosted by Ewain Gwynne, with support from National Science Foundation grant DMS-2245832. We thank Richard Kenyon and Istv\'an Prause for sharing their insights into surface tension related to our results, and Jacopo Borga for sharing a draft survey on permutons.
+
+\section*{AI disclosure statement}\label{sec:ai}
+\addcontentsline{toc}{section}{AI disclosure statement}
+This work was initiated when we posed the problem for $d=3$ to OpenAI's ChatGPT-5.5 Pro, which proposed the limit shape in Theorem~\ref{thm:shape} as a conjecture and suggested the coordinatewise transformation $\Phi^{-1}$ as a way to simplify the problem. When prompted to extend our tiling idea for $d=3$ to higher dimensions, it also suggested the tiling used in Section~\ref{sec:tiling}. These suggestions provided starting points for our subsequent development of the argument.
+
+During the development and revision of the paper, we used ChatGPT-5.6 and 6 Pro to help refine proofs, check computations and constants, and identify potential gaps. In particular, AI suggested constants and bounds in the estimates of Lemmas~\ref{lem:constant}, \ref{lem:matching}, and~\ref{lem:cube-lower} to finish our arguments. We evaluated these suggestions, selected which to retain, and revised the resulting arguments and exposition through discussion and review.
+
+We also used AI to help reorganize the manuscript, make systematic changes to notations, and develop Python code for the figures based on our existing visualizations. AI generated an accompanying Lean formalization of the results, available in the repository~\cite{antichain-lean}. We checked that the formal Lean statements of the main theorems agree with the corresponding statements in this paper. The authors take full responsibility for all results, proofs, references, and exposition.
+\input{verification-appendix}
+\input{verification-full-proofs}
+\printbibliography
+\end{document}

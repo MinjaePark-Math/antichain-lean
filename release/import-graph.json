@@ -1,0 +1,966 @@
+{
+  "Antichain/AffineAlcoveGroup.lean": [
+    "Antichain.TileSymmetries"
+  ],
+  "Antichain/AlcoveCover.lean": [
+    "Antichain.AffineAlcoveGroup",
+    "Antichain.AlcoveDiscreteness",
+    "Antichain.AlcoveTiling",
+    "Mathlib.Order.Fin.Basic"
+  ],
+  "Antichain/AlcoveDiscreteness.lean": [
+    "Antichain.AffineAlcoveGroup",
+    "Antichain.AlcoveTiling",
+    "Mathlib.Data.Finite.Prod",
+    "Mathlib.Data.Set.Finite.Lemmas",
+    "Mathlib.Data.Int.Interval"
+  ],
+  "Antichain/AlcoveFundamentalDomain.lean": [
+    "Antichain.AffineAlcoveGroup",
+    "Antichain.AlcoveTiling",
+    "Antichain.ConfigurationContraction",
+    "Mathlib.Data.List.Sort",
+    "Mathlib.Data.List.OfFn",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset"
+  ],
+  "Antichain/AlcoveTiling.lean": [
+    "Antichain.TileSymmetries",
+    "Mathlib.Data.Set.Countable",
+    "Mathlib.Topology.LocallyFinite",
+    "Mathlib.Analysis.Convex.Measure",
+    "Mathlib.MeasureTheory.Measure.AEDisjoint"
+  ],
+  "Antichain/Applications.lean": [
+    "Antichain.Basic",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "Mathlib.Tactic.FinCases",
+    "Mathlib.Tactic.Linarith"
+  ],
+  "Antichain/Asymptotics.lean": [
+    "Antichain.Applications",
+    "Mathlib.Analysis.Asymptotics.Defs",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+    "Mathlib.Analysis.SpecialFunctions.Exponential",
+    "Mathlib.Topology.Algebra.InfiniteSum.Real"
+  ],
+  "Antichain/Basic.lean": [
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.Algebra.BigOperators.Field",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+    "Mathlib.Order.Monotone.Basic",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Tactic.NormNum"
+  ],
+  "Antichain/BinaryKLPinsker.lean": [
+    "Mathlib.Analysis.SpecialFunctions.Log.NegMulLog",
+    "Mathlib.Analysis.Convex.Deriv",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.FunProp",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Ring"
+  ],
+  "Antichain/BoundaryMatching.lean": [
+    "Antichain.BoundaryProfiles",
+    "Antichain.GaussianPartitionIntegral",
+    "Antichain.ConfigurationContraction",
+    "Antichain.ConfigurationTube",
+    "Mathlib.Topology.ContinuousMap.Compact",
+    "Mathlib.Topology.Order.Lattice"
+  ],
+  "Antichain/BoundaryProfiles.lean": [
+    "Antichain.ReferenceSimplex",
+    "Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli",
+    "Mathlib.Topology.MetricSpace.UniformConvergence"
+  ],
+  "Antichain/BoundedMoment.lean": [
+    "Mathlib.Probability.Moments.MGFAnalytic",
+    "Mathlib.MeasureTheory.Integral.BoundedContinuousFunction",
+    "Mathlib.Analysis.Calculus.Taylor",
+    "Mathlib.Analysis.Asymptotics.Lemmas"
+  ],
+  "Antichain/ChernoffRate.lean": [
+    "Antichain.SeriesGrowth"
+  ],
+  "Antichain/CoefficientRate.lean": [
+    "Antichain.LocalRate",
+    "Antichain.TileCoefficients",
+    "Mathlib.Topology.Algebra.Order.LiminfLimsup"
+  ],
+  "Antichain/CommonHeightHolder.lean": [
+    "Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral",
+    "Mathlib.MeasureTheory.Group.Integral",
+    "Mathlib.Tactic.FunProp",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.MeasureTheory.Integral.MeanInequalities"
+  ],
+  "Antichain/ConditionalMoments.lean": [
+    "Antichain.WeightedLimit",
+    "Antichain.FloorTilt"
+  ],
+  "Antichain/ConfigurationContraction.lean": [
+    "Antichain.GaussianPartitionIntegral",
+    "Antichain.HeightCoordinates",
+    "Antichain.ReferenceSimplex",
+    "Mathlib.Topology.MetricSpace.HausdorffDistance",
+    "Mathlib.Topology.Connected.Clopen",
+    "Mathlib.Analysis.Convex.Basic",
+    "Mathlib.Tactic.Abel",
+    "Mathlib.MeasureTheory.Group.Pointwise"
+  ],
+  "Antichain/ConfigurationTube.lean": [
+    "Antichain.ConfigurationContraction",
+    "Antichain.OneTileModel"
+  ],
+  "Antichain/CoordinateChangeSource.lean": [
+    "Antichain.GaussianSample",
+    "Antichain.NormalCDFLipschitz",
+    "Antichain.GaussianCharacterization",
+    "Mathlib.Analysis.Calculus.Deriv.Inverse",
+    "Mathlib.Analysis.Calculus.FDeriv.Prod",
+    "Mathlib.Analysis.Calculus.MeanValue",
+    "Mathlib.LinearAlgebra.Determinant",
+    "Mathlib.MeasureTheory.Function.Jacobian",
+    "Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace"
+  ],
+  "Antichain/CoordinateFluctuations.lean": [
+    "Antichain.RankCDF",
+    "Antichain.CubeProbabilitySpace",
+    "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+    "Mathlib.Probability.Distributions.Gaussian.Real"
+  ],
+  "Antichain/CountableRate.lean": [
+    "Mathlib.Topology.Algebra.InfiniteSum.Real",
+    "Mathlib.Topology.Order.Basic",
+    "Mathlib.Order.Filter.Finite",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Positivity"
+  ],
+  "Antichain/CountingConstant.lean": [
+    "Antichain.WeightedLimit"
+  ],
+  "Antichain/CubeConcentration.lean": [
+    "Antichain.LipschitzCubeTests"
+  ],
+  "Antichain/CubeModel.lean": [
+    "Antichain.Basic",
+    "Mathlib.MeasureTheory.Constructions.Pi",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+    "Mathlib.MeasureTheory.Measure.OpenPos",
+    "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Positivity",
+    "Lean.Elab.Tactic.Omega"
+  ],
+  "Antichain/CubeProbabilitySpace.lean": [
+    "Antichain.EmpiricalConcentration",
+    "Antichain.LimitMarginals"
+  ],
+  "Antichain/CubeSeparation.lean": [
+    "Antichain.FloorIntegralApproximation",
+    "Mathlib.Topology.MetricSpace.HausdorffDistance"
+  ],
+  "Antichain/CubeShiftSupport.lean": [
+    "Antichain.IntervalGaussianPredictor",
+    "Mathlib.Data.Finset.Max",
+    "Mathlib.Topology.Order.IntermediateValue"
+  ],
+  "Antichain/CubeTestFloorError.lean": [
+    "Antichain.DistanceToFloor",
+    "Antichain.FloorTilt"
+  ],
+  "Antichain/CubeTileCount.lean": [
+    "Antichain.AlcoveTiling",
+    "Mathlib.Topology.Compactness.LocallyFinite",
+    "Mathlib.Algebra.Order.Ring.Abs",
+    "Mathlib.Analysis.Asymptotics.Defs",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+    "Mathlib.Data.Set.Card"
+  ],
+  "Antichain/DirectAlcoveInput.lean": [
+    "Antichain.AlcoveDiscreteness",
+    "Antichain.AlcoveFundamentalDomain",
+    "Antichain.AlcoveCover"
+  ],
+  "Antichain/DirectSourceEndpoints.lean": [
+    "Antichain.GaussianConcentration",
+    "Antichain.DirectAlcoveInput",
+    "Antichain.SourceEndpoints",
+    "Antichain.SourceCalculations",
+    "Antichain.ProbabilityConsequences",
+    "Antichain.RankCounting",
+    "Antichain.WeakBruhatIntervals",
+    "Antichain.Replication",
+    "Antichain.ShapeGeometry"
+  ],
+  "Antichain/DistanceToFloor.lean": [
+    "Antichain.NormalCDFLipschitz",
+    "Antichain.GaussianFloorLaw",
+    "Antichain.GaussianWeighted"
+  ],
+  "Antichain/DKWReverseMartingale.lean": [
+    "Antichain.UniformCDFConcentration",
+    "Antichain.TileProduct",
+    "Antichain.RankCDF",
+    "Antichain.DKWSaddle",
+    "Mathlib.Probability.Martingale.OptionalStopping"
+  ],
+  "Antichain/DKWSaddle.lean": [
+    "Mathlib.Analysis.Calculus.Deriv.MeanValue",
+    "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+    "Mathlib.Topology.Order.IntermediateValue",
+    "Mathlib.Tactic",
+    "Antichain.DKWStationary"
+  ],
+  "Antichain/DKWStationary.lean": [
+    "Antichain.BinaryKLPinsker",
+    "Mathlib.Topology.Order.IntermediateValue",
+    "Mathlib.Topology.Algebra.Order.Field"
+  ],
+  "Antichain/ElementaryCDFConcentration.lean": [
+    "Antichain.RankCDF",
+    "Antichain.UniformCDFConcentration"
+  ],
+  "Antichain/EmpiricalConcentration.lean": [
+    "Antichain.CubeConcentration"
+  ],
+  "Antichain/EmpiricalTopology.lean": [
+    "Antichain.GaussianWeighted",
+    "Antichain.LimitMeasure",
+    "Mathlib.MeasureTheory.Measure.ProbabilityMeasure",
+    "Mathlib.MeasureTheory.Measure.Portmanteau",
+    "Mathlib.Order.Filter.Bases.Finite"
+  ],
+  "Antichain/ExponentialTail.lean": [
+    "Antichain.BoundedMoment"
+  ],
+  "Antichain/FinalIntervalApplication.lean": [
+    "Antichain.WeakBruhatIntervals",
+    "Antichain.IntervalGaussianPredictor",
+    "Antichain.RankBoxes",
+    "Antichain.RankPermuton",
+    "Antichain.ProbabilityConsequences"
+  ],
+  "Antichain/FiniteConditioning.lean": [
+    "Mathlib.Probability.Distributions.Uniform",
+    "Mathlib.Probability.UniformOn"
+  ],
+  "Antichain/FloorIntegralApproximation.lean": [
+    "Antichain.TileGaussianSums",
+    "Antichain.CubeTileCount",
+    "Mathlib.MeasureTheory.Integral.Bochner.Set",
+    "Mathlib.MeasureTheory.Measure.Real",
+    "Mathlib.Topology.UniformSpace.UniformConvergence"
+  ],
+  "Antichain/FloorSpace.lean": [
+    "Antichain.Geometry",
+    "Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional",
+    "Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace",
+    "Mathlib.MeasureTheory.Measure.Haar.NormedSpace",
+    "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas"
+  ],
+  "Antichain/FloorTilt.lean": [
+    "Antichain.FloorIntegralApproximation",
+    "Antichain.BoundedMoment"
+  ],
+  "Antichain/GaussianCDF.lean": [
+    "Antichain.Support",
+    "Mathlib.Probability.CDF",
+    "Mathlib.Probability.Distributions.Gaussian.Real",
+    "Mathlib.Topology.Order.IntermediateValue",
+    "Mathlib.Tactic.Linarith"
+  ],
+  "Antichain/GaussianCharacterization.lean": [
+    "Mathlib.Analysis.Calculus.MeanValue",
+    "Mathlib.Analysis.Calculus.ContDiff.Basic",
+    "Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral",
+    "Mathlib.Tactic"
+  ],
+  "Antichain/GaussianConcentration.lean": [
+    "Antichain.ConditionalMoments",
+    "Antichain.ExponentialTail",
+    "Antichain.EmpiricalTopology"
+  ],
+  "Antichain/GaussianFloorHeightLaw.lean": [
+    "Antichain.GaussianFloorLaw",
+    "Mathlib.Analysis.InnerProductSpace.ProdL2"
+  ],
+  "Antichain/GaussianFloorLaw.lean": [
+    "Antichain.LimitMeasure",
+    "Antichain.FloorSpace",
+    "Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform",
+    "Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap",
+    "Mathlib.Tactic.Positivity"
+  ],
+  "Antichain/GaussianPartitionIntegral.lean": [
+    "Antichain.GaussianFloorHeightLaw",
+    "Antichain.GaussianWeighted",
+    "Mathlib.MeasureTheory.Integral.Pi"
+  ],
+  "Antichain/GaussianSample.lean": [
+    "Antichain.CubeModel",
+    "Antichain.GaussianCDF",
+    "Mathlib.Dynamics.Ergodic.MeasurePreserving",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Map"
+  ],
+  "Antichain/GaussianWeighted.lean": [
+    "Antichain.GaussianSample",
+    "Antichain.FloorSpace",
+    "Mathlib.MeasureTheory.Integral.Pi",
+    "Mathlib.Topology.ContinuousMap.Bounded.Normed",
+    "Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap",
+    "Mathlib.Tactic.FunProp"
+  ],
+  "Antichain/Geometry.lean": [
+    "Mathlib.Data.Finset.Lattice.Fold",
+    "Mathlib.Data.Real.Archimedean",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Order.ConditionallyCompleteLattice.Basic",
+    "Mathlib.Algebra.Order.Chebyshev",
+    "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+    "Mathlib.Analysis.SpecialFunctions.Sqrt",
+    "Mathlib.Analysis.InnerProductSpace.PiL2",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Ring",
+    "Antichain.Basic"
+  ],
+  "Antichain/GeometryRevisionSource.lean": [
+    "Antichain.DirectAlcoveInput"
+  ],
+  "Antichain/GreedyPacking.lean": [
+    "Antichain.FloorSpace",
+    "Antichain.ReferenceSimplex",
+    "Mathlib.Data.List.NodupEquivFin",
+    "Mathlib.Data.Finset.Card",
+    "Mathlib.Data.Finset.Max",
+    "Mathlib.Data.Finset.Lattice.Fold",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+    "Mathlib.MeasureTheory.Measure.OpenPos"
+  ],
+  "Antichain/GridBalls.lean": [
+    "Antichain.ReferenceSimplex",
+    "Mathlib.Algebra.Order.Floor.Semiring",
+    "Mathlib.Data.Fintype.EquivFin",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar"
+  ],
+  "Antichain/HeightCoordinates.lean": [
+    "Antichain.PinnedVolume",
+    "Mathlib.MeasureTheory.Group.Prod",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Map",
+    "Mathlib.Tactic.FunProp"
+  ],
+  "Antichain/HeightGaussianBound.lean": [
+    "Antichain.HeightCoordinates",
+    "Antichain.OneTileGaussian",
+    "Mathlib.Tactic.FunProp"
+  ],
+  "Antichain/IntervalElementary.lean": [
+    "Antichain.RankPermutonElementary",
+    "Antichain.DirectAlcoveInput",
+    "Antichain.FinalIntervalApplication"
+  ],
+  "Antichain/IntervalGaussianPredictor.lean": [
+    "Antichain.LimitMarginals",
+    "Antichain.NormalCDFLipschitz",
+    "Antichain.WeakVanishingTest",
+    "Mathlib.Probability.Distributions.Gaussian.Basic",
+    "Mathlib.Probability.Moments.Covariance",
+    "Mathlib.Topology.Order.MonotoneContinuity"
+  ],
+  "Antichain/IntervalInversions.lean": [
+    "Antichain.TwoPointAntichainPatterns",
+    "Antichain.RankLimitsHoeffding",
+    "Antichain.FinalIntervalApplication"
+  ],
+  "Antichain/LimitMarginals.lean": [
+    "Antichain.GaussianFloorLaw"
+  ],
+  "Antichain/LimitMeasure.lean": [
+    "Antichain.SurfaceClosure",
+    "Antichain.GaussianSample",
+    "Mathlib.MeasureTheory.Measure.Support",
+    "Mathlib.MeasureTheory.Constructions.Pi",
+    "Mathlib.Tactic.FunProp"
+  ],
+  "Antichain/LipschitzCubeTests.lean": [
+    "Antichain.GaussianConcentration",
+    "Antichain.CubeTestFloorError",
+    "Mathlib.Topology.MetricSpace.Lipschitz",
+    "Antichain.LipschitzStoneWeierstrass"
+  ],
+  "Antichain/LipschitzStoneWeierstrass.lean": [
+    "Antichain.CubeTestFloorError",
+    "Mathlib.Topology.ContinuousMap.StoneWeierstrass",
+    "Mathlib.Topology.Algebra.MetricSpace.Lipschitz"
+  ],
+  "Antichain/LocalRate.lean": [
+    "Antichain.PinnedVolumeUpper",
+    "Antichain.PinnedVolumeLower"
+  ],
+  "Antichain/LowerBound.lean": [
+    "Antichain.WeightedCubeLower",
+    "Antichain.CubeSeparation",
+    "Antichain.TileSizeSelection",
+    "Antichain.LowerRateAnalysis"
+  ],
+  "Antichain/LowerRateAnalysis.lean": [
+    "Antichain.LocalRate",
+    "Antichain.PartitionInterpolation",
+    "Antichain.SeriesGrowth"
+  ],
+  "Antichain/MinimumSpanningTree.lean": [
+    "Mathlib.Combinatorics.SimpleGraph.Acyclic",
+    "Mathlib.Combinatorics.SimpleGraph.Operations",
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.Data.Set.Finite.Lemmas",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Ring",
+    "Lean.Elab.Tactic.Omega"
+  ],
+  "Antichain/MSTGaugeBound.lean": [
+    "Antichain.SymmetricGaugePacking",
+    "Antichain.RootedTreeOrder",
+    "Mathlib.Data.Fin.Tuple.Sort"
+  ],
+  "Antichain/MSTLargestEdges.lean": [
+    "Antichain.MSTGaugeBound"
+  ],
+  "Antichain/MSTPinnedUpper.lean": [
+    "Antichain.MSTGaugeBound",
+    "Antichain.LocalRate"
+  ],
+  "Antichain/NormalCDFLipschitz.lean": [
+    "Antichain.GaussianCDF",
+    "Antichain.FloorSpace",
+    "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+    "Mathlib.Analysis.Calculus.MeanValue"
+  ],
+  "Antichain/OnePointIntegral.lean": [
+    "Antichain.PartitionDeletion",
+    "Antichain.GaussianFloorHeightLaw",
+    "Antichain.OneTileGaussian"
+  ],
+  "Antichain/OneTileGaussian.lean": [
+    "Antichain.Basic",
+    "Antichain.CommonHeightHolder",
+    "Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral",
+    "Mathlib.MeasureTheory.Group.Integral",
+    "Mathlib.Tactic.FunProp",
+    "Mathlib.Tactic.Linarith"
+  ],
+  "Antichain/OneTileIntegral.lean": [
+    "Antichain.HeightGaussianBound",
+    "Antichain.TileCoefficients",
+    "Antichain.TileSymmetries"
+  ],
+  "Antichain/OneTileModel.lean": [
+    "Antichain.OneTileIntegral",
+    "Antichain.GaussianPartitionIntegral"
+  ],
+  "Antichain/OneTileReal.lean": [
+    "Antichain.OneTileModel"
+  ],
+  "Antichain/OrientedCubeLower.lean": [
+    "Antichain.OrientedTileSizeSelection",
+    "Antichain.OrientedWeightedCubeLower",
+    "Antichain.OrientedCubeSeparation",
+    "Antichain.LowerRateAnalysis"
+  ],
+  "Antichain/OrientedCubeSeparation.lean": [
+    "Antichain.CubeSeparation"
+  ],
+  "Antichain/OrientedCubeSource.lean": [
+    "Antichain.OrientedCubeLower",
+    "Antichain.UpperBound",
+    "Antichain.DirectAlcoveInput"
+  ],
+  "Antichain/OrientedTileSizeSelection.lean": [
+    "Antichain.TileSizeSelection"
+  ],
+  "Antichain/OrientedWeightedCubeLower.lean": [
+    "Antichain.WeightedCubeLower"
+  ],
+  "Antichain/ParentHeightCoordinates.lean": [
+    "Antichain.HeightCoordinates",
+    "Mathlib.LinearAlgebra.Matrix.Block",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+    "Lean.Elab.Tactic.Omega"
+  ],
+  "Antichain/ParentHeightFubini.lean": [
+    "Antichain.ParentHeightCoordinates",
+    "Mathlib.MeasureTheory.Integral.Prod"
+  ],
+  "Antichain/PartitionDeletion.lean": [
+    "Antichain.GaussianWeighted",
+    "Mathlib.MeasureTheory.Integral.Pi"
+  ],
+  "Antichain/PartitionInterpolation.lean": [
+    "Antichain.OnePointIntegral",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+  ],
+  "Antichain/PatternBoxSampling.lean": [
+    "Antichain.RankBoxes",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Countable"
+  ],
+  "Antichain/PatternFrequency.lean": [
+    "Antichain.RankPermuton",
+    "Antichain.PatternWeakContinuity",
+    "Antichain.PatternSampling",
+    "Antichain.PatternBoxSampling"
+  ],
+  "Antichain/PatternFrequencyElementary.lean": [
+    "Antichain.PatternFrequencySubsets",
+    "Antichain.RankPermutonElementary"
+  ],
+  "Antichain/PatternFrequencySubsets.lean": [
+    "Antichain.PatternFrequency",
+    "Antichain.PatternSubsets"
+  ],
+  "Antichain/PatternSampling.lean": [
+    "Antichain.RankIndependence",
+    "Antichain.FiniteConditioning",
+    "Mathlib.Data.Finset.Powerset",
+    "Mathlib.Data.Fin.Embedding",
+    "Mathlib.Data.Fintype.CardEmbedding",
+    "Mathlib.MeasureTheory.Measure.Real"
+  ],
+  "Antichain/PatternSubsets.lean": [
+    "Antichain.PatternSampling",
+    "Mathlib.Data.Fintype.Powerset",
+    "Mathlib.Data.Finset.Sort"
+  ],
+  "Antichain/PatternWeakContinuity.lean": [
+    "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+    "Mathlib.MeasureTheory.Measure.Portmanteau"
+  ],
+  "Antichain/PinnedVolume.lean": [
+    "Antichain.FloorSpace",
+    "Antichain.CubeModel",
+    "Mathlib.MeasureTheory.Constructions.Pi",
+    "Mathlib.Algebra.Group.Action.Pointwise.Set.Basic",
+    "Mathlib.Algebra.GroupWithZero.Action.Pointwise.Set",
+    "Mathlib.LinearAlgebra.Dimension.Constructions",
+    "Mathlib.Tactic.FunProp"
+  ],
+  "Antichain/PinnedVolumeBounds.lean": [
+    "Antichain.PinnedVolume",
+    "Antichain.ReferenceSimplex",
+    "Mathlib.Analysis.Normed.Group.Constructions",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Tactic.Push"
+  ],
+  "Antichain/PinnedVolumeLower.lean": [
+    "Antichain.PinnedVolumeBounds",
+    "Antichain.HeightCoordinates",
+    "Antichain.GridBalls",
+    "Antichain.PinnedVolumeUpper",
+    "Mathlib.Data.Fintype.Perm",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar"
+  ],
+  "Antichain/PinnedVolumeUpper.lean": [
+    "Antichain.ParentHeightCoordinates",
+    "Antichain.GreedyPacking",
+    "Antichain.PinnedVolumeBounds",
+    "Antichain.SeriesGrowth",
+    "Antichain.MSTGaugeBound",
+    "Antichain.MSTLargestEdges",
+    "Antichain.ParentHeightFubini"
+  ],
+  "Antichain/PoissonConfiguration.lean": [
+    "Mathlib.Probability.Distributions.Poisson",
+    "Mathlib.MeasureTheory.Constructions.Pi",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Map"
+  ],
+  "Antichain/PoissonConfigurationProduct.lean": [
+    "Antichain.PoissonSpatialIndependence",
+    "Mathlib.Data.Finset.Preimage",
+    "Mathlib.Analysis.SpecialFunctions.Log.Summable"
+  ],
+  "Antichain/PoissonRestrictionComposition.lean": [
+    "Antichain.PoissonRestrictions",
+    "Mathlib.Data.List.OfFn",
+    "Mathlib.Data.List.FinRange"
+  ],
+  "Antichain/PoissonRestrictionCounts.lean": [
+    "Antichain.PoissonSpatialIndependence"
+  ],
+  "Antichain/PoissonRestrictionLaw.lean": [
+    "Antichain.PoissonRestrictions",
+    "Antichain.PoissonRestrictionSeries"
+  ],
+  "Antichain/PoissonRestrictions.lean": [
+    "Antichain.PoissonConfiguration",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+    "Mathlib.Data.Finset.Sort",
+    "Mathlib.Probability.Independence.Basic"
+  ],
+  "Antichain/PoissonRestrictionSeries.lean": [
+    "Antichain.PoissonConfiguration",
+    "Mathlib.Algebra.BigOperators.NatAntidiagonal",
+    "Mathlib.Algebra.Order.Antidiag.Prod",
+    "Mathlib.Data.Nat.Choose.Basic",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Finiteness"
+  ],
+  "Antichain/PoissonSpatialIndependence.lean": [
+    "Antichain.PoissonRestrictionLaw",
+    "Antichain.PoissonRestrictionComposition"
+  ],
+  "Antichain/ProbabilityConsequences.lean": [
+    "Antichain.CubeProbabilitySpace"
+  ],
+  "Antichain/ProductTranspose.lean": [
+    "Mathlib.MeasureTheory.Constructions.Pi"
+  ],
+  "Antichain/RandomPosetCounting.lean": [
+    "Antichain.WeakBruhatIntervals",
+    "Mathlib.Probability.ProbabilityMassFunction.Integrals"
+  ],
+  "Antichain/RankBinomial.lean": [
+    "Antichain.RankHoeffding",
+    "Antichain.PoissonRestrictions",
+    "Mathlib.Probability.ProbabilityMassFunction.Binomial"
+  ],
+  "Antichain/RankBoxes.lean": [
+    "Antichain.RankCDF",
+    "Antichain.ShapeGeometry",
+    "Mathlib.Order.Interval.Set.Union"
+  ],
+  "Antichain/RankCDF.lean": [
+    "Antichain.RankIndependence",
+    "Antichain.EmpiricalTopology",
+    "Mathlib.Order.Interval.Finset.Fin"
+  ],
+  "Antichain/RankCounting.lean": [
+    "Antichain.RankIndependence",
+    "Antichain.WeightedLimit",
+    "Mathlib.Data.Fin.Rev"
+  ],
+  "Antichain/RankHoeffding.lean": [
+    "Antichain.RankCDF",
+    "Antichain.UniformCDFConcentration",
+    "Antichain.ShapeGeometry"
+  ],
+  "Antichain/RankIndependence.lean": [
+    "Antichain.RankModel",
+    "Antichain.GaussianWeighted",
+    "Antichain.FiniteConditioning"
+  ],
+  "Antichain/RankLimitsDirect.lean": [
+    "Antichain.RankPermutonElementary",
+    "Antichain.SignedRankElementary",
+    "Antichain.PatternFrequencyElementary",
+    "Antichain.DirectAlcoveInput"
+  ],
+  "Antichain/RankLimitsHoeffding.lean": [
+    "Antichain.RankPermutonHoeffding",
+    "Antichain.DirectAlcoveInput"
+  ],
+  "Antichain/RankLimitsSharp.lean": [
+    "Antichain.DKWReverseMartingale",
+    "Antichain.DirectAlcoveInput",
+    "Antichain.RankPermuton",
+    "Antichain.RankShapeTransfer",
+    "Antichain.SignedRankLimits",
+    "Antichain.PatternFrequencySubsets",
+    "Antichain.FinalIntervalApplication"
+  ],
+  "Antichain/RankModel.lean": [
+    "Antichain.CubeModel",
+    "Antichain.ProductTranspose",
+    "Mathlib.Data.Finset.Sort",
+    "Mathlib.Data.Fintype.Perm",
+    "Mathlib.Order.WellFounded",
+    "Mathlib.Probability.Independence.Basic",
+    "Mathlib.Probability.Distributions.Uniform"
+  ],
+  "Antichain/RankPermuton.lean": [
+    "Antichain.RankBoxes",
+    "Antichain.RankShapeTransfer",
+    "Antichain.CubeProbabilitySpace"
+  ],
+  "Antichain/RankPermutonElementary.lean": [
+    "Antichain.RankPermuton",
+    "Antichain.ElementaryCDFConcentration"
+  ],
+  "Antichain/RankPermutonHoeffding.lean": [
+    "Antichain.RankPermuton",
+    "Antichain.SignedRankLimits",
+    "Antichain.PatternFrequencySubsets",
+    "Antichain.RankHoeffding"
+  ],
+  "Antichain/RankShapeElementary.lean": [
+    "Antichain.ElementaryCDFConcentration",
+    "Antichain.DirectAlcoveInput",
+    "Antichain.RankShapeTransfer",
+    "Antichain.SignedRankLimits"
+  ],
+  "Antichain/RankShapeTransfer.lean": [
+    "Antichain.RankCDF",
+    "Antichain.ShapeGeometry"
+  ],
+  "Antichain/ReferenceSimplex.lean": [
+    "Antichain.FloorSpace",
+    "Mathlib.Topology.MetricSpace.Bounded",
+    "Mathlib.MeasureTheory.Measure.OpenPos"
+  ],
+  "Antichain/ReflectionGluing.lean": [
+    "Antichain.SegmentSubdivision",
+    "Antichain.AlcoveTiling",
+    "Antichain.BoundaryMatching",
+    "Mathlib.Topology.Order.IntermediateValue",
+    "Mathlib.Topology.Algebra.MetricSpace.Lipschitz"
+  ],
+  "Antichain/Replication.lean": [
+    "Antichain.ReflectionGluing",
+    "Antichain.ReplicationLabels",
+    "Mathlib.Data.Fintype.Perm"
+  ],
+  "Antichain/ReplicationLabels.lean": [
+    "Mathlib.Data.Fintype.Perm",
+    "Mathlib.Data.Fintype.Sort",
+    "Mathlib.Data.Fintype.Prod",
+    "Mathlib.Data.Fintype.Pi",
+    "Mathlib.Data.Fintype.Sigma",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Algebra.Order.Ring.Nat",
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+    "Mathlib.Logic.Equiv.Sum"
+  ],
+  "Antichain/RootedTreeOrder.lean": [
+    "Antichain.ParentHeightCoordinates",
+    "Mathlib.Combinatorics.SimpleGraph.Acyclic",
+    "Mathlib.Combinatorics.SimpleGraph.Metric",
+    "Mathlib.Data.Finset.Sort",
+    "Mathlib.Tactic.Ring"
+  ],
+  "Antichain/SegmentGeometry.lean": [
+    "Antichain.AlcoveTiling",
+    "Antichain.BoundaryMatching"
+  ],
+  "Antichain/SegmentSubdivision.lean": [
+    "Antichain.SegmentGeometry",
+    "Mathlib.Topology.Compactness.LocallyFinite",
+    "Mathlib.Topology.Order.Compact",
+    "Mathlib.Analysis.Convex.Topology",
+    "Mathlib.Data.List.Chain"
+  ],
+  "Antichain/SeriesGrowth.lean": [
+    "Antichain.Asymptotics",
+    "Mathlib.Analysis.SpecialFunctions.Stirling",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+    "Mathlib.Topology.Order.LiminfLimsup"
+  ],
+  "Antichain/ShapeGeometry.lean": [
+    "Antichain.EmpiricalTopology",
+    "Antichain.EmpiricalConcentration",
+    "Antichain.CubeShiftSupport",
+    "Mathlib.Topology.MetricSpace.HausdorffDistance"
+  ],
+  "Antichain/SignedRankElementary.lean": [
+    "Antichain.SignedRankLimits",
+    "Antichain.RankPermutonElementary"
+  ],
+  "Antichain/SignedRankLimits.lean": [
+    "Antichain.RankCounting",
+    "Antichain.FinalIntervalApplication",
+    "Antichain.RankShapeTransfer"
+  ],
+  "Antichain/SimplicialBarycenter.lean": [
+    "Antichain.SimplicialCubeInterpolation",
+    "Mathlib.Algebra.BigOperators.Fin",
+    "Mathlib.Analysis.Convex.Combination"
+  ],
+  "Antichain/SimplicialCubeInterpolation.lean": [
+    "Antichain.SimplicialGridWeights",
+    "Antichain.SimplicialInterpolationRegularity",
+    "Antichain.SimplicialInterpolationApproximation",
+    "Mathlib.Data.List.NodupEquivFin",
+    "Mathlib.Data.List.Sort",
+    "Mathlib.LinearAlgebra.AffineSpace.AffineMap",
+    "Mathlib.Order.Interval.Finset.Fin"
+  ],
+  "Antichain/SimplicialGridWeights.lean": [
+    "Antichain.CubeModel",
+    "Mathlib.Data.Finset.Lattice.Fold",
+    "Mathlib.Data.Fintype.Pi",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+    "Mathlib.Topology.MetricSpace.Lipschitz",
+    "Mathlib.Topology.ContinuousMap.Bounded.Normed",
+    "Mathlib.Tactic"
+  ],
+  "Antichain/SimplicialInterpolationApproximation.lean": [
+    "Antichain.SimplicialGridWeights",
+    "Antichain.SimplicialInterpolationRegularity",
+    "Mathlib.Topology.Instances.RealVectorSpace"
+  ],
+  "Antichain/SimplicialInterpolationRegularity.lean": [
+    "Mathlib.Topology.MetricSpace.Lipschitz",
+    "Mathlib.Topology.ContinuousMap.Bounded.Normed",
+    "Mathlib.Data.Finset.Lattice.Fold",
+    "Mathlib.Tactic",
+    "Antichain.SimplicialGridWeights"
+  ],
+  "Antichain/SourceCalculations.lean": [
+    "Antichain.CountingConstant",
+    "Antichain.RankCounting"
+  ],
+  "Antichain/SourceColoring.lean": [
+    "Antichain.Basic",
+    "Mathlib.Data.Finset.Powerset",
+    "Mathlib.Data.Finset.Sort",
+    "Mathlib.Data.Finset.Lattice.Fold",
+    "Mathlib.Data.Fintype.Perm",
+    "Lean.Elab.Tactic.Omega"
+  ],
+  "Antichain/SourceCovariance.lean": [
+    "Antichain.LimitMarginals",
+    "Mathlib.Probability.Distributions.Gaussian.Basic",
+    "Mathlib.Probability.Moments.Covariance",
+    "Mathlib.Probability.Moments.Variance"
+  ],
+  "Antichain/SourceEndpoints.lean": [
+    "Antichain.WeightedLimit"
+  ],
+  "Antichain/SourceGaugeCalculations.lean": [
+    "Antichain.BoundaryProfiles",
+    "Mathlib.Analysis.Normed.Group.Seminorm",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.Basic"
+  ],
+  "Antichain/SourcePinnedNormalization.lean": [
+    "Antichain.PinnedVolume"
+  ],
+  "Antichain/SourceRankMarginals.lean": [
+    "Antichain.FinalIntervalApplication"
+  ],
+  "Antichain/SourceSimplexCalculations.lean": [
+    "Antichain.ConfigurationContraction",
+    "Mathlib.Analysis.Convex.Combination",
+    "Mathlib.Analysis.Convex.Extreme",
+    "Mathlib.Order.Interval.Finset.Fin"
+  ],
+  "Antichain/SourceStirling.lean": [
+    "Antichain.RankCounting",
+    "Mathlib.Analysis.SpecialFunctions.Stirling"
+  ],
+  "Antichain/Support.lean": [
+    "Antichain.Basic",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Tactic.Linarith"
+  ],
+  "Antichain/SurfaceClosure.lean": [
+    "Antichain.GaussianCDF",
+    "Mathlib.Topology.Algebra.InfiniteSum.Basic",
+    "Mathlib.Order.Filter.AtTopBot.Field",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.Ring"
+  ],
+  "Antichain/SymmetricGaugePacking.lean": [
+    "Antichain.SourceGaugeCalculations",
+    "Antichain.BoundaryMatching",
+    "Antichain.GreedyPacking",
+    "Antichain.TreeComponentCount"
+  ],
+  "Antichain/TileCoefficients.lean": [
+    "Antichain.PinnedVolumeBounds",
+    "Antichain.OneTileGaussian",
+    "Antichain.SeriesGrowth"
+  ],
+  "Antichain/TileGaussianSums.lean": [
+    "Antichain.AlcoveTiling",
+    "Antichain.GaussianFloorLaw",
+    "Mathlib.Topology.ContinuousMap.Bounded.Normed",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+    "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+    "Mathlib.MeasureTheory.Integral.DominatedConvergence"
+  ],
+  "Antichain/TileLogGrowth.lean": [
+    "Antichain.TileSeriesLocal",
+    "Antichain.TileGaussianSums",
+    "Antichain.CountableRate"
+  ],
+  "Antichain/TileProduct.lean": [
+    "Antichain.TileSeriesLocal",
+    "Antichain.OneTileReal",
+    "Antichain.AlcoveTiling",
+    "Antichain.PoissonConfiguration",
+    "Antichain.PoissonConfigurationProduct",
+    "Antichain.OnePointIntegral",
+    "Antichain.TileLogGrowth",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+    "Mathlib.Topology.Algebra.InfiniteSum.Ring",
+    "Mathlib.Data.Finset.Preimage",
+    "Mathlib.Analysis.SpecialFunctions.Log.Summable"
+  ],
+  "Antichain/TileSeries.lean": [
+    "Antichain.CoefficientRate"
+  ],
+  "Antichain/TileSeriesLocal.lean": [
+    "Antichain.TileSeries"
+  ],
+  "Antichain/TileSizeSelection.lean": [
+    "Antichain.CubeTileCount",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+  ],
+  "Antichain/TileSymmetries.lean": [
+    "Antichain.PinnedVolume",
+    "Antichain.ReferenceSimplex"
+  ],
+  "Antichain/TreeComponentCount.lean": [
+    "Antichain.MinimumSpanningTree",
+    "Mathlib.Combinatorics.SimpleGraph.LapMatrix",
+    "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas"
+  ],
+  "Antichain/TwoPointAntichainPatterns.lean": [
+    "Antichain.PatternFrequency",
+    "Antichain.LimitMarginals",
+    "Antichain.RankIndependence",
+    "Mathlib.Tactic.FinCases"
+  ],
+  "Antichain/UniformCDFConcentration.lean": [
+    "Antichain.GaussianSample",
+    "Antichain.EmpiricalTopology",
+    "Mathlib.Probability.Moments.SubGaussian",
+    "Mathlib.Order.Interval.Set.Union"
+  ],
+  "Antichain/UnpinnedInfiniteVolume.lean": [
+    "Antichain.BoundaryMatching",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar"
+  ],
+  "Antichain/UpperBound.lean": [
+    "Antichain.TileProduct",
+    "Antichain.ChernoffRate",
+    "Antichain.PartitionInterpolation",
+    "Antichain.FloorIntegralApproximation"
+  ],
+  "Antichain/WeakBruhatIntervals.lean": [
+    "Antichain.RankIndependence",
+    "Antichain.RankCounting",
+    "Mathlib.Data.Fin.Rev",
+    "Mathlib.Tactic.FinCases"
+  ],
+  "Antichain/WeakVanishingTest.lean": [
+    "Mathlib.MeasureTheory.Measure.HasOuterApproxClosed",
+    "Mathlib.MeasureTheory.Measure.ProbabilityMeasure",
+    "Mathlib.MeasureTheory.Integral.BoundedContinuousFunction"
+  ],
+  "Antichain/WeightedCubeLower.lean": [
+    "Antichain.Replication",
+    "Antichain.CubeTileCount",
+    "Antichain.FloorIntegralApproximation",
+    "Antichain.PinnedVolumeBounds"
+  ],
+  "Antichain/WeightedLimit.lean": [
+    "Antichain.UpperBound",
+    "Antichain.LowerBound"
+  ]
+}
