@@ -2,9 +2,9 @@
 
 This repository contains machine-checked proofs for
 
-> Andrew Elvey Price and Minjae Park, **[The limit shape of uniform random antichains in \[0,1\]ᵈ](paper/main.pdf)**.
+> Andrew Elvey Price and Minjae Park, **[The limit shape of uniform random antichains in \[0,1\]ᵈ](paper/main.pdf)**, [arXiv:2611.30371](https://arxiv.org/abs/2611.30371)
 
-The linked PDF presents the statements and outlines the verified proofs. The [authoring source](source/main.tex) contains the paper’s full arguments.
+The linked PDF presents the statements and outlines the verified proofs.
 
 Fix $`d\ge 2`$ and sample $`n`$ independent uniform points in the cube. They form an antichain if no point is strictly smaller than another in every coordinate. The paper determines the logarithmic probability of this event, the shape and empirical distribution of the sample conditioned on it, and the limiting permuton of the associated pattern-avoiding permutations.
 
